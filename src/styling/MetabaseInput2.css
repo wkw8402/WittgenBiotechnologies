@@ -1,0 +1,1201 @@
+/* screen - apply-metadatabase-inputimport-excel-file-upload-file */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Oxygen:400,300,700|Roboto:300|Inter:400,700,500,600|Source+Sans+Pro:400|Oswald:400,700");
+/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+@import url("https://px.animaapp.com/63a236ec63d7cd74a21d3405.63a236ed99ecd12a69868578.63c49d3d9565c9180a1f3b19.hcp.png");
+
+.screen-importExcel1 a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal-importExcel1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal-importExcel1 > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 1px none;
+  display: flex;
+  overflow: hidden;
+  width: 1920px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .group-438 {
+  align-items: flex-start;
+  display: flex;
+  height: 100%;
+  /* height: 1080px; */
+  left: -2px;
+  min-width: 260px;
+  position: fixed;
+  top: 0;
+  z-index: 4;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .overlap-group1 {
+  height: 100%;
+  /* height: 1080px; */
+  position: relative;
+  width: 262px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .group-184 {
+  align-items: flex-end;
+  display: flex;
+  height: 100%;
+  /* height: 1080px; */
+  left: 0;
+  min-width: 262px;
+  position: absolute;
+  top: 0;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .overlap-group {
+  align-items: flex-start;
+  background-color: var(--catskill-white);
+  display: flex;
+  height: 100%;
+  /* height: 1080px; */
+  justify-content: flex-end;
+  min-width: 260px;
+  padding: 22px 35px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .witt-gen-portal {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 35px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .line-79 {
+  height: 100%;
+  /* height: 1079px; */
+  object-fit: cover;
+  width: 1px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-13 {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 164px;
+  width: 260px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .dashboard {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-14 {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 224px;
+  width: 260px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file
+  .draft_fill1_wght400_grad0_opsz48-1-1 {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .my-files {
+  height: 19px;
+  width: 83px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-22 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 1px;
+  padding: 15px 60px;
+  position: absolute;
+  top: 866px;
+  width: 258px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file
+  .logout_fill0_wght400_grad0_opsz48-1 {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .logout {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-13-1 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 584px;
+  width: 260px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .import_contacts_fill {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .tutorial {
+  height: 19px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: 83px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-21 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 284px;
+  width: 260px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file
+  .paid_fill0_wght400_grad0_opsz48-1 {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .cost-usage {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-23 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 344px;
+  width: 260px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .my-profile {
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-18 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 524px;
+  width: 260px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .contact_support_fill {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .faq-support {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -2px;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-19 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 464px;
+  width: 260px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .contact-us {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-24 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 404px;
+  width: 260px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .settings {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-447 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 1px solid;
+  border-color: var(--mystic);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 128px;
+  justify-content: center;
+  left: 258px;
+  padding: 17px 80px;
+  position: fixed;
+  top: 0;
+  width: 1662px;
+  z-index: 2;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-350 {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  width: 1502px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .title {
+  letter-spacing: 0;
+  line-height: normal;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-258 {
+  align-items: flex-end;
+  display: flex;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-49 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-end;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .getting-started {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .rectangle-228 {
+  background-color: var(--blue-dianne);
+  height: 4px;
+  min-width: 200px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .metadatabase-input {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .database-input {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .rectangle-228-1 {
+  background-color: var(--catskill-white);
+  height: 4px;
+  min-width: 200px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .pay-submit {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-2 {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-33 {
+  align-items: center;
+  border: 1.2px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  justify-content: center;
+  padding: 12px 24px;
+  width: 160px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .discard-exit {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.7px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-31 {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  border: 1.2px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  justify-content: center;
+  padding: 12px 24px;
+  width: 160px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .researchers {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.7px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .group-325 {
+  align-items: flex-start;
+  display: flex;
+  height: 148px;
+  left: 258px;
+  min-width: 1662px;
+  position: fixed;
+  top: 932px;
+  z-index: 3;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-616 {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  margin-top: -12px;
+  padding: 12px 80px;
+  width: 1662px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-34 {
+  align-items: center;
+  border: 1.2px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 10px;
+  height: 48px;
+  justify-content: center;
+  padding: 12px 24px;
+  width: 180px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-33-1 {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  border: 1.2px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 10px;
+  height: 48px;
+  justify-content: center;
+  padding: 12px 24px;
+  width: 180px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-517 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  left: 338px;
+  position: fixed;
+  top: 144px;
+  width: fit-content;
+  z-index: 1;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-517-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 1502px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .group-283 {
+  align-items: flex-start;
+  align-self: stretch;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--catskill-white);
+  display: flex;
+  flex-direction: column;
+  height: 48px;
+  justify-content: center;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-504 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 48px;
+  justify-content: center;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-454 {
+  align-items: center;
+  display: flex;
+  margin-bottom: -2px;
+  margin-top: -2px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-214 {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  display: flex;
+  gap: 10px;
+  height: 48px;
+  justify-content: center;
+  padding: 12px 24px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .import-excel-file {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-215 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 52px;
+  justify-content: center;
+  padding: 14px 23px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .manual-data-input {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .group-260 {
+  height: 48px;
+  min-width: 50px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .overlap-group-1 {
+  background-color: var(--blue-dianne);
+  padding: 14px 20px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 19px;
+  min-width: 8px;
+  text-align: center;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .upload-file {
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .line-9 {
+  height: 2px;
+  min-width: 85px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .overlap-group-2 {
+  background-color: var(--catskill-white);
+  padding: 14px 19px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-1 {
+  min-height: 19px;
+  min-width: 10px;
+  text-align: center;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .match-columns {
+  letter-spacing: 0;
+  line-height: normal;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .overlap-group-3 {
+  background-color: var(--catskill-white);
+  justify-content: flex-end;
+  padding: 14px 18px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-2 {
+  min-height: 19px;
+  min-width: 11px;
+  text-align: center;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .validate-data {
+  letter-spacing: 0;
+  line-height: normal;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-516 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .your-excel-sheet {
+  letter-spacing: 0;
+  line-height: normal;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-212 {
+  align-items: center;
+  background-color: var(--white);
+  border: 1.2px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  justify-content: center;
+  padding: 12px 24px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .reupload-file {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.7px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-51 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  overflow: scroll;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-5 {
+  align-items: flex-start;
+  display: flex;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component {
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  padding: 12px;
+  width: 200px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .id {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .dob {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .height-cm {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .weight-kg {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .primary-region {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .subtype {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .grade {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-1 {
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  padding: 12px;
+  width: 102px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .surgery {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-514 {
+  background-color: var(--concrete);
+  border-color: var(--geyser);
+  border-left-style: solid;
+  border-left-width: 1px;
+  height: 477px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  margin-right: -1px;
+  min-width: 1504px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 475px;
+  /* width: 1723px; */
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-511 {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  width: 1502px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-2 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 1px;
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  padding: 12px;
+  width: 200px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .gh-1234567 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-3 {
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-4 {
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .date {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .breast {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .er {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-5 {
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .yes {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-511-1 {
+  align-items: flex-start;
+  display: flex;
+  margin-right: -98px;
+  width: 1600px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-6 {
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .e-rdfa {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .date-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .breast-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .tnbc {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-7 {
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .yes-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-8 {
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-9 {
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .component-3 {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--geyser);
+  height: 40px;
+  min-width: 200px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .place {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-449-1 {
+  align-items: center;
+  align-self: flex-end;
+  background-color: var(--mystic);
+  display: flex;
+  height: 16px;
+  justify-content: space-between;
+  margin-top: 102px;
+  padding: 4px;
+  transform: rotate(90deg);
+  width: 459px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-449 {
+  align-items: flex-start;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: -2px;
+  margin-top: -2px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .iontriangle-sharp {
+  height: 8px;
+  margin-left: -2px;
+  min-width: 12px;
+  transform: rotate(-90deg);
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .rectangle-235 {
+  background-color: var(--silver);
+  height: 12px;
+  min-width: 403px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .iontriangle-sharp-1 {
+  height: 8px;
+  margin-right: -2px;
+  min-width: 12px;
+  transform: rotate(-90deg);
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .frame-450 {
+  align-items: center;
+  background-color: var(--mystic);
+  display: flex;
+  height: 16px;
+  justify-content: space-between;
+  margin-top: 222px;
+  padding: 4px;
+  width: 1486px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .iontriangle-sharp-2 {
+  height: 12px;
+  min-width: 8px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .rectangle-235-1 {
+  background-color: var(--silver);
+  height: 12px;
+  min-width: 1155px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .iontriangle-sharp-3 {
+  height: 12px;
+  margin-bottom: -2px;
+  margin-top: -2px;
+  min-width: 8px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .gh-1234567-3 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .icon {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .my {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .number-10 {
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .overlap-group-4 {
+  align-items: flex-end;
+  border-radius: 24px;
+  display: flex;
+  height: 48px;
+  min-width: 48px;
+}
+
+.apply-metadatabase-inputimport-excel-file-upload-file .researchers-3 {
+  letter-spacing: 0;
+  line-height: normal;
+  width: fit-content;
+}
+
+:root {
+  --black: #000000;
+  --blue-dianne: #25474f;
+  --catskill-white: #f1f6f7;
+  --concrete: #f1f3f4;
+  --geyser: #cedde1;
+  --japanese-laurel: #009f06;
+  --mystic: #e9ebed;
+  --oslo-gray: #7c9195;
+  --silver: #c0c0c0;
+  --slate-gray: #707e8c;
+  --tundora: #464646;
+  --white: #ffffff;
+
+  --font-size-l: 16px;
+  --font-size-m: 14px;
+  --font-size-xl: 20px;
+  --font-size-xxxl: 32px;
+  --font-size-xxxl2: 28px;
+
+  --font-family-inter: "Inter", Helvetica;
+  --font-family-oxygen: "Oxygen", Helvetica;
+}
+.inter-normal-tundora-14px {
+  color: var(--tundora);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-normal-blue-dianne-16px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-slate-gray-14px {
+  color: var(--slate-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-normal-slate-gray-16px {
+  color: var(--slate-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-blue-dianne-16px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-semi-bold-blue-dianne-14px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.oxygen-bold-blue-dianne-28px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-oxygen);
+  font-size: var(--font-size-xxxl2);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.inter-normal-oslo-gray-16px {
+  color: var(--oslo-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-white-14px {
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.oxygen-light-blue-dianne-28px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-oxygen);
+  font-size: var(--font-size-xxxl2);
+  font-style: normal;
+  font-weight: 300;
+}
+
+.inter-semi-bold-slate-gray-32px {
+  color: var(--slate-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-normal-japanese-laurel-16px {
+  color: var(--japanese-laurel);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-white-16px {
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-normal-white-16px {
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-tundora-16px {
+  color: var(--tundora);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-semi-bold-tundora-20px {
+  color: var(--tundora);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 600;
+}
