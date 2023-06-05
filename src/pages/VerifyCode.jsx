@@ -1,7 +1,7 @@
 import "../styling/VerifyCode.css";
 import "../styling/tailwind.css";
 
-export default function () {
+export default function VerifyCode() {
   return (
     <>
       <meta charSet="utf-8" />
@@ -20,8 +20,10 @@ export default function () {
         name="page"
         defaultValue="verify-code"
       />
+
       <div className="container-center-horizontal-verify">
         <div className="verify-code screen-verify">
+          {/* left side bar */}
           <div className="group-184">
             <div className="overlap-group">
               <div className="witt-gen-portal oxygen-bold-blue-dianne-28px">
@@ -31,11 +33,13 @@ export default function () {
             </div>
             <img className="line-79" src="line-79.png" alt="Line 79" />
           </div>
+
+          {/* Email check form section */}
           <div className="verify-email">
             <div className="frame-205 frame">
               <div className="frame-460 frame">
                 <h1 className="title inter-semi-bold-blue-dianne-36px">
-                  Please check your email
+                  Please check your emails
                 </h1>
                 <p className="please-enter-the-ver inter-normal-black-16px">
                   <span className="inter-normal-black-16px">
@@ -81,6 +85,8 @@ export default function () {
               </div>
             </div>
           </div>
+
+          {/* ???? */}
           <img
             className="icbaseline-download"
             src="ic-baseline-download@2x.png"
