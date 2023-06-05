@@ -1,4 +1,6 @@
 import "../styling/Register.css";
+import "../styling/tailwind.css";
+
 export default function () {
   return (
     <>
@@ -34,7 +36,7 @@ export default function () {
             <div className="component-85">
               <div className="frame-459-1">
                 <h1 className="title inter-semi-bold-blue-dianne-36px">
-                  Create new account
+                  Create new accounts
                 </h1>
                 <div className="frame">
                   <div className="already-have-an-account inter-normal-slate-gray-16px">

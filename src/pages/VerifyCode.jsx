@@ -1,4 +1,6 @@
 import "../styling/VerifyCode.css";
+import "../styling/tailwind.css";
+
 export default function () {
   return (
     <>

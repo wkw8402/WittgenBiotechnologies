@@ -18,13 +18,14 @@ import Payment2 from "./pages/Payment2";
 import Register from "./pages/Register";
 import Submitted from "./pages/Submitted";
 import VerifyCode from "./pages/VerifyCode";
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
-        {/* <Route path="/register" element={<Register />}></Route>
-        <Route path="/verify_code" element={<VerifyCode />}></Route> */}
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/verify_code" element={<VerifyCode />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/my_files_1" element={<MyFiles1 />}></Route>
         {/* <Route path="/my_files_2" element={<MyFiles2 />}></Route>

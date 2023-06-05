@@ -6,7 +6,8 @@ import { createContext } from "react";
 // import "../index.css";
 import "../styling/Login.css";
 import React from "react";
-import Modal from './Popup';
+import Modal from "./Popup";
+
 import {
   configTableName,
   configParams,
@@ -54,7 +55,7 @@ const authenticate = async (Username, Password) => {
       onFailure: (err) => {
         console.log("login failure", err);
         reject(err);
-        alert("Login failed!")
+        alert("Login failed!");
       },
       newPasswordRequired: (data) => {
         console.log("new password required", data);
@@ -79,7 +80,6 @@ export default function () {
     event.preventDefault();
     setModalOpen(false);
   };
-
 
   const { innerWidth: width, innerHeight: height } = window;
   // console.log(width, height);
@@ -121,7 +121,6 @@ export default function () {
       });
   };
 
-
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
@@ -156,47 +155,48 @@ export default function () {
           </div>
         </div>
         <div className="thank-you-for-your-i">
-          Thank you for your interest!<br />
-          We have our alpha version demo, which is not ready for customers.<br />
-          Please sign up for demo if you want the next version as soon as possible!
+          Thank you for your interest!
+          <br />
+          We have our alpha version demo, which is not ready for customers.
+          <br />
+          Please sign up for demo if you want the next version as soon as
+          possible!
         </div>
         <div className="login-form login-2">
           <div className="frame-203 frame-1">
             <h1 className="title">LOGIN</h1>
-            <form onSubmit={handleSubmit}>  
-            <div className="frame">
-              <div className="frame-19 frame-1">
-                <div className="username inter-semi-bold-blue-dianne-12px">
-                  Username
-                </div>
-                <input
-                  type="text"
-                  value={username}
-                  onChange={handleUsernameChange}
-                  className="rectangle-211"
-                  placeholder="Enter your username"
-                />
-              </div>
+            <form onSubmit={handleSubmit}>
               <div className="frame">
                 <div className="frame-19 frame-1">
-                  <div className="password inter-semi-bold-blue-dianne-12px">
-                    Password
+                  <div className="username inter-semi-bold-blue-dianne-12px">
+                    Username
                   </div>
                   <input
-                    type="password"
-                    value={password}
-                    onChange={handlePasswordChange}
+                    type="text"
+                    value={username}
+                    onChange={handleUsernameChange}
                     className="rectangle-211"
-                    placeholder="Enter your password"
+                    placeholder="Enter your username"
                   />
                 </div>
+                <div className="frame">
+                  <div className="frame-19 frame-1">
+                    <div className="password inter-semi-bold-blue-dianne-12px">
+                      Password
+                    </div>
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={handlePasswordChange}
+                      className="rectangle-211"
+                      placeholder="Enter your password"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-            <button type="submit" className="login">
-              <div className="login-1 login-2">
-                Login
-              </div>
-            </button>
+              <button type="submit" className="login">
+                <div className="login-1 login-2">Login</div>
+              </button>
             </form>
             <div className="frame-204 frame-1">
               <div className="group-201">
@@ -213,11 +213,10 @@ export default function () {
                   </div>
                 </div>
               </div>
-                <button className="sign-up" onClick={openModal}>
-                  <div className="sign-up-1">Sign Up for Demo</div>
-                </button>
-                <Modal open={modalOpen} close={closeModal} header="">
-                    </Modal>
+              <button className="sign-up" onClick={openModal}>
+                <div className="sign-up-1">Sign Up for Demo</div>
+              </button>
+              <Modal open={modalOpen} close={closeModal} header=""></Modal>
             </div>
           </div>
         </div>
@@ -227,7 +226,6 @@ export default function () {
           alt="ic:baseline-download"
         />
       </div>
-      
     </>
   );
 }
