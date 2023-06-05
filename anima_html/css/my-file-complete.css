@@ -1,0 +1,1243 @@
+/* screen - my-file-complete */
+
+.my-file-complete {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 0.75px none;
+  display: flex;
+  flex-direction: column;
+  min-height: 1057px;
+  overflow-x: hidden;
+  width: 1440px;
+}
+
+.my-file-complete .main-navigation {
+  align-items: flex-start;
+  display: flex;
+  height: 810px;
+  left: -2px;
+  min-width: 195px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+
+.my-file-complete .overlap-group2 {
+  height: 810px;
+  position: relative;
+  width: 197px;
+}
+
+.my-file-complete .group-184 {
+  align-items: flex-end;
+  display: flex;
+  height: 810px;
+  left: 0;
+  min-width: 197px;
+  position: absolute;
+  top: 0;
+}
+
+.my-file-complete .overlap-group {
+  align-items: flex-start;
+  background-color: var(--blue-dianne);
+  display: flex;
+  height: 810px;
+  justify-content: flex-end;
+  min-width: 195px;
+  padding: 16.5px 26.2px;
+}
+
+.my-file-complete .witt-gen-portal {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 27px;
+}
+
+.my-file-complete .line-79 {
+  height: 809px;
+  width: 1px;
+}
+
+.my-file-complete .frame-185 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  left: 0;
+  position: absolute;
+  top: 123px;
+  width: fit-content;
+}
+
+.my-file-complete .frame-185-item {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  padding: 11.25px 45px;
+  position: relative;
+  width: 195px;
+}
+
+.my-file-complete .icon-home {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-file-complete .dashboard {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-complete .draft_fill1_wght400_grad0_opsz48-1-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-file-complete .my-files {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: -1.50px;
+  margin-top: -3.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-complete .paid_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-file-complete .cost-usage {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .icon-settings {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-file-complete .settings {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .contact_support_fill {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-file-complete .faq-support {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -2.00px;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .logout {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  left: 0;
+  padding: 11.25px 45px;
+  position: absolute;
+  top: 717px;
+  width: 195px;
+}
+
+.my-file-complete .logout_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-file-complete .logout-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .rectangle-241 {
+  background-color: var(--white);
+  border-bottom-style: solid;
+  border-bottom-width: 0.75px;
+  border-color: var(--mystic);
+  height: 60px;
+  left: 388px;
+  position: fixed;
+  top: 0;
+  width: 1052px;
+  z-index: 4;
+}
+
+.my-file-complete .group-292 {
+  align-items: flex-start;
+  display: flex;
+  height: 809px;
+  left: 194px;
+  min-width: 195px;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+.my-file-complete .rectangle-203 {
+  background-color: var(--geyser);
+  height: 808px;
+  width: 195px;
+}
+
+.my-file-complete .component-83 {
+  align-items: flex-end;
+  background-color: var(--blue-dianne);
+  border: 0.9px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 6px;
+  height: 31px;
+  justify-content: center;
+  left: 526px;
+  padding: 9px 22.5px 9px 18px;
+  position: fixed;
+  top: 14px;
+  width: fit-content;
+  z-index: 10;
+}
+
+.my-file-complete .icbaseline-download {
+  height: 12px;
+  min-width: 12px;
+  position: relative;
+}
+
+.my-file-complete .download {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.15px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .component-84 {
+  align-items: center;
+  background-color: var(--white);
+  border: 0.9px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 6px;
+  height: 31px;
+  left: 645px;
+  padding: 9px 18px;
+  position: fixed;
+  top: 14px;
+  width: fit-content;
+  z-index: 11;
+}
+
+.my-file-complete .icon-printer {
+  height: 12px;
+  min-width: 12px;
+  position: relative;
+}
+
+.my-file-complete .print {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.03px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .component-33 {
+  align-items: center;
+  align-self: center;
+  background-color: var(--blue-dianne);
+  border: 0.9px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 7.5px;
+  height: 31px;
+  justify-content: center;
+  margin-right: 246.0px;
+  margin-top: 16px;
+  padding: 9px 18px;
+  position: relative;
+  width: 120px;
+  z-index: 1;
+}
+
+.my-file-complete .researchers {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: -8.50px;
+  margin-right: -8.50px;
+  margin-top: -1.03px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .group-334 {
+  align-items: flex-start;
+  display: flex;
+  gap: 98px;
+  height: 18px;
+  left: 200px;
+  min-width: 325px;
+  position: fixed;
+  top: 23px;
+  z-index: 6;
+}
+
+.my-file-complete .gh-123325 {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 18px;
+  white-space: nowrap;
+  width: 113px;
+}
+
+.my-file-complete .gh-12384359-1 {
+  min-height: 18px;
+}
+
+.my-file-complete .component-82 {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  border: 0.9px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 7.5px;
+  height: 31px;
+  justify-content: center;
+  left: 231px;
+  padding: 9px 18px;
+  position: fixed;
+  top: 59px;
+  width: 120px;
+  z-index: 9;
+}
+
+.my-file-complete .researchers-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: -2.50px;
+  margin-right: -2.50px;
+  margin-top: -1.03px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .frame-606 {
+  align-items: flex-start;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-right: 59.25px;
+  margin-top: 37px;
+  position: relative;
+  width: 970px;
+  z-index: 2;
+}
+
+.my-file-complete .group-341 {
+  height: 354px;
+  min-width: 941px;
+  position: relative;
+}
+
+.my-file-complete .flex-col {
+  align-items: flex-start;
+  flex-direction: column;
+  left: 0;
+  min-height: 267px;
+  position: absolute;
+  top: 0;
+  width: 468px;
+}
+
+.my-file-complete .summary {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 18px;
+  white-space: nowrap;
+}
+
+.my-file-complete .group-340 {
+  align-items: flex-start;
+  display: flex;
+  gap: 9px;
+  height: 240px;
+  min-width: 468px;
+}
+
+.my-file-complete .group-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+  width: 150px;
+}
+
+.my-file-complete .group-3 {
+  align-items: flex-start;
+  border-bottom-style: solid;
+  border-bottom-width: 0.75px;
+  border-color: var(--mystic);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  height: 120px;
+  padding: 18px 0px;
+  position: relative;
+  width: 150px;
+}
+
+.my-file-complete .primary-region {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-complete .breast {
+  letter-spacing: 0;
+  line-height: 24px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-complete .breast-2 {
+  line-height: 15.8px;
+}
+
+.my-file-complete .breast-1 {
+  line-height: 21px;
+}
+
+.my-file-complete .image-9 {
+  height: 328px;
+  left: 546px;
+  object-fit: cover;
+  position: absolute;
+  top: 26px;
+  width: 393px;
+}
+
+.my-file-complete .line-107 {
+  height: 1px;
+  min-width: 970.5px;
+  position: relative;
+}
+
+.my-file-complete .frame-604 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .frame-576 {
+  border: 0.75px solid;
+  border-color: var(--geyser);
+  height: 255px;
+  margin-bottom: -0.75px;
+  margin-left: -0.75px;
+  margin-right: -0.75px;
+  min-width: 972px;
+  overflow: hidden;
+  position: relative;
+}
+
+.my-file-complete .frame-container {
+  height: 241px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1120px;
+}
+
+.my-file-complete .frame-560 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 1px;
+  width: 1120px;
+}
+
+.my-file-complete .frame-569 {
+  height: 121px;
+  margin-right: -79.50px;
+  min-width: 1200px;
+  position: relative;
+}
+
+.my-file-complete .frame-container-1 {
+  height: 121px;
+  left: -1px;
+  position: relative;
+  width: 1202px;
+}
+
+.my-file-complete .frame-556 {
+  align-items: flex-start;
+  display: flex;
+  left: 1px;
+  position: absolute;
+  top: 0;
+  width: fit-content;
+}
+
+.my-file-complete .component {
+  align-items: center;
+  display: flex;
+  gap: 7.5px;
+  height: 30px;
+  padding: 9px;
+  position: relative;
+  width: 150px;
+}
+
+.my-file-complete .sample {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .component-104 {
+  align-items: center;
+  display: flex;
+  gap: 54px;
+  height: 30px;
+  padding: 9px;
+  position: relative;
+  width: 150px;
+}
+
+.my-file-complete .database-category {
+  margin-top: -1.25px;
+}
+
+.my-file-complete .component-1 {
+  align-items: center;
+  display: flex;
+  gap: 7.5px;
+  padding: 9px;
+  position: relative;
+  width: 150px;
+}
+
+.my-file-complete .database-file {
+  margin-top: -0.75px;
+}
+
+.my-file-complete .component-10 {
+  height: 30.75px;
+  min-width: 150px;
+  position: relative;
+}
+
+.my-file-complete .dob {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.75px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .frame-557 {
+  align-items: flex-start;
+  border-color: var(--geyser);
+  border-top-style: solid;
+  border-top-width: 0.75px;
+  display: flex;
+  left: 0;
+  position: absolute;
+  top: 30px;
+  width: fit-content;
+}
+
+.my-file-complete .frame-596 {
+  border: 0px none;
+  height: 30px;
+  min-width: 150px;
+  position: relative;
+}
+
+.my-file-complete .component-38 {
+  align-items: center;
+  background-color: var(--wild-sand);
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 0.75px;
+  display: flex;
+  gap: 7.5px;
+  height: 30px;
+  padding: 9px;
+  position: relative;
+  width: 150px;
+}
+
+.my-file-complete .mdicheck-decagram {
+  height: 12px;
+  min-width: 12px;
+  position: relative;
+}
+
+.my-file-complete .component-2 {
+  align-items: center;
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 0.75px;
+  display: flex;
+  gap: 54px;
+  height: 30px;
+  padding: 9px;
+  position: relative;
+  width: 150px;
+}
+
+.my-file-complete .seurat {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: 66.75px;
+}
+
+.my-file-complete .material-symbolsnavigate-next {
+  height: 12px;
+  margin-right: -0.75px;
+  min-width: 12px;
+  position: relative;
+}
+
+.my-file-complete .component-3 {
+  align-items: center;
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 0.75px;
+  display: flex;
+  gap: 7.5px;
+  height: 30px;
+  padding: 9px;
+  position: relative;
+  width: 150px;
+}
+
+.my-file-complete .gh-1234567 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  text-decoration: underline;
+  width: fit-content;
+}
+
+.my-file-complete .component-4 {
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 0.75px;
+  height: 30px;
+  min-width: 150px;
+  position: relative;
+}
+
+.my-file-complete .date {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .frame-558 {
+  align-items: flex-start;
+  border-color: var(--geyser);
+  border-left-style: solid;
+  border-left-width: 0.75px;
+  border-top-style: solid;
+  border-top-width: 0.75px;
+  display: flex;
+  height: 32px;
+  left: 0;
+  position: absolute;
+  top: 60px;
+  width: fit-content;
+}
+
+.my-file-complete .frame-595 {
+  border-color: var(--geyser);
+  border-left-style: solid;
+  border-left-width: 0.75px;
+  height: 31.5px;
+  margin-left: -0.75px;
+  margin-top: -0.75px;
+  min-width: 151.5px;
+  position: relative;
+}
+
+.my-file-complete .mdicheck-decagram-1 {
+  height: 12px;
+  min-width: 12px;
+  position: relative;
+}
+
+.my-file-complete .fast-queue {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: 66.75px;
+}
+
+.my-file-complete .frame-559 {
+  align-items: flex-start;
+  border-bottom-style: solid;
+  border-bottom-width: 0.75px;
+  border-color: var(--geyser);
+  border-left-style: solid;
+  border-left-width: 0.75px;
+  border-top-style: solid;
+  border-top-width: 0.75px;
+  display: flex;
+  left: 1px;
+  position: absolute;
+  top: 91px;
+  width: fit-content;
+}
+
+.my-file-complete .cell-ranger {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: 66.75px;
+}
+
+.my-file-complete .frame-573 {
+  align-items: center;
+  background-color: var(--mystic);
+  display: flex;
+  height: 12px;
+  justify-content: space-between;
+  left: 844px;
+  padding: 3px;
+  position: absolute;
+  top: 114px;
+  transform: rotate(90.00deg);
+  width: 241px;
+}
+
+.my-file-complete .frame-449 {
+  align-items: flex-start;
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-bottom: -1.50px;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .iontriangle-sharp {
+  height: 6px;
+  margin-left: -1.50px;
+  min-width: 9px;
+  position: relative;
+  transform: rotate(-90.00deg);
+}
+
+.my-file-complete .rectangle-235 {
+  background-color: var(--silver);
+  height: 9px;
+  min-width: 199.5px;
+  position: relative;
+}
+
+.my-file-complete .iontriangle-sharp-1 {
+  height: 6px;
+  margin-right: -1.50px;
+  min-width: 9px;
+  position: relative;
+  transform: rotate(-90.00deg);
+}
+
+.my-file-complete .frame-572 {
+  align-items: center;
+  background-color: var(--mystic);
+  display: flex;
+  height: 12px;
+  justify-content: space-between;
+  left: 1px;
+  padding: 3px;
+  position: absolute;
+  top: 241px;
+  width: 958px;
+}
+
+.my-file-complete .iontriangle-sharp-2 {
+  height: 9px;
+  min-width: 6px;
+  position: relative;
+}
+
+.my-file-complete .rectangle-235-1 {
+  background-color: var(--silver);
+  height: 9px;
+  min-width: 526.5px;
+  position: relative;
+}
+
+.my-file-complete .iontriangle-sharp-3 {
+  height: 9px;
+  margin-bottom: -1.50px;
+  margin-top: -1.50px;
+  min-width: 6px;
+  position: relative;
+}
+
+.my-file-complete .frame-603 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  width: 969px;
+}
+
+.my-file-complete .frame-609 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-left: -162.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .line-105 {
+  height: 1px;
+  margin-top: -0.75px;
+  min-width: 1131px;
+  position: relative;
+}
+
+.my-file-complete .frame-590 {
+  align-items: flex-start;
+  display: flex;
+  gap: 60px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .frame-58 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .frame-582 {
+  align-items: center;
+  display: flex;
+  gap: 48px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .order-summary {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-complete .group-391 {
+  height: 14.98px;
+  margin-right: -2.00px;
+  min-width: 75.5px;
+  position: relative;
+}
+
+.my-file-complete .currency-usd {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 74px;
+}
+
+.my-file-complete .line-107-1 {
+  height: 1px;
+  margin-bottom: -0.25px;
+  min-width: 235.5px;
+  position: relative;
+}
+
+.my-file-complete .group-394 {
+  height: 35.1px;
+  min-width: 236.25px;
+  position: relative;
+}
+
+.my-file-complete .group-393 {
+  align-items: flex-start;
+  display: flex;
+  gap: 148px;
+  height: 35px;
+  min-width: 238px;
+}
+
+.my-file-complete .group-392 {
+  height: 17.12px;
+  min-width: 52.25px;
+  position: relative;
+}
+
+.my-file-complete .samples {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 50px;
+}
+
+.my-file-complete .group-389 {
+  height: 14.98px;
+  margin-right: -6.00px;
+  min-width: 61.5px;
+  position: relative;
+}
+
+.my-file-complete .flex-row {
+  align-items: flex-end;
+  height: 15px;
+  min-width: 56px;
+}
+
+.my-file-complete .number {
+  align-self: flex-start;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  min-height: 15px;
+  white-space: nowrap;
+  width: 7px;
+}
+
+.my-file-complete .x {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  min-height: 15px;
+  white-space: nowrap;
+  width: 6px;
+}
+
+.my-file-complete .price {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  min-height: 15px;
+  white-space: nowrap;
+  width: 25px;
+}
+
+.my-file-complete .price-1 {
+  letter-spacing: 0;
+  line-height: 18px;
+  min-height: 17px;
+  white-space: nowrap;
+}
+
+.my-file-complete .frame-58-1 {
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 9px;
+  width: fit-content;
+}
+
+.my-file-complete .subtotal {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-complete .price-2 {
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-complete .taxes10 {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.my-file-complete .price-3 {
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.75px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-complete .line-112 {
+  height: 1px;
+  margin-bottom: -0.25px;
+  min-width: 238.5px;
+  position: relative;
+}
+
+.my-file-complete .frame-317 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  padding: 3px 9px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .group-427 {
+  height: 33px;
+  margin-right: -4.00px;
+  min-width: 147.75px;
+  position: relative;
+}
+
+.my-file-complete .total-amount {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.my-file-complete .price-4 {
+  color: var(--silver);
+  font-family: var(--font-family-inter);
+  font-size: 27px;
+  font-weight: 600;
+  left: 73px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-decoration: line-through;
+  top: 0;
+}
+
+.my-file-complete .group-428 {
+  height: 33px;
+  margin-right: -4.00px;
+  min-width: 97px;
+  position: relative;
+}
+
+.my-file-complete .freemium {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  white-space: nowrap;
+}
+
+.my-file-complete .price-5 {
+  left: 57px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.my-file-complete .span0 {
+  line-height: 15.8px;
+}
+
+.my-file-complete .frame-290 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 0.75px solid;
+  border-color: var(--mystic-2);
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  height: 36px;
+  justify-content: center;
+  left: 200px;
+  padding: 9px;
+  position: fixed;
+  top: 108px;
+  width: 183px;
+  z-index: 7;
+}
+
+.my-file-complete .group-234 {
+  height: 18.25px;
+  margin-bottom: -0.12px;
+  margin-top: -0.12px;
+  min-width: 111px;
+  position: relative;
+}
+
+.my-file-complete .icon-search {
+  height: 18px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 18px;
+}
+
+.my-file-complete .search-samples {
+  left: 30px;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: absolute;
+  top: 2px;
+  white-space: nowrap;
+}
+
+.my-file-complete .group-339 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 194px;
+  min-height: 150px;
+  position: fixed;
+  top: 150px;
+  width: 196px;
+  z-index: 8;
+}
+
+.my-file-complete .component-5 {
+  align-items: center;
+  background-color: var(--geyser);
+  display: flex;
+  gap: 7.5px;
+  height: 30px;
+  padding: 12px 39px;
+  position: relative;
+  width: 196px;
+}
+
+.my-file-complete .gh-12384359-2 {
+  margin-bottom: -2.75px;
+  margin-top: -4.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .gh-12384359 {
+  letter-spacing: 0;
+  line-height: 21px;
+  margin-bottom: -4.25px;
+  margin-top: -5.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-complete .breast-3 {
+  letter-spacing: 0;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .database {
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .date-8 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .flex {
+  display: flex;
+  gap: 9px;
+}
+
+.my-file-complete .gh-1234567-4 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-file-complete .gh-12384359-3 {
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}

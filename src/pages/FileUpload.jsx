@@ -1,4 +1,4 @@
-import "../styling/MetabaseInput1.css";
+import "../styling/FileUpload.css";
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ConfigurationOptions } from "aws-sdk";
