@@ -6,7 +6,7 @@ import GettingStarted2 from "./pages/GettingStarted2";
 import InProgress from "./pages/InProgress";
 import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
-import MetabaseInput1 from "./pages/MetabaseInput1";
+import MetabaseInput1 from "./pages/FileUpload";
 import MetabaseInput2 from "./pages/MetabaseInput2";
 import MetabaseInput3 from "./pages/MetabaseInput3";
 import MetabaseInput4 from "./pages/MetabaseInput4";
@@ -18,13 +18,14 @@ import Payment2 from "./pages/Payment2";
 import Register from "./pages/Register";
 import Submitted from "./pages/Submitted";
 import VerifyCode from "./pages/VerifyCode";
-
+import FileUpload from "./pages/FileUpload";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/fileupload" element={<FileUpload />}></Route>
         <Route path="/verify_code" element={<VerifyCode />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/my_files_1" element={<MyFiles1 />}></Route>

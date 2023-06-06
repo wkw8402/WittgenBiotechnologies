@@ -1,4 +1,6 @@
 import "../styling/VerifyCode.css";
+import "../styling/globals.css";
+import "../styling/styleguide.css";
 import "../styling/tailwind.css";
 
 export default function VerifyCode() {
@@ -13,7 +15,17 @@ export default function VerifyCode() {
         type="image/png"
         href="https://animaproject.s3.amazonaws.com/home/favicon.png"
       />
+
       <link rel="stylesheet" type="text/css" href="css/verify-code.css" />
+
+      {/* Oxygen font google link */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Open+Sans:ital,wght@0,400;0,700;1,700;1,800&family=Oxygen:wght@300;400;700&display=swap"
+        rel="stylesheet"
+      />
+
       <input
         type="hidden"
         id="anPageName"
@@ -21,77 +33,63 @@ export default function VerifyCode() {
         defaultValue="verify-code"
       />
 
-      <div className="container-center-horizontal-verify">
-        <div className="verify-code screen-verify">
-          {/* left side bar */}
-          <div className="group-184">
-            <div className="overlap-group">
-              <div className="witt-gen-portal oxygen-bold-blue-dianne-28px">
-                <span className="oxygen-bold-white-28px">WittGen</span>
-                <span className="oxygen-light-white-28px">Portal</span>
+      {/* Oxygen font link */}
+
+      {/* entire container */}
+      <div className="flex flex-row relative bg-[#F2F6F7] w-screen h-screen">
+        {/* left side bar */}
+        <div className="bg-witgen text-white absolute w-195 top-0 left-0 bg-fixed h-screen">
+          <div className="flex flex-row w-138 h-27 left-30.75 text-wg top-16.5 font-oxygen pt-16.5 pl-30.75 pr-26.25">
+            <h1 className="font-bold">WittGen</h1>
+            <h1 className="font-extralight">Portal</h1>
+          </div>
+        </div>
+
+        {/* check email form */}
+        <div className="bg-[#FFFFFF] font-inter border-0.75 border-solid border-gray-300 justify-start w-498 h-488.25 flex flex-row flex-start top-114 right-471 left-471 absolute bottom-207.75">
+          <div className="p-[36px] px-[91.5px] pb-[42.75px]">
+            <div className="text-center font-semibold text-witgen">
+              <h1 className="text-[27px]">Please check your email</h1>
+            </div>
+            <div>
+              <p className="leading-[15px] text-[12px] font-normal text-black pt-[18px]">
+                Please enter the verification code sent to your email at{" "}
+                <span className="font-bold">j****h@science.co</span> to activate
+                your account. The link will expire in 24 hours.
+              </p>
+            </div>
+            <div className="pt-[45px] flex flex-row text-[16px] font-normal justify-between">
+              <div className="text-witgen leading-6 font-semibold">
+                Verify code
+              </div>
+              <div className="text-[#0FB4DB] font-normal leading-5">
+                <a href="#">
+                  <span>Resend code</span>
+                </a>
               </div>
             </div>
-            <img className="line-79" src="line-79.png" alt="Line 79" />
-          </div>
 
-          {/* Email check form section */}
-          <div className="verify-email">
-            <div className="frame-205 frame">
-              <div className="frame-460 frame">
-                <h1 className="title inter-semi-bold-blue-dianne-36px">
-                  Please check your emails
-                </h1>
-                <p className="please-enter-the-ver inter-normal-black-16px">
-                  <span className="inter-normal-black-16px">
-                    Please enter the verification code sent to your email at{" "}
-                  </span>
-                  <span className="span-1 inter-semi-bold-black-16px">
-                    j****h@science.co
-                  </span>
-                  <span className="inter-normal-black-16px">
-                    to activate your account. The link will expire in 24 hours.
-                  </span>
-                </p>
-              </div>
-              <div className="frame-460-1 frame-460-3">
-                <div className="frame-1 frame">
-                  <div className="frame-1-1">
-                    <div className="frame-202 frame">
-                      <div className="frame-196 frame">
-                        <div className="frame-460-2 frame-460-3">
-                          <div className="verify-code-1 inter-semi-bold-blue-dianne-16px">
-                            Verify code
-                          </div>
-                          <div className="resend-code inter-normal-cerulean-16px">
-                            Resend code
-                          </div>
-                        </div>
-                        <div className="frame-1-2" />
-                      </div>
-                    </div>
-                    <div className="frame-1-3" />
-                  </div>
-                  <p className="click-here-if-you-wo">
-                    <span className="span-2">Click here</span>
-                    <span className="inter-normal-black-16px">
-                      if you would like to change the email address you signed
-                      up with.
-                    </span>
-                  </p>
-                </div>
-                <div className="login">
-                  <div className="login-1 inter-medium-white-18px">Submit</div>
-                </div>
-              </div>
+            <input
+              className="w-full border border-witgen w-[318px] h-[38.25px] pt-[6px]"
+              type="text"
+              placeholder=""
+            ></input>
+
+            <div className="pt-[69px]">
+              <p className="leading-5 text-[12px]">
+                <span className="text-[#0FB4DB] font-semibold">Click here</span>{" "}
+                if you would like to change the email address you signed up
+                with.
+              </p>
+            </div>
+            <div className="pt-[57.25px]">
+              <button className="bg-witgen border-none w-[318px]">
+                <span className="block py-[14.5px] px-[136px] text-white">
+                  Submit
+                </span>
+              </button>
             </div>
           </div>
-
-          {/* ???? */}
-          <img
-            className="icbaseline-download"
-            src="ic-baseline-download@2x.png"
-            alt="ic:baseline-download"
-          />
         </div>
       </div>
     </>
