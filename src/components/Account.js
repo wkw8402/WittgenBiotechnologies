@@ -12,7 +12,7 @@ var cogGroup, NewJWTTOKEN;
 const Account = forwardRef((props, ref) => {
   const getSession = async () => {
     await new Promise((resolve, reject) => {
-      const user = UserPool.getCurrentUser();
+      const user = UserPool.getCurrentUser(); 
       // alert("Userpool.getCurrentUser = ", user);
       if (user) {
         user.getSession((err, session) => {
@@ -79,7 +79,7 @@ const Account = forwardRef((props, ref) => {
 
     const user = UserPool.getCurrentUser();
     console.log(UserPool);
-
+    console.log(user)
     user.signOut();
 
     window.location.href = "/";
