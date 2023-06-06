@@ -1,0 +1,637 @@
+/* screen - create-an-account-6 */
+
+.create-an-account-6 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 0.75px none;
+  display: flex;
+  overflow: hidden;
+  width: 1440px;
+}
+
+.create-an-account-6 .group-184 {
+  align-items: flex-end;
+  display: flex;
+  gap: 13857px;
+  height: 810px;
+  left: 0;
+  min-width: 197px;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+.create-an-account-6 .overlap-group1 {
+  align-items: flex-start;
+  background-color: var(--blue-dianne);
+  display: flex;
+  height: 810px;
+  justify-content: flex-end;
+  min-width: 195px;
+  padding: 16.5px 26.3px;
+}
+
+.create-an-account-6 .witt-gen-portal {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 27px;
+  width: 138px;
+}
+
+.create-an-account-6 .line-79 {
+  height: 1px;
+  margin-bottom: -422.12px;
+  width: 809px;
+}
+
+.create-an-account-6 .frame-459 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  left: 285px;
+  overflow: hidden;
+  position: fixed;
+  top: 43px;
+  width: 262px;
+  z-index: 2;
+}
+
+.create-an-account-6 .title {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -0.50px;
+  margin-top: -0.75px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .already-have-an-account {
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .login {
+  color: var(--cerulean);
+  cursor: pointer;
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.75px;
+  position: relative;
+  text-decoration: underline;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-640 {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  height: 148px;
+  left: 457px;
+  min-width: 286px;
+  position: fixed;
+  top: 220px;
+  z-index: 3;
+}
+
+.create-an-account-6 .overlap-group {
+  height: 150px;
+  margin-left: -1px;
+  margin-top: -0.75px;
+  position: relative;
+  width: 286px;
+}
+
+.create-an-account-6 .frame-546 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 0.75px solid;
+  border-color: var(--geyser);
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-438 {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  padding: 9px 18px;
+  position: relative;
+  width: 274.5px;
+}
+
+.create-an-account-6 .password-security {
+  line-height: normal;
+  width: 232.5px;
+}
+
+.create-an-account-6 .password {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .address {
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .group-462 {
+  align-items: flex-end;
+  background-image: url(../img/polygon-1.svg);
+  background-size: 100% 100%;
+  display: flex;
+  height: 10px;
+  left: 265px;
+  min-width: 22px;
+  padding: 0 0.0px;
+  position: absolute;
+  top: 9px;
+}
+
+.create-an-account-6 .rectangle-256 {
+  background-color: var(--white);
+  height: 10px;
+  margin-bottom: -0.11px;
+  width: 10px;
+}
+
+.create-an-account-6 .frame-638 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 61.5px;
+  left: 754px;
+  position: fixed;
+  top: 43px;
+  width: fit-content;
+  z-index: 4;
+}
+
+.create-an-account-6 .frame-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-4 {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .all-fields-are-mandatory {
+  color: var(--milano-red);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .group-405 {
+  height: 54px;
+  min-width: 432px;
+  position: relative;
+}
+
+.create-an-account-6 .frame-4-1 {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  height: 54px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-40 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .first-name {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-290 {
+  align-items: flex-start;
+  border: 0.9px solid;
+  border-color: var(--geyser);
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  height: 36px;
+  justify-content: center;
+  padding: 9px;
+  position: relative;
+  width: 210px;
+}
+
+.create-an-account-6 .group-234 {
+  height: 16px;
+  min-width: 87px;
+  position: relative;
+}
+
+.create-an-account-6 .last-name {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .group-234-1 {
+  min-width: 87px;
+  opacity: 0;
+}
+
+.create-an-account-6 .x1234emailcom {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.create-an-account-6 .frame-30 {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  height: 54px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .group-317-1 {
+  height: 53px;
+  min-width: 432px;
+  position: relative;
+}
+
+.create-an-account-6 .group-298 {
+  align-items: flex-start;
+  display: flex;
+  height: 53px;
+  min-width: 432px;
+}
+
+.create-an-account-6 .email {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .text {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-290-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  justify-content: center;
+  padding: 9px 4.5px 9px 9px;
+  width: 432px;
+}
+
+.create-an-account-6 .group-234-2 {
+  min-width: 104px;
+}
+
+.create-an-account-6 .exampleemailcom {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.create-an-account-6 .group-317 {
+  height: 52.75px;
+  min-width: 432px;
+  position: relative;
+}
+
+.create-an-account-6 .password-1 {
+  line-height: 15.8px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-290-1 {
+  height: 33.75px;
+  min-width: 432px;
+}
+
+.create-an-account-6 .frame-306 {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .confirm-password {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-304 {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  margin-bottom: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-301 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .department-laboratory {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-403 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-290-3 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  height: 36px;
+  justify-content: center;
+  padding: 9px;
+  width: 432px;
+}
+
+.create-an-account-6 .state-province {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .group-234-3 {
+  min-width: 117px;
+}
+
+.create-an-account-6 .frame-607 {
+  height: 18px;
+  min-width: 18px;
+  position: relative;
+}
+
+.create-an-account-6 .group-298-1 {
+  height: 55px;
+  margin-bottom: -1.00px;
+  min-width: 210px;
+  position: relative;
+}
+
+.create-an-account-6 .city {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .group-234-4 {
+  min-width: 63px;
+}
+
+.create-an-account-6 .frame-461 {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .country {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .group-234-5 {
+  min-width: 84px;
+}
+
+.create-an-account-6 .frame-301-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 54px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .zip-postal-code {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-290-4 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  height: 36px;
+  justify-content: center;
+  margin-bottom: -1.00px;
+  padding: 9px;
+  width: 90px;
+}
+
+.create-an-account-6 .group-234-6 {
+  margin-right: -20.00px;
+  min-width: 92px;
+}
+
+.create-an-account-6 .frame-636 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  position: relative;
+  width: fit-content;
+}
+
+.create-an-account-6 .login-1 {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  border: 0.75px solid;
+  display: flex;
+  gap: 6px;
+  height: 45px;
+  justify-content: center;
+  padding: 13.5px 138px;
+  position: relative;
+  width: 432px;
+}
+
+.create-an-account-6 .login-2 {
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .by-signing-up-you-a {
+  color: transparent;
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .icbaseline-download {
+  height: 18px;
+  margin-left: 15128px;
+  margin-top: 2083.12px;
+  width: 18px;
+  z-index: 1;
+}
+
+.create-an-account-6 .company {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-an-account-6 .frame-290-5 {
+  border: 0.9px solid;
+  border-color: var(--geyser);
+  position: relative;
+}
+
+.create-an-account-6 .group-234-7 {
+  height: 16px;
+  position: relative;
+}
+
+.create-an-account-6 .password-2 {
+  letter-spacing: 0;
+  margin-top: -0.75px;
+  position: relative;
+}
+
+.create-an-account-6 .select-a {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 15.8px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}

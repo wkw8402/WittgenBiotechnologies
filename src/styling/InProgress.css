@@ -1,0 +1,1355 @@
+/* screen - my-file-in-progress */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Oxygen:400,300,700|Roboto:300|Inter:400,700,500,600|Source+Sans+Pro:400|Oswald:400,700");
+/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+@import url("https://px.animaapp.com/63a236ec63d7cd74a21d3405.63a236ed99ecd12a69868578.63c49d3d9565c9180a1f3b19.hcp.png");
+
+.screen-fileProgress a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal-fileProgress {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal-fileProgress > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.my-file-in-progress {
+  align-items: flex-end;
+  background-color: var(--white);
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* height: 1317px; */
+  overflow: hidden;
+  width: 1920px;
+}
+
+.my-file-in-progress .group-437 {
+  align-items: flex-start;
+  display: flex;
+  height: 100%;
+  /* height: 1080px; */
+  left: -2px;
+  min-width: 260px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+
+.my-file-in-progress .overlap-group1 {
+  height: 100%;
+  /* height: 1080px; */
+  position: relative;
+  width: 262px;
+}
+
+.my-file-in-progress .group-184 {
+  align-items: flex-end;
+  display: flex;
+  height: 100%;
+  /* height: 1080px; */
+  left: 0;
+  min-width: 262px;
+  position: absolute;
+  top: 0;
+}
+
+.my-file-in-progress .overlap-group {
+  align-items: flex-start;
+  background-color: var(--catskill-white);
+  display: flex;
+  height: 100%;
+  /* height: 1080px; */
+  justify-content: flex-end;
+  min-width: 260px;
+  padding: 22px 35px;
+}
+
+.my-file-in-progress .witt-gen-portal {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 35px;
+}
+
+.my-file-in-progress .line-79 {
+  height: 100%;
+  /* height: 1079px; */
+  object-fit: cover;
+  width: 1px;
+}
+
+.my-file-in-progress .component-13 {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 164px;
+  width: 260px;
+}
+
+.my-file-in-progress .dashboard {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.my-file-in-progress .component-14 {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 224px;
+  width: 260px;
+}
+
+.my-file-in-progress .draft_fill1_wght400_grad0_opsz48-1-1 {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.my-file-in-progress .my-files {
+  height: 19px;
+  width: 83px;
+}
+
+.my-file-in-progress .component-22 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 1px;
+  padding: 15px 60px;
+  position: absolute;
+  top: 866px;
+  width: 258px;
+}
+
+.my-file-in-progress .logout_fill0_wght400_grad0_opsz48-1 {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.my-file-in-progress .logout {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.my-file-in-progress .component-13-1 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 584px;
+  width: 260px;
+}
+
+.my-file-in-progress .import_contacts_fill {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.my-file-in-progress .tutorial {
+  height: 19px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: 83px;
+}
+
+.my-file-in-progress .component-21 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 284px;
+  width: 260px;
+}
+
+.my-file-in-progress .paid_fill0_wght400_grad0_opsz48-1 {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.my-file-in-progress .cost-usage {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.my-file-in-progress .component-23 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 344px;
+  width: 260px;
+}
+
+.my-file-in-progress .my-profile {
+  width: fit-content;
+}
+
+.my-file-in-progress .component-18 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 524px;
+  width: 260px;
+}
+
+.my-file-in-progress .contact_support_fill {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.my-file-in-progress .faq-support {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -2px;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.my-file-in-progress .component-19 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 464px;
+  width: 260px;
+}
+
+.my-file-in-progress .contact-us {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.my-file-in-progress .component-24 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  left: 0;
+  padding: 15px 60px;
+  position: absolute;
+  top: 404px;
+  width: 260px;
+}
+
+.my-file-in-progress .settings {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-593 {
+  align-items: center;
+  background-color: var(--white);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--mystic);
+  display: flex;
+  gap: 10px;
+  left: 259px;
+  padding: 24px;
+  position: fixed;
+  top: 0;
+  width: 1661px;
+  z-index: 4;
+}
+
+.my-file-in-progress .gh-12384359 {
+  margin-top: -1px;
+}
+
+.my-file-in-progress .component-33 {
+  align-items: center;
+  align-self: center;
+  background-color: var(--blue-dianne);
+  border: 1.2px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 10px;
+  height: 41px;
+  justify-content: center;
+  margin-right: 328px;
+  margin-top: 22px;
+  padding: 12px 24px;
+  width: 160px;
+  z-index: 1;
+}
+
+.my-file-in-progress .researchers {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: -11.5px;
+  margin-right: -11.5px;
+  margin-top: -1.2px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-605 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-right: 74px;
+  margin-top: 25px;
+  width: fit-content;
+  z-index: 2;
+}
+
+.my-file-in-progress .frame-60 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: fit-content;
+}
+
+.my-file-in-progress .file-progress {
+  color: var(--black);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  line-height: normal;
+}
+
+.my-file-in-progress .frame-601 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-600 {
+  align-items: flex-start;
+  display: flex;
+  gap: 60px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-5 {
+  align-items: flex-start;
+  display: flex;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-59 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 37px 34px;
+  width: 240px;
+}
+
+.my-file-in-progress .frame-371 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: fit-content;
+}
+
+.my-file-in-progress .application-submitted {
+  line-height: 24px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-in-progress ._fill0_wght400_grad0_opsz48-1 {
+  height: 56px;
+  min-width: 56px;
+}
+
+.my-file-in-progress .text {
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  width: fit-content;
+}
+
+.my-file-in-progress .data-curation {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-in-progress .data-pre-processing {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-in-progress .ml-model {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-in-progress .file-complete {
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.my-file-in-progress .component-109 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: fit-content;
+}
+
+.my-file-in-progress .ellipse-23 {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgb(255, 255, 255) 0deg,
+    rgb(15.1, 179.88, 218.65) 0.04deg,
+    rgb(15.1, 179.88, 218.65) 136.84deg,
+    rgb(255, 255, 255) 136.88deg
+  );
+  border: 1px solid;
+  border-color: var(--cerulean);
+  border-radius: 110px;
+  height: 220px;
+  min-width: 220px;
+}
+
+.my-file-in-progress .x40-complete {
+  color: transparent;
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxxl);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 36px;
+  text-align: center;
+  width: fit-content;
+}
+
+.my-file-in-progress .span1 {
+  line-height: 24px;
+}
+
+.my-file-in-progress .line-104 {
+  height: 1px;
+  min-width: 1508px;
+  object-fit: cover;
+}
+
+.my-file-in-progress .application-info {
+  height: 24px;
+  line-height: normal;
+  width: 152px;
+}
+
+.my-file-in-progress .frame-576 {
+  border: 1px solid;
+  border-color: var(--geyser);
+  height: 340px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  margin-right: -1px;
+  min-width: 1504px;
+  position: relative;
+}
+
+.my-file-in-progress .frame-container {
+  height: 321px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1502px;
+}
+
+.my-file-in-progress .frame-560 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  overflow: scroll;
+  position: absolute;
+  top: 1px;
+  width: 1494px;
+}
+
+.my-file-in-progress .frame-569 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-right: -106px;
+  width: fit-content;
+}
+
+.my-file-in-progress .component {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  padding: 12px;
+  width: 200px;
+}
+
+.my-file-in-progress .component-104 {
+  align-items: center;
+  display: flex;
+  gap: 72px;
+  height: 40px;
+  padding: 12px;
+  width: 200px;
+}
+
+.my-file-in-progress .database-category {
+  margin-top: -1.5px;
+}
+
+.my-file-in-progress .component-1 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  width: 200px;
+}
+
+.my-file-in-progress .database-file {
+  margin-top: -1px;
+}
+
+.my-file-in-progress .component-10 {
+  height: 41px;
+  min-width: 200px;
+}
+
+.my-file-in-progress .dob {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-557 {
+  align-items: flex-start;
+  border-color: var(--geyser);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: flex;
+  margin-left: -1px;
+  margin-right: -1px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-596 {
+  border: 0px none;
+  height: 40px;
+  min-width: 200px;
+}
+
+.my-file-in-progress .component-38 {
+  align-items: center;
+  background-color: var(--concrete);
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 1px;
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  padding: 12px;
+  width: 200px;
+}
+
+.my-file-in-progress .verified_fill1_wght400_grad0_opsz48-1 {
+  height: 16px;
+  min-width: 16px;
+}
+
+.my-file-in-progress .component-2 {
+  align-items: center;
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 1px;
+  display: flex;
+  gap: 72px;
+  height: 40px;
+  padding: 12px;
+  width: 200px;
+}
+
+.my-file-in-progress .seurat {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: 89px;
+}
+
+.my-file-in-progress .material-symbolsnavigate-next {
+  height: 16px;
+  margin-right: -1px;
+  min-width: 16px;
+}
+
+.my-file-in-progress .component-3 {
+  align-items: center;
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 1px;
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  padding: 12px;
+  width: 200px;
+}
+
+.my-file-in-progress .gh-1234567 {
+  margin-top: -1.5px;
+  text-decoration: underline;
+}
+
+.my-file-in-progress .component-4 {
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 1px;
+  height: 40px;
+  min-width: 200px;
+}
+
+.my-file-in-progress .date {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-558 {
+  align-items: flex-start;
+  border-color: var(--geyser);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  display: flex;
+  height: 42px;
+  margin-left: -1px;
+  margin-right: -1px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-595 {
+  border-color: var(--geyser);
+  border-left-style: solid;
+  border-left-width: 1px;
+  height: 42px;
+  margin-left: -1px;
+  margin-top: -1px;
+  min-width: 202px;
+}
+
+.my-file-in-progress .fast-queue {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: 89px;
+}
+
+.my-file-in-progress .frame-559 {
+  align-items: flex-start;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--geyser);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  display: flex;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-595-1 {
+  background-color: var(--concrete);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  height: 40px;
+  min-width: 200px;
+}
+
+.my-file-in-progress .cell-ranger {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: 89px;
+}
+
+.my-file-in-progress .frame-573 {
+  align-items: center;
+  background-color: var(--mystic);
+  display: flex;
+  height: 16px;
+  justify-content: space-between;
+  left: 1333px;
+  padding: 4px;
+  position: absolute;
+  top: 153px;
+  transform: rotate(90deg);
+  width: 321px;
+}
+
+.my-file-in-progress .frame-449 {
+  align-items: flex-start;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: -2px;
+  margin-top: -2px;
+  width: fit-content;
+}
+
+.my-file-in-progress .iontriangle-sharp {
+  height: 8px;
+  margin-left: -2px;
+  min-width: 12px;
+  transform: rotate(-90deg);
+}
+
+.my-file-in-progress .rectangle-235 {
+  background-color: var(--silver);
+  height: 12px;
+  min-width: 290px;
+}
+
+.my-file-in-progress .iontriangle-sharp-1 {
+  height: 8px;
+  margin-right: -2px;
+  min-width: 12px;
+  transform: rotate(-90deg);
+}
+
+.my-file-in-progress .frame-572 {
+  align-items: center;
+  background-color: var(--mystic);
+  display: flex;
+  height: 16px;
+  justify-content: space-between;
+  left: 1px;
+  padding: 4px;
+  position: absolute;
+  top: 321px;
+  width: 1485px;
+}
+
+.my-file-in-progress .iontriangle-sharp-2 {
+  height: 12px;
+  min-width: 8px;
+}
+
+.my-file-in-progress .rectangle-235-1 {
+  background-color: var(--silver);
+  height: 12px;
+  min-width: 702px;
+}
+
+.my-file-in-progress .iontriangle-sharp-3 {
+  height: 12px;
+  margin-bottom: -2px;
+  margin-top: -2px;
+  min-width: 8px;
+}
+
+.my-file-in-progress .frame-608 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 1502px;
+}
+
+.my-file-in-progress .line-105 {
+  height: 1px;
+  margin-left: -6px;
+  margin-top: -1px;
+  min-width: 1508px;
+  object-fit: cover;
+}
+
+.my-file-in-progress .frame-603 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-590 {
+  align-items: flex-start;
+  display: flex;
+  gap: 80px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-58 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-582 {
+  align-items: center;
+  display: flex;
+  gap: 64px;
+  width: fit-content;
+}
+
+.my-file-in-progress .order-summary {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  width: fit-content;
+}
+
+.my-file-in-progress .group-391 {
+  height: 19.97px;
+  margin-right: -2px;
+  min-width: 100px;
+  position: relative;
+}
+
+.my-file-in-progress .currency-usd {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 21px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 98px;
+}
+
+.my-file-in-progress .line-107 {
+  height: 1px;
+  min-width: 314px;
+  object-fit: cover;
+}
+
+.my-file-in-progress .group-394 {
+  height: 46.8px;
+  min-width: 315px;
+}
+
+.my-file-in-progress .group-393 {
+  align-items: flex-start;
+  display: flex;
+  gap: 198px;
+  height: 47px;
+  min-width: 317px;
+}
+
+.my-file-in-progress .frame-416 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: fit-content;
+}
+
+.my-file-in-progress .group-392 {
+  height: 22.83px;
+  min-width: 69px;
+  position: relative;
+}
+
+.my-file-in-progress .samples {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 67px;
+}
+
+.my-file-in-progress .group-389 {
+  height: 19.97px;
+  margin-right: -6px;
+  min-width: 80px;
+}
+
+.my-file-in-progress .flex-row {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  height: 20px;
+  min-width: 74px;
+}
+
+.my-file-in-progress .number {
+  letter-spacing: 0;
+  line-height: 21px;
+  min-height: 20px;
+  white-space: nowrap;
+  width: 9px;
+}
+
+.my-file-in-progress .x {
+  letter-spacing: 0;
+  line-height: 21px;
+  min-height: 20px;
+  white-space: nowrap;
+  width: 8px;
+}
+
+.my-file-in-progress .price {
+  letter-spacing: 0;
+  line-height: 21px;
+  min-height: 20px;
+  white-space: nowrap;
+}
+
+.my-file-in-progress .price-1 {
+  letter-spacing: 0;
+  line-height: 24px;
+  min-height: 23px;
+  white-space: nowrap;
+}
+
+.my-file-in-progress .frame-58-1 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-587 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: fit-content;
+}
+
+.my-file-in-progress .frame-58-2 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 274px;
+}
+
+.my-file-in-progress .subtotal {
+  letter-spacing: 0;
+  line-height: 21px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-in-progress .price-2 {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-in-progress .group-387 {
+  height: 21px;
+  min-width: 78px;
+  position: relative;
+}
+
+.my-file-in-progress .taxes10 {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 21px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.my-file-in-progress .price-3 {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  text-align: right;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-file-in-progress .line-112 {
+  height: 1px;
+  min-width: 318px;
+  object-fit: cover;
+}
+
+.my-file-in-progress .frame-317 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 12px;
+  width: fit-content;
+}
+
+.my-file-in-progress .group-427 {
+  height: 44px;
+  margin-right: -4px;
+  min-width: 196px;
+  position: relative;
+}
+
+.my-file-in-progress .total-amount {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 21px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.my-file-in-progress .price-4 {
+  left: 97px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-decoration: line-through;
+  top: 0;
+}
+
+.my-file-in-progress .group-428 {
+  height: 44px;
+  margin-right: -4px;
+  min-width: 128px;
+  position: relative;
+}
+
+.my-file-in-progress .freemium {
+  left: 0;
+  letter-spacing: 0;
+  line-height: 21px;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  white-space: nowrap;
+}
+
+.my-file-in-progress .price-5 {
+  left: 76px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.my-file-in-progress .payed-by-credit-card-ending-in-2563 {
+  letter-spacing: 0;
+  line-height: 14px;
+  width: fit-content;
+}
+
+.my-file-in-progress .span0 {
+  line-height: 21px;
+}
+
+.my-file-in-progress .application {
+  letter-spacing: 0;
+  margin-top: -1px;
+}
+
+.my-file-in-progress .database {
+  letter-spacing: 0;
+  line-height: normal;
+  width: fit-content;
+}
+
+.my-file-in-progress .date-8 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.my-file-in-progress .dob-3 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  width: fit-content;
+}
+
+.my-file-in-progress .file {
+  letter-spacing: 0;
+  margin-top: -1px;
+  width: fit-content;
+}
+
+.my-file-in-progress .gh {
+  letter-spacing: 0;
+  line-height: normal;
+  width: fit-content;
+}
+
+.my-file-in-progress .gh-1234567-5 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  width: fit-content;
+}
+
+.my-file-in-progress .icon {
+  height: 24px;
+  margin-bottom: -3px;
+  margin-top: -3px;
+  min-width: 24px;
+}
+
+.my-file-in-progress .my {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+}
+
+:root {
+  --black: #000000;
+  --blue-dianne: #25474f;
+  --catskill-white: #f1f6f7;
+  --cerulean: #0fb3da;
+  --concrete: #f1f3f4;
+  --geyser: #cedde1;
+  --japanese-laurel: #009f06;
+  --mystic: #e9ebed;
+  --persian-blue: #1431c8;
+  --silver: #c0c0c0;
+  --slate-gray: #707e8c;
+  --tundora: #464646;
+  --white: #ffffff;
+
+  --font-size-l: 16px;
+  --font-size-m: 14px;
+  --font-size-xl: 20px;
+  --font-size-xxxl2: 28px;
+  --font-size-xxxxl: 36px;
+
+  --font-family-inter: "Inter", Helvetica;
+  --font-family-oxygen: "Oxygen", Helvetica;
+}
+.inter-normal-tundora-14px {
+  color: var(--tundora);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-normal-slate-gray-14px {
+  color: var(--slate-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-normal-blue-dianne-16px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-slate-gray-14px {
+  color: var(--slate-gray);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-normal-persian-blue-14px {
+  color: var(--persian-blue);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-tundora-16px {
+  color: var(--tundora);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-semi-bold-blue-dianne-20px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.oxygen-bold-blue-dianne-28px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-oxygen);
+  font-size: var(--font-size-xxxl2);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.inter-semi-bold-blue-dianne-16px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-semi-bold-japanese-laurel-16px {
+  color: var(--japanese-laurel);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-normal-black-16px {
+  color: var(--black);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-silver-16px {
+  color: var(--silver);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-semi-bold-blue-dianne-36px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.oxygen-light-blue-dianne-28px {
+  color: var(--blue-dianne);
+  font-family: var(--font-family-oxygen);
+  font-size: var(--font-size-xxxl2);
+  font-style: normal;
+  font-weight: 300;
+}
+
+.inter-semi-bold-white-14px {
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-semi-bold-black-16px {
+  color: var(--black);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-normal-silver-14px {
+  color: var(--silver);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.inter-semi-bold-silver-36px {
+  color: var(--silver);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.inter-normal-cerulean-14px {
+  color: var(--cerulean);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}

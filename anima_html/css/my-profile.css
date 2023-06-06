@@ -1,0 +1,614 @@
+/* screen - my-profile */
+
+.my-profile {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 0.75px none;
+  display: flex;
+  overflow: hidden;
+  width: 1440px;
+}
+
+.my-profile .main-navigation {
+  align-items: flex-start;
+  display: flex;
+  height: 810px;
+  left: -2px;
+  min-width: 195px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.my-profile .overlap-group {
+  height: 810px;
+  position: relative;
+  width: 197px;
+}
+
+.my-profile .group-184 {
+  align-items: flex-end;
+  display: flex;
+  height: 810px;
+  left: 0;
+  min-width: 197px;
+  position: absolute;
+  top: 0;
+}
+
+.my-profile .overlap-group-1 {
+  align-items: flex-start;
+  background-color: var(--blue-dianne);
+  display: flex;
+  height: 810px;
+  justify-content: flex-end;
+  min-width: 195px;
+  padding: 16.5px 26.2px;
+}
+
+.my-profile .witt-gen-portal {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 27px;
+}
+
+.my-profile .line-79 {
+  height: 809px;
+  width: 1px;
+}
+
+.my-profile .frame-185 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  left: 0;
+  position: absolute;
+  top: 123px;
+  width: fit-content;
+}
+
+.my-profile .dashboard {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  padding: 11.25px 45px;
+  position: relative;
+  width: 195px;
+}
+
+.my-profile .home_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-profile .my-files {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  padding: 11.25px 45px;
+  position: relative;
+  width: 195px;
+}
+
+.my-profile .cost-usage {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  padding: 11.25px 45px;
+  position: relative;
+  width: 195px;
+}
+
+.my-profile .paid_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-profile .cost-usage-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .my-profile-1 {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  padding: 11.25px 45px;
+  position: relative;
+  width: 195px;
+}
+
+.my-profile .my-profile-2 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .settings {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  padding: 11.25px 45px;
+  position: relative;
+  width: 195px;
+}
+
+.my-profile .settings_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-profile .contact_support_fill {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-profile .faq-support {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -2.00px;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .logout {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  left: 0;
+  padding: 11.25px 45px;
+  position: absolute;
+  top: 717px;
+  width: 195px;
+}
+
+.my-profile .logout_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-profile .main-navigation-1 {
+  align-items: flex-start;
+  display: flex;
+  height: 810px;
+  left: -2px;
+  min-width: 195px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.my-profile .frame-695 {
+  align-items: flex-start;
+  display: flex;
+  gap: 60px;
+  left: 254px;
+  position: fixed;
+  top: 74px;
+  width: fit-content;
+  z-index: 3;
+}
+
+.my-profile .frame {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .frame-496 {
+  align-items: center;
+  display: flex;
+  gap: 232.5px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .title {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.75px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .frame-468 {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  border: 0.75px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 9px;
+  height: 42px;
+  padding: 9px;
+  position: relative;
+  width: 390px;
+}
+
+.my-profile .icon {
+  height: 18px;
+  min-width: 18px;
+  position: relative;
+}
+
+.my-profile .my-profile-3 {
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .frame-466 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  border: 0.75px solid;
+  border-color: var(--geyser);
+  cursor: pointer;
+  display: flex;
+  gap: 9px;
+  height: 42px;
+  padding: 9px;
+  position: relative;
+  width: 390px;
+}
+
+.my-profile .frame-467 {
+  align-items: center;
+  background-color: var(--mystic);
+  border: 0.75px solid;
+  border-color: var(--silver);
+  display: flex;
+  gap: 9px;
+  height: 42px;
+  padding: 9px;
+  position: relative;
+  width: 390px;
+}
+
+.my-profile .application {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .component-85 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .my-profile-4 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.75px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .frame-292 {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  border: 0.75px solid;
+  border-color: var(--geyser);
+  cursor: pointer;
+  display: flex;
+  gap: 9px;
+  justify-content: center;
+  padding: 6px 9px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .edit-my-profile {
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .frame-464 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  width: 432px;
+}
+
+.my-profile .frame-464-1 {
+  gap: 9px;
+  width: fit-content;
+}
+
+.my-profile .frame-291 {
+  align-items: center;
+  background-color: var(--catskill-white);
+  display: flex;
+  gap: 9px;
+  height: 30px;
+  padding: 9px;
+  position: relative;
+  width: 432px;
+}
+
+.my-profile .password {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: -2.10px;
+  margin-top: -3.90px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .frame-464-2 {
+  gap: 18px;
+  padding: 0px 9px;
+  width: 432px;
+}
+
+.my-profile .frame-449 {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  margin-right: -18.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .frame-40 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .frame-301 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .first-name {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .frame-290 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 24px;
+  justify-content: center;
+  position: relative;
+  width: 210px;
+}
+
+.my-profile .name {
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .last-name {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .color {
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .frame-450 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-right: -9.00px;
+  position: relative;
+  width: 423px;
+}
+
+.my-profile .send-notifications-to {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .johnsnowrandomscienceco {
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .switch {
+  height: 27.07px;
+  margin-right: -1.12px;
+  min-width: 39.38px;
+  position: relative;
+}
+
+.my-profile .frame-497 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-right: -18.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .frame-464-3 {
+  gap: 18px;
+  padding: 0px 9px;
+  width: fit-content;
+}
+
+.my-profile .frame-4 {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-profile .randomscience {
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .country {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .place {
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .address {
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .state-province {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .place-1 {
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .city {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .san-fransisco {
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .zip-postal-code {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .h3-j-1-g9 {
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .company {
+  letter-spacing: 0;
+  line-height: 15.8px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-profile .frame-464-4 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
