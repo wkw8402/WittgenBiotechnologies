@@ -165,10 +165,10 @@ function downloadBlob(blob) {
   document.body.removeChild(link);
 }
 
-
 export default function () {
   // TODO: get user name in first call or wait until we get correct username or dont use usestate in username
-  const [submittedFilesState,setSubmittedFilesState] = useState(null);
+  const [submittedFilesState, setSubmittedFilesState] = useState(null);
+  const [user, setUser] = useState(null);
 
   async function breakCallbackDownload() { 
   UserNameUploaded = await HandleUserName();
@@ -183,12 +183,12 @@ export default function () {
     },
   };
   
-
     return dynamodb.query(queryItemParams).promise().then();
   }
 
   useEffect(() => {
     breakCallbackDownload().then((data) => setSubmittedFilesState(data))
+    setUser(getUser());
     //setSubmittedFilesState(data)
     // console.log("submittedFilesObject updated", submittedFilesState)
   }, []);
@@ -223,10 +223,10 @@ export default function () {
       download_estTime: "2 files",
     },
   ]
-  let submittedFilesObjectRender = submittedFilesState ? (submittedFilesState.Items.map((element) => {
-    //console.log("render",submittedFilesState);
-    // console.log("render",typeof(submittedFilesState.Items));
-    // console.log("render",element);
+  let submittedFilesObjectRender = (user && submittedFilesState) ? (submittedFilesState.Items.map((element) => {
+    console.log("render",submittedFilesState);
+    console.log("render",typeof(submittedFilesState.Items));
+    console.log("render",element);
     return (
       <div className="frame-4">
         <div className="frame-460">
@@ -271,6 +271,11 @@ const compRef = useRef();
 const logout = (event) => {
   event.preventDefault();
   compRef.current.logout();
+  
+}
+
+const getUser = () => {
+  return compRef.current.getUser();
 }
 
   return (
@@ -379,7 +384,7 @@ const logout = (event) => {
                   submittedFilesObjectRender
                 ) : (
                   <p>
-                    Loding...
+                    Loading...
                   </p>
                 )}
             {/* <div class="frame-4-1">

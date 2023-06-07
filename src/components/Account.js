@@ -78,17 +78,21 @@ const Account = forwardRef((props, ref) => {
     // alert("LOGOUT CALLED")
 
     const user = UserPool.getCurrentUser();
-    console.log(UserPool);
-    console.log(user)
+
     user.signOut();
 
     window.location.href = "/";
     // window.location.href = "/login";
   };
 
+  const getUser = () => {
+    return UserPool.getCurrentUser();
+  }
+
   useImperativeHandle(ref, () => ({
     authenticate,
     logout,
+    getUser,
   }))
 
   return (
