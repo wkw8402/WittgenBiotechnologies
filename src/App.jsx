@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Outlet, PrivateOutlet, Navigate } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import DatabaseInput1 from "./pages/DatabaseInput1";
 import GettingStarted1 from "./pages/GettingStarted1";
@@ -19,32 +20,57 @@ import Register from "./pages/Register";
 import Submitted from "./pages/Submitted";
 import VerifyCode from "./pages/VerifyCode";
 import FileUpload from "./pages/FileUpload";
+import { Account } from "./components/Account";
+
 function App() {
+
+  const compRef = useRef();
+  const [hasError, setHasError] = useState(null);
+
+  function PrivateRoute() {
+    try {
+      const auth = compRef.current.getUser();
+    } catch(e) {
+      setHasError(true);
+    }
+
+    if (hasError) return <Navigate to="/login" />
+   
+    return <Outlet />
+  }
+  
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/fileupload" element={<FileUpload />}></Route>
-        <Route path="/verify_code" element={<VerifyCode />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route path="/my_files_1" element={<MyFiles1 />}></Route>
-        {/* <Route path="/my_files_2" element={<MyFiles2 />}></Route>
-        <Route path="/getting_started_1" element={<GettingStarted1 />}></Route>
-        <Route path="/getting_started_2" element={<GettingStarted2 />}></Route> */}
-        <Route path="/metabase_input_1" element={<MetabaseInput1 />}></Route>
-        {/* <Route path="/metabase_input_2" element={<MetabaseInput2 />}></Route>
-        <Route path="/metabase_input_3" element={<MetabaseInput3 />}></Route>
-        <Route path="/metabase_input_4" element={<MetabaseInput4 />}></Route>
-        <Route path="/metabase_input_5" element={<MetabaseInput5 />}></Route>
-        <Route path="/database_input_1" element={<DatabaseInput1 />}></Route> */}
-        {/* <Route path="/payment_1" element={<Payment1 />}></Route>
-        <Route path="/payment_2" element={<Payment2 />}></Route> */}
-        <Route path="/submitted" element={<Submitted />}></Route>
-        {/* <Route path="/in_progress" element={<InProgress />}></Route> */}
-        <Route path="/login" element={<Login />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Account ref={compRef} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />}></Route>
+          
+          <Route path="/login" element={<Login />}></Route>
+
+          <Route element={<PrivateRoute />}>
+            <Route path="/register" element={<Register />}></Route>
+            <Route path="/fileupload" element={<FileUpload />}></Route>
+            <Route path="/verify_code" element={<VerifyCode />}></Route>
+            <Route path="/dashboard" element={<Dashboard />}></Route>
+            <Route path="/my_files_1" element={<MyFiles1 />}></Route>
+            {/* <Route path="/my_files_2" element={<MyFiles2 />}></Route>
+            <Route path="/getting_started_1" element={<GettingStarted1 />}></Route>
+            <Route path="/getting_started_2" element={<GettingStarted2 />}></Route> */}
+            <Route path="/metabase_input_1" element={<MetabaseInput1 />}></Route>
+            {/* <Route path="/metabase_input_2" element={<MetabaseInput2 />}></Route>
+            <Route path="/metabase_input_3" element={<MetabaseInput3 />}></Route>
+            <Route path="/metabase_input_4" element={<MetabaseInput4 />}></Route>
+            <Route path="/metabase_input_5" element={<MetabaseInput5 />}></Route>
+            <Route path="/database_input_1" element={<DatabaseInput1 />}></Route> */}
+            {/* <Route path="/payment_1" element={<Payment1 />}></Route>
+            <Route path="/payment_2" element={<Payment2 />}></Route> */}
+            <Route path="/submitted" element={<Submitted />}></Route>
+            {/* <Route path="/in_progress" element={<InProgress />}></Route> */}
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

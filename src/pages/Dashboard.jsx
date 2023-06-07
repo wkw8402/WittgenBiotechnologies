@@ -273,7 +273,6 @@ const logout = (event) => {
   compRef.current.logout();
   
 }
-
 const getUser = () => {
   return compRef.current.getUser();
 }

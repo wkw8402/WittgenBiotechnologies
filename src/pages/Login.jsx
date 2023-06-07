@@ -55,7 +55,7 @@ export default function () {
       .then((data) => {
         // console.log(data);
 
-        toast("🦄 ou are successfully logged in!", {
+        toast("🦄 you are successfully logged in!", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
