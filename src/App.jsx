@@ -25,18 +25,14 @@ import { Account } from "./components/Account";
 function App() {
 
   const compRef = useRef();
-  const [hasError, setHasError] = useState(null);
 
   function PrivateRoute() {
-    try {
+    try{
       const auth = compRef.current.getUser();
-    } catch(e) {
-      setHasError(true);
+      return <Outlet />
+    } catch{
+      return <Navigate to="/login" />
     }
-
-    if (hasError) return <Navigate to="/login" />
-   
-    return <Outlet />
   }
   
   return (

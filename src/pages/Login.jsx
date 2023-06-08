@@ -65,8 +65,10 @@ export default function () {
           progress: undefined,
           theme: "light",
         });
-
+        
+        console.log("to dashboard");
         navigate("/dashboard");
+        console.log("after wards")
         // history.replace("/dashboard");
         //else if (cogGroup == configDownloadGroup) {
       })

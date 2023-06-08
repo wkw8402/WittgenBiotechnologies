@@ -224,9 +224,9 @@ export default function () {
     },
   ]
   let submittedFilesObjectRender = (user && submittedFilesState) ? (submittedFilesState.Items.map((element) => {
-    console.log("render",submittedFilesState);
-    console.log("render",typeof(submittedFilesState.Items));
-    console.log("render",element);
+    // console.log("render",submittedFilesState);
+    // console.log("render",typeof(submittedFilesState.Items));
+    // console.log("render",element);
     return (
       <div className="frame-4">
         <div className="frame-460">

@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 import { AuthenticationDetails, CognitoUser } from "amazon-cognito-identity-js";
+import { useNavigate } from "react-router-dom";
 import { createContext, forwardRef, useImperativeHandle } from "react";
 import { UserPool } from "../config";
 import "../config";
