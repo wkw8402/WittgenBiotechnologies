@@ -38,7 +38,7 @@ export default function VerifyCode() {
       {/* entire container */}
       <div className="flex flex-row relative bg-[#F2F6F7] w-screen h-screen">
         {/* left side bar */}
-        <div className="bg-witgen text-white absolute w-195 top-0 left-0 bg-fixed h-screen">
+        <div className="absolute top-0 left-0 h-screen text-white bg-fixed bg-witgen w-195">
           <div className="flex flex-row w-138 h-27 left-30.75 text-wg top-16.5 font-oxygen pt-16.5 pl-30.75 pr-26.25">
             <h1 className="font-bold">WittGen</h1>
             <h1 className="font-extralight">Portal</h1>
@@ -48,7 +48,7 @@ export default function VerifyCode() {
         {/* check email form */}
         <div className="bg-[#FFFFFF] font-inter border-0.75 border-solid border-gray-300 justify-start w-498 h-488.25 flex flex-row flex-start top-114 right-471 left-471 absolute bottom-207.75">
           <div className="p-[36px] px-[91.5px] pb-[42.75px]">
-            <div className="text-center font-semibold text-witgen">
+            <div className="font-semibold text-center text-witgewqn">
               <h1 className="text-[27px]">Please check your email</h1>
             </div>
             <div>
@@ -59,7 +59,7 @@ export default function VerifyCode() {
               </p>
             </div>
             <div className="pt-[45px] flex flex-row text-[16px] font-normal justify-between">
-              <div className="text-witgen leading-6 font-semibold">
+              <div className="font-semibold leading-6 text-witgen">
                 Verify code
               </div>
               <div className="text-[#0FB4DB] font-normal leading-5">
