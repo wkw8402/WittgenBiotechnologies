@@ -1,5 +1,5 @@
 import "../styling/GettingStarted2.css";
-export default function () {
+export default function GettingStarted2() {
   return (
     <>
       <meta charSet="utf-8" />

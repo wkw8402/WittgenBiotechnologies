@@ -29,9 +29,9 @@ function App() {
         <Route path="/verify_code" element={<VerifyCode />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/my_files_1" element={<MyFiles1 />}></Route>
-        {/* <Route path="/my_files_2" element={<MyFiles2 />}></Route>
+        <Route path="/my_files_2" element={<MyFiles2 />}></Route>
         <Route path="/getting_started_1" element={<GettingStarted1 />}></Route>
-        <Route path="/getting_started_2" element={<GettingStarted2 />}></Route> */}
+        <Route path="/getting_started_2" element={<GettingStarted2 />}></Route>
         <Route path="/metabase_input_1" element={<MetabaseInput1 />}></Route>
         {/* <Route path="/metabase_input_2" element={<MetabaseInput2 />}></Route>
         <Route path="/metabase_input_3" element={<MetabaseInput3 />}></Route>
