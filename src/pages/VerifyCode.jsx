@@ -33,8 +33,6 @@ export default function VerifyCode() {
         defaultValue="verify-code"
       />
 
-      {/* Oxygen font link */}
-
       {/* entire container */}
       <div className="flex flex-row relative bg-[#F2F6F7] w-screen h-screen">
         {/* left side bar */}
@@ -46,7 +44,7 @@ export default function VerifyCode() {
         </div>
 
         {/* check email form */}
-        <div className="bg-[#FFFFFF] font-inter border-0.75 border-solid border-gray-300 justify-start w-498 h-488.25 flex flex-row flex-start top-114 right-471 left-471 absolute bottom-207.75">
+        <div className="bg-[#FFFFFF] font-inter border-0.75 border-solid border-gray-300 justify-start w-498 h-488.25 flex flex-row flex-start top-114 right-471 left-471 absolute bottom-207.75 mx-auto ">
           <div className="p-[36px] px-[91.5px] pb-[42.75px]">
             <div className="font-semibold text-center text-witgewqn">
               <h1 className="text-[27px]">Please check your email</h1>

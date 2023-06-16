@@ -64,8 +64,8 @@ export default function Register() {
         {/* entire section  */}
         <div className="flex flex-row  mt-[42.75px]">
           {/* Register description section */}
-          <div className="pl-[285px] pt-[42.75px] flex flex-col gap-[18px]">
-            <h1 className="text-witgen text-[27px] font-semibold leading-[33px]">
+          <div className="pl-[285px] pt-[42.75px] flex flex-col gap-[18px] ">
+            <h1 className="text-witgen text-[27px] font-semibold leading-[33px]  ">
               Create new account
             </h1>
 

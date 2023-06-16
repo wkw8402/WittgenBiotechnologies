@@ -127,6 +127,7 @@ export default function GettingStarted2() {
               </div>
             </div>
           </div>
+
           <div className="frame-447">
             <div className="frame-350">
               <h1 className="title inter-semi-bold-slate-gray-32px">

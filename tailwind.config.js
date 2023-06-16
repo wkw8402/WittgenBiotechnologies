@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      filter: {
+        none: "none",
+        white: "brightness(0) invert(1)",
+      },
       colors: { witgen: "#25474F", witgen_bg: "#F5F5F5", bd_bg: "#CEDDE1" },
       width: { 195: "195px", 138: "138px" },
       height: { 27: "27px", 810: "810px" },
