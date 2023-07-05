@@ -1,0 +1,789 @@
+/* screen - apply-metadatabase-input-manual-input */
+
+.apply-metadatabase-input-manual-input {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 0.75px none;
+  display: flex;
+  overflow: hidden;
+  width: 1440px;
+}
+
+.apply-metadatabase-input-manual-input .main-navigation {
+  align-items: flex-start;
+  display: flex;
+  height: 810px;
+  left: -2px;
+  min-width: 195px;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+.apply-metadatabase-input-manual-input .overlap-group1 {
+  height: 810px;
+  position: relative;
+  width: 197px;
+}
+
+.apply-metadatabase-input-manual-input .group-184 {
+  align-items: flex-end;
+  display: flex;
+  height: 810px;
+  left: 0;
+  min-width: 197px;
+  position: absolute;
+  top: 0;
+}
+
+.apply-metadatabase-input-manual-input .overlap-group {
+  align-items: flex-start;
+  background-color: var(--blue-dianne);
+  display: flex;
+  height: 810px;
+  justify-content: flex-end;
+  min-width: 195px;
+  padding: 16.5px 26.2px;
+}
+
+.apply-metadatabase-input-manual-input .witt-gen-portal {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 27px;
+}
+
+.apply-metadatabase-input-manual-input .line-79 {
+  height: 809px;
+  width: 1px;
+}
+
+.apply-metadatabase-input-manual-input .frame-185 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  left: 0;
+  position: absolute;
+  top: 123px;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .frame-185-item {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  padding: 11.25px 45px;
+  position: relative;
+  width: 195px;
+}
+
+.apply-metadatabase-input-manual-input .home_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .dashboard {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .draft_fill1_wght400_grad0_opsz48-1-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .my-files {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: -1.50px;
+  margin-top: -3.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .paid_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .cost-usage {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .settings_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .settings {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .contact_support_fill {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .faq-support {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -2.00px;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .logout {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  left: 0;
+  padding: 11.25px 45px;
+  position: absolute;
+  top: 717px;
+  width: 195px;
+}
+
+.apply-metadatabase-input-manual-input .logout_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .logout-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .back-next {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  left: 194px;
+  position: fixed;
+  top: 762px;
+  width: fit-content;
+  z-index: 1;
+}
+
+.apply-metadatabase-input-manual-input .frame-616 {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 60px;
+  position: relative;
+  width: 1246.5px;
+}
+
+.apply-metadatabase-input-manual-input .back-button {
+  align-items: center;
+  background-color: var(--white);
+  border: 0.9px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 7.5px;
+  height: 36px;
+  justify-content: center;
+  padding: 18px 60px;
+  position: relative;
+  width: 135px;
+}
+
+.apply-metadatabase-input-manual-input .place {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: -5.60px;
+  margin-left: -5.00px;
+  margin-right: -5.00px;
+  margin-top: -7.40px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .next-button {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  border: 0.9px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 7.5px;
+  height: 36px;
+  justify-content: center;
+  padding: 18px 60px;
+  position: relative;
+  width: 150px;
+}
+
+.apply-metadatabase-input-manual-input .next {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: -5.60px;
+  margin-top: -7.40px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .frame-447 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 0.56px solid;
+  border-color: var(--mystic);
+  display: flex;
+  flex-direction: column;
+  gap: 4.5px;
+  height: 72px;
+  justify-content: center;
+  left: 194px;
+  padding: 9.56px 45px;
+  position: fixed;
+  top: 0;
+  width: 935px;
+  z-index: 4;
+}
+
+.apply-metadatabase-input-manual-input .frame-350 {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 844.88px;
+}
+
+.apply-metadatabase-input-manual-input .frame-49 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5px;
+  justify-content: flex-end;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .getting-started {
+  letter-spacing: 0;
+  line-height: 13.5px;
+  margin-top: -0.56px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .rectangle-228-1 {
+  background-color: var(--japanese-laurel);
+}
+
+.apply-metadatabase-input-manual-input .metadatabase-input {
+  letter-spacing: 0;
+  line-height: 13.5px;
+  margin-top: -0.56px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .rectangle-228-2 {
+  background-color: var(--blue-dianne);
+}
+
+.apply-metadatabase-input-manual-input .database-input {
+  letter-spacing: 0;
+  line-height: 13.5px;
+  margin-top: -0.56px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .rectangle-228 {
+  background-color: var(--catskill-white);
+  height: 2.25px;
+  min-width: 112.5px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .submit {
+  letter-spacing: 0;
+  line-height: 13.5px;
+  margin-top: -0.56px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .frame-213 {
+  align-items: center;
+  display: flex;
+  gap: 6.75px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .component-33 {
+  border: 0.68px solid;
+  border-color: var(--geyser);
+  gap: 5.62px;
+  height: 22.5px;
+  justify-content: center;
+  padding: 6.75px 13.5px;
+  width: 90px;
+}
+
+.apply-metadatabase-input-manual-input .x-exit {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.18px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .component-31 {
+  background-color: var(--blue-dianne);
+  border: 0.68px solid;
+  border-color: var(--geyser);
+  gap: 5.62px;
+  height: 22.5px;
+  justify-content: center;
+  padding: 6.75px 13.5px;
+  width: 90px;
+}
+
+.apply-metadatabase-input-manual-input .frame-541 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 225px;
+  left: 254px;
+  position: fixed;
+  top: 108px;
+  width: fit-content;
+  z-index: 2;
+}
+
+.apply-metadatabase-input-manual-input .group-347 {
+  height: 235.5px;
+  min-width: 1126.5px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .frame {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .frame-504 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  width: 1126.5px;
+}
+
+.apply-metadatabase-input-manual-input .group-283 {
+  align-items: center;
+  align-self: stretch;
+  border-bottom-style: solid;
+  border-bottom-width: 0.75px;
+  border-color: var(--catskill-white);
+  display: flex;
+  height: 36px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .frame-454 {
+  align-items: center;
+  display: flex;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .frame-214 {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 7.5px;
+  height: 36px;
+  justify-content: center;
+  padding: 9px 18px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .import-excel-file {
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .frame-215 {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  display: flex;
+  gap: 7.5px;
+  height: 36px;
+  justify-content: center;
+  padding: 10.5px 17.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .manual-data-input {
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-bottom: -0.75px;
+  margin-top: -2.25px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .frame-317 {
+  align-items: flex-start;
+  display: flex;
+  gap: 7.5px;
+  margin-bottom: -1.50px;
+  margin-top: -1.50px;
+  padding: 3px 9px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .price {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .component {
+  align-items: center;
+  display: flex;
+  gap: 7.5px;
+  height: 30px;
+  padding: 9px;
+  position: relative;
+  width: 150px;
+}
+
+.apply-metadatabase-input-manual-input .sample {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .height {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .span0 {
+  color: var(--slate-gray);
+}
+
+.apply-metadatabase-input-manual-input .span1 {
+  color: var(--tundora);
+}
+
+.apply-metadatabase-input-manual-input .component-99 {
+  gap: 7.5px;
+  padding: 9px;
+  width: 150px;
+}
+
+.apply-metadatabase-input-manual-input .primary-region {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .subtype {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: 50.25px;
+}
+
+.apply-metadatabase-input-manual-input .grade {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .surgery {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .component-1 {
+  background-color: var(--catskill-white);
+  border-color: var(--geyser);
+  border-right-style: solid;
+  border-right-width: 0.75px;
+  border-top-style: solid;
+  border-top-width: 0.75px;
+  gap: 7.5px;
+  height: 30px;
+  padding: 9px;
+  width: 150px;
+}
+
+.apply-metadatabase-input-manual-input .gh-1234567 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .gh-1234567-3 {
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .gh-1234567-4 {
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .insert-cell {
+  align-items: center;
+  background-color: #fefae1;
+  border-color: var(--geyser);
+  border-top-style: solid;
+  border-top-width: 0.75px;
+  display: flex;
+  gap: 7.5px;
+  height: 30px;
+  padding: 9px;
+  position: relative;
+  width: 150px;
+}
+
+.apply-metadatabase-input-manual-input .icon {
+  height: 12px;
+  left: 122px;
+  position: absolute;
+  top: 0;
+  width: 12px;
+}
+
+.apply-metadatabase-input-manual-input .number {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.25px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .insert-cell-1 {
+  align-items: center;
+  background-color: var(--pippin);
+  border-color: var(--geyser);
+  border-top-style: solid;
+  border-top-width: 0.75px;
+  display: flex;
+  gap: 7.5px;
+  height: 30px;
+  padding: 9px;
+  position: relative;
+  width: 150px;
+}
+
+.apply-metadatabase-input-manual-input .database-input_-button {
+  align-items: center;
+  background-color: var(--white);
+  border: 0.75px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 90px;
+  height: 30px;
+  justify-content: center;
+  padding: 6px;
+  position: relative;
+  width: 75px;
+}
+
+.apply-metadatabase-input-manual-input .group-297 {
+  height: 13px;
+  min-width: 33px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .button {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.apply-metadatabase-input-manual-input .frame-450 {
+  align-items: center;
+  background-color: var(--mystic);
+  display: flex;
+  height: 12px;
+  justify-content: space-between;
+  padding: 3px;
+  position: relative;
+  width: 1114.5px;
+}
+
+.apply-metadatabase-input-manual-input .frame-449 {
+  align-items: flex-start;
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-bottom: -1.50px;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-metadatabase-input-manual-input .iontriangle-sharp {
+  height: 9px;
+  min-width: 6px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .rectangle-235 {
+  background-color: var(--silver);
+  height: 9px;
+  min-width: 866.25px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .iontriangle-sharp-1 {
+  height: 9px;
+  margin-bottom: -1.50px;
+  margin-top: -1.50px;
+  min-width: 6px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .alert {
+  align-items: center;
+  background-color: var(--pippin);
+  border: 0.75px solid;
+  border-color: var(--red);
+  display: flex;
+  gap: 7.5px;
+  left: 1090px;
+  padding: 18px;
+  position: fixed;
+  top: 610px;
+  width: 350px;
+  z-index: 3;
+}
+
+.apply-metadatabase-input-manual-input .frame-449-1 {
+  align-items: center;
+  background-color: var(--mystic);
+  display: flex;
+  height: 12px;
+  justify-content: space-between;
+  left: 1177px;
+  padding: 3px;
+  position: fixed;
+  top: 365px;
+  transform: rotate(90.00deg);
+  width: 393px;
+  z-index: 6;
+}
+
+.apply-metadatabase-input-manual-input .iontriangle-sharp-2 {
+  height: 6px;
+  margin-left: -1.50px;
+  min-width: 9px;
+  position: relative;
+  transform: rotate(-90.00deg);
+}
+
+.apply-metadatabase-input-manual-input .rectangle-235-1 {
+  background-color: var(--silver);
+  height: 9px;
+  min-width: 302.25px;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .iontriangle-sharp-3 {
+  height: 6px;
+  margin-right: -1.50px;
+  min-width: 9px;
+  position: relative;
+  transform: rotate(-90.00deg);
+}
+
+.apply-metadatabase-input-manual-input .component-2 {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.apply-metadatabase-input-manual-input .rectangle-228-3 {
+  height: 2.25px;
+  min-width: 112.5px;
+  position: relative;
+}
