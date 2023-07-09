@@ -11,6 +11,9 @@ import "../config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import "../styling/VerifyCode.css";
+import "../styling/globals.css";
+import "../styling/styleguide.css";
 
 export default function Register() {
   const [firstname, setFirstname] = useState("");
@@ -41,13 +44,13 @@ export default function Register() {
     const attributeList = [];
     attributeList.push(
       new CognitoUserAttribute({
-        Name: "given_name",
+        Name: "custom:firstname",
         Value: firstname,
       })
     );
     attributeList.push(
       new CognitoUserAttribute({
-        Name: "family_name",
+        Name: "custom:lastname",
         Value: lastname,
       })
     );
@@ -65,7 +68,7 @@ export default function Register() {
     );
     attributeList.push(
       new CognitoUserAttribute({
-        Name: "address",
+        Name: "custom:address",
         Value: address,
       })
     );
@@ -140,6 +143,45 @@ export default function Register() {
     });
   };
 
+  const verifyAccount = (e) => {
+    e.preventDefault();
+    const user = new CognitoUser({
+      Username: email,
+      Pool: UserPool,
+    });
+    user.confirmRegistration(OTP, true, (err, data) => {
+      if (err) {
+        console.log(err);
+
+        toast("🦄 Couldnt verify account!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+
+        //alert("Couldn't verify account");
+      } else {
+        console.log(data);
+        toast("🦄  Successfully verified!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        navigate("/login");
+      }
+    });
+  };
+
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
     if (event.target.value) {
@@ -174,7 +216,7 @@ export default function Register() {
         </div>
 
         {/* entire section  */}
-        <div className="flex flex-row  mt-[42.75px]">
+        {!verifyProcess && (<div className="flex flex-row  mt-[42.75px]">
           {/* Register description section */}
           <div className="pl-[285px] pt-[42.75px] flex flex-col gap-[18px] ">
             <h1 className="text-witgen text-[27px] font-semibold leading-[33px]  ">
@@ -424,10 +466,64 @@ export default function Register() {
               </h3>
             </div>
           </form>
-        </div>
+        </div>)}
+
+        {verifyProcess && (<div className="bg-[#FFFFFF] font-inter border-0.75 border-solid border-gray-300 justify-start w-498 h-488.25 flex flex-row flex-start top-114 right-471 left-471 absolute bottom-207.75 mx-auto ">
+          <div className="p-[36px] px-[91.5px] pb-[42.75px]">
+            <div className="font-semibold text-center text-witgewqn">
+              <h1 className="text-[27px]">Please check your email</h1>
+            </div>
+            <div>
+              <p className="leading-[15px] text-[12px] font-normal text-black pt-[18px]">
+                Please enter the verification code sent to your email at{" "}
+                <span className="font-bold">j****h@science.co</span> to activate
+                your account. The link will expire in 24 hours.
+              </p>
+            </div>
+            <div className="pt-[45px] flex flex-row text-[16px] font-normal justify-between">
+              <div className="font-semibold leading-6 text-witgen">
+                Verify code
+              </div>
+              <div className="text-[#0FB4DB] font-normal leading-5">
+                <a href="#">
+                  <span>Resend code</span>
+                </a>
+              </div>
+            </div>
+
+            <input
+              className="w-full border border-witgen w-[318px] h-[38.25px] pt-[6px]"
+              type="text"
+              placeholder="Enter verification code here"
+              bsSize="lg"
+              value={OTP}
+              onChange={(e) => setOTP(e.target.value)}
+              style={{ paddingLeft: '10px' }}
+              autoComplete="new-password"
+            ></input>
+
+            <div className="pt-[69px]">
+              <p className="leading-5 text-[12px]">
+                <span className="text-[#0FB4DB] font-semibold">Click here</span>{" "}
+                if you would like to change the email address you signed up
+                with.
+              </p>
+            </div>
+            <div className="pt-[57.25px]">
+              <button 
+                className="bg-witgen border-none w-[318px]"
+                onClick={verifyAccount}
+              >
+                <span className="block py-[14.5px] px-[136px] text-white">
+                  Submit
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>)}
 
         {/* Validation for Password  */}
-        {showValidation && (
+        {!verifyProcess && showValidation && (
           <div className="absolute font-normal w-[285.75px] h-[147.75px] top-[220.5px] left-[456.75px] border border-[0.75px] border-solid border-[#CEDDE1] ">
             <div className="flex flex-row ml-[18.75px] mt-[9px] content-center  ">
               <FontAwesomeIcon
