@@ -6,7 +6,7 @@ export default function () {
       databaseCategory: "Cell Ranger",
       databaseFile1: "Upload File",
       databaseFile2: "",
-      databaseFile3: "Upload File",
+      databaseFile3: "Uplox",
     },
     {
       sample: "GH-2342",
