@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:500,400,700,600|Oxygen:300,700");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Oxygen:400,300,700|Roboto:300|Inter:400,700,500,600|Source+Sans+Pro:400|Oswald:400,700");
+@import url("https://px.animaapp.com/63a236ec63d7cd74a21d3405.63a236ed99ecd12a69868578.63c49d3d9565c9180a1f3b19.hcp.png");
+.link-style {
+    white-space: nowrap;
+}
+
+.drag-drop-box {
+    align-items: center;
+    background-color: #f1f3f4;
+    border: 0.9px dashed;
+    border-color: var(--oslo-gray);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 369px;
+    justify-content: center;
+    padding: 7.5px 0px;
+    position: fixed;
+    width: 1126.5px;
+    left: 255px;
+    top: 255px;
+}
+
+.frame-212 {
+    align-items: flex-start;
+    background-color: var(--geyser);
+    border: none;
+    display: flex;
+    gap: 7.5px;
+    padding: 8.25px 18px;
+    position: relative;
+    width: fit-content;
+}
+
+.drag-drop-a-file-here {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.or {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.choose-a-file {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -0.9px;
+    position: relative;
+    width: fit-content;
+}
+
+.inter-semi-bold-blue-dianne-10-5px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.drop-next-button {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    padding: 18px 60px;
+    position: fixed;
+    background-color: #E9EBED;
+    gap: 7.5px;
+    right: 80px;
+}
+
+.drop-next-button .drop-next {
+    margin-left: auto;
+    color: #c0c0c0;
+    font-family: var(--font-family-inter);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: fixed;
+    width: fit-content;
+}

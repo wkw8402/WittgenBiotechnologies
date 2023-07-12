@@ -1,0 +1,118 @@
+.excel-frame-4 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    top: 120px;
+}
+
+.excel-51-4 {
+    align-items: flex-start;
+    position: relative;
+    width: 1126.5px;
+    height: 300px;
+    overflow: auto;
+}
+
+.excel-514-4 {
+    display: flex;
+    width: 100%;
+    background: #FFFFFF;
+    border: 0.75px solid #CEDDE1;
+    border-left: none;
+    border-bottom: none;
+}
+
+.combined-content {
+    width: 100%;
+    display: grid;
+    flex-direction: column;
+}
+
+.icsharp-delete {
+    width: 18px;
+    height: 18px
+}
+
+.excel-table-container {
+    display: flex;
+}
+
+.delete-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 0.75px solid #CEDDE1;
+    border-right: none;
+    border-bottom: none;
+}
+
+.last-button {
+    border-bottom: 0.75px solid #CEDDE1;
+    height: 31.2px;
+}
+
+.deletebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #F2F6F7;
+}
+
+.errorImage {
+    position: absolute;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+}
+
+.add {
+    border: 0.75px solid #CEDDE1;
+    padding: 6px;
+    width: 75px;
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-font {
+    font-size: 12px;
+    line-height: 16.94px;
+    font-family: "inter";
+    color: #25474F;
+    word-wrap: break-word;
+}
+
+.rowsetting {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+}
+
+.setting-table {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.cell-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
