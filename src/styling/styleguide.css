@@ -37,7 +37,7 @@
 .inter-normal-tundora-10-5px {
   color: var(--tundora);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 400;
 }
@@ -45,7 +45,7 @@
 .inter-normal-white-12px {
   color: var(--white);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-l);
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
 }
@@ -69,7 +69,7 @@
 .oxygen-bold-white-21px {
   color: var(--white);
   font-family: var(--font-family-oxygen);
-  font-size: var(--font-size-xxxxl);
+  font-size: 21px;
   font-style: normal;
   font-weight: 700;
 }
@@ -77,7 +77,7 @@
 .inter-normal-persian-blue-10-5px {
   color: var(--persian-blue);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 400;
 }
@@ -109,7 +109,7 @@
 .inter-normal-slate-gray-10-5px-2 {
   color: var(--slate-gray);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 400;
 }
@@ -117,7 +117,7 @@
 .inter-normal-black-10-5px {
   color: var(--black);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 400;
 }
@@ -125,7 +125,7 @@
 .oxygen-light-white-21px {
   color: var(--white);
   font-family: var(--font-family-oxygen);
-  font-size: var(--font-size-xxxxl);
+  font-size: 21px;
   font-style: normal;
   font-weight: 300;
 }
@@ -133,7 +133,7 @@
 .inter-normal-tundora-10-5px-2 {
   color: var(--tundora);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 11px;
   font-style: normal;
   font-weight: 400;
 }
@@ -165,7 +165,7 @@
 .inter-normal-cerulean-10-5px {
   color: var(--cerulean);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 400;
 }
@@ -173,7 +173,7 @@
 .inter-semi-bold-silver-12px {
   color: var(--silver);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-l);
+  font-size: 12px;
   font-style: normal;
   font-weight: 600;
 }
@@ -269,7 +269,7 @@
 .inter-normal-oslo-gray-9px {
   color: var(--oslo-gray);
   font-family: var(--font-family-inter);
-  font-size: 9px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
 }
@@ -325,7 +325,7 @@
 .inter-normal-japanese-laurel-9px {
   color: var(--japanese-laurel);
   font-family: var(--font-family-inter);
-  font-size: 9px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
 }
@@ -333,7 +333,7 @@
 .inter-semi-bold-blue-dianne-7-9px {
   color: var(--blue-dianne);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-s);
+  font-size: 11px;
   font-style: normal;
   font-weight: 600;
 }
@@ -341,7 +341,7 @@
 .inter-semi-bold-black-10-5px {
   color: var(--black);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 600;
 }
@@ -365,7 +365,7 @@
 .inter-semi-bold-blue-dianne-15px-2 {
   color: var(--blue-dianne);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-xxl);
+  font-size: 15px;
   font-style: normal;
   font-weight: 600;
 }
@@ -381,7 +381,7 @@
 .inter-semi-bold-white-7-9px {
   color: var(--white);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-s);
+  font-size: 11px;
   font-style: normal;
   font-weight: 600;
 }
@@ -525,7 +525,7 @@
 .inter-normal-blue-dianne-10-5px {
   color: var(--blue-dianne);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 400;
 }
@@ -540,7 +540,7 @@
 .inter-normal-black-10-5px-2 {
   color: var(--black);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 400;
 }
@@ -556,7 +556,7 @@
 .inter-semi-bold-white-12px-2 {
   color: var(--white);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-l);
+  font-size: 12px;
   font-style: normal;
   font-weight: 600;
 }
@@ -564,7 +564,7 @@
 .inter-normal-tundora-15px {
   color: var(--tundora);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-xxl);
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
 }
@@ -643,7 +643,7 @@
 .inter-semi-bold-cerulean-10-5px {
   color: var(--cerulean);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 600;
 }

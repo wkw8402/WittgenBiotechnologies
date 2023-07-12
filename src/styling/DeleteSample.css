@@ -1,0 +1,107 @@
+/* screen - delete-sample */
+
+.delete-sample {
+    align-items: center;
+    background-color: #192021cc;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 78px;
+    min-width: 741px;
+    padding: 64px 120px;
+    position: relative;
+  }
+  
+  #overlay-delete-sample {
+    align-items: center;
+    background-color: #192021cc;
+    justify-content: center;
+  }
+  
+  .delete-sample-1 {
+    align-items: center;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 78px;
+    padding: 64px 120px;
+    width: fit-content;
+  }
+  
+  .title {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.00px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .span0 {
+    line-height: 25.6px;
+  }
+  
+  .span1 {
+    line-height: 24px;
+  }
+  
+  .back-buttondelete {
+    align-items: center;
+    background-color: var(--white);
+    border: 1.2px solid;
+    border-color: var(--geyser);
+    display: flex;
+    gap: 10px;
+    height: 48px;
+    justify-content: center;
+    padding: 24px 80px;
+    position: relative;
+    width: 200px;
+  }
+  
+  .back {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: -7.30px;
+    margin-left: -4.00px;
+    margin-right: -4.00px;
+    margin-top: -9.70px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .next-delete {
+    align-items: center;
+    background-color: var(--milano-red);
+    border: 1.2px solid;
+    border-color: var(--geyser);
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    height: 48px;
+    justify-content: center;
+    padding: 24px 80px;
+    position: relative;
+    width: 200px;
+  }
+  .yes-delete-sample {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: -7.30px;
+    margin-left: -43.50px;
+    margin-right: -43.50px;
+    margin-top: -9.70px;
+    position: relative;
+    white-space: nowrap; 
+    width: 200px; 
+  }
+  
+  .frame-delete {
+    display: flex;
+    position: relative;
+    width: fit-content;
+  }
+  

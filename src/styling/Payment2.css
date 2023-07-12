@@ -1768,7 +1768,7 @@
 .inter-normal-blue-dianne-14px {
   color: var(--blue-dianne);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-m);
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
 }
@@ -1791,7 +1791,7 @@
 .inter-semi-bold-white-16px {
   color: var(--white);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-l);
+  font-size: 12px;
   font-style: normal;
   font-weight: 600;
 }

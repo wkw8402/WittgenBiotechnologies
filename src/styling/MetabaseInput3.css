@@ -16,6 +16,7 @@
   justify-content: center;
   pointer-events: none;
   width: 100%;
+  z-index: 1;
 }
 
 .container-center-horizontal > * {

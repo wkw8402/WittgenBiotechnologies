@@ -1647,6 +1647,14 @@ a {
   font-weight: 400;
 }
 
+.oxygen-normal-tundora-10px {
+  color: var(--tundora);
+  font-family: var(--font-family-oxygen);
+  font-size: 10.5px;
+  font-style: normal;
+  font-weight: 400;
+}
+
 .oxygen-bold-tundora-30px {
   color: var(--tundora);
   font-family: var(--font-family-oxygen);

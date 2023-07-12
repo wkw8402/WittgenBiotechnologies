@@ -207,7 +207,7 @@
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 23.96px;
+  gap: 46.96px;
   margin-left: 253px;
   margin-top: 107.83px;
   position: relative;
@@ -267,7 +267,7 @@
   padding: 0.7px 0;
   position: absolute;
   top: 47px;
-  width: 855px;
+  width: 855.16px;
 }
 
 .component-108 {
@@ -371,6 +371,19 @@
   width: 118px;
 }
 
+.frame-32a {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  gap: 7.49px;
+  justify-content: center;
+  left: 236px;
+  padding: 10.48px 17.22px;
+  position: absolute;
+  top: 0;
+  width: 118px;
+}
+
 .invoice {
   letter-spacing: 0;
   line-height: 18.0px;
@@ -439,6 +452,7 @@
   white-space: nowrap;
 }
 
+
 .frame-591 {
   align-items: flex-start;
   background-color: var(--white);
@@ -447,13 +461,13 @@
   border-left-width: 0.75px;
   display: flex;
   gap: 7.49px;
-  height: 747px;
-  left: 1166px;
+  height: 7 00px;
+  right: 20px;
   padding: 32.2px 14.23px;
   position: fixed;
   top: 96px;
   width: fit-content;
-  z-index: 7;
+  z-index: 0;
 }
 
 .frame-416 {
@@ -475,7 +489,7 @@
 }
 
 .frame-588 {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   gap: 8.99px;
@@ -1144,6 +1158,7 @@
   padding: 9px;
   position: relative;
   width: 150px;
+  height: 30px;
 }
 
 .component-6 {
@@ -1169,7 +1184,7 @@
   left: 1034px;
   min-height: 450px;
   position: fixed;
-  top: 183px;
+  top: 190px;
   width: 310px;
   z-index: 2;
 }
@@ -1301,6 +1316,12 @@
   display: flex;
   position: relative;
   width: fit-content;
+}
+.frame-5-3a {
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+  width: 855px;
 }
 
 .component-103 {
