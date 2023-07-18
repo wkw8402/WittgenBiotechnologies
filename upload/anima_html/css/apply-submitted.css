@@ -1,0 +1,427 @@
+/* screen - apply-submitted */
+
+.apply-submitted {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 0.75px none;
+  display: flex;
+  overflow: hidden;
+  width: 1440px;
+}
+
+.apply-submitted .main-navigation {
+  align-items: flex-start;
+  display: flex;
+  height: 810px;
+  left: -2px;
+  min-width: 195px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.apply-submitted .overlap-group1 {
+  height: 810px;
+  position: relative;
+  width: 197px;
+}
+
+.apply-submitted .group-184 {
+  height: 810px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 197px;
+}
+
+.apply-submitted .overlap-group {
+  align-items: flex-start;
+  background-color: var(--blue-dianne);
+  display: flex;
+  height: 810px;
+  justify-content: flex-end;
+  left: 0;
+  min-width: 195px;
+  padding: 16.5px 26.2px;
+  position: absolute;
+  top: 0;
+}
+
+.apply-submitted .witt-gen-portal {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 27px;
+}
+
+.apply-submitted .line-79 {
+  height: 809px;
+  left: 195px;
+  position: absolute;
+  top: 1px;
+  width: 1px;
+}
+
+.apply-submitted .frame-185 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  left: 0;
+  position: absolute;
+  top: 123px;
+  width: fit-content;
+}
+
+.apply-submitted .frame-185-item {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  padding: 11.25px 45px;
+  position: relative;
+  width: 195px;
+}
+
+.apply-submitted .home_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-submitted .dashboard {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-submitted .draft_fill1_wght400_grad0_opsz48-1-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-submitted .my-files {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: -1.50px;
+  margin-top: -3.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-submitted .paid_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-submitted .cost-usage {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .settings_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-submitted .settings {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .contact_support_fill {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-submitted .faq-support {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -2.00px;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .logout {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  left: 0;
+  padding: 11.25px 45px;
+  position: absolute;
+  top: 717px;
+  width: 195px;
+}
+
+.apply-submitted .logout_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+}
+
+.apply-submitted .logout-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .frame-447 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 0.56px solid;
+  border-color: var(--mystic);
+  display: flex;
+  flex-direction: column;
+  gap: 4.5px;
+  height: 72px;
+  justify-content: center;
+  left: 194px;
+  padding: 9.56px 45px;
+  position: fixed;
+  top: 0;
+  width: 935px;
+  z-index: 2;
+}
+
+.apply-submitted .frame-350 {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 844.88px;
+}
+
+.apply-submitted .frame-49 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5px;
+  justify-content: flex-end;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .getting-started {
+  letter-spacing: 0;
+  line-height: 13.5px;
+  margin-top: -0.56px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-submitted .rectangle-228 {
+  background-color: var(--japanese-laurel);
+  height: 2.25px;
+  min-width: 112.5px;
+  position: relative;
+}
+
+.apply-submitted .metadatabase-input {
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.56px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-submitted .database-input {
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.56px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-submitted .submit {
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -0.56px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-submitted .frame-213 {
+  align-items: center;
+  display: flex;
+  gap: 6.75px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .component-33 {
+  align-items: center;
+  border: 0.68px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 5.62px;
+  height: 22.5px;
+  justify-content: center;
+  padding: 6.75px 13.5px;
+  position: relative;
+  width: 90px;
+}
+
+.apply-submitted .discard-exit {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: -5.50px;
+  margin-right: -5.50px;
+  margin-top: -1.18px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .frame-581 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 19.5px;
+  left: 254px;
+  position: fixed;
+  top: 126px;
+  width: fit-content;
+  z-index: 3;
+}
+
+.apply-submitted .frame-578 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .frame-364 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .group-363 {
+  background-color: var(--white);
+  border: 1.5px solid;
+  border-color: var(--japanese-laurel);
+  border-radius: 18px;
+  height: 36px;
+  min-width: 36px;
+  position: relative;
+}
+
+.apply-submitted .material-symbolscheck-small {
+  height: 24px;
+  left: 4px;
+  position: absolute;
+  top: 4px;
+  width: 24px;
+}
+
+.apply-submitted .your-application-has {
+  color: var(--japanese-laurel);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxl);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.apply-submitted .line-105 {
+  height: 1px;
+  margin-bottom: -0.25px;
+  min-width: 1123.5px;
+  position: relative;
+}
+
+.apply-submitted .frame-579 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  width: fit-content;
+}
+
+.apply-submitted .frame-580 {
+  height: 60.75px;
+  min-width: 378.75px;
+  position: relative;
+}
+
+.apply-submitted .flex-col {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 64px;
+  position: relative;
+  top: -1px;
+  width: 379px;
+}
+
+.apply-submitted .flex-col-item {
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.apply-submitted .component-33-1 {
+  align-items: center;
+  background-color: var(--blue-dianne);
+  border: 0.9px solid;
+  border-color: var(--geyser);
+  cursor: pointer;
+  display: flex;
+  gap: 7.5px;
+  height: 30.75px;
+  justify-content: center;
+  padding: 9px 18px;
+  position: relative;
+  width: 120px;
+}
+
+.apply-submitted .see-my-file {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.03px;
+  position: relative;
+  width: fit-content;
+}

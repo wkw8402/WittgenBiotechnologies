@@ -1,0 +1,2727 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:500,400,700,600|Oxygen:300,700");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Oxygen:400,300,700|Roboto:300|Inter:400,700,500,600|Source+Sans+Pro:400|Oswald:400,700");
+@import url("https://px.animaapp.com/63a236ec63d7cd74a21d3405.63a236ed99ecd12a69868578.63c49d3d9565c9180a1f3b19.hcp.png");
+* {
+    box-sizing: border-box;
+}
+
+.page {
+    width: 1440px;
+    height: 810px;
+    position: relative;
+}
+
+.main-navigation {
+    align-items: flex-end;
+    display: flex;
+    height: 100vh;
+    left: 0;
+    width: 195px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.navigation-box-1 {
+    align-items: center;
+    display: flex;
+    gap: 9px;
+    height: 36px;
+    padding: 11.25px 45px;
+    position: relative;
+    width: 195px;
+}
+
+.logo-box {
+    align-items: flex-start;
+    background-color: var(--blue-dianne);
+    display: flex;
+    height: 100vh;
+    justify-content: flex-end;
+    width: 138vw;
+    padding: 16.5px 26.2px;
+}
+
+.witt-gen-portal {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 27px;
+}
+
+.bold-portal-logo {
+    color: var(--white);
+    font-family: var(--font-family-oxygen);
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px;
+}
+
+.light-portal-logo {
+    color: var(--white);
+    font-family: var(--font-family-oxygen);
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.witt-gen-portal {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 35px;
+}
+
+.navigation-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 9px;
+    position: absolute;
+    width: 195px;
+    height: 216px;
+    left: 0px;
+    top: 123px;
+}
+
+.logout {
+    align-items: center;
+    display: flex;
+    gap: 9px;
+    height: 36px;
+    left: 0;
+    padding: 11.25px 45px;
+    position: absolute;
+    bottom: 12%;
+    width: 195px;
+}
+
+.dashboard-icon {
+    width: 12px;
+    height: 13.5px;
+    display: flex;
+    align-items: center;
+}
+
+.my-files-font {
+    width: 46px;
+    height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.light-font {
+    width: 100px;
+    height: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.myfiles-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.cost-usage-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.setting-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.faq-support-icon {
+    width: 12.75px;
+    height: 15px;
+}
+
+.logout-icon {
+    width: 13.5px;
+    height: 13.5px;
+}
+
+.frame-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 13px 60px;
+    gap: 6px;
+    position: fixed;
+    width: 100%;
+    height: 96px;
+    background: #FFFFFF;
+    border: 0.75px solid #E9EBED;
+}
+
+.frame-top-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 297px;
+    width: 1126.5px;
+    height: 30px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.frame-top-left {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0px;
+    width: 600px;
+    height: 27px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.frame-top-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 6px;
+    width: 150px;
+    height: 27px;
+}
+
+.metadatabase-input-1 {
+    width: 117px;
+    height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: #25474F;
+}
+
+.rectangle-228-5 {
+    background-color: var(--blue-dianne);
+    height: 3px;
+    min-width: 150px;
+    position: relative;
+}
+
+.database-input-1 {
+    width: 87px;
+    height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #7C9195;
+}
+
+.rectangle-228-1 {
+    background-color: var(--catskill-white);
+    height: 3px;
+    min-width: 150px;
+    position: relative;
+}
+
+.submit-1 {
+    width: 40px;
+    height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #7C9195;
+}
+
+.rectangle-228-4 {
+    width: 150px;
+    height: 3px;
+    background: #009F06;
+}
+
+.getting-started-1 {
+    width: 87px;
+    height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #009F06;
+}
+
+.frame-top-right {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 270px;
+    align-items: center;
+    padding: 0px;
+    width: 249px;
+    height: 30px;
+}
+
+.frame-top-right-light {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 18px;
+    gap: 7.5px;
+    width: 120px;
+    height: 30px;
+    border: 0.9px solid #CEDDE1;
+}
+
+.discard-exit-1 {
+    width: 70px;
+    height: 13px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10.5px;
+    line-height: 13px;
+    color: #25474F;
+}
+
+.frame-top-right-bold {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 18px;
+    gap: 7.5px;
+    width: 120px;
+    height: 30px;
+    background: #25474F;
+    border: 0.9px solid #CEDDE1;
+}
+
+.save-exit-1 {
+    width: 56px;
+    height: 13px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10.5px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+.frame-bottom {
+    align-items: center;
+    background-color: var(--white);
+    display: flex;
+    padding: 18px 60px;
+    position: fixed;
+    width: 100%;
+    height: 72px;
+    bottom: 5%;
+    justify-content: flex-end;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    fill: solid;
+    padding: 18px 60px;
+    position: fixed;
+    left: 254px;
+    background-color: #FFFFFF;
+    border: 0.9px solid #CEDDE1;
+    gap: 7.5px;
+}
+
+.next-button {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    right: 80px;
+    height: 30px;
+    fill: solid;
+    padding: 18px 60px;
+    position: fixed;
+    background-color: #25474F;
+    border: 0.9px solid #CEDDE1;
+    gap: 7.5px;
+}
+
+.next-button .next {
+    margin-left: auto;
+    color: #FFFFFF;
+    font-family: var(--font-family-inter);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: fixed;
+    width: fit-content;
+}
+
+.back-button .back {
+    margin-left: auto;
+    color: #25474F;
+    font-family: var(--font-family-inter);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: fixed;
+    width: fit-content;
+}
+
+.frame-main-top {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: fixed;
+    top: 108px;
+    width: fit-content;
+    z-index: 1;
+}
+
+.frame-503 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    width: 1126.5px;
+}
+
+.frame-main-2 {
+    align-items: center;
+    display: flex;
+    gap: 9px;
+    position: relative;
+    width: fit-content;
+}
+
+.line-9 {
+    height: 1.5px;
+    min-width: 63.75px;
+    position: relative;
+}
+
+.frame-26 {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    position: relative;
+    width: fit-content;
+}
+
+.group-260 {
+    height: 36px;
+    min-width: 36px;
+    position: relative;
+}
+
+.overlap-group-4 {
+    align-items: center;
+    border-radius: 18px;
+    display: flex;
+    height: 36px;
+    min-width: 36px;
+}
+
+.overlap-group-3 {
+    background-color: var(--catskill-white);
+    justify-content: flex-end;
+    padding: 0 13.8px;
+}
+
+.number {
+    letter-spacing: 0;
+    line-height: 24px;
+    min-height: 18px;
+    min-width: 8px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.number-font-white {
+    letter-spacing: 0;
+    line-height: 24px;
+    min-height: 18px;
+    min-width: 6px;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: absolute;
+}
+
+.number-font-gray {
+    letter-spacing: 0;
+    line-height: 24px;
+    min-height: 18px;
+    min-width: 6px;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: gray;
+}
+
+.validate-data {
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.match-columns {
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.overlap-group-2 {
+    background-color: var(--catskill-white);
+    padding: 0 13.2px;
+}
+
+.overlap-group-1 {
+    background-color: var(--blue-dianne);
+    padding: 0 15px;
+}
+
+.number-1 {
+    letter-spacing: 0;
+    line-height: 24px;
+    min-height: 18px;
+    min-width: 6px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.bold-font {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+    color: #25474F;
+}
+
+.bold-number {
+    position: absolute;
+    width: 8px;
+    height: 18px;
+    left: 14.25px;
+    top: 9px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.group-283 {
+    align-items: flex-start;
+    align-self: stretch;
+    border-bottom-style: solid;
+    border-bottom-width: 0.75px;
+    border-color: var(--catskill-white);
+    display: flex;
+    flex-direction: column;
+    height: 36px;
+    justify-content: center;
+    position: relative;
+}
+
+.frame-504 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 36px;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+}
+
+.frame-454 {
+    align-items: center;
+    display: flex;
+    margin-bottom: -1.5px;
+    margin-top: -1.5px;
+    position: relative;
+    width: fit-content;
+}
+
+.frame-214 {
+    align-items: center;
+    background-color: var(--blue-dianne);
+    display: flex;
+    gap: 7.5px;
+    height: 36px;
+    justify-content: center;
+    padding: 9px 18px;
+    position: relative;
+    width: fit-content;
+}
+
+.import-excel-file {
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.frame-215 {
+    align-items: center;
+    display: flex;
+    gap: 7.5px;
+    height: 39px;
+    justify-content: center;
+    padding: 10.5px 17.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.manual-data-input {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+:root {
+    --black: rgba(0, 0, 0, 1);
+    --japanese-laurel: rgba(0, 159, 6, 1);
+    --cerulean: rgba(15, 179, 218, 1);
+    --persian-blue: rgba(20, 49, 200, 1);
+    --blue-dianne: rgba(37, 71, 79, 1);
+    --mineral-green: rgba(61, 91, 98, 1);
+    --tundora: rgba(70, 70, 70, 1);
+    --slate-gray: rgba(112, 126, 140, 1);
+    --oslo-gray: rgba(124, 145, 149, 1);
+    --milano-red: rgba(182, 10, 10, 1);
+    --silver: rgba(192, 192, 192, 1);
+    --geyser: rgba(206, 221, 225, 1);
+    --alto: rgba(217, 217, 217, 1);
+    --red: rgba(221, 0, 0, 1);
+    --mystic-2: rgba(231, 237, 239, 1);
+    --mystic: rgba(233, 235, 237, 1);
+    --tahiti-gold: rgba(234, 121, 16, 1);
+    --rice-flower: rgba(236, 249, 226, 1);
+    --porcelain: rgba(240, 243, 243, 1);
+    --wild-sand: rgba(241, 243, 244, 1);
+    --catskill-white: rgba(241, 246, 247, 1);
+    --catskill-white-2: rgba(242, 246, 247, 1);
+    --pippin: rgba(254, 227, 225, 1);
+    --solitaire: rgba(254, 250, 225, 1);
+    --white: rgba(255, 255, 255, 1);
+    --font-size-s: 7.9px;
+    --font-size-m: 10.5px;
+    --font-size-l: 12px;
+    --font-size-xl: 14px;
+    --font-size-xxl: 15px;
+    --font-size-xxxl: 16px;
+    --font-size-xxxxl: 21px;
+    --font-size-xxxxxl: 27px;
+    --font-family-inter: "Inter";
+    --font-family-oxygen: "Oxygen";
+}
+
+.inter-bold-tundora-10-5px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-normal-slate-gray-12px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-36px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 36px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-cerulean-10-5px {
+    color: var(--cerulean);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-16px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-10-5px2 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-medium-blue-dianne-10-5px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 500;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-15px2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-tundora-12px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-black-12px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-tundora-10-5px2 {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-black-12px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-7-9px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-slate-gray-10-5px2 {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: 10.5px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-slate-gray-14px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-14px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-12px-2 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-cerulean-15px {
+    color: var(--cerulean);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-10-5px-3 {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-silver-27px {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: 26.95787811279297px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-persian-blue-12px {
+    color: var(--persian-blue);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-silver-14px {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-tundora-14px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-tahiti-gold-8-2px {
+    color: var(--tahiti-gold);
+    font-family: var(--font-family-inter);
+    font-size: 8.25px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-9px {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: 9px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-bold-persian-blue-12px {
+    color: var(--persian-blue);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-semi-bold-silver-27px-2 {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: 27px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-black-14px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-black-10-5px-3 {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-cerulean-12px {
+    color: var(--cerulean);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-12px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-12px {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-bold-slate-gray-10-5px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-15px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-bold-milano-red-10-5px {
+    color: var(--milano-red);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-normal-oslo-gray-9px {
+    color: var(--oslo-gray);
+    font-family: var(--font-family-inter);
+    font-size: 9px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-blue-dianne-16px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-milano-red-8-2px {
+    color: var(--milano-red);
+    font-family: var(--font-family-inter);
+    font-size: 8.25px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.oxygen-bold-white-21px2 {
+    color: var(--white);
+    font-family: var(--font-family-oxygen);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-27px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 26.95787811279297px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-10-5px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-persian-blue-15px {
+    color: var(--persian-blue);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-red-10-5px {
+    color: var(--red);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-7-9px-2 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-oslo-gray-12px {
+    color: var(--oslo-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-black-10-5px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-9px-2 {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: 8.985960006713867px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-12px2 {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.oxygen-light-white-21px-2 {
+    color: var(--white);
+    font-family: var(--font-family-oxygen);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-15px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-27px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 27px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-14px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.oxygen-bold-blue-dianne-21px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-oxygen);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-semi-bold-slate-gray-16px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-slate-gray-15px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-blue-dianne-10-5px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-9px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 9px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-medium-tundora-10-5px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 500;
+    font-style: normal;
+}
+
+.inter-semi-bold-milano-red-10-5px {
+    color: var(--milano-red);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-tundora-16px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-bold-white-10-5px {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-normal-white-12px2 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-black-10-5px-2 {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-silver-12px-2 {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-blue-dianne-14px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-cerulean-10-5px-2 {
+    color: var(--cerulean);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-10-5px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-slate-gray-10-5px2 {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-persian-blue-10-5px2 {
+    color: var(--persian-blue);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-10-5px {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-14px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-medium-white-13-5px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: 13.5px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-28px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 28px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-slate-gray-8-2px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: 8.25px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-tundora-15px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-16px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-black-14px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-16px {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-tahiti-gold-11px {
+    color: var(--tahiti-gold);
+    font-family: var(--font-family-inter);
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-silver-10-5px-2 {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-slate-gray-16px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main-page {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    left: 255px;
+    position: fixed;
+    top: 108px;
+    width: 1126.5px;
+    height: 486px;
+}
+
+.inter-bold-tundora-10-5px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-normal-slate-gray-12px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-36px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 36px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-cerulean-10-5px {
+    color: var(--cerulean);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-16px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-10-5px2 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-medium-blue-dianne-10-5px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 500;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-15px2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-tundora-12px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-black-12px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-tundora-10-5px2 {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-black-12px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-7-9px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-slate-gray-10-5px2 {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-slate-gray-14px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-14px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-12px-2 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-cerulean-15px {
+    color: var(--cerulean);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-10-5px-3 {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-silver-27px {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: 26.95787811279297px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-persian-blue-12px {
+    color: var(--persian-blue);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-silver-14px {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-tundora-14px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-tahiti-gold-8-2px {
+    color: var(--tahiti-gold);
+    font-family: var(--font-family-inter);
+    font-size: 8.25px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-9px {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: 9px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-bold-persian-blue-12px {
+    color: var(--persian-blue);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-semi-bold-silver-27px-2 {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: 27px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-black-14px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-black-10-5px-3 {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-cerulean-12px {
+    color: var(--cerulean);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-12px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-12px {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-bold-slate-gray-10-5px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-15px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-bold-milano-red-10-5px {
+    color: var(--milano-red);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-normal-oslo-gray-9px {
+    color: var(--oslo-gray);
+    font-family: var(--font-family-inter);
+    font-size: 9px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-blue-dianne-16px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-milano-red-8-2px {
+    color: var(--milano-red);
+    font-family: var(--font-family-inter);
+    font-size: 8.25px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.oxygen-bold-white-21px2 {
+    color: var(--white);
+    font-family: var(--font-family-oxygen);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-27px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 26.95787811279297px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-10-5px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-persian-blue-15px {
+    color: var(--persian-blue);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-red-10-5px {
+    color: var(--red);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-7-9px-2 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-oslo-gray-12px {
+    color: var(--oslo-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-black-10-5px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-9px-2 {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: 8.985960006713867px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-12px2 {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.oxygen-light-white-21px-2 {
+    color: var(--white);
+    font-family: var(--font-family-oxygen);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inter-semi-bold-white-15px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-27px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 27px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-14px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.oxygen-bold-blue-dianne-21px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-oxygen);
+    font-size: var(--font-size-xxxxl);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-semi-bold-slate-gray-16px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-slate-gray-15px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-blue-dianne-10-5px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-9px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 9px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-medium-tundora-10-5px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 500;
+    font-style: normal;
+}
+
+.inter-semi-bold-milano-red-10-5px {
+    color: var(--milano-red);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-tundora-16px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-bold-white-10-5px {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-normal-white-12px2 {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-black-10-5px-2 {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-silver-12px-2 {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-blue-dianne-14px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-cerulean-10-5px-2 {
+    color: var(--cerulean);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-10-5px-2 {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-slate-gray-10-5px2 {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-persian-blue-10-5px2 {
+    color: var(--persian-blue);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-10-5px {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-14px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-medium-white-13-5px {
+    color: var(--white);
+    font-family: var(--font-family-inter);
+    font-size: 13.5px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.inter-semi-bold-blue-dianne-28px {
+    color: var(--blue-dianne);
+    font-family: var(--font-family-inter);
+    font-size: 28px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-slate-gray-8-2px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: 8.25px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-tundora-15px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-tundora-16px {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-semi-bold-black-14px {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-japanese-laurel-16px {
+    color: var(--japanese-laurel);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-semi-bold-tahiti-gold-11px {
+    color: var(--tahiti-gold);
+    font-family: var(--font-family-inter);
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-normal-silver-10-5px-2 {
+    color: var(--silver);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inter-normal-slate-gray-16px {
+    color: var(--slate-gray);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxxl);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.excel-frame {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+    top: 120px;
+}
+
+.frame-516-1 {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    position: relative;
+    width: fit-content;
+}
+
+.frame-212 {
+    align-items: center;
+    background-color: var(--white);
+    border: 0.9px solid;
+    border-color: var(--geyser);
+    display: flex;
+    gap: 7.5px;
+    height: 30px;
+    justify-content: center;
+    padding: 9px 18px;
+    position: relative;
+    width: fit-content;
+}
+
+.reupload-file {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 18px;
+    gap: 7.5px;
+    width: 102px;
+    height: 30px;
+    white-space: nowrap;
+}
+
+.your-excel-sheet {
+    color: var(--tundora);
+    font-family: var(--font-family-inter);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.excel-input-frame {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.excel-page {
+    background-color: #f1f3f4;
+    height: 357.75px;
+    width: 100%;
+    max-width: 1126.5px;
+    border: 0.75px solid #CEDDE1;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.frame-450 {
+    align-items: center;
+    background-color: var(--mystic);
+    display: flex;
+    height: 12px;
+    justify-content: space-between;
+    margin-top: 166px;
+    padding: 3px;
+    position: relative;
+    width: 1114px;
+}
+
+.iontriangle-sharp-3 {
+    height: 9px;
+    margin-bottom: -1.5px;
+    margin-top: -1.5px;
+    min-width: 6px;
+    position: relative;
+}
+
+.excelsheet-bottom {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: fit-content;
+    z-index: 1;
+}
+
+.iontriangle-sharp-2 {
+    height: 9px;
+    min-width: 6px;
+    position: relative;
+}
+
+.rectangle-235-1 {
+    background-color: var(--silver);
+    height: 9px;
+    min-width: 866.25px;
+    position: relative;
+}
+
+.excelsheet-right {
+    align-items: center;
+    align-self: flex-end;
+    background-color: var(--mystic);
+    display: flex;
+    height: 344.12px;
+    justify-content: space-between;
+    margin-top: 76px;
+    padding: 3px;
+    position: relative;
+    transform: rotate(90deg);
+    width: 12px;
+}
+
+.rectangle-235 {
+    background-color: var(--silver);
+    height: 9px;
+    min-width: 302.25px;
+    position: relative;
+}
+
+.iontriangle-sharp {
+    height: 6px;
+    margin-left: -1.5px;
+    min-width: 9px;
+    position: relative;
+    transform: rotate(-90deg);
+}
+
+.iontriangle-sharp-1 {
+    height: 6px;
+    margin-right: -1.5px;
+    min-width: 9px;
+    position: relative;
+    transform: rotate(-90deg);
+}
+
+.input-list {
+    align-items: flex-start;
+    display: flex;
+    position: relative;
+    width: fit-content;
+}
+
+.component {
+    align-items: center;
+    border-color: var(--geyser);
+    display: flex;
+    height: 30px;
+    padding: 9px;
+    position: relative;
+    width: 150px;
+    justify-content: flex-start;
+}
+
+.number-7 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.number-8 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.component-3 {
+    border-bottom-style: solid;
+    border-bottom-width: 0.75px;
+    height: 30px;
+    min-width: 150px;
+}
+
+.applyu47-metadatabase-inputu47import-excel-fileu47-upload-file .component-4 {
+    border-color: var(--geyser);
+    position: relative;
+}
+
+.component-1 {
+    align-items: center;
+    display: flex;
+    gap: 7.5px;
+    height: 30px;
+    padding: 9px;
+    width: 76.5px;
+}
+
+.place-1 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.component-2 {
+    align-items: center;
+    background-color: var(--catskill-white);
+    border-bottom-style: solid;
+    border-bottom-width: 0.75px;
+    border-right-style: solid;
+    border-right-width: 0.75px;
+    display: flex;
+    gap: 7.5px;
+    height: 30px;
+    padding: 9px;
+    width: 150px;
+}
+
+.applyu47-metadatabase-inputu47import-excel-fileu47-upload-file .gh-1234567-3 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.frame-511-1 {
+    align-items: flex-start;
+    display: flex;
+    margin-right: -73.5px;
+    position: relative;
+    width: 1200px;
+}
+
+.yes-1 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.number-5 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.date-1 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.e-rdfa {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.breast-1 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.tnbc {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.number-6 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.date {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.gh-1234567 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.breast {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.yes {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.number-2 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.number-3 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.er {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.number-4 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.primary-region {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.grade {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.dob {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.surgery {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.height-cm {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.id {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.weight-kg {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.subtype {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.25px;
+    position: relative;
+    width: fit-content;
+}
+
+.main-frame {
+    display: flex;
+    position: relative;
+    width: 1245px;
+    margin-left: 195px;
+    height: 810px;
+}
+
+.excel-table {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+}
+
+.excel-table-row {
+    display: flex;
+    width: 100%;
+    border-bottom: 0.75px solid #CEDDE1;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.excel-table-cell {
+    box-sizing: border-box;
+    min-width: 150px;
+    max-width: 150px;
+    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    padding: 9px;
+    text-align: left;
+    vertical-align: middle;
+    font-family: 'Inter';
+    font-size: 10.5px;
+    word-wrap: break-word;
+    margin: none;
+}
+
+.In-progress {
+    box-sizing: border-box;
+    width: 1130px;
+    height: 780px;
+    left: 253.5px;
+    top: 78px;
+    gap: 27px;
+    position: fixed;
+}
+
+.fp-title {
+    width: 94px;
+    height: 18px;
+    font-family: "Inter";
+    font-size: 15px;
+    line-height: 18.15px;
+    color: #464646;
+    top: 0px;
+    left: 0px;
+}
+
+.progress-layout {
+    margin-top: 12px;
+    width: 900px;
+    height: 193.5px;
+    border-radius: 8px;
+    background-color: #F2F6F7;
+    display: flex;
+}
+
+.progress-box {
+    width: 180px;
+    height: 193.5px;
+    padding: 28px 26px;
+    gap: 7.5px;
+    display: flex;
+    text-align: center;
+}
+
+.progress-frame {
+    width: 129px;
+    height: 138px;
+}
+
+.progress-font {
+    font-family: "inter";
+    font-size: 12px;
+    line-height: 18px;
+    word-wrap: break-word;
+    margin-bottom: 30px;
+}
+
+.progress-time {
+    margin-top: 30px;
+}
+
+.progress-layout2 {
+    width: 1126.5px;
+    height: 283.5px;
+    gap: 12px;
+    overflow: auto;
+}
+
+.ap-title {
+    width: 114px;
+    height: 18px;
+    font-family: "Inter";
+    font-size: 15px;
+    line-height: 18.15px;
+    color: #25474F;
+    top: 0px;
+    left: 0px;
+}
+
+.progress-layout3 {
+    position: absolute;
+    right: -50 px;
+    width: 1126.5px;
+    height: 191.5px;
+    gap: 27px;
+    border-top: 0.75px solid #F2F6F7;
+}
+
+.summary-box {
+    width: 535px;
+    height: 164.5px;
+    gap: 12px;
+    margin-top: 27px;
+    right: 0px;
+    position: absolute;
+    display: flex;
+}
+
+.order-summary {
+    width: 236.5px;
+    height: 71.1px;
+    gap: 9px;
+}
+
+.order-top {
+    width: 236.5px;
+    height: 18px;
+    display: flex;
+    position: relative;
+}
+
+.order-top1 {
+    position: absolute;
+    color: #464646;
+    font-size: 10.5px;
+    line-height: 15.75px;
+    font-family: "inter";
+    top: 1.51px;
+    left: 163px;
+}
+
+.order-line {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    border-top: 0.75px solid #E9EBED;
+}
+
+.amount-box {
+    width: 238.5px;
+    height: 136.5px;
+    gap: 9px;
+    position: relative;
+}
+
+.amount-top {
+    width: 238.5px;
+    height: 48px;
+    gap: 9px;
+    padding-left: 33px;
+    padding-bottom: 9px;
+}
+
+.amount-bottom {
+    width: 161.75px;
+    height: 79.5px;
+    padding: 3px 9px 3px 9px;
+    gap: 7.5px;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+}
+
+.database-update {
+    margin-top: 12px;
+    width: 1126.5px;
+    height: 253.5px;
+    border: 0.75px solid #CEDDE1;
+    overflow: auto;
+}
+
+.summary-font {
+    font-size: 12px;
+    line-height: 18px;
+    color: #464646;
+    font-family: "Inter";
+}
+
+.summary-font1 {
+    font-size: 10.5px;
+    line-height: 15.75px;
+    color: #717F8C;
+    font-family: "Inter";
+}
+
+.right-position {
+    position: absolute;
+    left: 204px;
+    top: 36px;
+}
+
+.amount-top1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: middle;
+}
+
+.total-amount {
+    display: flex;
+    gap: 7.75px;
+    width: 200px;
+    text-align: right;
+}
+
+.total-amount2 {
+    word-wrap: break-word;
+    font-family: "Inter";
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #C0C0C0;
+}
+
+.total-amount3 {
+    text-decoration: line-through;
+    font-family: "Inter";
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    color: #C0C0C0;
+}
+
+.freemium {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    text-align: right;
+    padding-left: 16px;
+}
+
+.freemium2 {
+    font-family: "inter";
+    font-size: 10.5px;
+    line-height: 15.75px;
+    color: #0FB4DB;
+}
+
+.freemium3 {
+    font-family: Inter;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #25474F;
+}
+
+.excel-514-44 {
+    display: flex;
+    width: 100%;
+    background: #FFFFFF;
+    border: 0.75px solid #CEDDE1;
+    border-bottom: none;
+}

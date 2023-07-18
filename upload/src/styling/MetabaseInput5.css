@@ -1,0 +1,26 @@
+.input-style {
+    border: none;
+    padding: 9px;
+    text-align: left;
+    vertical-align: middle;
+    font-family: 'Inter';
+    font-size: 10.5px;
+    word-wrap: break-word;
+}
+
+.input-box {
+    overflow: hidden;
+    width: 150px;
+    height: 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.errorbox {
+    width: 350px;
+    height: 54px;
+    border: 0.75px solid #DD0000;
+    background-color: #FFE3E1;
+}
