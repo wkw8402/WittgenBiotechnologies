@@ -39,7 +39,7 @@ export default function () {
 
 
   function SampleTable() {
-    const [selectedSample, setSelectedSample] = useState(null);
+    const [selectedSample, setSelectedSample] = useState(dataObject[0].sample);
 
     const handleClick = (sample) => {
       setSelectedSample(sample);

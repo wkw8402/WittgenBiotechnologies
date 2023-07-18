@@ -576,31 +576,6 @@
     align-items: center;
 }
 
-.myfiles-icon {
-    width: 12px;
-    height: 15px;
-}
-
-.cost-usage-icon {
-    width: 15px;
-    height: 15px;
-}
-
-.setting-icon {
-    width: 15px;
-    height: 15px;
-}
-
-.faq-support-icon {
-    width: 12.75px;
-    height: 15px;
-}
-
-.logout-icon {
-    width: 13.5px;
-    height: 13.5px;
-}
-
 .frame-top {
     display: flex;
     flex-direction: column;

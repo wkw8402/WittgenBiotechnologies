@@ -147,11 +147,11 @@ export default function () {
 
   useEffect(() => {
     setProgress({
-      applicationSubmitted: 'completed',
-      dataCuration: 'completed',
-      dataPreProcessing: 'completed',
-      mlModel: 'completed',
-      fileComplete: 'completed',
+      applicationSubmitted: '',
+      dataCuration: '',
+      dataPreProcessing: '',
+      mlModel: '',
+      fileComplete: '',
     });
     setProgressTime({
       applicationSubmitted: '2023-06-28 10:00',

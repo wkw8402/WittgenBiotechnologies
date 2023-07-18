@@ -15,6 +15,8 @@ import MyFiles1 from "./pages/MyFiles1";
 import MyFiles2 from "./pages/MyFiles2";
 import Payment1 from "./pages/Payment1";
 import Payment2 from "./pages/Payment2";
+import Complete from "./pages/Complete";
+import CostUsage from "./pages/CostUsage";
 import Register from "./pages/Register";
 import Submitted from "./pages/Submitted";
 import VerifyCode from "./pages/VerifyCode";
@@ -30,6 +32,8 @@ function App() {
         <Route path="/verify_code" element={<VerifyCode />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/my_files_1" element={<MyFiles1 />}></Route>
+        <Route path="/Complete" element={<Complete />}></Route>
+        <Route path="/CostUsage" element={<CostUsage />}></Route>
         {/* <Route path="/my_files_2" element={<MyFiles2 />}></Route>
         <Route path="/getting_started_1" element={<GettingStarted1 />}></Route>
         <Route path="/getting_started_2" element={<GettingStarted2 />}></Route> */}
