@@ -74,7 +74,291 @@ export default function () {
             lastEdited: "111/13/2232",
             status: "Pending",
             amount: "$900",
+        }, {
+            fileId: "Memory Usage Upgrade",
+            service: "",
+            lastEdited: "",
+            status: "Pending",
+            amount: "$50",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Pending",
+            amount: "$150",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$130",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Failed",
+            amount: "$250",
+        },
+        {
+            fileId: "GH-1234325",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$500",
+        },
+        {
+            fileId: "GH-1145",
+            service: "Research",
+            lastEdited: "11/43/2022",
+            status: "Done",
+            amount: "$260",
+        },
+        {
+            fileId: "GH-345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$90",
+        },
+        {
+            fileId: "GH-1231345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$900",
+        },
+        {
+            fileId: "Memory Usage Upgrade",
+            service: "",
+            lastEdited: "",
+            status: "Pending",
+            amount: "$50",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Pending",
+            amount: "$150",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$130",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Failed",
+            amount: "$250",
+        },
+        {
+            fileId: "GH-1234325",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$500",
+        },
+        {
+            fileId: "GH-1145",
+            service: "Research",
+            lastEdited: "11/43/2022",
+            status: "Done",
+            amount: "$260",
+        },
+        {
+            fileId: "GH-345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$90",
+        },
+        {
+            fileId: "GH-1231345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$900",
+        },
+        {
+            fileId: "Memory Usage Upgrade",
+            service: "",
+            lastEdited: "",
+            status: "Pending",
+            amount: "$50",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Pending",
+            amount: "$150",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$130",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Failed",
+            amount: "$250",
+        },
+        {
+            fileId: "GH-1234325",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$500",
+        },
+        {
+            fileId: "GH-1145",
+            service: "Research",
+            lastEdited: "11/43/2022",
+            status: "Done",
+            amount: "$260",
+        },
+        {
+            fileId: "GH-345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$90",
+        },
+        {
+            fileId: "GH-1231345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$900",
+        },
+        {
+            fileId: "Memory Usage Upgrade",
+            service: "",
+            lastEdited: "",
+            status: "Pending",
+            amount: "$50",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Pending",
+            amount: "$150",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$130",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Failed",
+            amount: "$250",
+        },
+        {
+            fileId: "GH-1234325",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$500",
+        },
+        {
+            fileId: "GH-1145",
+            service: "Research",
+            lastEdited: "11/43/2022",
+            status: "Done",
+            amount: "$260",
+        },
+        {
+            fileId: "GH-345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$90",
+        },
+        {
+            fileId: "GH-1231345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$900",
+        },
+        {
+            fileId: "Memory Usage Upgrade",
+            service: "",
+            lastEdited: "",
+            status: "Pending",
+            amount: "$50",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Pending",
+            amount: "$150",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$130",
+        },
+        {
+            fileId: "GH-123445",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Failed",
+            amount: "$250",
+        },
+        {
+            fileId: "GH-1234325",
+            service: "Clincal",
+            lastEdited: "11/13/2022",
+            status: "Done",
+            amount: "$500",
+        },
+        {
+            fileId: "GH-1145",
+            service: "Research",
+            lastEdited: "11/43/2022",
+            status: "Done",
+            amount: "$260",
+        },
+        {
+            fileId: "GH-345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$90",
+        },
+        {
+            fileId: "GH-1231345",
+            service: "Clincal",
+            lastEdited: "111/13/2232",
+            status: "Pending",
+            amount: "$900",
         }
+
+
+
+
+
 
     ];
 
@@ -94,7 +378,7 @@ export default function () {
 
 
     // Manage currentPage as status
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1)
 
     // Function that runs when you click on a page number
     const handlePageClick = (page) => {
@@ -109,8 +393,29 @@ export default function () {
 
     // Page Components
     function Pagination() {
+        let startPage;
+        let endPage;
+    
+        // If there are 5 or less pages
+        if (totalPages <= 5) {
+            startPage = 1;
+            endPage = totalPages;
+        } else {
+            // If there are more than 5 pages
+            if (currentPage <= 3) {
+                startPage = 1;
+                endPage = 5;
+            } else if (currentPage + 2 >= totalPages) {
+                startPage = totalPages - 4;
+                endPage = totalPages;
+            } else {
+                startPage = currentPage - 2;
+                endPage = currentPage + 2;
+            }
+        }
+
         let pages = [];
-        for (let i = 1; i <= totalPages; i++) {
+        for (let i = startPage; i <= endPage; i++) {
             pages.push(
                 <button
                     className={`page-btn ${currentPage === i ? 'page-btn-circle' : ''}`}  // Display the currently selected page
