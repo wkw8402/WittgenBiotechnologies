@@ -172,6 +172,17 @@
     margin-bottom: 45px;
 }
 
+.cost-page-list{
+    position: absolute;
+    width:249px;
+    height:27px;
+    top: 0px;
+    right:0px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
 .cost-title-box {
     position: relative;
     width: 100%;
@@ -179,6 +190,29 @@
     justify-content: center;
     display: flex;
     align-items: center;
+}
+
+.page-btn{
+    font-family: "Inter";
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #717F8C;
+    border: none;
+    background: none;
+}
+
+.page-btn-circle{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    height: 27px;
+    background: #E9EBED;
+    color: #464646;
+    border-radius: 50%;
 }
 
 .rectangle-skyblue {
@@ -388,6 +422,14 @@
     position: relative;
     width: 100%;
     height: 408px;
+}
+
+.cost-page-maintop {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 36px;
+    display: flex;
 }
 
 .cost-page-payment {

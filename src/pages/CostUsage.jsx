@@ -2,9 +2,7 @@ import "../styling/CostUsage.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import "../styling/MetabaseInput2.css";
-import "../styling/CostUsage.css";
-import React, { useState, useEffect, useRef } from 'react';
-
+import React, { useState } from 'react';
 
 
 export default function () {
@@ -91,7 +89,54 @@ export default function () {
         }
     };
 
+    //number of items
+    const ITEMS_PER_PAGE = 7;
+
+
+    // Manage currentPage as status
+    const [currentPage, setCurrentPage] = useState(1);
+
+    // Function that runs when you click on a page number
+    const handlePageClick = (page) => {
+        setCurrentPage(page);
+    };
+
+    // Calculate the total number of pages
+    const totalPages = Math.ceil(FilesObject.length / ITEMS_PER_PAGE);
+
+    const itemsToShow = FilesObject.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
+
+
+    // Page Components
+    function Pagination() {
+        let pages = [];
+        for (let i = 1; i <= totalPages; i++) {
+            pages.push(
+                <button
+                    className={`page-btn ${currentPage === i ? 'page-btn-circle' : ''}`}  // Display the currently selected page
+                    key={i}
+                    onClick={() => handlePageClick(i)}
+                    disabled={i === currentPage}
+                >
+                    {i}
+                </button>
+            );
+        }
+
+        return (
+            <div>
+                <button className="page-btn" onClick={() => handlePageClick(1)} disabled={currentPage === 1}>{"<<"}</button>
+                <button className="page-btn" onClick={() => handlePageClick(currentPage - 1)} disabled={currentPage === 1}>{"<"}</button>
+                {pages}
+                <button className="page-btn" onClick={() => handlePageClick(currentPage + 1)} disabled={currentPage === totalPages}>{">"}</button>
+                <button className="page-btn" onClick={() => handlePageClick(totalPages)} disabled={currentPage === totalPages}>{">>"}</button>
+            </div>
+        );
+    }
+
     function PaymentTable() {
+        // Extract items to display
+
         return (
             <div className="payment-table">
                 <div className="payment-row-top">
@@ -103,7 +148,7 @@ export default function () {
                         </div>
                     ))}
                 </div>
-                {FilesObject.map((row, index) => (
+                {itemsToShow.map((row, index) => (
                     <div className="payment-row" key={index}>
                         {Object.entries(row).map(([key, value], cellIndex) => (
                             <div className={cellIndex === 0 ? "payment-first-cell" : "payment-cell"}
@@ -113,6 +158,11 @@ export default function () {
                                 {value}
                             </div>
                         ))}
+                        <div className="payment-cell">
+                            <img
+                                src="/image/download_fill_icon.svg"
+                                alt="Download Invoice" />
+                        </div>
                     </div>
                 ))}
             </div>
@@ -218,34 +268,28 @@ export default function () {
                             </div>
                             <div className="skyblue-line2"></div>
                             <div className="cost-title-font3">$500/ to be charged March 15th, 2023</div>
-                            <div className="update-box">
-                                <div className="update-font">Update membership plan</div>
-                            </div>
+
                         </div>
-                        <div className="cost-title-box2">
-                            <div className="cost-bottom-1">Current Quota Usage (Membership only)</div>
-                            <div className="cost-bottom-2">Update usage</div>
-                            <div className="cost-bottom-3">Using 5.45 TB of quota 6 TB</div>
-                            <div className="cost-bottom-4">45%</div>
-                            <div className="cost-bottom-5"></div>
-                        </div>
+
                     </div>
 
                     <div className="cost-page-main-2">
-                        <div className="cost-page-payment">Payments</div>
-                        <div className="cost-serach-box">
-                            <img
-                                style={{ marginRight: '9px' }}
-                                src="/image/cost-serach-icon.svg"
-                                alt="search-icon"
-                            />
-                            Search
-                        </div>
-                        <div className="cost-search-bottom">
-                            Search
-                        </div>
-                        <div className="cost-page-list">
-                            12345
+                        <div className="cost-page-maintop">
+                            <div className="cost-page-payment">Payments</div>
+                            <div className="cost-serach-box">
+                                <img
+                                    style={{ marginRight: '9px' }}
+                                    src="/image/cost-serach-icon.svg"
+                                    alt="search-icon"
+                                />
+                                Search
+                            </div>
+                            <div className="cost-search-bottom">
+                                Search
+                            </div>
+                            <div className="cost-page-list">
+                                <Pagination />
+                            </div>
                         </div>
                     </div>
                     <PaymentTable />
