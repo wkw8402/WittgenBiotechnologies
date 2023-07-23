@@ -204,7 +204,7 @@ export default function Sample()  {
     <>
   <head>
 
-      <meta charSet="utf-8" />
+  <meta charSet="utf-8" />
       {/*<meta name=description content="This site was generated with Anima. www.animaapp.com"/>*/}
       {/* <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> */}
       <meta name="viewport" content="width=1920, maximum-scale=1.0" />
@@ -227,7 +227,7 @@ export default function Sample()  {
             <div class="group-184">
               <div class="overlap-group">
                 <div class="witt-gen-portal oxygen-bold-white-21px">
-                  <span class="oxygen-bold-white-21px">WittGen</span><span class="oxygen-light-white-21px">Portal</span>
+                  <span class="oxygen-bold-white-21px" style={{ fontSize: '21px' }}>WittGen</span><span class="oxygen-light-white-21px" style={{ fontSize: '21px' }}>Portal</span>
                 </div>
               </div>
               {/*<img class="line-79" src="img/line-79-12.svg" alt="Line 79" />*/}
@@ -239,7 +239,7 @@ export default function Sample()  {
                   src="home-fill0-wght400-grad0-opsz48-1.svg"
                   alt="home_FILL0_wght400_GRAD0_opsz48 1"
                 />
-                <div class="dashboard inter-normal-white-12px">Dashboard</div>
+                <div class="dashboard inter-normal-white-12px" style={{ fontSize: '12px' }}>Dashboard</div>
               </div>
               <div class="frame-185-item">
                 <img
@@ -247,7 +247,7 @@ export default function Sample()  {
                   src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
                   alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <div class="my-files inter-semi-bold-white-16px">My files</div>
+                <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' }}>My files</div>
               </div>
               <div class="frame-185-item">
                 <img
@@ -255,7 +255,7 @@ export default function Sample()  {
                   src="paid-fill0-wght400-grad0-opsz48-1.svg"
                   alt="paid_FILL0_wght400_GRAD0_opsz48 1"
                 />
-                <div class="cost-usage inter-normal-white-12px">Cost &amp; Usage</div>
+                <div class="cost-usage inter-normal-white-12px" style={{ fontSize: '12px' }}>Cost &amp; Usage</div>
               </div>
               <div class="frame-185-item">
                 <img
@@ -263,7 +263,7 @@ export default function Sample()  {
                   src="settings-fill0-wght400-grad0-opsz48-1.svg"
                   alt="settings_FILL0_wght400_GRAD0_opsz48 1"
                 />
-                <div class="settings inter-normal-white-12px">Settings</div>
+                <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' }}>Settings</div>
               </div>
               <div class="frame-185-item">
                 <img
@@ -271,7 +271,7 @@ export default function Sample()  {
                   src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
                   alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <div class="faq-support inter-normal-white-12px">FAQ / Support</div>
+                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px' }}>FAQ / Support</div>
               </div>
             </div>
             <div class="logout">
@@ -280,21 +280,21 @@ export default function Sample()  {
                 src="logout-fill0-wght400-grad0-opsz48-1.svg"
                 alt="logout_FILL0_wght400_GRAD0_opsz48 1"
               />
-              <div class="logout-1 inter-normal-white-12px">Logout</div>
+              <div class="logout-1 inter-normal-white-12px" style={{ fontSize: '12px' }}>Logout</div>
             </div>
           </div>
         </div>
         <div class="back-next">
           <div class="frame-616">
-            <div class="back-button"><div class="place inter-semi-bold-blue-dianne-10-5px">Back</div></div>
-            <div class="next-button"><div class="next inter-semi-bold-white-10-5px">Next</div></div>
+            <div class="back-button"><div class="place inter-semi-bold-blue-dianne-10-5px" style={{ fontSize: '14px' }}>Back</div></div>
+            <div class="next-button"><div class="next inter-semi-bold-white-10-5px" style={{ fontSize: '14px' }}>Next</div></div>
           </div>
         </div>
         <div class="frame-563">
           <div class="frame-350">
             <div class="frame-258">
               <div class="frame-49">
-                <div class="getting-started inter-normal-japanese-laurel-9px">Getting started</div>
+                <div class="getting-started inter-normal-japanese-laurel-9px" style={{ fontSize: '12px' }}>Getting started</div>
                 <div class="rectangle-228"></div>
               </div>
               <div class="frame-49">
@@ -306,15 +306,15 @@ export default function Sample()  {
                 <div class="rectangle-228-1 rectangle-228-3"></div>
               </div>
               <div class="frame-49">
-                <div class="submit inter-normal-oslo-gray-9px">Submit</div>
+                <div class="submit inter-normal-oslo-gray-9px" style={{ fontSize: '12px' }}>Submit</div>
                 <div class="rectangle-228-2 rectangle-228-3"></div>
               </div>
             </div>
             <div class="frame-213">
               <div class="component-33">
-                <div class="x-exit inter-semi-bold-blue-dianne-7-9px">Discard &amp; Exit</div>
+                <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '12px' }}>Discard &amp; Exit</div>
               </div>
-              <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px">Save &amp; Exit</div></div>
+              <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }}>Save &amp; Exit</div></div>
             </div>
           </div>
         </div> 
@@ -343,7 +343,7 @@ export default function Sample()  {
               <th scope="col" class="component-104">
                 <div class="database-category database inter-semi-bold-slate-gray-10-5px">Database category</div>
               </th>
-              <th scope="col" class="component-105">
+              <th scope="col" class="component-105" style={{ height: '30px' }}>
                 <div class="database-file database inter-semi-bold-slate-gray-10-5px">Database file</div>
               </th>
               <th scope="col" class="component-10"></th>
@@ -364,7 +364,7 @@ export default function Sample()  {
                   />
                 </td>
                 <td class="component">
-                  <div class="inter-normal-tundora-10-5px">{item.title}</div>
+                  <div class="inter-normal-tundora-10-5px" style={{ fontSize: '10.5px' }}>{item.title}</div>
                 </td>
                 <td class="component-6">
                   <select
@@ -397,29 +397,29 @@ export default function Sample()  {
                     src="error-fill0-wght400-grad0-opsz48-1.svg"
                     alt="error_FILL0_wght400_GRAD0_opsz48 1"
                   />
-                  <div class="important inter-semi-bold-milano-red-8-2px">Important</div>
+                  <div class="important inter-semi-bold-milano-red-8-2px" style={{ fontSize: '8.25px' }}>Important</div>
                 </div>
-                <p class="please-upload-your-d inter-normal-black-10-5px">
+                <p class="please-upload-your-d inter-normal-black-10-5px" style={{ fontSize: '10.5px' }}>
                   Please upload your database file(s) accordingly (in no particular order):
                 </p>
               </div>
               <div class="frame-5">
                 <div class="frame-5-1 frame-5-3">
-                  <div class="frame-4"><div class="seurat-1 inter-semi-bold-black-10-5px">Seurat</div></div>
-                  <div class="frame-44"><div class="rds inter-normal-black-10-5px">RDS</div></div>
+                  <div class="frame-4"><div class="seurat-1 inter-semi-bold-black-10-5px" style={{ fontSize: '10.5px' }}>Seurat</div></div>
+                  <div class="frame-44"><div class="rds inter-normal-black-10-5px" style={{ fontSize: '10.5px' }}>RDS</div></div>
                 </div>
                 <div class="frame-5-1 frame-5-3">
                   <div class="frame-440">
-                    <div class="fast-queue-1 fast-queue-3 inter-semi-bold-black-10-5px">FastQ</div>
+                    <div class="fast-queue-1 fast-queue-3 inter-semi-bold-black-10-5px" style={{ fontSize: '10.5px' }}>FastQ</div>
                   </div>
-                  <div class="frame-443 inter-normal-black-10-5px">
+                  <div class="frame-443 inter-normal-black-10-5px" style={{ fontSize: '10.5px' }}>
                     <div class="fast-queue-1-1">FastQ #1</div>
                     <div class="fast-queue-2 fast-queue-3">FastQ #2</div>
                   </div>
                 </div>
                 <div class="frame-5-1 frame-5-3">
-                  <div class="frame-4"><div class="cell-ranger-1 inter-semi-bold-black-10-5px">Cell Ranger</div></div>
-                  <div class="frame-44 inter-normal-black-10-5px">
+                  <div class="frame-4"><div class="cell-ranger-1 inter-semi-bold-black-10-5px" style={{ fontSize: '10.5px' }}>Cell Ranger</div></div>
+                  <div class="frame-44 inter-normal-black-10-5px" style={{ fontSize: '10.5px' }}>
                     <div class="bar-code">Bar code</div>
                     <div class="feature">Feature</div>
                     <div class="matrix">Matrix</div>

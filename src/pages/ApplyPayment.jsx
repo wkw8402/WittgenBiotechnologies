@@ -22,10 +22,8 @@ export default function Sample()  {
     {id: 3, title: 'GH-1234567d'},
     {id: 4, title: 'GH-1234567e'},
     {id: 5, title: 'GH-1234567f'},
-    {id: 6, title: 'GH-1234567g'},
-    {id: 7, title: 'GH-1234567h'},
-    {id: 8, title: 'GH-1234567i'},
-    {id: 9, title: 'GH-1234567j'},
+    
+    
   ]);
 
   
@@ -35,13 +33,6 @@ export default function Sample()  {
       openModal();
     } else {
       setDeleteMultipleMode((prevDeleteMultipleMode) => !prevDeleteMultipleMode);
-      setButtonStyle((prevButtonStyle) => ({
-        ...prevButtonStyle,
-        deleteMultiple: {
-          backgroundColor: deleteMultipleMode ? "var(--cerulean)" : "",
-          color: deleteMultipleMode ? "white" : "",
-        },
-      }));
     }
   };
 
@@ -277,12 +268,12 @@ function toggleTable(checked) {
         <input type="hidden" id="anPageName" name="page" value="applyu47-database-input" />
       <div class="container-center-horizontal">
         <div class="applyu47-database-input screen">
-          <div class="main-navigation">
-            <div class="overlap-group1">
-              <div class="group-184">
-                <div class="overlap-group">
-                  <div class="witt-gen-portal oxygen-bold-white-21px">
-                    <span class="oxygen-bold-white-21px">WittGen</span><span class="oxygen-light-white-21px">Portal</span>
+        <div class="main-navigation">
+          <div class="overlap-group1">
+            <div class="group-184">
+              <div class="overlap-group">
+                <div class="witt-gen-portal oxygen-bold-white-21px">
+                  <span class="oxygen-bold-white-21px" style={{ fontSize: '21px' }}>WittGen</span><span class="oxygen-light-white-21px" style={{ fontSize: '21px' }}>Portal</span>
                 </div>
               </div>
               {/*<img class="line-79" src="img/line-79-12.svg" alt="Line 79" />*/}
@@ -294,7 +285,7 @@ function toggleTable(checked) {
                   src="home-fill0-wght400-grad0-opsz48-1.svg"
                   alt="home_FILL0_wght400_GRAD0_opsz48 1"
                 />
-                <div class="dashboard inter-normal-white-12px">Dashboard</div>
+                <div class="dashboard inter-normal-white-12px" style={{ fontSize: '12px' }}>Dashboard</div>
               </div>
               <div class="frame-185-item">
                 <img
@@ -302,7 +293,7 @@ function toggleTable(checked) {
                   src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
                   alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <div class="my-files inter-semi-bold-white-16px">My files</div>
+                <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' }}>My files</div>
               </div>
               <div class="frame-185-item">
                 <img
@@ -310,7 +301,7 @@ function toggleTable(checked) {
                   src="paid-fill0-wght400-grad0-opsz48-1.svg"
                   alt="paid_FILL0_wght400_GRAD0_opsz48 1"
                 />
-                <div class="cost-usage inter-normal-white-12px">Cost &amp; Usage</div>
+                <div class="cost-usage inter-normal-white-12px" style={{ fontSize: '12px' }}>Cost &amp; Usage</div>
               </div>
               <div class="frame-185-item">
                 <img
@@ -318,7 +309,7 @@ function toggleTable(checked) {
                   src="settings-fill0-wght400-grad0-opsz48-1.svg"
                   alt="settings_FILL0_wght400_GRAD0_opsz48 1"
                 />
-                <div class="settings inter-normal-white-12px">Settings</div>
+                <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' }}>Settings</div>
               </div>
               <div class="frame-185-item">
                 <img
@@ -326,7 +317,7 @@ function toggleTable(checked) {
                   src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
                   alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <div class="faq-support inter-normal-white-12px">FAQ / Support</div>
+                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px' }}>FAQ / Support</div>
               </div>
             </div>
             <div class="logout">
@@ -335,7 +326,7 @@ function toggleTable(checked) {
                 src="logout-fill0-wght400-grad0-opsz48-1.svg"
                 alt="logout_FILL0_wght400_GRAD0_opsz48 1"
               />
-              <div class="logout-1 inter-normal-white-12px">Logout</div>
+              <div class="logout-1 inter-normal-white-12px" style={{ fontSize: '12px' }}>Logout</div>
             </div>
           </div>
         </div>
@@ -597,7 +588,7 @@ function toggleTable(checked) {
                 <div class="frame-587">
                   <div class="frame-58-1a">
                     <div class="subtotal inter-normal-slate-gray-10-5px-2">Subtotal:</div>
-                    <div class="price-2 inter-semi-bold-tundora-12px">$300</div>
+                    <div class="price-2 inter-semi-bold-tundora-12px">${data.length * 100}</div>
                   </div>
                   <div class="frame-58-1">
                     <div class="group-387"><div class="taxes10 inter-normal-slate-gray-10-5px-2">Taxes(10%)</div></div>
