@@ -298,11 +298,11 @@ export default function Sample()  {
                 <div class="rectangle-228"></div>
               </div>
               <div class="frame-49">
-                <div class="database-input database inter-normal-japanese-laurel-16px">Metadatabase Input</div>
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Metadatabase Input</div>
                 <div class="rectangle-228"></div>
               </div>
               <div class="frame-49">
-                <div class="database-input database inter-semi-bold-blue-dianne-16px">Database Input</div>
+                <div class="database-input database inter-semi-bold-blue-dianne-16px" style={{ fontSize: '12px' }}>Database Input</div>
                 <div class="rectangle-228-1 rectangle-228-3"></div>
               </div>
               <div class="frame-49">
