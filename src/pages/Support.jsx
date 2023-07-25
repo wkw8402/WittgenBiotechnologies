@@ -47,7 +47,7 @@ export default function Sample() {
                   src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
                   alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' }}>My files</div>
+                <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' , fontWeight: 400 }}>My files</div>
               </div>
               <div class="frame-185-item">
                 <img
@@ -71,7 +71,7 @@ export default function Sample() {
                   src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
                   alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px' }}>FAQ / Support</div>
+                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px',  fontWeight: 600 }}>FAQ / Support</div>
               </div>
             </div>
             <div class="logout">
