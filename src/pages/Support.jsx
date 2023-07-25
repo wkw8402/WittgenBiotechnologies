@@ -93,27 +93,27 @@ export default function Sample() {
               </div>
               <div class="frame-683 frame-1">
                 <div class="group-464">
-                  <p class="learn-how-to-apply-f inter-semi-bold-tundora-15px">
+                  <p class="learn-how-to-apply-f inter-semi-bold-tundora-15px" style={{ fontSize: '15px' }}>
                     Learn how to apply for and receive your clinical report
                   </p>
-                  <div class="frame-670 frame-1"><div class="learn-now inter-semi-bold-white-12px">Learn now</div></div>
+                  <div class="frame-670 frame-1"><div class="learn-now inter-semi-bold-white-12px" style={{ fontSize: '12px' }}>Learn now</div></div>
                 </div>
               </div>
             </div>
             <div class="frame">
               <div class="frame-464 frame-1">
                 <img class="icon" src="icon-18.svg" alt="icon" />
-                <div class="contact-us inter-semi-bold-blue-dianne-27px">Contact Us</div>
+                <div class="contact-us inter-semi-bold-blue-dianne-27px" style={{ fontSize: '27px' }}>Contact Us</div>
               </div>
               <div class="frame-464-1 frame-464-3">
-                <p class="get-in-touch-and-let inter-normal-black-12px">
+                <p class="get-in-touch-and-let inter-normal-black-12px" style={{ fontSize: '12px' }}>
                   Get in touch and let us know how we can help. We accept all inquiries,<br />including technical
                   questions and partnership opportunities.
                 </p>
                 <div class="frame-464-2 frame-464-3">
-                  <div class="infowittgenbiocom inter-semi-bold-blue-dianne-12px">info@wittgenbio.com</div>
+                  <div class="infowittgenbiocom inter-semi-bold-blue-dianne-12px" style={{ fontSize: '12px' }}>info@wittgenbio.com</div>
                   <div class="database-input_-button">
-                    <div class="group-297"><div class="button inter-normal-blue-dianne-14px">Copy e-mail</div></div>
+                    <div class="group-297"><div class="button inter-normal-blue-dianne-14px" style={{ fontSize: '14px' }}>Copy e-mail</div></div>
                   </div>
                 </div>
               </div>
@@ -124,14 +124,14 @@ export default function Sample() {
             <div class="frame-672 frame-1">
               <div class="frame-6 frame-1">
                 <img class="icon" src="icon-19.svg" alt="icon" />
-                <div class="frequently-asked-questions inter-semi-bold-blue-dianne-27px">
+                <div class="frequently-asked-questions inter-semi-bold-blue-dianne-27px" style={{ fontSize: '27px' }}>
                   Frequently Asked Questions
                 </div>
               </div>
             </div>
             <div class="group-467">
               <div class="overlap-group-1">
-                <div class="to-be-updated inter-semi-bold-slate-gray-15px">To be updated!</div>
+                <div class="to-be-updated inter-semi-bold-slate-gray-15px" style={{ fontSize: '15px' }}>To be updated!</div>
               </div>
             </div>
           </div>

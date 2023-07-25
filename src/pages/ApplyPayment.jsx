@@ -340,27 +340,27 @@ function toggleTable(checked) {
           <div class="frame-350">
             <div class="frame-258">
               <div class="frame-49">
-                <div class="getting-started inter-normal-japanese-laurel-9px">Getting started</div>
+                <div class="getting-started inter-normal-japanese-laurel-9px" style={{ fontSize: '12px' }}>Getting started</div>
                 <div class="rectangle-228"></div>
               </div>
               <div class="frame-49">
-                <div class="database-input database inter-normal-japanese-laurel-16px">Metadatabase Input</div>
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Metadatabase Input</div>
                 <div class="rectangle-228"></div>
               </div>
               <div class="frame-49">
-                <div class="database-input database inter-semi-bold-blue-dianne-16px">Database Input</div>
+                <div class="database-input database inter-semi-bold-blue-dianne-16px" style={{ fontSize: '12px' }}>Database Input</div>
                 <div class="rectangle-228-1 rectangle-228-3"></div>
               </div>
               <div class="frame-49">
-                <div class="submit inter-normal-oslo-gray-9px">Submit</div>
+                <div class="submit inter-normal-oslo-gray-9px" style={{ fontSize: '12px' }}>Submit</div>
                 <div class="rectangle-228-2 rectangle-228-3"></div>
               </div>
             </div>
             <div class="frame-213">
               <div class="component-33">
-                <div class="x-exit inter-semi-bold-blue-dianne-7-9px">Discard &amp; Exit</div>
+                <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '12px' }}>Discard &amp; Exit</div>
               </div>
-              <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px">Save &amp; Exit</div></div>
+              <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }}>Save &amp; Exit</div></div>
             </div>
           </div>
         </div> 
@@ -368,12 +368,12 @@ function toggleTable(checked) {
           <div class="frame-562a">
             <div class="group-447">
               <div class="frame-564">
-                <p class="upgrade-freemium-to-6-months inter-semi-bold-blue-dianne-15px-2">
+                <p class="upgrade-freemium-to-6-months inter-semi-bold-blue-dianne-15px-2" style={{ fontSize: '15px' }}>
                   Upgrade Freemium to 6 months
                 </p>
                 <div class="frame-565">
                   <div class="group-456">
-                    <p class="agree-to-wittgens-u inter-normal-blue-dianne-10-5px">
+                    <p class="agree-to-wittgens-u inter-normal-blue-dianne-10-5px" style={{ fontSize: '10.5px' }}>
                       Agree to Wittgen’s use of sample &amp; data information and enjoy 6 months unlimited access to
                       Wittgen’s services for free. Effective immediately.
                     </p>
@@ -384,12 +384,12 @@ function toggleTable(checked) {
                   onChange={(e) => toggleTable(e.target.checked)}
                   checked={tableEnabled}
                 />
-                      <p class="i-have-read-and-agree-to-the-website inter-normal-white-10-5px">
-                        <span class="inter-normal-black-10-5px-2">I have read and agree to the website</span
+                      <p class="i-have-read-and-agree-to-the-website inter-normal-white-10-5px" style={{ fontSize: '10.5px' }}>
+                        <span class="inter-normal-black-10-5px-2" style={{ fontSize: '10.5px' }}>I have read and agree to the website</span
                         ><span class="inter-normal-cerulean-10-5px"></span>
                       </p>
                       <a onclick="ShowOverlay('frame-416', 'animate-appear');"
-                        ><div class="terms-and-conditions inter-normal-cerulean-10-5px">terms and conditions</div>
+                        ><div class="terms-and-conditions inter-normal-cerulean-10-5px" style={{ fontSize: '10.5px' }}>terms and conditions</div>
                       </a>
                     </div>
                   </div>
@@ -429,7 +429,7 @@ function toggleTable(checked) {
                   alt="verified_FILL1_wght400_GRAD0_opsz48 1"  
                   disabled={!applyButtonEnabled}            
                 />              
-              <div class="promotion inter-semi-bold-cerulean-10-5px" disabled={!applyButtonEnabled}>Promotion</div>
+              <div class="promotion inter-semi-bold-cerulean-10-5px"  style={{ fontSize: '10.5px' }} disabled={!applyButtonEnabled}>Promotion</div>
               </th>
               <th scope="col" class="component-103">
                 <div class="sample inter-semi-bold-slate-gray-10-5px">Sample</div>
@@ -479,7 +479,7 @@ function toggleTable(checked) {
                     id={`applyButton${item.id}`}
                     className="frame-618 apply-3 inter-normal-cerulean-10-5px"
                     onClick={() => handleButtonClick(item.id)}
-                    style={buttonStyle[item.id]}
+                    style={{ ...buttonStyle[item.id], fontSize: "10.5px" }}
                     disabled={!applyButtonEnabled}
                   >
                     {buttonText[item.id] || "Apply"}
@@ -487,7 +487,7 @@ function toggleTable(checked) {
                 </div>                          
                 </td>
                 <td class="component">
-                  <div class="inter-normal-tundora-10-5px">{item.title}</div>
+                  <div class="inter-normal-tundora-10-5px" style={{fontSize: "10.5px" }}>{item.title}</div>
                   {buttonText[item.id] && (
             <img
             id={`image${item.id}`}
@@ -529,25 +529,25 @@ function toggleTable(checked) {
             </div>
           </div>
           <div class="group-438">
-            <div class="group-431"><div class="payment inter-semi-bold-blue-dianne-15px-2">Payment</div></div>
+            <div class="group-431"><div class="payment inter-semi-bold-blue-dianne-15px-2" style={{fontSize: "15px" }}>Payment</div></div>
             <div class="group-432">
               <div class="group-423">
                 <div class="overlap-group-1">
-                  <div class="frame-214"><div class="membership inter-semi-bold-silver-12px">Membership</div></div>
+                  <div class="frame-214"><div class="membership inter-semi-bold-silver-12px" style={{fontSize: "12px" }}>Membership</div></div>
                   <div class="frame-32a"></div>
                   <div class="frame-32">
-                    <div class="debit-credit-card inter-semi-bold-silver-12px">Debit/Credit card</div>
+                    <div class="debit-credit-card inter-semi-bold-silver-12px" style={{fontSize: "12px" }}>Debit/Credit card</div>
                   </div>
-                  <div class="frame-327"><div class="invoice-1 inter-semi-bold-silver-12px">Invoice</div></div>
-                  <div class="frame-215"><div class="freemium inter-semi-bold-white-12px-2">Freemium</div></div>
+                  <div class="frame-327"><div class="invoice-1 inter-semi-bold-silver-12px" style={{fontSize: "12px" }}>Invoice</div></div>
+                  <div class="frame-215"><div class="freemium inter-semi-bold-white-12px-2" style={{fontSize: "12px" }}>Freemium</div></div>
                   <img class="line-92" src="img/line-92-3.svg" alt="Line 92" />
                 </div>
-                <div class="pre-payment inter-semi-bold-silver-12px">Pre-payment</div>
+                <div class="pre-payment inter-semi-bold-silver-12px" style={{fontSize: "12px" }}>Pre-payment</div>
               </div>
-              <p class="your-freemium-ends-i inter-normal-tundora-12px">
-                <span class="inter-normal-tundora-12px">Your Freemium ends in </span
-                ><span class="inter-semi-bold-tundora-12px">June 17th, 2023</span
-                ><span class="inter-normal-tundora-12px"> (6 month upgrade applied).</span>
+              <p class="your-freemium-ends-i inter-normal-tundora-12px" style={{fontSize: "12px" }}>
+                <span class="inter-normal-tundora-12px" style={{fontSize: "12px" }}>Your Freemium ends in </span
+                ><span class="inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>June 17th, 2023</span
+                ><span class="inter-normal-tundora-12px" style={{fontSize: "12px" }}> (6 month upgrade applied).</span>
               </p>
             </div>
           </div>
@@ -560,19 +560,19 @@ function toggleTable(checked) {
             <div class="frame-58">
               <div class="frame-58">
                 <div class="frame-582">
-                  <div class="order-summary inter-normal-tundora-15px">Order Summary</div>
+                  <div class="order-summary inter-normal-tundora-15px" style={{fontSize: "15px" }}>Order Summary</div>
                   <div class="group-391">
-                    <div class="currency-usd inter-normal-tundora-10-5px-2">Currency: USD</div>
+                    <div class="currency-usd inter-normal-tundora-10-5px-2" style={{fontSize: "10.5px" }}>Currency: USD</div>
                   </div>
                 </div>
                 <img class="line-107" src="line-107-1@2x.svg" alt="Line 107" />
               </div>
               <div class="group-394">
-                <div class="group-393 inter-semi-bold-tundora-12px">
+                <div class="group-393 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>
                   <div class="frame-416">
                     <div class="group-392"><div class="samples">Samples</div></div>
                     <div class="group-389">
-                      <div class="flex-row inter-normal-slate-gray-10-5px-2">
+                      <div class="flex-row inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>
                         <div class="number">{data.length}</div>
                         <div class="x">x</div>
                         <div class="price">$100</div>
@@ -587,24 +587,24 @@ function toggleTable(checked) {
               <div class="frame-588">
                 <div class="frame-587">
                   <div class="frame-58-1a">
-                    <div class="subtotal inter-normal-slate-gray-10-5px-2">Subtotal:</div>
-                    <div class="price-2 inter-semi-bold-tundora-12px">${data.length * 100}</div>
+                    <div class="subtotal inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>Subtotal:</div>
+                    <div class="price-2 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>${data.length * 100}</div>
                   </div>
                   <div class="frame-58-1">
-                    <div class="group-387"><div class="taxes10 inter-normal-slate-gray-10-5px-2">Taxes(10%)</div></div>
-                    <div class="price-3 inter-semi-bold-tundora-12px">${Math.floor(data.length * 100 * 0.1)}</div>
+                    <div class="group-387"><div class="taxes10 inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>Taxes(10%)</div></div>
+                    <div class="price-3 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>${Math.floor(data.length * 100 * 0.1)}</div>
                   </div>
                 </div>
                 <img class="line-112" src="line-112-2@2x.svg" alt="Line 112" />
               </div>
               <div class="frame-317a">
                 <div class="group-427">
-                  <div class="total-amount inter-normal-silver-10-5px">Total amount</div>
-                  <h1 class="price-4 inter-semi-bold-silver-27px">${Math.floor(data.length * 100 * 1.1)}</h1>
+                  <div class="total-amount inter-normal-silver-10-5px" style={{fontSize: "10.5px" }}>Total amount</div>
+                  <h1 class="price-4 inter-semi-bold-silver-27px" style={{fontSize: "27px" }}>${Math.floor(data.length * 100 * 1.1)}</h1>
                 </div>
                 <div class="group-428">
-                  <div class="freemium-1 inter-normal-cerulean-10-5px">Freemium</div>
-                  <div class="price-5 inter-semi-bold-blue-dianne-27px-2">$0</div>
+                  <div class="freemium-1 inter-normal-cerulean-10-5px" style={{fontSize: "10.5px" }}>Freemium</div>
+                  <div class="price-5 inter-semi-bold-blue-dianne-27px-2" style={{fontSize: "27px" }}>$0</div>
                 </div>
               </div>
             </div>
