@@ -2,7 +2,6 @@ import "../styling/MetabaseInput3.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import "../styling/FileUpload.css";
-import "../styling/MetabaseInput2.css";
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
 
@@ -170,10 +169,10 @@ export default function ColumnExcelComponent() {
                 <div className="frame-504">
                   <div className="frame-454">
                     <div className="frame-214">
-                      <div className="import-excel-file inter-semi-bold-white-16px">Import Excel file</div>
+                      <div className="white-font">Import Excel file</div>
                     </div>
                     <div className="frame-215">
-                      <div className="manual-data-input">Manual data input</div>
+                      <div className="green-font">Manual data input</div>
                     </div>
                   </div>
                 </div>
@@ -211,7 +210,7 @@ export default function ColumnExcelComponent() {
                       <div className="number-font-gray">3</div>
                     </div>
                   </div>
-                  <div className="validate-data inter-normal-slate-gray-16px">Validate data</div>
+                  <div className="gray-font">Validate data</div>
                 </div>
               </div>
             </div>

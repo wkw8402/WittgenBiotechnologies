@@ -1,5 +1,137 @@
 import "../styling/DatabaseInput1.css";
-export default function () {
+import "../styling/globals.css";
+import "../styling/styleguide.css";
+import React from "react";
+import { useState, useEffect, useRef } from 'react';
+import { FileUploader } from "react-drag-drop-files";
+import ReactDOM from 'react-dom';
+
+export default function Sample()  {
+  const [columnNames, setColumnNames] = useState([]);
+  const [excelData, setExcelData] = useState([]);
+  const prevColumnNamesRef = useRef([]);
+
+  useEffect(() => {
+    // Load columnNames from localStorage
+    const storedColumnNames = localStorage.getItem("columnNames");
+    if (storedColumnNames) {
+      const parsedColumnNames = JSON.parse(storedColumnNames);
+      setColumnNames(parsedColumnNames);
+      prevColumnNamesRef.current = parsedColumnNames;
+    }
+  }, []);
+
+
+  useEffect(() => {
+    const storedExcelData = localStorage.getItem("excelData");
+    if (storedExcelData) {
+      setExcelData(JSON.parse(storedExcelData));
+    }
+  }, []);
+
+  function DragDrop({id, types}) {
+  const [files, setFiles] = useState([]);
+  const [fileNames, setFileNames] = useState([]);
+  
+
+  const handleFileChange = (id, file) => {
+    setFiles((prevFiles) => {
+      const updatedFiles = [...prevFiles];
+      updatedFiles[id] = file;
+      return updatedFiles;
+    });
+    
+    setFileNames((prevNames) => {
+      const updatedNames = [...prevNames];
+      updatedNames[id] = truncateFileName(file.name, 20);
+      return updatedNames;
+    });
+  };
+  const truncateFileName = (fileName, maxLength) => {
+    if (fileName.length <= maxLength) {
+      return fileName;
+    }
+    const truncatedName = fileName.substring(0, maxLength - 3) + '...';
+    return truncatedName;
+  };
+
+    const file = files[id];
+    const fileName = fileNames[id];
+    const fileType = file ? file.type.split('/')[1] : '';
+    
+    return (
+      <>
+        {!file ? (
+          <FileUploader handleChange={(file) => handleFileChange(id, file)} types={types} name="file" >
+            <button className="upload-file inter-normal-persian-blue-10-5px">Upload file</button>
+          </FileUploader>
+        ) : (
+          
+            <div className="oxygen-normal-tundora-10px">{fileName}.{fileType}</div>
+          
+        )}
+      </>
+    );
+  }
+
+  function updateUploadFields(id) {
+    var selectElement = document.getElementById(`mySelect${id}`);
+    var selectedValue = selectElement.value;
+  
+    var uploadField1 = document.getElementById(`uploadField1${id}`);
+    var uploadField2 = document.getElementById(`uploadField2${id}`);
+    var uploadField3 = document.getElementById(`uploadField3${id}`);
+  
+    // 초기화
+    ReactDOM.unmountComponentAtNode(uploadField1);
+    ReactDOM.unmountComponentAtNode(uploadField2);
+    ReactDOM.unmountComponentAtNode(uploadField3);
+
+    
+    const seuratfiletype = [".rds" ,".RDS"];
+    const fastQfiletype = [".fastq",".FASTQ"];
+    const cellrangerfiletype = ["tsv","csv","mtx"];
+
+    if (selectedValue === "Seurat") {
+      ReactDOM.render(<DragDrop id={id} types={seuratfiletype}/>, uploadField1);
+    } else if (selectedValue === "FastQ") {
+      ReactDOM.render(<DragDrop id={id} types={fastQfiletype}/>, uploadField1);
+      ReactDOM.render(<DragDrop id={id} types={fastQfiletype}/>, uploadField2);
+    } else if (selectedValue === "Cell Ranger") {
+      ReactDOM.render(<DragDrop id={id} types={cellrangerfiletype}/>, uploadField1);
+      ReactDOM.render(<DragDrop id={id} types={cellrangerfiletype}/>, uploadField2);
+      ReactDOM.render(<DragDrop id={id} types={cellrangerfiletype}/>, uploadField3);
+    }
+  }
+
+
+  // 체크된 아이템을 담을 배열
+  const [checkItems, setCheckItems] = useState([]);
+
+  // 체크박스 단일 선택
+  const handleSingleCheck = (checked, id) => {
+    if (checked) {
+      // 단일 선택 시 체크된 아이템을 배열에 추가
+      setCheckItems(prev => [...prev, id]);
+    } else {
+      // 단일 선택 해제 시 체크된 아이템을 제외한 배열 (필터)
+      setCheckItems(checkItems.filter((el) => el !== id));
+    }
+  };
+
+  // 체크박스 전체 선택
+  const handleAllCheck = (checked) => {
+    if(checked) {
+      // 전체 선택 클릭 시 데이터의 모든 아이템(id)를 담은 배열로 checkItems 상태 업데이트
+      const idArray = [];
+      excelData.forEach((el) => idArray.push(excelData.indexOf(el)));
+      setCheckItems(idArray);
+    }
+    else {
+      // 전체 선택 해제 시 checkItems 를 빈 배열로 상태 업데이트
+      setCheckItems([]);
+    }
+
   let dataObject = [
     {
       sample: "GH-2342",
@@ -30,7 +162,7 @@ export default function () {
         <div className="frame-5-2 frame-5-3">
           <div className="frame-55-1">
             <div className="component-102" />
-          </div>
+          </div>ㄴ
           <div className="component-1">
             <div className="gh-1234567-4 inter-normal-tundora-14px">
               {element.sample}
@@ -65,10 +197,13 @@ export default function () {
       </>
     );
   });
+  }
 
+  
   return (
     <>
-      import "../styling/MetabaseInput5.css"
+  <head>
+
       <meta charSet="utf-8" />
       {/*<meta name=description content="This site was generated with Anima. www.animaapp.com"/>*/}
       {/* <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> */}
@@ -81,460 +216,223 @@ export default function () {
       <link rel="stylesheet" type="text/css" href="apply-database-input.css" />
       <link rel="stylesheet" type="text/css" href="styleguide.css" />
       <link rel="stylesheet" type="text/css" href="globals.css" />
-      <input
-        type="hidden"
-        id="anPageName"
-        name="page"
-        defaultValue="apply-database-input"
-      />
-      <div className="container-center-horizontal-databaseInput1">
-        <div className="apply-database-input screen-databaseInput1">
-          <div className="group-438">
-            <div className="overlap-group1">
-              <div className="group-184">
-                <div className="overlap-group">
-                  <a href="/">
-                    <div className="witt-gen-portal oxygen-bold-blue-dianne-28px">
-                      <span className="oxygen-bold-blue-dianne-28px">
-                        WittGen
-                      </span>
-                      <span className="oxygen-light-blue-dianne-28px">
-                        Portal
-                      </span>
-                    </div>
-                  </a>
+      </head>
+      
+      <body>
+      <input type="hidden" id="anPageName" name="page" value="applyu47-database-input" />
+    <div class="container-center-horizontal">
+      <div class="applyu47-database-input screen">
+        <div class="main-navigation">
+          <div class="overlap-group1">
+            <div class="group-184">
+              <div class="overlap-group">
+                <div class="witt-gen-portal oxygen-bold-white-21px">
+                  <span class="oxygen-bold-white-21px">WittGen</span><span class="oxygen-light-white-21px">Portal</span>
                 </div>
-                <img
-                  className="line-79"
-                  src="line-79-13@1x.svg"
-                  alt="Line 79"
-                />
               </div>
-              <div className="component-13">
+              {/*<img class="line-79" src="img/line-79-12.svg" alt="Line 79" />*/}
+            </div>
+            <div class="frame-185">
+              <div class="frame-185-item">
                 <img
-                  className="icon"
-                  src="home-fill0-wght400-grad0-opsz48-1-12@2x.svg"
-                  alt="icon-home"
+                  class="home_fill0_wght400_grad0_opsz48-1"
+                  src="home-fill0-wght400-grad0-opsz48-1.svg"
+                  alt="home_FILL0_wght400_GRAD0_opsz48 1"
                 />
-                <a href="/dashboard" style={{ textDecoration: "none" }}>
-                  <div className="dashboard inter-normal-blue-dianne-16px">
-                    Dashboard
-                  </div>
-                </a>
+                <div class="dashboard inter-normal-white-12px">Dashboard</div>
               </div>
-              <div className="component-14">
+              <div class="frame-185-item">
                 <img
-                  className="draft_fill1_wght400_grad0_opsz48-1-1"
-                  src="draft-fill1-wght400-grad0-opsz48--1--1-12@2x.svg"
+                  class="draft_fill1_wght400_grad0_opsz48-1-1"
+                  src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
                   alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <a href="/my_files_1" style={{ textDecoration: "none" }}>
-                  <div className="my-files my inter-semi-bold-blue-dianne-16px">
-                    My files
-                  </div>
-                </a>
+                <div class="my-files inter-semi-bold-white-16px">My files</div>
               </div>
-              <div className="component-22">
+              <div class="frame-185-item">
                 <img
-                  className="logout_fill0_wght400_grad0_opsz48-1"
-                  src="logout-fill0-wght400-grad0-opsz48-1-13@2x.svg"
-                  alt="logout_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div className="logout inter-normal-blue-dianne-16px">
-                  Logout
-                </div>
-              </div>
-              <div className="component-13-1">
-                <img
-                  className="import_contacts_fill"
-                  src="import-contacts-fill0-wght400-grad0-opsz48-1-13@2x.svg"
-                  alt="import_contacts_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div className="tutorial inter-normal-blue-dianne-16px">
-                  Tutorial
-                </div>
-              </div>
-              <div className="component-21">
-                <img
-                  className="paid_fill0_wght400_grad0_opsz48-1"
-                  src="paid-fill0-wght400-grad0-opsz48-1-13@2x.svg"
+                  class="paid_fill0_wght400_grad0_opsz48-1"
+                  src="paid-fill0-wght400-grad0-opsz48-1.svg"
                   alt="paid_FILL0_wght400_GRAD0_opsz48 1"
                 />
-                <div className="cost-usage inter-normal-blue-dianne-16px">
-                  Cost &amp; Usage
-                </div>
+                <div class="cost-usage inter-normal-white-12px">Cost &amp; Usage</div>
               </div>
-              <div className="component-23">
+              <div class="frame-185-item">
                 <img
-                  className="icon"
-                  src="person-fill0-wght400-grad0-opsz48-1-13@2x.svg"
-                  alt="icon-user"
+                  class="settings_fill0_wght400_grad0_opsz48-1"
+                  src="settings-fill0-wght400-grad0-opsz48-1.svg"
+                  alt="settings_FILL0_wght400_GRAD0_opsz48 1"
                 />
-                <div className="my-profile my inter-normal-blue-dianne-16px">
-                  My Profile
-                </div>
+                <div class="settings inter-normal-white-12px">Settings</div>
               </div>
-              <div className="component-18">
+              <div class="frame-185-item">
                 <img
-                  className="contact_support_fill"
-                  src="contact-support-fill0-wght400-grad0-opsz48--1--1-13@2x.svg"
+                  class="contact_support_fill"
+                  src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
                   alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <div className="faq-support inter-normal-blue-dianne-16px">
-                  FAQ / Support
-                </div>
-              </div>
-              <div className="component-19">
-                <img
-                  className="icon"
-                  src="call-fill0-wght400-grad0-opsz48--1--1-13@2x.svg"
-                  alt="icon-call"
-                />
-                <div className="contact-us inter-normal-blue-dianne-16px">
-                  Contact Us
-                </div>
-              </div>
-              <div className="component-24">
-                <img
-                  className="icon"
-                  src="settings-fill0-wght400-grad0-opsz48-1-13@2x.svg"
-                  alt="icon-settings"
-                />
-                <div className="settings inter-normal-blue-dianne-16px">
-                  Settings
-                </div>
+                <div class="faq-support inter-normal-white-12px">FAQ / Support</div>
               </div>
             </div>
-          </div>
-          <div className="frame-447">
-            <div className="frame-350">
-              <div className="gh inter-semi-bold-slate-gray-32px">
-                GH-13728930
-              </div>
-              <div className="frame-258">
-                <div className="frame-49">
-                  <div className="getting-started inter-normal-japanese-laurel-16px">
-                    Getting started
-                  </div>
-                  <div className="rectangle-228" />
-                </div>
-                <div className="frame-49">
-                  <div className="metadatabase-input inter-normal-japanese-laurel-16px">
-                    Metadatabase Input
-                  </div>
-                  <div className="rectangle-228" />
-                </div>
-                <div className="frame-49">
-                  <div className="database-input database inter-semi-bold-blue-dianne-16px">
-                    Database Input
-                  </div>
-                  <div className="rectangle-228" />
-                </div>
-                <div className="frame-49">
-                  <div className="pay-submit inter-normal-oslo-gray-16px">
-                    Pay &amp; Submit
-                  </div>
-                  <div className="rectangle-228-1" />
-                </div>
-              </div>
-              <div className="frame-213">
-                <a href="/dashboard" style={{ textDecoration: "none" }}>
-                  <div className="component-33">
-                    <div className="discard-exit inter-semi-bold-blue-dianne-14px">
-                      Discard &amp; Exit
-                    </div>
-                  </div>
-                </a>
-                <a href="/dashboard?mode=save">
-                  <div className="component-31">
-                    <div className="researchers inter-semi-bold-white-14px">
-                      Save &amp; Exit
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="group-325">
-            <div className="frame-616">
-              <a
-                href="javascript:history.back()"
-                style={{ textDecoration: "none" }}
-              >
-                <div className="component-34">
-                  <div className="researchers-3 inter-semi-bold-blue-dianne-14px">
-                    Back
-                  </div>
-                </div>
-              </a>
-              <a href="/payment_1">
-                <div className="component-33-1">
-                  <div className="researchers-3 inter-semi-bold-white-14px">
-                    Next
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="frame-545">
-            <div className="group-284">
-              <div className="frame-544">
-                <div className="frame-444">
-                  <div className="frame-5">
-                    <article className="component-10">
-                      <div className="group-297-1 group-297-3">
-                        <div className="seurat inter-normal-blue-dianne-14px">
-                          Seurat
-                        </div>
-                      </div>
-                    </article>
-                    <article className="component-104">
-                      <div className="group-297">
-                        <div className="seurat-1 inter-normal-blue-dianne-14px">
-                          Fast Queue
-                        </div>
-                      </div>
-                    </article>
-                    <article className="component-10">
-                      <div className="group-297">
-                        <div className="seurat-2 inter-normal-blue-dianne-14px">
-                          Cell Ranger
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div className="component-106">
-                    <img
-                      className="icsharp-delete"
-                      src="ic-sharp-delete-13@2x.svg"
-                      alt="ic:sharp-delete"
-                    />
-                    <div className="group-297-2 group-297-3">
-                      <div className="delete inter-normal-blue-dianne-14px">
-                        Delete
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="frame-290">
-                  <div className="frame-234">
-                    <img
-                      className="risearch-2-line"
-                      src="ri-search-2-line@2x.png"
-                      alt="ri:search-2-line"
-                    />
-                    <div className="search inter-normal-slate-gray-14px">
-                      Search
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="frame-317">
-                <div className="expected-amount inter-normal-slate-gray-14px">
-                  Expected amount
-                </div>
-                <h1 className="price inter-semi-bold-blue-dianne-36px">$300</h1>
-              </div>
-            </div>
-            <div className="frame-5-1 frame-5-3">
-              <div className="frame-55">
-                <div className="frame-552">
-                  <div className="component-102" />
-                </div>
-                <div className="component">
-                  <div className="gh-1234567 gh inter-semi-bold-slate-gray-14px">
-                    Sample
-                  </div>
-                </div>
-                <div className="component-104-1">
-                  <div className="database-category database inter-semi-bold-slate-gray-14px">
-                    Database category
-                  </div>
-                </div>
-                <div className="component-105">
-                  <div className="database-file database inter-semi-bold-slate-gray-14px">
-                    Database file
-                  </div>
-                </div>
-                <div className="component-10-1" />
-                <div className="component-10-1" />
-              </div>
-              {dataObjectRender}
-              {/* <div className="frame-5-2 frame-5-3">
-                <div className="frame-55-1">
-                  <div className="component-102" />
-                </div>
-                <div className="component-1">
-                  <div className="gh-1234567-4 inter-normal-tundora-14px">
-                    GH-1234567
-                  </div>
-                </div>
-                <div className="component-6">
-                  <div className="seurat-3 inter-normal-tundora-14px">
-                    Seurat
-                  </div>
-                  <img
-                    className="material-symbolsnavigate-next"
-                    src="material-symbols-navigate-next-13@2x.svg"
-                    alt="material-symbols:navigate-next"
-                  />
-                </div>
-                <div className="component-2">
-                  <div className="upload-file inter-normal-persian-blue-14px">
-                    Upload file
-                  </div>
-                </div>
-                <div className="component-2">
-                  <div className="upload-file inter-normal-persian-blue-14px">
-                    Upload file
-                  </div>
-                </div>
-                <div className="component-96" />
-              </div> */}
-              {/* <div className="frame-5-2 frame-5-3">
-                <div className="frame-55-1">
-                  <div className="component-102" />
-                </div>
-                <div className="component-1">
-                  <div className="gh-1234567-4 inter-normal-tundora-14px">
-                    GH-1234567
-                  </div>
-                </div>
-                <div className="component-6">
-                  <div className="fast-queue inter-normal-tundora-14px">
-                    Fast Queue
-                  </div>
-                  <img
-                    className="material-symbolsnavigate-next"
-                    src="material-symbols-navigate-next-14@2x.svg"
-                    alt="material-symbols:navigate-next"
-                  />
-                </div>
-                <div className="component-2">
-                  <div className="upload-file inter-normal-persian-blue-14px">
-                    Upload file
-                  </div>
-                </div>
-                <div className="component-2">
-                  <div className="upload-file inter-normal-persian-blue-14px">
-                    Upload file
-                  </div>
-                </div>
-                <div className="component-96" />
-              </div> */}
-              {/* <div className="frame-55">
-                <div className="frame-55-1">
-                  <div className="component-102" />
-                </div>
-                <div className="component-1">
-                  <div className="gh-1234567-4 inter-normal-tundora-14px">
-                    GH-1234567
-                  </div>
-                </div>
-                <div className="component-6">
-                  <div className="cell-ranger inter-normal-tundora-14px">
-                    Cell ranger
-                  </div>
-                  <img
-                    className="material-symbolsnavigate-next"
-                    src="material-symbols-navigate-next-15@2x.svg"
-                    alt="material-symbols:navigate-next"
-                  />
-                </div>
-                <div className="component-2">
-                  <div className="upload-file inter-normal-persian-blue-14px">
-                    Upload file
-                  </div>
-                </div>
-                <div className="component-2">
-                  <div className="upload-file inter-normal-persian-blue-14px">
-                    Upload file
-                  </div>
-                </div>
-                <div className="component">
-                  <div className="upload-file inter-normal-persian-blue-14px">
-                    Upload file
-                  </div>
-                </div>
-              </div> */}
-            </div>
-          </div>
-          <div className="frame-561">
-            {/* <div className="frame-449">
-              <div className="frame-449-1">
-                <img
-                  className="iontriangle-sharp"
-                  src="ion-triangle-sharp-30@2x.svg"
-                  alt="ion:triangle-sharp"
-                />
-                <div className="rectangle-235" />
-              </div>
+            <div class="logout">
               <img
-                className="iontriangle-sharp-1"
-                src="ion-triangle-sharp-29@2x.svg"
-                alt="ion:triangle-sharp"
+                class="logout_fill0_wght400_grad0_opsz48-1"
+                src="logout-fill0-wght400-grad0-opsz48-1.svg"
+                alt="logout_FILL0_wght400_GRAD0_opsz48 1"
               />
-            </div> */}
-            <div className="frame-5-1 frame-5-3 frame-box">
-              <div className="group-445">
-                <div className="frame-5-1 frame-5-3">
-                  <div className="frame-438">
-                    <div className="frame-445">
-                      <img
-                        className="error_fill0_wght400_grad0_opsz48-1"
-                        src="error-fill0-wght400-grad0-opsz48-1@2x.svg"
-                        alt="error_FILL0_wght400_GRAD0_opsz48 1"
-                      />
-                      <div className="important">Important</div>
-                    </div>
-                    <p className="please-upload-your-d inter-normal-black-14px">
-                      Please upload your database file(s) accordingly (in no
-                      particular order):
-                    </p>
-                  </div>
-                  <div className="frame-5">
-                    <div className="frame-5-1 frame-5-3">
-                      <div className="frame-4">
-                        <div className="seurat-4 inter-semi-bold-black-14px">
-                          Seurat
-                        </div>
-                      </div>
-                      <div className="frame-44">
-                        <div className="rds inter-normal-black-14px">RDS</div>
-                      </div>
-                    </div>
-                    <div className="frame-5-1 frame-5-3">
-                      <div className="frame-440">
-                        <div className="fast-queue-1 fast-queue-3 inter-semi-bold-black-14px">
-                          Fast Queue
-                        </div>
-                      </div>
-                      <div className="frame-443 inter-normal-black-14px">
-                        <div className="fast-queue-1-1">Fast Queue #1</div>
-                        <div className="fast-queue-2 fast-queue-3">
-                          Fast Queue #2
-                        </div>
-                      </div>
-                    </div>
-                    <div className="frame-5-1 frame-5-3">
-                      <div className="frame-4">
-                        <div className="cell-ranger-1 inter-semi-bold-black-14px">
-                          Cell Ranger
-                        </div>
-                      </div>
-                      <div className="frame-44 inter-normal-black-14px">
-                        <div className="bar-code">Bar code</div>
-                        <div className="feature">Feature</div>
-                        <div className="matrix">Matrix</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="logout-1 inter-normal-white-12px">Logout</div>
             </div>
           </div>
         </div>
+        <div class="back-next">
+          <div class="frame-616">
+            <div class="back-button"><div class="place inter-semi-bold-blue-dianne-10-5px" style={{ fontSize: '14px' }}>Back</div></div>
+            <div class="next-button"><div class="next inter-semi-bold-white-10-5px" style={{ fontSize: '14px' }}>Next</div></div>
+          </div>
+        </div>
+        <div class="frame-563">
+          <div class="frame-350">
+            <div class="frame-258">
+              <div class="frame-49">
+                <div class="getting-started inter-normal-japanese-laurel-9px" style={{ fontSize: '12px' }}>Getting started</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-normal-japanese-laurel-16px">Metadatabase Input</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-semi-bold-blue-dianne-16px">Database Input</div>
+                <div class="rectangle-228-1 rectangle-228-3"></div>
+              </div>
+              <div class="frame-49">
+                <div class="submit inter-normal-oslo-gray-9px" style={{ fontSize: '12px' }}>Submit</div>
+                <div class="rectangle-228-2 rectangle-228-3"></div>
+              </div>
+            </div>
+            <div class="frame-213">
+              <div class="component-33">
+                <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '12px' }}>Discard &amp; Exit</div>
+              </div>
+              <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }}>Save &amp; Exit</div></div>
+            </div>
+          </div>
+        </div> 
+        <div class="frame-562">
+        <div class="group-284">
+            <div class="frame-317">
+              <div class="expected-amount inter-normal-slate-gray-14px">Expected amount</div>
+              <h1 class="price inter-semi-bold-blue-dianne-36px">$300</h1>
+            </div>
+          </div>
+
+  
+          <table class="frame-5-1 frame-5-3">
+            <tr class="frame-556">
+              <th scope="col" class="frame-552">
+                <input
+                  type="checkbox"
+                  name="select-all"
+                  onChange={(e) => handleAllCheck(e.target.checked)}
+                  checked={checkItems.length === excelData.length ? true : false}
+                />
+              </th>
+              <th scope="col" class="component-103">
+                <div class="sample inter-semi-bold-slate-gray-10-5px">Sample</div>
+              </th>
+              <th scope="col" class="component-104">
+                <div class="database-category database inter-semi-bold-slate-gray-10-5px">Database category</div>
+              </th>
+              <th scope="col" class="component-105" style={{ height: '30px' }}>
+                <div class="database-file database inter-semi-bold-slate-gray-10-5px">Database file</div>
+              </th>
+              <th scope="col" class="component-10"></th>
+              <th scope="col" class="component-10"></th>
+            </tr>
+            <ul class="table-container_database">
+            {excelData?.map((item) => (
+              <tr
+                class={checkItems.includes(excelData.indexOf(item)) ? "frame-5-2 frame-5-3" : "frame-5-ss frame-5-3"}
+                key={excelData.indexOf(item)}
+              >
+                <td class="frame-55">
+                  <input
+                    type="checkbox"
+                    name={`select-${excelData.indexOf(item)}`}
+                    onChange={(e) => handleSingleCheck(e.target.checked, excelData.indexOf(item))}
+                    checked={checkItems.includes(excelData.indexOf(item)) ? true : false}
+                  />
+                </td>
+                <td class="component">
+                  <div class="inter-normal-tundora-10-5px">{item[0]}</div>
+                </td>
+                <td class="component-6">
+                  <select
+                    id={`mySelect${excelData.indexOf(item)}`}
+                    onChange={() => updateUploadFields(excelData.indexOf(item))}
+                    class={checkItems.includes(excelData.indexOf(item)) ? "custom-select" : "custom-select2"}
+                    key={excelData.indexOf(item)}
+                  >
+                    <option>Choose category</option>
+                    <option value="Seurat">Seurat</option>
+                    <option value="FastQ">FastQ</option>
+                    <option value="Cell Ranger">Cell Ranger</option>
+                  </select>
+                </td>
+                <td class="component-1" id={`uploadField1${excelData.indexOf(item)}`}></td>
+                <td class="component-1" id={`uploadField2${excelData.indexOf(item)}`}></td>
+                <td class="component-1" id={`uploadField3${excelData.indexOf(item)}`}></td>
+              </tr>
+            ))}
+            </ul>
+          </table>
+        </div>
+        <div class="frame-561">
+          <div class="group-445">
+            <div class="frame-5-1 frame-5-3">
+              <div class="frame-438">
+                <div class="frame-445">
+                  <img
+                    class="error_fill0_wght400_grad0_opsz48-1"
+                    src="error-fill0-wght400-grad0-opsz48-1.svg"
+                    alt="error_FILL0_wght400_GRAD0_opsz48 1"
+                  />
+                  <div class="important inter-semi-bold-milano-red-8-2px">Important</div>
+                </div>
+                <p class="please-upload-your-d inter-normal-black-10-5px">
+                  Please upload your database file(s) accordingly (in no particular order):
+                </p>
+              </div>
+              <div class="frame-5">
+                <div class="frame-5-1 frame-5-3">
+                  <div class="frame-4"><div class="seurat-1 inter-semi-bold-black-10-5px">Seurat</div></div>
+                  <div class="frame-44"><div class="rds inter-normal-black-10-5px">RDS</div></div>
+                </div>
+                <div class="frame-5-1 frame-5-3">
+                  <div class="frame-440">
+                    <div class="fast-queue-1 fast-queue-3 inter-semi-bold-black-10-5px">FastQ</div>
+                  </div>
+                  <div class="frame-443 inter-normal-black-10-5px">
+                    <div class="fast-queue-1-1">FastQ #1</div>
+                    <div class="fast-queue-2 fast-queue-3">FastQ #2</div>
+                  </div>
+                </div>
+                <div class="frame-5-1 frame-5-3">
+                  <div class="frame-4"><div class="cell-ranger-1 inter-semi-bold-black-10-5px">Cell Ranger</div></div>
+                  <div class="frame-44 inter-normal-black-10-5px">
+                    <div class="bar-code">Bar code</div>
+                    <div class="feature">Feature</div>
+                    <div class="matrix">Matrix</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
       </div>
+    </div>
+    </body>
     </>
   );
 }

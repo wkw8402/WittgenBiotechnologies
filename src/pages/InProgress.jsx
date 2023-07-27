@@ -1,4 +1,4 @@
-import "../styling/MetabaseInput2.css";
+
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React, { useState, useEffect, useRef } from "react";
@@ -221,7 +221,7 @@ export default function () {
             </div>
             <div className="navigation-box-1">
               <img
-                className="faq-support-ion"
+                className="faq-support-icon"
                 src="/image/faq-support-icon.svg"
                 alt="faq-support-icon"
               />
@@ -250,7 +250,7 @@ export default function () {
                 <div className="progress-frame" style={{ color: determineColor(progress.applicationSubmitted) }}>
                   <p className="progress-font">Application submitted</p>
                   <img
-                    className=""
+                    className="icon-position"
                     src={determineImageUpload(progress.applicationSubmitted)}
                     alt="uplod-icon"
                   />
@@ -261,7 +261,7 @@ export default function () {
                 <div className="progress-frame" style={{ color: determineColor(progress.dataCuration) }}>
                   <p className="progress-font">Data Curation</p>
                   <img
-                    className=""
+                    className="icon-position"
                     src={determineImageDatabase(progress.dataCuration)}
                     alt="database_file-icon"
                   />
@@ -272,7 +272,7 @@ export default function () {
                 <div className="progress-frame" style={{ color: determineColor(progress.dataPreProcessing) }}>
                   <p className="progress-font">Data pre-processing</p>
                   <img
-                    className=""
+                    className="icon-position"
                     src={determineImageDataset(progress.dataPreProcessing)}
                     alt="dataset_processing-icon"
                   />
@@ -283,7 +283,7 @@ export default function () {
                 <div className="progress-frame" style={{ color: determineColor(progress.mlModel) }}>
                   <p className="progress-font">ML Model</p>
                   <img
-                    className=""
+                    className="icon-position"
                     src={determineImageRebase(progress.mlModel)}
                     alt="rebase-file-icon"
                   />
@@ -294,7 +294,7 @@ export default function () {
                 <div className="progress-frame" style={{ color: determineColor(progress.fileComplete) }}>
                   <p className="progress-font">File complete</p>
                   <img
-                    className=""
+                    className="icon-position"
                     src={determineImageFile(progress.fileComplete)}
                     alt="file complete-icon"
                   />

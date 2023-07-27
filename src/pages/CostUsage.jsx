@@ -1,7 +1,6 @@
 import "../styling/CostUsage.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
-import "../styling/MetabaseInput2.css";
 import React, { useState } from 'react';
 
 

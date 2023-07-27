@@ -1,4 +1,4 @@
-import "../styling/MetabaseInput2.css";
+
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React, { useState, useEffect, useRef } from "react";

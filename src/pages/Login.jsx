@@ -1,7 +1,9 @@
+/* eslint-disable */
+
 import { AuthenticationDetails, CognitoUser } from "amazon-cognito-identity-js";
 import { useNavigate } from "react-router-dom";
 import "../config";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { createContext } from "react";
 // import "../index.css";
 import "../styling/Login.css";
@@ -15,54 +17,11 @@ import {
   UserPool,
 } from "../config";
 import { useHistory } from "react-router-dom";
-// import { Account, AccountContext, cogGroup } from "../components/Account";
+import { Account, AccountContext, cogGroup } from "../components/Account";
 import { ToastContainer, toast } from "react-toastify";
 // reactstrap components
 
 configParams();
-
-const AccountContext = createContext();
-var cogGroup, NewJWTTOKEN;
-const authenticate = async (Username, Password) => {
-  await new Promise((resolve, reject) => {
-    const user = new CognitoUser({
-      Username,
-      Pool: UserPool,
-    });
-
-    const authDetails = new AuthenticationDetails({
-      Username,
-      Password,
-    });
-
-    console.log("AUTH DETIALS - ", authDetails);
-
-    user.authenticateUser(authDetails, {
-      onSuccess: (result) => {
-        console.log("login success", result);
-
-        NewJWTTOKEN = result.getAccessToken().getJwtToken();
-        localStorage.setItem("persist-crs-token", JSON.stringify(NewJWTTOKEN));
-        console.log("access token + " + result.getAccessToken().getJwtToken());
-        cogGroup = result.getIdToken().payload["cognito:groups"];
-        console.log("Cognito Group Name is ----", cogGroup);
-        //alert(cogGroup);
-        localStorage.setItem("UsedGroup", JSON.stringify(cogGroup));
-
-        resolve(result);
-      },
-      onFailure: (err) => {
-        console.log("login failure", err);
-        reject(err);
-        alert("Login failed!")
-      },
-      newPasswordRequired: (data) => {
-        console.log("new password required", data);
-        resolve(data);
-      },
-    });
-  });
-};
 
 export default function () {
   const navigate = useNavigate();
@@ -80,6 +39,10 @@ export default function () {
     setModalOpen(false);
   };
 
+  const compRef = useRef();
+  const authenticate = (Username, Password) => {
+    return compRef.current.authenticate(Username, Password);
+  }
 
   const { innerWidth: width, innerHeight: height } = window;
   // console.log(width, height);
@@ -90,9 +53,9 @@ export default function () {
     await localStorage.setItem("username", JSON.stringify(username));
     authenticate(username, password)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
 
-        toast("🦄 ou are successfully logged in!", {
+        toast("🦄 you are successfully logged in!", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -102,8 +65,10 @@ export default function () {
           progress: undefined,
           theme: "light",
         });
-
+        
+        console.log("to dashboard");
         navigate("/dashboard");
+        console.log("after wards")
         // history.replace("/dashboard");
         //else if (cogGroup == configDownloadGroup) {
       })
@@ -132,6 +97,7 @@ export default function () {
 
   return (
     <>
+      <Account ref={compRef} />
       <meta charSet="utf-8" />
       {/*<meta name=description content="This site was generated with Anima. www.animaapp.com"/>*/}
       {/* <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> */}
@@ -175,6 +141,7 @@ export default function () {
                   onChange={handleUsernameChange}
                   className="rectangle-211"
                   placeholder="Enter your username"
+                  style= {{ paddingLeft: "5px" }}
                 />
               </div>
               <div className="frame">
@@ -188,6 +155,7 @@ export default function () {
                     onChange={handlePasswordChange}
                     className="rectangle-211"
                     placeholder="Enter your password"
+                    style= {{ paddingLeft: "5px" }}
                   />
                 </div>
               </div>

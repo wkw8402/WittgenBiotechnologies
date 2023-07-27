@@ -1402,3 +1402,23 @@
     outline: none;
     width: 130px;
 }
+
+.white-font {
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.green-font {
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #25474F;
+}

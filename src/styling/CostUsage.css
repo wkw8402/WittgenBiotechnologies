@@ -172,12 +172,12 @@
     margin-bottom: 45px;
 }
 
-.cost-page-list{
+.cost-page-list {
     position: absolute;
-    width:249px;
-    height:27px;
+    width: 249px;
+    height: 27px;
     top: 0px;
-    right:0px;
+    right: 0px;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -192,19 +192,20 @@
     align-items: center;
 }
 
-.page-btn{
+.page-btn {
     font-family: "Inter";
     font-size: 11px;
     font-weight: 600;
     line-height: 13px;
     letter-spacing: 0em;
+    margin-left: 15px;
     text-align: center;
     color: #717F8C;
     border: none;
     background: none;
 }
 
-.page-btn-circle{
+.page-btn-circle {
     display: inline-flex;
     justify-content: center;
     align-items: center;

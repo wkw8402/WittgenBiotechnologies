@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FileUploader } from "react-drag-drop-files";
 import { read, utils, writeFile } from 'xlsx';
-import "../styling/MetabaseInput2.css";
+
 
 function ExcelTable({ columnNames, data }) {
     return (

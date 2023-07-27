@@ -100,3 +100,69 @@
     position: fixed;
     width: fit-content;
 }
+
+.white-font {
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.green-font {
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #25474F;
+}
+
+.circle-frame-bold {
+    height: 36px;
+    width: 36px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #25474F;
+    color: #FFFFFF;
+    vertical-align: baseline;
+    border-radius: 50%;
+}
+
+.circle-frame-gray {
+    height: 36px;
+    width: 36px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f6f7;
+    color: #717F8C;
+    vertical-align: baseline;
+    border-radius: 50%;
+}
+
+.gray-font {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #717f8c;
+}
+
+.bold-font {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #464646;
+}

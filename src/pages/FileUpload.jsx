@@ -1,5 +1,4 @@
 import "../styling/FileUpload.css";
-import "../styling/MetabaseInput2.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React, { useState, useEffect, useContext } from "react";
@@ -8,7 +7,6 @@ import { ConfigurationOptions } from "aws-sdk";
 import { read, utils, writeFile } from 'xlsx';
 import AWS from "aws-sdk";
 import "../config";
-import DragDrop from './DragDrop.jsx';
 import YourExcelComponent from './ExcelComponent.jsx';
 
 import {
@@ -361,22 +359,28 @@ export default function FileUpload() {
                                     <div className="frame-504">
                                         <div className="frame-454">
                                             <div className="frame-214">
-                                                <div className="import-excel-file inter-semi-bold-white-16px">Import Excel file</div>
+                                                <div className="white-font">Import Excel file</div>
                                             </div>
                                             <div className="frame-215">
-                                                <div className="manual-data-input">Manual data input</div>
+                                                <div className="green-font">Manual data input</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="frame-main-2">
                                     <div className="frame-26">
-                                        <div className="group-260">
-                                            <div className="overlap-group-1 overlap-group-4">
-                                                <div className="number-font-white">1</div>
-                                            </div>
+                                                <div className="circle-frame-bold">1</div>
                                         </div>
                                         <div className="bold-font">Upload file</div>
+                                    
+                                    <img
+                                        className="line-9"
+                                        src="/image/line-93.svg"
+                                        alt="line-93"
+                                    />
+                                    <div className="frame-26">
+                                                <div className="circle-frame-gray">2</div>
+                                        <div className="gray-font">Match columns</div>
                                     </div>
                                     <img
                                         className="line-9"
@@ -384,25 +388,8 @@ export default function FileUpload() {
                                         alt="line-93"
                                     />
                                     <div className="frame-26">
-                                        <div className="group-260">
-                                            <div className="overlap-group-2 overlap-group-4">
-                                                <div className="number-font-gray">2</div>
-                                            </div>
-                                        </div>
-                                        <div className="match-columns inter-normal-slate-gray-16px">Match columns</div>
-                                    </div>
-                                    <img
-                                        className="line-9"
-                                        src="/image/line-93.svg"
-                                        alt="line-93"
-                                    />
-                                    <div className="frame-26">
-                                        <div className="group-260">
-                                            <div className="overlap-group-3 overlap-group-4">
-                                                <div className="number-font-gray">3</div>
-                                            </div>
-                                        </div>
-                                        <div className="validate-data inter-normal-slate-gray-16px">Validate data</div>
+                                                <div className="circle-frame-gray">3</div>
+                                        <div className="gray-font">Validate data</div>
                                     </div>
                                 </div>
                             </div>

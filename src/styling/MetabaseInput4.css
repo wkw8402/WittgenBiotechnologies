@@ -116,3 +116,50 @@
     align-items: center;
     position: relative;
 }
+
+.white-font {
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.green-font {
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #25474F;
+}
+
+.errorbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 610px;
+    left: 1090px;
+    width: 350.25px;
+    height: 54px;
+    top: 609.75px;
+    left: 1089.75px;
+    padding: 18px;
+    border: 0.75px;
+    gap: 7.5px;
+    border: 0.75px solid #DD0000;
+    background-color: #FFE3E1;
+}
+
+.errorbox-font {
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+}

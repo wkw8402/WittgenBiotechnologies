@@ -1,12 +1,11 @@
 import "../styling/MetabaseInput4.css";
-import "../styling/MetabaseInput2.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
 import { useState, useEffect, useRef } from 'react'
 
 
-
+// Add New Row
 function AddRowButton({ addRow }) {
   return (
     <div className="add" onClick={addRow}>
@@ -15,7 +14,27 @@ function AddRowButton({ addRow }) {
   );
 }
 
-function ExcelTable({ data }) {
+
+//Error message
+function ParentComponent({ hasErrorOrWarning }) {
+
+  return (
+    <>
+      {hasErrorOrWarning && (
+        <div className="errorbox">
+          <img src="/image/errorbox-icon.svg" alt="error-img" /> 
+          <div className="errorbox-font">
+            Please fill in the invalid/or empty fields
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+
+//Excel Table Function
+function ExcelTable({ data, onErrorOrWarningChange }) {
   const [previousRow, setPreviousRow] = useState(null);
 
   useEffect(() => {
@@ -31,10 +50,12 @@ function ExcelTable({ data }) {
       value === undefined ||
       String(value).toUpperCase() === "NA"
     ) {
+      onErrorOrWarningChange(true);   
       return "error";
     }
 
     if (previousValue !== null && typeof value !== typeof previousValue) {
+      onErrorOrWarningChange(true); 
       return "warning";
     }
 
@@ -84,6 +105,7 @@ function ExcelTable({ data }) {
   );
 }
 
+//Delete row
 function DeleteButtons({ data, deleteRow }) {
   return (
     <>
@@ -109,6 +131,7 @@ export default function App() {
   const [excelData, setExcelData] = useState([]);
   const [columnNames, setColumnNames] = useState([]);
   const prevColumnNamesRef = useRef([]);
+  const [hasErrorOrWarning, setHasErrorOrWarning] = useState(false);
 
   const addRow = () => {
     setExcelData(prevExcelData => [...prevExcelData, []]);
@@ -258,11 +281,11 @@ export default function App() {
                 <div className="frame-504">
                   <div className="frame-454">
                     <div className="frame-214">
-                      <div className="import-excel-file inter-semi-bold-white-16px">Import Excel file</div>
+                      <div className="white-font">Import Excel file</div>
                     </div>
                     <a href="./metabase_input_5">
                       <div className="frame-215">
-                        <div className="manual-data-input">Manual data input</div>
+                        <div className="green-font">Manual data input</div>
                       </div>
                     </a>
                   </div>
@@ -331,7 +354,7 @@ export default function App() {
                       ))}
                     </div>
                     <div className="excel-514-4">
-                      <ExcelTable data={excelData} />
+                    <ExcelTable data={excelData} onErrorOrWarningChange={setHasErrorOrWarning} />
                     </div>
                   </div>
                 </div>
@@ -345,6 +368,8 @@ export default function App() {
         </div>
 
       </div>
+      
+      <ParentComponent hasErrorOrWarning={hasErrorOrWarning} />
       <div className="frame-bottom">
         <a href="/metabase_input_3">
           <div className="back-button">

@@ -1,12 +1,15 @@
+/* eslint-disable */
+
 // TODO: change fileName to relFileName?
 // TODO: change configTargetBucket
 
 import "../styling/Dashboard.css";
 
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import AWS, { SecretsManager } from "aws-sdk";
+import { useNavigate } from 'react-router-dom'; 
 
-//import { Account, AccountContext, cogGroup } from "../components/Account";
+import { Account, AccountContext, cogGroup } from "../components/Account";
 
 import JSZip from "jszip";
 import saveAs from "save-as";
@@ -21,6 +24,7 @@ var UserNameUploaded = "";
 
 let ItemsDataArr = {};
 var zipFilename = "wittgen.zip";
+
 
 
 let unSubmittedFilesObject = [
@@ -163,10 +167,10 @@ function downloadBlob(blob) {
   document.body.removeChild(link);
 }
 
-
 export default function () {
   // TODO: get user name in first call or wait until we get correct username or dont use usestate in username
-  const [submittedFilesState,setSubmittedFilesState] = useState(null);
+  const [submittedFilesState, setSubmittedFilesState] = useState(null);
+  const [user, setUser] = useState(null);
 
   async function breakCallbackDownload() { 
   UserNameUploaded = await HandleUserName();
@@ -181,14 +185,14 @@ export default function () {
     },
   };
   
-
     return dynamodb.query(queryItemParams).promise().then();
   }
 
   useEffect(() => {
     breakCallbackDownload().then((data) => setSubmittedFilesState(data))
+    setUser(getUser());
     //setSubmittedFilesState(data)
-    console.log("submittedFilesObject updated", submittedFilesState)
+    // console.log("submittedFilesObject updated", submittedFilesState)
   }, []);
   
   let submittedFilesObject = [
@@ -221,10 +225,10 @@ export default function () {
       download_estTime: "2 files",
     },
   ]
-  let submittedFilesObjectRender = submittedFilesState ? (submittedFilesState.Items.map((element) => {
-    //console.log("render",submittedFilesState);
+  let submittedFilesObjectRender = (user && submittedFilesState) ? (submittedFilesState.Items.map((element) => {
+    // console.log("render",submittedFilesState);
     // console.log("render",typeof(submittedFilesState.Items));
-    console.log("render",element);
+    // console.log("render",element);
     return (
       <div className="frame-4">
         <div className="frame-460">
@@ -264,11 +268,23 @@ export default function () {
   </div>
 </div>
 )
-  
 
+const compRef = useRef();
+
+const logout = (event) => {
+  event.preventDefault();
+  compRef.current.logout();
   
+}
+const getUser = () => {
+  return compRef.current.getUser();
+}
+
+const navigate = useNavigate(); 
+
   return (
     <>
+      <Account ref={compRef} />
       <meta charSet="utf-8" />
       {/*<meta name=description content="This site was generated with Anima. www.animaapp.com"/>*/}
       {/* <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> */}
@@ -317,14 +333,14 @@ export default function () {
               </div>
               </a>
             </div>
-            <a href="/">
+            <a href="/" onClick={logout}>
             <div class="logout">
               <img
                 class="logout_fill0_wght400_grad0_opsz48-1"
                 src="logout-fill0-wght400-grad0-opsz48-1.svg"
                 alt="logout_FILL0_wght400_GRAD0_opsz48 1"
               />
-              <div class="logout-1 inter-normal-white-12px">Logout</div>
+              <div class="logout-1 inter-normal-white-12px" >Logout</div>
             </div>
             </a>
           </div>
@@ -333,7 +349,6 @@ export default function () {
           <div class="frame-615"><h1 class="place">Welcome</h1></div>
           <div class="frame-449">
             <p class="get-started-with-our-services inter-semi-bold-blue-dianne-15px">Get started with our services</p>
-            <a href="/metabase_input_1">
             <div class="frame-448">
               <div class="dashbaord_main-buttons-researcher">
                 <div class="frame-447">
@@ -342,11 +357,10 @@ export default function () {
                     src="assignment-fill0-wght400-grad0-opsz48-1-white.svg"
                     alt="assignment_FILL0_wght400_GRAD0_opsz48 1"
                   />
-                  <div class="researchers inter-semi-bold-white-12px">Upload your file</div>
+                  <button className="researchers inter-semi-bold-white-12px" onClick={()=>{navigate('/getting_started_1')}}>Upload your file</button>
                 </div>
               </div>
             </div>
-            </a>
           </div>
         </div>
         <div class="frame-473">
@@ -372,7 +386,7 @@ export default function () {
                   submittedFilesObjectRender
                 ) : (
                   <p>
-                    Loding...
+                    Loading...
                   </p>
                 )}
             {/* <div class="frame-4-1">

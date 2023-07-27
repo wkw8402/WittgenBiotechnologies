@@ -100,3 +100,12 @@
 .first-cell {
     background-color: #F1F3F4;
 }
+
+.icon-position {
+    position: relative;
+    width: 129px;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
