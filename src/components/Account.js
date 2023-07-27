@@ -1,16 +1,20 @@
+/* eslint-disable */
+
 import { AuthenticationDetails, CognitoUser } from "amazon-cognito-identity-js";
-import { createContext } from "react";
-import { UserPool } from "../config";
+import { useNavigate } from "react-router-dom";
+import { createContext, forwardRef, useImperativeHandle, useState } from "react";
+import UserPool  from "../config";
 import "../config";
 import { Discovery } from "aws-sdk";
 
 const AccountContext = createContext();
-var cogGroup, NewJWTTOKEN;
+var cogGroup, NewJWTTOKEN
 
-const Account = (props) => {
+const Account = forwardRef((props, ref) => {
+
   const getSession = async () => {
     await new Promise((resolve, reject) => {
-      const user = UserPool.getCurrentUser();
+      const user = UserPool.getCurrentUser(); 
       // alert("Userpool.getCurrentUser = ", user);
       if (user) {
         user.getSession((err, session) => {
@@ -52,6 +56,7 @@ const Account = (props) => {
           console.log(
             "access token + " + result.getAccessToken().getJwtToken()
           );
+        
           cogGroup = result.getIdToken().payload["cognito:groups"];
           console.log("Cognito Group Name is ----", cogGroup);
           //alert(cogGroup);
@@ -62,6 +67,7 @@ const Account = (props) => {
         onFailure: (err) => {
           console.log("login failure", err);
           reject(err);
+          alert("Login failed!")
         },
         newPasswordRequired: (data) => {
           console.log("new password required", data);
@@ -75,17 +81,28 @@ const Account = (props) => {
     // alert("LOGOUT CALLED")
 
     const user = UserPool.getCurrentUser();
+
     user.signOut();
 
     window.location.href = "/";
     // window.location.href = "/login";
   };
 
+  const getUser = () => {
+    return UserPool.getCurrentUser();
+  }
+
+  useImperativeHandle(ref, () => ({
+    authenticate,
+    logout,
+    getUser,
+  }))
+
   return (
     <AccountContext.Provider value={{ authenticate, getSession, logout }}>
       {props.children}
     </AccountContext.Provider>
   );
-};
+});
 
 export { Account, AccountContext, cogGroup, NewJWTTOKEN };

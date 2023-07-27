@@ -7,7 +7,6 @@ import InProgress from "./pages/InProgress";
 import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
 import MetabaseInput1 from "./pages/FileUpload";
-import MetabaseInput2 from "./pages/MetabaseInput2";
 import MetabaseInput3 from "./pages/MetabaseInput3";
 import MetabaseInput4 from "./pages/MetabaseInput4";
 import MetabaseInput5 from "./pages/MetabaseInput5";
@@ -21,6 +20,7 @@ import Register from "./pages/Register";
 import Submitted from "./pages/Submitted";
 import VerifyCode from "./pages/VerifyCode";
 import FileUpload from "./pages/FileUpload";
+import Excel from "./pages/ExcelComponent"
 
 function App() {
   return (
@@ -34,11 +34,10 @@ function App() {
         <Route path="/my_files_1" element={<MyFiles1 />}></Route>
         <Route path="/Complete" element={<Complete />}></Route>
         <Route path="/CostUsage" element={<CostUsage />}></Route>
-        {/* <Route path="/my_files_2" element={<MyFiles2 />}></Route>
+        <Route path="/my_files_2" element={<MyFiles2 />}></Route>
         <Route path="/getting_started_1" element={<GettingStarted1 />}></Route>
-        <Route path="/getting_started_2" element={<GettingStarted2 />}></Route> */}
+        <Route path="/getting_started_2" element={<GettingStarted2 />}></Route>
         <Route path="/metabase_input_1" element={<MetabaseInput1 />}></Route>
-        <Route path="/metabase_input_2" element={<MetabaseInput2 />}></Route>
         <Route path="/metabase_input_3" element={<MetabaseInput3 />}></Route>
         <Route path="/metabase_input_4" element={<MetabaseInput4 />}></Route>
         <Route path="/metabase_input_5" element={<MetabaseInput5 />}></Route>

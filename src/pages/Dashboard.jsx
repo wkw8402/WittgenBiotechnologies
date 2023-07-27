@@ -7,14 +7,14 @@ import "../styling/Dashboard.css";
 
 import React, { useState, useEffect, useContext, useRef } from "react";
 import AWS, { SecretsManager } from "aws-sdk";
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 import { Account, AccountContext, cogGroup } from "../components/Account";
 
 import JSZip from "jszip";
 import saveAs from "save-as";
 
-import  {configTableName, configTargetBucket, configParams, configSourceBucket}  from "../config";
+import { configTableName, configTargetBucket, configParams, configSourceBucket } from "../config";
 
 configParams();
 
@@ -28,30 +28,30 @@ var zipFilename = "wittgen.zip";
 
 
 let unSubmittedFilesObject = [
-  // {
-  //   fileId: "GH-123445",
-  //   service: "Clincal",
-  //   lastEdited: "11/13/2022",
-  //   status: "Unpaid",
-  // },
-  // {
-  //   fileId: "GH-123445",
-  //   service: "Clincal",
-  //   lastEdited: "11/13/2022",
-  //   status: "Paid",
-  // },
-  // {
-  //   fileId: "GH-123445",
-  //   service: "Clincal",
-  //   lastEdited: "11/13/2022",
-  //   status: "Unpaid",
-  // },
-  // {
-  //   fileId: "GH-123445",
-  //   service: "Clincal",
-  //   lastEdited: "11/13/2022",
-  //   status: "Unpaid",
-  // },
+  {
+    fileId: "GH-123445",
+    service: "Clincal",
+    lastEdited: "11/13/2022",
+    status: "Unpaid",
+  },
+  {
+    fileId: "GH-123445",
+    service: "Clincal",
+    lastEdited: "11/13/2022",
+    status: "Paid",
+  },
+  {
+    fileId: "GH-123445",
+    service: "Clincal",
+    lastEdited: "11/13/2022",
+    status: "Unpaid",
+  },
+  {
+    fileId: "GH-123445",
+    service: "Clincal",
+    lastEdited: "11/13/2022",
+    status: "Unpaid",
+  },
 ];
 
 let unSubmittedFilesObjectRender = unSubmittedFilesObject.map((element) => {
@@ -137,10 +137,10 @@ function downloadOnClick() {
               });
           }
         }
-      });; 
+      });;
     });
   }
-  
+
 }
 
 function downloadBlob(blob) {
@@ -172,19 +172,19 @@ export default function () {
   const [submittedFilesState, setSubmittedFilesState] = useState(null);
   const [user, setUser] = useState(null);
 
-  async function breakCallbackDownload() { 
-  UserNameUploaded = await HandleUserName();
-  
+  async function breakCallbackDownload() {
+    UserNameUploaded = await HandleUserName();
 
-  var queryItemParams = {
-    TableName: configTableName,
-    IndexName: "upoadedBy-CreationDate-index",
-    KeyConditionExpression: "upoadedBy = :username",
-    ExpressionAttributeValues: {
-      ":username": {S: UserNameUploaded },
-    },
-  };
-  
+
+    var queryItemParams = {
+      TableName: configTableName,
+      IndexName: "upoadedBy-CreationDate-index",
+      KeyConditionExpression: "upoadedBy = :username",
+      ExpressionAttributeValues: {
+        ":username": { S: UserNameUploaded },
+      },
+    };
+
     return dynamodb.query(queryItemParams).promise().then();
   }
 
@@ -194,7 +194,7 @@ export default function () {
     //setSubmittedFilesState(data)
     // console.log("submittedFilesObject updated", submittedFilesState)
   }, []);
-  
+
   let submittedFilesObject = [
     {
       fileId: "GH-123445",
@@ -202,13 +202,13 @@ export default function () {
       submittedDate: "11/13/2022",
       status: "Submitted",
       download_estTime: <button
-      onClick={() => {
-        downloadOnClick();
-      }}
-      className="researchers-3 inter-semi-bold-slate-gray-14px"
-    >
-      Next
-    </button>,
+        onClick={() => {
+          downloadOnClick();
+        }}
+        className="researchers-3 inter-semi-bold-slate-gray-14px"
+      >
+        Next
+      </button>,
     },
     {
       fileId: "GH-123445",
@@ -259,28 +259,28 @@ export default function () {
         </div>
       </div>
     );
-  })) : (      
-  <div className="frame-4">
-  <div className="frame-460">
-    <div className="fileId inter-normal-tundora-14px">
-      You did not submitted any files yet.
+  })) : (
+    <div className="frame-4">
+      <div className="frame-460">
+        <div className="fileId inter-normal-tundora-14px">
+          You did not submitted any files yet.
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-)
+  )
 
-const compRef = useRef();
+  const compRef = useRef();
 
-const logout = (event) => {
-  event.preventDefault();
-  compRef.current.logout();
-  
-}
-const getUser = () => {
-  return compRef.current.getUser();
-}
+  const logout = (event) => {
+    event.preventDefault();
+    compRef.current.logout();
 
-const navigate = useNavigate(); 
+  }
+  const getUser = () => {
+    return compRef.current.getUser();
+  }
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -301,95 +301,129 @@ const navigate = useNavigate();
         name="page"
         defaultValue="dashboard-1-1440"
       />
-    <div class="container-center-horizontal">
-      <div class="dashboard-1-1440 screen">
-        <div class="main-navigation">
-          <div class="overlap-group1">
-            <div class="group-184">
-              <div class="overlap-group">
-              <a href="/dashboard">
-                <div class="witt-gen-portal oxygen-bold-white-21px">
-                  <span class="oxygen-bold-white-21px">WittGen</span><span class="oxygen-light-white-21px">Portal</span>
+      <div class="container-center-horizontal">
+        <div class="dashboard-1-1440 screen">
+          <div className="main-navigation">
+            <div className="logo-box">
+              <a href="/">
+                <div className="witt-gen-portal bold-portal-logo">
+                  <span className="bold-portal-logo">
+                    WittGen
+                  </span>
+                  <span className="light-portal-logo">
+                    Portal
+                  </span>
                 </div>
-                </a>
-              </div>
-              <img class="line-79" src="line-79.svg" alt="Line 79" />
-            </div>
-            <div class="frame-185">
-            <a href="/dashboard">
-              <div class="frame-185-item">
-                <img class="icon-home" src="home-fill1-wght400-grad0-opsz48--2--1.svg" alt="icon-home" />
-                <div class="dashboard inter-semi-bold-white-12px">Dashboard</div>
-              </div>
               </a>
-              <a href="/my_files_1">
-              <div class="frame-185-item">
+            </div>
+            <div className="navigation-box">
+              <div className="navigation-box-1">
                 <img
-                  class="draft_fill0_wght400_grad0_opsz48-1"
-                  src="draft-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="draft_FILL0_wght400_GRAD0_opsz48 1"
+                  className="dashboard-icon"
+                  src="/image/home-icon.svg"
+                  alt="home-icon"
                 />
-                <div class="my-files inter-normal-white-12px">My files</div>
+                <div className="light-font">Dashboard</div>
               </div>
-              </a>
+              <div className="navigation-box-1">
+                <img
+                  className="myfiles-icon"
+                  src="/image/myfiles-icon.svg"
+                  alt="myfiles-icon"
+                />
+                <div className="my-files-font">My files</div>
+              </div>
+              <div className="navigation-box-1">
+                <img
+                  className="cost-usage-icon"
+                  src="/image/cost-usage-icon.svg"
+                  alt="cost-usage-icon"
+                />
+                <div className="light-font">Cost &amp; Usage</div>
+              </div>
+              <div className="navigation-box-1">
+                <img
+                  className="setting-icon"
+                  src="/image/settings-icon.svg"
+                  alt="setting-icon"
+                />
+                <div className="light-font">Settings</div>
+              </div>
+              <div className="navigation-box-1">
+                <img
+                  className="faq-support-ion"
+                  src="/image/faq-support-icon.svg"
+                  alt="faq-support-icon"
+                />
+                <div className="light-font">FAQ / Support</div>
+              </div>
             </div>
-            <a href="/" onClick={logout}>
-            <div class="logout">
+            <div className="logout">
               <img
-                class="logout_fill0_wght400_grad0_opsz48-1"
-                src="logout-fill0-wght400-grad0-opsz48-1.svg"
-                alt="logout_FILL0_wght400_GRAD0_opsz48 1"
+                className="logout-icon"
+                src="/image/logout-icon.png"
+                alt="logout-icon"
               />
-              <div class="logout-1 inter-normal-white-12px" >Logout</div>
+              <div className="light-font">Logout</div>
             </div>
-            </a>
           </div>
-        </div>
-        <div class="frame-610">
-          <div class="frame-615"><h1 class="place">Welcome</h1></div>
-          <div class="frame-449">
-            <p class="get-started-with-our-services inter-semi-bold-blue-dianne-15px">Get started with our services</p>
-            <div class="frame-448">
-              <div class="dashbaord_main-buttons-researcher">
-                <div class="frame-447">
-                  <img
-                    class="assignment_fill0"
-                    src="assignment-fill0-wght400-grad0-opsz48-1-white.svg"
-                    alt="assignment_FILL0_wght400_GRAD0_opsz48 1"
-                  />
-                  <button className="researchers inter-semi-bold-white-12px" onClick={()=>{navigate('/getting_started_1')}}>Upload your file</button>
+
+          <div class="frame-610">
+            <div class="frame-615"><h1 class="place">Welcome</h1></div>
+            <div class="frame-449">
+              <p class="get-started-with-our-services blue-15px">Get started with our services</p>
+              <div class="frame-448">
+                <div class="dashbaord_main-buttons-researcher">
+                  <div class="frame-447">
+                    <img
+                      class="assignment_fill0"
+                      src="assignment-fill0-wght400-grad0-opsz48-1-white.svg"
+                      alt="assignment_FILL0_wght400_GRAD0_opsz48 1"
+                    />
+                    <button className="researchers inter-semi-bold-white-12px" onClick={() => { navigate('/getting_started_1') }}>Researchers</button>
+                  </div>
+
+                </div>
+                <div class="dashbaord_main-buttons-researcher">
+                  <div class="frame-447">
+                    <img
+                      class="assignment_fill0"
+                      src="/image/clinicians-icon.svg"
+                      alt="clinicians-icon"
+                    />
+                    <button className="researchers inter-semi-bold-white-12px" onClick={() => { navigate('/getting_started_1') }}>Clinicians</button>
+
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="frame-473">
-          <div class="frame-472">
-            <div class="submitted-files submitted-1 inter-semi-bold-blue-dianne-15px">Submitted files</div>
-            <a href="/my_files_1">
-            <div class="component-3"><div class="view-all">View all</div></div>
-            </a>
-          </div>
-          <div class="frame-47">
-            <div class="frame-4">
-              <div class="frame-455"><div class="id inter-semi-bold-blue-dianne-10-5px">ID</div></div>
-              <div class="frame-456"><div class="service inter-semi-bold-blue-dianne-10-5px">Service</div></div>
-              <div class="frame-45">
-                <div class="submitted-date submitted-1 inter-semi-bold-blue-dianne-10-5px">Submitted Date</div>
-              </div>
-              <div class="frame-45"><div class="status inter-semi-bold-blue-dianne-10-5px">Status</div></div>
-              <div class="frame-459">
-                <div class="download-est-time inter-semi-bold-blue-dianne-10-5px">Download/ Est time</div>
-              </div>
+          <div class="frame-473">
+            <div class="frame-472">
+              <div class="submitted-files submitted-1 blue-15px">Submitted files</div>
+              <a href="/my_files_1">
+  <div class="view-all-box">View all</div>
+              </a>
             </div>
-            {submittedFilesState ? (
-                  submittedFilesObjectRender
-                ) : (
-                  <p>
-                    Loading...
-                  </p>
-                )}
-            {/* <div class="frame-4-1">
+            <div class="frame-47">
+              <div class="frame-4">
+                <div class="frame-455"><div class="id inter-semi-bold-blue-dianne-10-5px">ID</div></div>
+                <div class="frame-456"><div class="service inter-semi-bold-blue-dianne-10-5px">Service</div></div>
+                <div class="frame-45">
+                  <div class="submitted-date submitted-1 inter-semi-bold-blue-dianne-10-5px">Submitted Date</div>
+                </div>
+                <div class="frame-45"><div class="status inter-semi-bold-blue-dianne-10-5px">Status</div></div>
+                <div class="frame-459">
+                  <div class="download-est-time inter-semi-bold-blue-dianne-10-5px">Download/ Est time</div>
+                </div>
+              </div>
+              {submittedFilesState ? (
+                submittedFilesObjectRender
+              ) : (
+                <p>
+                </p>
+              )}
+               <div class="frame-4-1">
               <div class="frame-4">
                 <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-1234567</div></div>
                 <div class="frame-461"><div class="clinical inter-normal-tundora-10-5px">Clinical</div></div>
@@ -435,13 +469,13 @@ const navigate = useNavigate();
                 </div>
                 <div class="frame-464"><div class="text inter-normal-tundora-10-5px">-</div></div>
               </div>
-            </div> */}
+            </div> 
+            </div>
           </div>
-        </div>
-        {/* <div class="frame-474">
+           <div class="frame-474">
           <div class="frame-472-1">
-            <div class="unsubmitted-files inter-semi-bold-blue-dianne-15px">Unsubmitted files</div>
-            <div class="component-3"><div class="view-all">View all</div></div>
+            <div class="unsubmitted-files blue-15px">Unsubmitted files</div>
+            <div class="view-all-box">View all</div>
           </div>
           <div class="frame-47">
             <div class="frame-4 inter-semi-bold-blue-dianne-10-5px">
@@ -513,25 +547,26 @@ const navigate = useNavigate();
               </div>
             </div>
           </div>
-        </div> */}
-        <div class="frame-478">
-          <div class="frame-47">
-            <div class="frame-305">
-              <div class="our-updates inter-semi-bold-blue-dianne-15px">Our updates</div>
-              <div class="component-3">
-                {/* <div class="view-all-1">View all</div> */}
-                </div>
-            </div>
-            <div class="frame-4-1">
-              <div class="component">
-                <div class="frame-287">
-                  <p class="lorem-ipsum-dolor-si inter-semi-bold-tundora-12px">
-                    We have published our new demo! We will implement our further funtions here. You can now upload and download your files, and see the files you submitted.
-                  </p>
-                  <div class="date inter-semi-bold-slate-gray-8-2px">10/04/2023</div>
+        </div> 
+          <div class="frame-478">
+            <div class="frame-47">
+              <div class="frame-305">
+                <div class="our-updates blue-15px">Our updates</div>
+                <div class="view-all-box">
+                  View all
                 </div>
               </div>
-              {/* <div class="component">
+              <div class="frame-4-1">
+                <div class="component">
+                  <div class="frame-287">
+                    <p class="lorem-ipsum-dolor-si inter-semi-bold-tundora-12px">
+                    We have published our new demo! We will implement our further funtions here. You can now upload and download your files, and see the files you submitted.
+                    
+                    </p>
+                    <div class="date inter-semi-bold-slate-gray-8-2px">10/04/2023</div>
+                  </div>
+                </div>
+                 <div class="component">
                 <div class="frame-287">
                   <p class="ut-enim-ad-minim-ven inter-semi-bold-tundora-12px">
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
@@ -546,13 +581,13 @@ const navigate = useNavigate();
                   </p>
                   <div class="date inter-semi-bold-slate-gray-8-2px">15/11/2022</div>
                 </div>
-              </div> */}
+              </div>
+              </div>
             </div>
-          </div>
-          {/* <div class="frame-47">
+             <div class="frame-47">
             <div class="frame-305">
-              <div class="cost-usage inter-semi-bold-blue-dianne-15px">Cost &amp; Usage</div>
-              <div class="component-3"><div class="view-all-1">View all</div></div>
+              <div class="cost-usage blue-15px">Cost &amp; Usage</div>
+              <div class="view-all-box">View all</div>
             </div>
             <div class="frame-4-1">
               <div class="component">
@@ -583,10 +618,10 @@ const navigate = useNavigate();
                 </div>
               </div>
             </div>
-          </div> */}
+          </div> 
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
