@@ -5,6 +5,9 @@ import React from "react";
 import { useState, useEffect, useRef } from 'react';
 import { FileUploader } from "react-drag-drop-files";
 import ReactDOM from 'react-dom';
+import AWS from "aws-sdk";
+import pako from 'pako';
+import { configSourceBucket } from "../config";
 
 export default function Sample()  {
   const [columnNames, setColumnNames] = useState([]);
@@ -104,7 +107,6 @@ export default function Sample()  {
     }
   }
 
-
   // 체크된 아이템을 담을 배열
   const [checkItems, setCheckItems] = useState([]);
 
@@ -199,6 +201,69 @@ export default function Sample()  {
   });
   }
 
+  const data = [columnNames].concat(excelData);
+
+  const tsvContent = data.map((row) => row.join('\t')).join('\n');
+    const blob = new Blob([tsvContent], { type: 'text/tsv' });
+    const fileUrl = URL.createObjectURL(blob);
+
+  // Now you have the TSV content as a local variable (fileUrl)
+  console.log(fileUrl);
+
+  const handleUpload = async () => {
+    const file = await fetch(fileUrl).then((response) => response.blob());
+
+    const s3 = new AWS.S3();
+    const bucketName = configSourceBucket;
+    const key = 'file.tsv'; // Replace with the desired key or filename in S3
+
+    const params = {
+      Bucket: bucketName,
+      Key: key,
+      Body: file,
+      ContentType: 'text/tab-separated-values', // Set the content type for the file (in this case, TSV)
+    };
+
+    try {
+      await s3.upload(params).promise();
+      console.log('File uploaded successfully to S3.');
+
+       // Fetch the TSV file content from S3
+       const getObjectParams = {
+        Bucket: bucketName,
+        Key: key,
+      };
+
+      const tsvFileContent = await s3.getObject(getObjectParams).promise();
+      
+      // Compress the file into a tar.gz buffer using pako
+      const compressedFile = pako.gzip(tsvFileContent.Body, { level: 9 });
+
+      // Upload the compressed tar.gz file to S3
+      const uploadParams = {
+        Bucket: bucketName,
+        Key: `${key}.tar.gz`,
+        Body: compressedFile,
+        ContentType: 'application/gzip',
+      };
+
+      await s3.upload(uploadParams).promise();
+
+      // Remove the original TSV file from S3
+      const deleteParams = {
+        Bucket: bucketName,
+        Key: key,
+      };
+
+      await s3.deleteObject(deleteParams).promise();
+
+      console.log(`Successfully compressed and uploaded ${key}.tar.gz to S3.`);
+    } catch (error) {
+      console.error('Error uploading or compressing:', error);
+    }
+
+
+  };
   
   return (
     <>
@@ -287,7 +352,7 @@ export default function Sample()  {
         <div class="back-next">
           <div class="frame-616">
             <div class="back-button"><div class="place inter-semi-bold-blue-dianne-10-5px" style={{ fontSize: '14px' }}>Back</div></div>
-            <div class="next-button"><div class="next inter-semi-bold-white-10-5px" style={{ fontSize: '14px' }}>Next</div></div>
+            <button class="next-button" onClick={handleUpload}><div class="next inter-semi-bold-white-10-5px" style={{ fontSize: '14px' }}>Next</div></button>
           </div>
         </div>
         <div class="frame-563">

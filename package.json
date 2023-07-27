@@ -12,11 +12,12 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "amazon-cognito-identity-js": "^5.2.10",
-    "aws-sdk": "^2.1253.0",
+    "aws-sdk": "^2.1423.0",
     "country-state-city": "^3.1.2",
     "jszip": "^3.10.1",
     "jszip-utils": "^0.1.0",
     "moment": "^2.29.4",
+    "pako": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-drag-drop-files": "^2.3.9",
@@ -33,8 +34,10 @@
     "react-toastify": "^9.0.8",
     "redux": "^4.2.1",
     "save-as": "^0.1.8",
+    "tar": "^6.1.15",
     "web-vitals": "^2.1.4",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "zlib": "^1.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
