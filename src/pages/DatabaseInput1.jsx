@@ -42,11 +42,11 @@ export default function Sample()  {
       <>
         {!file ? (
           <FileUploader handleChange={(file) => handleFileChange(id, file)} types={types} name="file" >
-            <button className="upload-file inter-normal-persian-blue-10-5px">Upload file</button>
+            <button className="upload-file inter-normal-persian-blue-10-5px" style={{ fontSize: '10.5px' }}>Upload file</button>
           </FileUploader>
         ) : (
           
-            <div className="oxygen-normal-tundora-10px">{fileName}.{fileType}</div>
+            <div className="oxygen-normal-tundora-10px" style={{ fontSize: '10px' }}>{fileName}.{fileType}</div>
           
         )}
       </>
@@ -88,7 +88,7 @@ export default function Sample()  {
     ReactDOM.unmountComponentAtNode(uploadField3);
 
     
-    const seuratfiletype = [".rds" ,".RDS"];
+    const seuratfiletype = ["pdf" ,".RDS"];
     const fastQfiletype = [".fastq",".FASTQ"];
     const cellrangerfiletype = ["tsv","csv","mtx"];
 
@@ -162,14 +162,14 @@ export default function Sample()  {
         <div className="frame-5-2 frame-5-3">
           <div className="frame-55-1">
             <div className="component-102" />
-          </div>ㄴ
+          </div>
           <div className="component-1">
-            <div className="gh-1234567-4 inter-normal-tundora-14px">
+            <div className="gh-1234567-4 inter-normal-tundora-14px" style={{ fontSize: '14px' }}>
               {element.sample}
             </div>
           </div>
           <div className="component-6">
-            <div className="seurat-3 inter-normal-tundora-14px">
+            <div className="seurat-3 inter-normal-tundora-14px" style={{ fontSize: '14px' }}>
               {element.databaseCategory}
             </div>
             <img
@@ -179,17 +179,17 @@ export default function Sample()  {
             />
           </div>
           <div className="component-2">
-            <div className="upload-file inter-normal-persian-blue-14px">
+            <div className="upload-file inter-normal-persian-blue-14px" style={{ fontSize: '14px' }}>
               {element.databaseFile1}
             </div>
           </div>
           <div className="component-2">
-            <div className="upload-file inter-normal-persian-blue-14px">
+            <div className="upload-file inter-normal-persian-blue-14px" style={{ fontSize: '14px' }}>
               {element.databaseFile2}
             </div>
           </div>
           <div className="component-2">
-            <div className="upload-file inter-normal-persian-blue-14px">
+            <div className="upload-file inter-normal-persian-blue-14px" style={{ fontSize: '14px' }}>
               {element.databaseFile3}
             </div>
           </div>

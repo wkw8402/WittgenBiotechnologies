@@ -3,6 +3,7 @@ import SingleModal from './SingleModal';
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
+import "../styling/DeleteMult.css";
 import { useState, useEffect } from 'react';
 import { FileUploader } from "react-drag-drop-files";
 import ReactDOM from 'react-dom';
@@ -101,7 +102,7 @@ export default function Sample()  {
       <>
         {!file ? (
           <FileUploader handleChange={(file) => handleFileChange(id, file)} types={types} name="file" >
-            <button className="upload-file inter-normal-persian-blue-10-5px">Upload file</button>
+            <button className="upload-file inter-normal-persian-blue-10-5px" style={{ fontSize: '10.5px' }}>Upload file</button>
           </FileUploader>
         ) : (
           
@@ -268,7 +269,7 @@ function toggleTable(checked) {
         <input type="hidden" id="anPageName" name="page" value="applyu47-database-input" />
       <div class="container-center-horizontal">
         <div class="applyu47-database-input screen">
-        <div class="main-navigation">
+        <div class="main-navigation" style={{ zIndex: '1' }}>
           <div class="overlap-group1">
             <div class="group-184">
               <div class="overlap-group">
@@ -331,9 +332,9 @@ function toggleTable(checked) {
           </div>
         </div>
         <div class="back-next">
-          <div class="frame-616">
-            <div class="back-button"><div class="place inter-semi-bold-blue-dianne-10-5px">Back</div></div>
-            <div class="next-button"><div class="next inter-semi-bold-white-10-5px">Next</div></div>
+          <div class="frame-616a">
+          <button class="back-buttona"><div class="place inter-semi-bold-blue-dianne-10-5px-2" style={{ fontSize: '14px' }}>Back</div></button>
+            <button class="next-buttona"><div class="next inter-semi-bold-white-10-5px-2" style={{ fontSize: '14px' }}>Submit</div></button>
           </div>
         </div>
         <div class="frame-563">
@@ -364,7 +365,7 @@ function toggleTable(checked) {
             </div>
           </div>
         </div> 
-        <div class="frame-577">
+        <div class="frame-577" style={{ position: 'fixed', left: '103px' }}>
           <div class="frame-562a">
             <div class="group-447">
               <div class="frame-564">
@@ -555,7 +556,7 @@ function toggleTable(checked) {
         
         
       </div>
-      <div class="frame-591">
+      <div class="frame-591" style={{ left: '1360px', zIndex: '0', height:'870px' }}>
           <div class="frame-590">
             <div class="frame-58">
               <div class="frame-58">
@@ -584,7 +585,7 @@ function toggleTable(checked) {
               </div>
             </div>
             <div class="frame-589">
-              <div class="frame-588">
+              <div class="frame-588" style={{ alignItems: 'flex-start' }}>
                 <div class="frame-587">
                   <div class="frame-58-1a">
                     <div class="subtotal inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>Subtotal:</div>
