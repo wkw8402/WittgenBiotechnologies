@@ -82,11 +82,11 @@ export default function Sample()  {
       <>
         {!file ? (
           <FileUploader handleChange={(file) => handleFileChange(id, file)} types={types} name="file" >
-            <button className="upload-file inter-normal-persian-blue-10-5px">Upload file</button>
+            <button className="upload-file inter-normal-persian-blue-10-5px" style={{ fontSize: '10.5px' }}>Upload file</button>
           </FileUploader>
         ) : (
           
-            <div className="oxygen-normal-tundora-10px">{fileName}.{fileType}</div>
+            <div className="oxygen-normal-tundora-10px" style={{ fontSize: '10px' }}>{fileName}.{fileType}</div>
           
         )}
       </>
