@@ -3,6 +3,7 @@ import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 import { FileUploader } from "react-drag-drop-files";
 import ReactDOM from 'react-dom';
 import AWS from "aws-sdk";
@@ -10,10 +11,27 @@ import JSZip from 'jszip';
 import { gzip } from 'pako';
 import { configSourceBucket } from "../config";
 
+var dynamodb = new AWS.DynamoDB();
+var fileID,
+  fileName,
+  relFileName,
+  fileModifiedDate,
+  fileSize,
+  fileType,
+  fileURI,
+  downloadEligible,
+  fileURL,
+  origFileName,
+  status,
+  est;
+
 export default function Sample()  {
   const [columnNames, setColumnNames] = useState([]);
   const [excelData, setExcelData] = useState([]);
   const prevColumnNamesRef = useRef([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Load columnNames from localStorage
@@ -217,6 +235,7 @@ export default function Sample()  {
         } else {
           console.log('File uploaded successfully to S3:', fileObject.name);
           resolve(data.Location);
+          uploadFile(fileArrays);
         }
       });
     });
@@ -225,7 +244,141 @@ export default function Sample()  {
   const handleUpload = async () => {
     compressAllFiles(fileArrays, data);
   };
-  
+
+  const getStringValue = (value) => {
+    if (typeof value == "number") {
+      return "" + value + "";
+    }
+    return value;
+  };
+
+  const uploadFile = (fileArrays) => {
+    fileArrays.forEach((files) => {
+      files.forEach((file) => {
+        if (file) {
+          setIsSubmitting(true);
+
+          //fileID = Math.floor(Math.random() * 100);
+          fileID = Math.floor(Date.now() + "" + Math.random());
+          
+          //YYYY-MM-DD, HH:mm
+          var dateobj = new Date();
+          var CreationDate = `${dateobj.toISOString().slice(0, 10)}, ${dateobj.toISOString().slice(11, 16)}`;
+
+          downloadEligible = true;
+
+          fileModifiedDate = file.lastModifiedDate;
+          
+          fileName = fileID + "_" + file.name;
+
+          fileSize = file.size / 1000 + "kB";
+          
+          if (files.length === 1) {
+            fileType = 'seurat';
+          } else if (files.length === 2) {
+            fileType = 'FASTQ';
+          } else if (files.length === 3) {
+            fileType = 'countMTX';
+          } else {
+            fileType = 'others-' + file.type;
+          }
+
+          fileURI = "s3://" + configSourceBucket + "/" + fileName;
+          
+          fileURL =
+            "https://" +
+            configSourceBucket /*S3_BUCKET*/ +
+            ".s3.amazonaws.com/" +
+            fileName;
+
+
+          origFileName = file.name;  
+          relFileName = fileID + "_" + fileName;
+
+          status = null;
+          est = null;
+
+          console.log("File Id has been calculated as - ", fileID);
+          console.log("File URL has been calculated as - ", encodeURI(fileURL));
+
+          fileID: getStringValue(fileID);
+          fileModifiedDate: getStringValue(
+            new Date(fileModifiedDate).toISOString()
+          );
+          fileName: getStringValue(fileName);
+          fileSize: getStringValue(fileSize);
+          fileType: getStringValue(fileType);
+          fileURI: getStringValue(fileURI);
+          downloadEligible: getStringValue(downloadEligible);
+          origFileName: getStringValue(origFileName);
+          status: getStringValue(status);
+          est: getStringValue(est);
+          // fileURL: getStringValue(encodeURI(fileURL));
+          //CreationDate: getStringValue(CreationDate);
+
+          var params = {
+            Item: {
+              fileID: {
+                S: "" + fileID + "",
+                //S: "Somewhat Famous"
+              },
+              fileModifiedDate: {
+                S: "" + fileModifiedDate + "",
+                //S: "No One You Know"
+              },
+              fileName: {
+                S: "" + fileName + "",
+                //S: "Call Me Today"
+              },
+              fileSize: {
+                S: "" + fileSize + "",
+                //S: "Call Me Today"
+              },
+              fileType: {
+                S: "" + fileType + "",
+                //S: "Call Me Today"
+              },
+              fileURI: {
+                S: "" + fileURI + "",
+                //S: "Call Me Today"
+              },
+              fileURL: {
+                S: "" + encodeURI(fileURL) + "",
+                //S: "Call Me Today"
+              },
+              downloadEligible: {
+                S: "" + downloadEligible + "",
+                //S: "Call Me Today
+              },
+              CreationDate: {
+                S: "" + CreationDate + "",
+                //S: "Call Me Today
+              },
+              relFileName: {
+                S: "" + relFileName + "",
+                //S: "Call Me Today
+              },
+              origFileName: {
+                S: "" + origFileName + "",
+                //S: "Call Me Today
+              },
+            },
+            ReturnConsumedCapacity: "TOTAL",
+            TableName: "wittgen-bio-metadata-table",
+          };
+
+          dynamodb.putItem(params, function (err, data) {
+            if (err) console.log(err, err.stack);
+            // an error occurred
+            else console.log(data); // successful response
+            
+          });
+          // navigate('/submitted', { state: { fileName: fileName} });
+        }
+      });
+    });
+  }
+
   return (
     <>
   <head>
