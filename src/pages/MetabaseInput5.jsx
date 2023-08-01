@@ -3,6 +3,8 @@ import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import "../config";
 
 //Add New Row
 function AddRowButton({ addRow }) {
@@ -68,6 +70,7 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
     }
   }, [data, previousRow, onErrorOrWarningChange]);
   
+
 
   return (
     <>
@@ -142,6 +145,8 @@ export default function App() {
     setExcelData(prevExcelData => [...prevExcelData, []]);
   };
 
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     // fetch data from local storage
@@ -192,7 +197,8 @@ export default function App() {
         id="anPageName"
         name="page"
         defaultValue="apply-metadatabase-input-import-excel-file-match-columns"
-      />
+      />import { useNavigate } from 'react-router-dom';
+
       <div className="main-navigation">
         <div className="logo-box">
           <a href="/">
@@ -351,9 +357,9 @@ export default function App() {
               <div className="back">back</div>
             </div>
           </a>
-          <div className="next-button">
+          <button className="next-button" onClick={()=>{navigate('/database_input_1')}}>
             <div className="next">Next</div>
-          </div>
+          </button>
         </div>
       </div>
     </div >
