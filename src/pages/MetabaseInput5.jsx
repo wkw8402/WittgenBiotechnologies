@@ -3,8 +3,6 @@ import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import "../config";
 
 //Add New Row
 function AddRowButton({ addRow }) {
@@ -36,6 +34,11 @@ function ParentComponent({ hasErrorOrWarning }) {
 function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
   const [previousRow, setPreviousRow] = useState(null);
 
+
+  useEffect(() => {
+    setPreviousRow(data[data.length - 1]);
+  }, [data]);
+  
   useEffect(() => {
     if (data.length > 0) {
       setPreviousRow(data[0]);
@@ -46,7 +49,7 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
     if (
       value === "" ||
       value === null ||
-      value === undefined ||
+      value === undefined ||    
       String(value).toUpperCase() === "NA"
     ) {
       return "error";
@@ -70,7 +73,6 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
     }
   }, [data, previousRow, onErrorOrWarningChange]);
   
-
 
   return (
     <>
@@ -145,9 +147,21 @@ export default function App() {
     setExcelData(prevExcelData => [...prevExcelData, []]);
   };
 
-  const navigate = useNavigate();
-
-
+  useEffect(() => {
+    window.addEventListener("beforeunload", saveDataToLocal);
+  
+    // Component unmount 때에 이벤트 리스너를 제거합니다.
+    return () => {
+      window.removeEventListener("beforeunload", saveDataToLocal);
+    };
+  }, [excelData, columnNames]);
+  
+  const saveDataToLocal = () => {
+    localStorage.setItem("excelData", JSON.stringify(excelData));
+    localStorage.setItem("columnNames", JSON.stringify(columnNames));
+  };
+  
+  
   useEffect(() => {
     // fetch data from local storage
     const storedExcelData = localStorage.getItem("excelData");
@@ -197,8 +211,7 @@ export default function App() {
         id="anPageName"
         name="page"
         defaultValue="apply-metadatabase-input-import-excel-file-match-columns"
-      />import { useNavigate } from 'react-router-dom';
-
+      />
       <div className="main-navigation">
         <div className="logo-box">
           <a href="/">
@@ -357,9 +370,9 @@ export default function App() {
               <div className="back">back</div>
             </div>
           </a>
-          <button className="next-button" onClick={()=>{navigate('/database_input_1')}}>
+          <div className="next-button">
             <div className="next">Next</div>
-          </button>
+          </div>
         </div>
       </div>
     </div >
