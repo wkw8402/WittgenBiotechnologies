@@ -3,6 +3,7 @@ import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 
 //Add New Row
 function AddRowButton({ addRow }) {
@@ -142,6 +143,7 @@ export default function App() {
   const [columnNames, setColumnNames] = useState([]);
   const prevColumnNamesRef = useRef([]);
   const [hasErrorOrWarning, setHasErrorOrWarning] = useState(false);
+  const navigate = useNavigate();
 
   const addRow = () => {
     setExcelData(prevExcelData => [...prevExcelData, []]);
@@ -370,7 +372,7 @@ export default function App() {
               <div className="back">back</div>
             </div>
           </a>
-          <div className="next-button">
+          <div className="next-button" onClick={()=>{navigate('/database_input_1')}}>
             <div className="next">Next</div>
           </div>
         </div>
