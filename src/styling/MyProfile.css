@@ -1,0 +1,680 @@
+/* screen - my-profile */
+
+.my-profile {
+    align-items: flex-start;
+    background-color: var(--white);
+    border: 0.75px none;
+    display: flex;
+    overflow: hidden;
+    width: 1440px;
+  }
+  
+ 
+  
+  .my-profile .main-navigation {
+    align-items: flex-start;
+    display: flex;
+    height: 100vh;
+    left: -2px;
+    min-width: 195px;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+  }
+  
+  
+  .my-profile .overlap-group1 {
+  height: 100vh;
+  position: relative;
+  width: 197px;
+  }
+  
+  .my-profile .group-184 {
+  align-items: flex-end;
+  background-color: var(--blue-dianne);
+  display: flex;
+  height: 100vh;
+  left: 0;
+  min-width: 197px;
+  position: absolute;
+  top: 0;
+  }
+  
+  .my-profile .overlap-group {
+  position: relative;
+  align-items: flex-start;
+  background-color: var(--blue-dianne);
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
+  min-width: 195px;
+  padding: 16.5px 26.2px;
+  }
+  
+  .my-profile .witt-gen-portal {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 27px;
+  position: fixed;
+  top: 16.5px;
+  width: 138px;
+  
+  }
+  .my-profile .my-table {
+  border-collapse: collapse;
+  width: 100%;
+  }
+  
+  .my-profile .my-table th, .my-table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+  }
+  
+  .my-profile .line-79 {
+  height: 809px;
+  width: 1px;
+  }
+  
+  .my-profile .frame-185 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  left: 0;
+  position: absolute;
+  top: 123px;
+  width: 195px;
+  height: 216px;
+  }
+  
+  .my-profile .frame-185-item {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  padding: 11.25px 45px;
+  position: relative;
+  right: 61px;
+  width: 195px;
+  }
+  
+  .my-profile .home_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+  }
+  
+  .my-profile .dashboard {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+  }
+  
+  .my-profile .draft_fill1_wght400_grad0_opsz48-1-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+  }
+  
+  .my-profile .my-files {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: -1.50px;
+  margin-top: -3.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+  }
+  
+  .my-profile .paid_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+  }
+  
+  .my-profile .cost-usage {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+  white-space: nowrap;
+  }
+  
+  .my-profile .settings_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+  }
+  
+  .my-profile .settings {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+  }
+  
+  .my-profile .contact_support_fill {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+  }
+  
+  @media (min-height: 380px){
+  .my-profile .logout {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  height: 36px;
+  left: 0;
+  padding: 11.25px 45px;
+  position: fixed;
+  width: 195px;
+  bottom: 57px;
+  }
+  }
+  
+.my-profile .logout_fill0_wght400_grad0_opsz48-1 {
+  height: 18px;
+  margin-bottom: -2.25px;
+  margin-top: -2.25px;
+  min-width: 18px;
+  position: relative;
+  }
+  
+  .my-profile .logout-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.50px;
+  position: relative;
+  width: fit-content;
+  }
+  
+  .my-profile .frame-695 {
+    align-items: flex-start;
+    display: flex;
+    gap: 60px;
+    left: 254px;
+    position: fixed;
+    top: 74px;
+    width: fit-content;
+    z-index: 3;
+  }
+  
+  .my-profile .frame {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-496 {
+    align-items: center;
+    display: flex;
+    gap: 232.5px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .title {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -0.75px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-468 {
+    align-items: center;
+    background-color: var(--blue-dianne);
+    border: 0.75px solid;
+    border-color: var(--geyser);
+    display: flex;
+    gap: 9px;
+    height: 42px;
+    padding: 9px;
+    position: relative;
+    width: 390px;
+  }
+  
+  .my-profile .icon {
+    height: 18px;
+    min-width: 18px;
+    position: relative;
+  }
+  
+  .my-profile .my-profile-3 {
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-466 {
+    align-items: center;
+    background-color: var(--catskill-white);
+    border: 0.75px solid;
+    border-color: var(--geyser);
+    cursor: pointer;
+    display: flex;
+    gap: 9px;
+    height: 42px;
+    padding: 9px;
+    position: relative;
+    width: 390px;
+  }
+  
+  .my-profile .frame-467 {
+    align-items: center;
+    background-color: var(--mystic);
+    border: 0.75px solid;
+    border-color: var(--silver);
+    display: flex;
+    gap: 9px;
+    height: 42px;
+    padding: 9px;
+    position: relative;
+    width: 390px;
+  }
+  
+  .my-profile .application {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .component-85 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .my-profile-4 {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -0.75px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-292 {
+    align-items: center;
+    background-color: var(--blue-dianne);
+    border: 0.75px solid;
+    border-color: var(--geyser);
+    cursor: pointer;
+    display: flex;
+    gap: 9px;
+    justify-content: center;
+    padding: 6px 9px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .edit-my-profile {
+    letter-spacing: 0;
+    line-height: 18px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-464 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    width: 432px;
+  }
+  
+  .my-profile .frame-464-1 {
+    gap: 9px;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-291 {
+    align-items: center;
+    background-color: var(--catskill-white);
+    display: flex;
+    gap: 9px;
+    height: 30px;
+    padding: 9px;
+    position: relative;
+    width: 432px;
+  }
+  
+  .my-profile .password {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: -2.10px;
+    margin-top: -3.90px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-464-2 {
+    gap: 18px;
+    padding: 0px 9px;
+    width: 432px;
+  }
+  
+  .my-profile .frame-449 {
+    align-items: flex-start;
+    display: flex;
+    gap: 12px;
+    margin-right: -18.00px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-40 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-301 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .first-name {
+    letter-spacing: 0;
+    line-height: 15.8px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .change-password11 {
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.wrapper {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin: 5px;
+  }
+  #switch {
+    position: absolute;
+    /* hidden */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  .switch_label {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 58px;
+    height: 28px;
+    background: #fff;
+    border: 2px solid #daa;
+    border-radius: 20px;
+    transition: 0.2s;
+  }
+  .switch_label:hover {
+    background: #efefef;
+  }
+  .onf_btn {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: #daa;
+    transition: 0.2s;
+    
+  }
+  
+  /* checking style */
+  #switch:checked+.switch_label {
+    background: #34C759;
+    border: 2px solid #34C759;
+  }
+  
+  #switch:checked+.switch_label:hover {
+    background: #34C759;
+  }
+  
+  /* move */
+  #switch:checked+.switch_label .onf_btn {
+    left: 34px;
+    background: #fff;
+    box-shadow: 1px 2px 3px #00000020;
+  }
+  
+  .my-profile .frame-290 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 24px;
+    justify-content: center;
+    position: relative;
+    width: 210px;
+    padding-left: 0;
+  }
+  
+  .my-profile .name {
+    letter-spacing: 0;
+    line-height: 18px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .last-name {
+    letter-spacing: 0;
+    line-height: 15.8px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .color {
+    letter-spacing: 0;
+    line-height: 18px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-450a {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-right: -9.00px;
+    position: relative;
+    width: 423px;
+  }
+  
+  .my-profile .send-notifications-to {
+    letter-spacing: 0;
+    line-height: 15.8px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .johnsnowrandomscienceco {
+    letter-spacing: 0;
+    line-height: 18px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .switch {
+    height: 27.07px;
+    margin-right: -1.12px;
+    min-width: 39.38px;
+    position: relative;
+  }
+  
+  .my-profile .frame-497 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-right: -18.00px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-464-3 {
+    gap: 18px;
+    padding: 0px 9px;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-4 {
+    align-items: flex-start;
+    display: flex;
+    gap: 12px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .my-profile .randomscience {
+    letter-spacing: 0;
+    line-height: 18px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .country {
+    letter-spacing: 0;
+    line-height: 15.8px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .place {
+    letter-spacing: 0;
+    line-height: 18px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .address {
+    letter-spacing: 0;
+    line-height: 18px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .state-province {
+    letter-spacing: 0;
+    line-height: 15.8px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .place-1 {
+    letter-spacing: 0;
+    line-height: 18px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .city {
+    letter-spacing: 0;
+    line-height: 15.8px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .san-fransisco {
+    letter-spacing: 0;
+    line-height: 18px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .zip-postal-code {
+    letter-spacing: 0;
+    line-height: 15.8px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .h3-j-1-g9 {
+    letter-spacing: 0;
+    line-height: 18px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .company {
+    letter-spacing: 0;
+    line-height: 15.8px;
+    margin-top: -0.75px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .my-profile .frame-464-4 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
