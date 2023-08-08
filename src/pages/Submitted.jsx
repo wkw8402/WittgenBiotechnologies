@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import "../styling/Submitted.css";
 import { useLocation } from 'react-router-dom';
 

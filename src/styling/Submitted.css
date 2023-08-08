@@ -213,12 +213,14 @@
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 19.5px;
+  gap: 9px;
+  height: 208px;
   left: 254px;
   position: fixed;
-  top: 126px;
+  top: 108px;
   width: fit-content;
   z-index: 4;
+  right: 60px;
 }
 
 .apply-submitted .frame-578 {
