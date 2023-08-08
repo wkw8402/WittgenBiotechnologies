@@ -689,9 +689,9 @@ export default function Sample()  {
             }}>
               {100 > progress && progress >= 0 && (
                 <div>
-                  <progress style={{ width: '500px'}} value={progress} max="100"></progress>
+                  <progress style={{ width: '500px' }} value={progress} max="100"></progress>
                   <div>
-                    <p className="inter-light-blue-dianne-15px" style={{ marginBotton: '10px'}}>
+                    <p className="inter-light-blue-dianne-15px">
                       Please wait while uploading... ({((progress * finalFileSize) / 100000000).toFixed(2)} MB / {(finalFileSize / 1000000).toFixed(2)} MB)
                     </p>
                   </div>
