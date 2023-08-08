@@ -621,7 +621,7 @@ export default function Sample()  {
         </>
         ) : (
         <>
-        <div class="frame-563">
+        {100 > progress && progress >= 0 && (<div class="frame-563">
           <div class="frame-350">
             <div class="frame-258">
               <div class="frame-49">
@@ -648,11 +648,46 @@ export default function Sample()  {
               <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }}>Save &amp; Exit</div></div>
             </div>
           </div>
-        </div> 
+        </div>)}
+        {100 === progress && (<div class="frame-563">
+          <div class="frame-350">
+            <div class="frame-258">
+              <div class="frame-49">
+                <div class="getting-started inter-normal-japanese-laurel-9px" style={{ fontSize: '12px' }}>Getting started</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Metadatabase Input</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Database Input</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Submit</div>
+                <div class="rectangle-228"></div>
+              </div>
+            </div>
+            <div class="frame-213">
+              <div class="component-33">
+                <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '10px' }}>Exit to Applications</div>
+              </div>
+            </div>
+          </div>
+        </div>)}
         <div class="frame-562">
-          <div class="frame-578">
-            <div class="frame-364">
-              {progress >= 0 && (
+          <div class="frame-581">
+            <div class="frame-578" style={{ 
+              alignItems: 'center', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              gap: '30px', 
+              position: 'relative', 
+              width: 'fit-content',
+              marginTop: '50px',
+            }}>
+              {100 > progress && progress >= 0 && (
                 <div>
                   <progress style={{ width: '500px'}} value={progress} max="100"></progress>
                   <div>
@@ -662,6 +697,43 @@ export default function Sample()  {
                   </div>
                 </div>
               )}
+              {progress === 100 && (
+                <>
+                <div class="frame-364" style={{ 
+                  alignItems: 'center', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  gap: '18px', 
+                  position: 'relative', 
+                  width: 'fit-content'
+                }}>
+                  <div class="group-363" style={{ 
+                    backgroundColor: 'var(--white)', 
+                    border: '1.5px solid', 
+                    borderColor: 'var(--japanese-laurel)', 
+                    borderRadius: '18px', 
+                    height: '36px', 
+                    minWidth: '36px', 
+                    position: 'relative'
+                  }}>
+                    <img
+                      class="material-symbolscheck-small"
+                      src="material-symbols-check-small.svg"
+                      alt="material-symbols:check-small"
+                      style={{ 
+                        height: '24px', 
+                        left: '4px', 
+                        position: 'absolute', 
+                        top: '4px', 
+                        width: '24px' 
+                      }}
+                    />
+                  </div>
+                  <p class="your-application-has" style={{ color: 'var(--japanese-laurel)'}}>Your application has been successfully submitted.</p>
+                </div>
+                <img class="line-105" src="line-105.svg" alt="Line 105" />
+              </>
+              )}
             </div>
             <img class="line-105" src="line-105.svg" alt="Line 105" />
           </div>
@@ -669,9 +741,8 @@ export default function Sample()  {
             <div class="frame-580">
               {progress === 100 && (
                 <>
-                <p class="your-application-has">Your application has been successfully submitted.</p>
-                <div class="file-id-gh-13728930">File Name: {finalFileName}</div>
-                <p class="well-email-you-when">We will email you when your result is ready.</p>
+                <div class="file-id-gh-13728930" style={{ marginTop: '10px' }}>File Name: {finalFileName}</div>
+                <p class="well-email-you-when" style={{ marginTop: '10px' }}>We'll email you an order confirmation with details and tracking info.</p>
                 </>
               )}
             </div>

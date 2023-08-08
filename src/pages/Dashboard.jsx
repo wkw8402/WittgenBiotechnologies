@@ -423,7 +423,7 @@ export default function () {
                 <p>
                 </p>
               )}
-               <div class="frame-4-1">
+              {/* <div class="frame-4-1">
               <div class="frame-4">
                 <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-1234567</div></div>
                 <div class="frame-461"><div class="clinical inter-normal-tundora-10-5px">Clinical</div></div>
@@ -469,10 +469,10 @@ export default function () {
                 </div>
                 <div class="frame-464"><div class="text inter-normal-tundora-10-5px">-</div></div>
               </div>
-            </div> 
+            </div>  */}
             </div>
           </div>
-           <div class="frame-474">
+           {/* <div class="frame-474">
           <div class="frame-472-1">
             <div class="unsubmitted-files blue-15px">Unsubmitted files</div>
             <div class="view-all-box">View all</div>
@@ -547,7 +547,7 @@ export default function () {
               </div>
             </div>
           </div>
-        </div> 
+        </div>  */}
           <div class="frame-478">
             <div class="frame-47">
               <div class="frame-305">
@@ -566,7 +566,7 @@ export default function () {
                     <div class="date inter-semi-bold-slate-gray-8-2px">10/04/2023</div>
                   </div>
                 </div>
-                 <div class="component">
+                 {/* <div class="component">
                 <div class="frame-287">
                   <p class="ut-enim-ad-minim-ven inter-semi-bold-tundora-12px">
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
@@ -581,10 +581,10 @@ export default function () {
                   </p>
                   <div class="date inter-semi-bold-slate-gray-8-2px">15/11/2022</div>
                 </div>
-              </div>
+              </div> */}
               </div>
             </div>
-             <div class="frame-47">
+             {/* <div class="frame-47">
             <div class="frame-305">
               <div class="cost-usage blue-15px">Cost &amp; Usage</div>
               <div class="view-all-box">View all</div>
@@ -618,7 +618,7 @@ export default function () {
                 </div>
               </div>
             </div>
-          </div> 
+          </div>  */}
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { useMemo } from "react";
 import Select from "react-select";
 import countryList from "react-select-country-list";
 import React, { useState, useEffect, useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import AWS, { SecretsManager } from "aws-sdk";
 import "../config";
 import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
@@ -47,6 +48,7 @@ export default function GettingStarted1() {
   };
 
   const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
 
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
@@ -91,56 +93,60 @@ export default function GettingStarted1() {
             <h1 className="font-extralight">Portal</h1>
           </div>
 
-          <ul className="font-normal text-[16px] flex flex-col mt-[90px] text-left leading-[19px] gap-[28.5px] ml-[46.5px]">
-            <div className="flex flex-row ">
-              <img
-                className="icon"
-                src="home-fill0-wght400-grad0-opsz48-1-1@2x.svg"
-                alt="icon-home"
-              />
-              <li className="inline-block">Dashbaord</li>
+          <div class="main-navigation">
+          <div class="overlap-group1">
+            <div class="frame-185">
+              <div class="frame-185-item">
+                <img
+                  class="home_fill0_wght400_grad0_opsz48-1"
+                  src="home-fill0-wght400-grad0-opsz48-1.svg"
+                  alt="home_FILL0_wght400_GRAD0_opsz48 1"
+                />
+                <div class="dashboard inter-normal-white-12px" style={{ fontSize: '12px' }}>Dashboard</div>
+              </div>
+              <div class="frame-185-item">
+                <img
+                  class="draft_fill1_wght400_grad0_opsz48-1-1"
+                  src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
+                  alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
+                />
+                <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px', fontWeight:'600' }}>My files</div>
+              </div>
+              <div class="frame-185-item">
+                <img
+                  class="paid_fill0_wght400_grad0_opsz48-1"
+                  src="paid-fill0-wght400-grad0-opsz48-1.svg"
+                  alt="paid_FILL0_wght400_GRAD0_opsz48 1"
+                />
+                <div class="cost-usage inter-normal-white-12px" style={{ fontSize: '12px' }}>Cost &amp; Usage</div>
+              </div>
+              <div class="frame-185-item">
+                <img
+                  class="settings_fill0_wght400_grad0_opsz48-1"
+                  src="settings-fill0-wght400-grad0-opsz48-1.svg"
+                  alt="settings_FILL0_wght400_GRAD0_opsz48 1"
+                />
+                <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' }}>Settings</div>
+              </div>
+              <div class="frame-185-item">
+                <img
+                  class="contact_support_fill"
+                  src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
+                  alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
+                />
+                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px' }}>FAQ / Support</div>
+              </div>
             </div>
-            <div className="flex flex-row">
+            <div class="logout">
               <img
-                className="draft_fill1_wght400_grad0_opsz48-1-1"
-                src="draft-fill1-wght400-grad0-opsz48--1--1-3@2x.svg"
-                alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
-              />
-              <li>My files</li>
-            </div>
-            <div className="flex flex-row">
-              <img
-                className="paid_fill0_wght400_grad0_opsz48-1"
-                src="paid-fill0-wght400-grad0-opsz48-1-3@2x.svg"
-                alt="paid_FILL0_wght400_GRAD0_opsz48 1"
-              />
-              <li>Cost & Usage</li>
-            </div>
-            <div className="flex flex-row">
-              <img
-                className="icon"
-                src="settings-fill0-wght400-grad0-opsz48-1-3@2x.svg"
-                alt="icon-settings"
-              />
-              <li>Settings</li>
-            </div>
-            <div className="flex flex-row">
-              <img
-                className="contact_support_fill"
-                src="contact-support-fill0-wght400-grad0-opsz48--1--1-3@2x.svg"
-                alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
-              />
-              <li>FAQ / Support</li>
-            </div>
-            <div className="flex flex-row ">
-              <img
-                className="logout_fill0_wght400_grad0_opsz48-1"
-                src="logout-fill0-wght400-grad0-opsz48-1-3@2x.svg"
+                class="logout_fill0_wght400_grad0_opsz48-1"
+                src="logout-fill0-wght400-grad0-opsz48-1.svg"
                 alt="logout_FILL0_wght400_GRAD0_opsz48 1"
               />
-              <span>Logout</span>
+              <div class="logout-1 inter-normal-white-12px" style={{ fontSize: '12px' }}>Logout</div>
             </div>
-          </ul>
+          </div>
+        </div>
         </div>
 
         {/* header */}
