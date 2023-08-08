@@ -1,4 +1,5 @@
 import "../styling/DatabaseInput1.css";
+import "../styling/Submitted.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
@@ -31,6 +32,8 @@ export default function Sample()  {
   const prevColumnNamesRef = useRef([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [finalFileSize, setFinalFileSize] = useState(0);
+  const [finalFileName, setFinalFileName] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -49,6 +52,7 @@ export default function Sample()  {
     if (storedExcelData) {
       setExcelData(JSON.parse(storedExcelData));
     }
+    console.log(progress);
   }, []);
 
   const titles = excelData.map((innerArray) => innerArray[0]);
@@ -171,9 +175,6 @@ export default function Sample()  {
 
   const data = [columnNames].concat(excelData);
 
-  console.log(titles);
-  console.log(fileArrays);
-
   const convert2DArrayToTSV = (data) => {
     const tsvContent = data.map((row) => row.join('\t')).join('\n');
     return tsvContent;
@@ -211,6 +212,7 @@ export default function Sample()  {
   // Generate the final tar.gz archive
   const content = await finalZip.generateAsync({ type: 'blob' });
 
+  setFinalFileSize(content.size);
     // Save the tar.gz file to S3
     await uploadToS3({ name: 'meta&data.tar.gz', content });
   
@@ -218,6 +220,8 @@ export default function Sample()  {
   };
 
   const uploadToS3 = (fileObject) => {
+    setFinalFileName(fileObject.name);
+
     const s3 = new AWS.S3();
     const bucketName = configSourceBucket; // Replace with your S3 bucket name
   
@@ -228,7 +232,8 @@ export default function Sample()  {
     };
   
     return new Promise((resolve, reject) => {
-      s3.upload(params, (err, data) => {
+      s3
+      .upload(params, (err, data) => {
         if (err) {
           console.error('Error uploading to S3:', err);
           reject(err);
@@ -237,11 +242,15 @@ export default function Sample()  {
           resolve(data.Location);
           uploadFile(fileArrays);
         }
+      })
+      .on("httpUploadProgress", (evt) => {
+        setProgress(Math.round((evt.loaded / evt.total) * 100));
       });
     });
   };
 
   const handleUpload = async () => {
+    setIsSubmitting(true);
     compressAllFiles(fileArrays, data);
   };
 
@@ -373,7 +382,6 @@ export default function Sample()  {
             else console.log(data); // successful response
             
           });
-          // navigate('/submitted', { state: { fileName: fileName} });
         }
       });
     });
@@ -469,6 +477,8 @@ export default function Sample()  {
             <button class="next-button" onClick={handleUpload}><div class="next inter-semi-bold-white-10-5px" style={{ fontSize: '14px' }}>Next</div></button>
           </div>
         </div>
+        {!isSubmitting ? (
+        <>
         <div class="frame-563">
           <div class="frame-350">
             <div class="frame-258">
@@ -607,8 +617,149 @@ export default function Sample()  {
               </div>
             </div>
           </div>
-          
         </div>
+        </>
+        ) : (
+        <>
+        {100 > progress && progress >= 0 && (<div class="frame-563">
+          <div class="frame-350">
+            <div class="frame-258">
+              <div class="frame-49">
+                <div class="getting-started inter-normal-japanese-laurel-9px" style={{ fontSize: '12px' }}>Getting started</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Metadatabase Input</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Database Input</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-semi-bold-blue-dianne-16px" style={{ fontSize: '12px' }}>Submit</div>
+                <div class="rectangle-228-1 rectangle-228-3"></div>
+              </div>
+            </div>
+            <div class="frame-213">
+              <div class="component-33">
+                <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '12px' }}>Discard &amp; Exit</div>
+              </div>
+              <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }}>Save &amp; Exit</div></div>
+            </div>
+          </div>
+        </div>)}
+        {100 === progress && (<div class="frame-563">
+          <div class="frame-350">
+            <div class="frame-258">
+              <div class="frame-49">
+                <div class="getting-started inter-normal-japanese-laurel-9px" style={{ fontSize: '12px' }}>Getting started</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Metadatabase Input</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Database Input</div>
+                <div class="rectangle-228"></div>
+              </div>
+              <div class="frame-49">
+                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Submit</div>
+                <div class="rectangle-228"></div>
+              </div>
+            </div>
+            <div class="frame-213">
+              <div class="component-33">
+                <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '10px' }}>Exit to Applications</div>
+              </div>
+            </div>
+          </div>
+        </div>)}
+        <div class="frame-562">
+          <div class="frame-581">
+            <div class="frame-578" style={{ 
+              alignItems: 'center', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              gap: '30px', 
+              position: 'relative', 
+              width: 'fit-content',
+              marginTop: '50px',
+            }}>
+              {100 > progress && progress >= 0 && (
+                <div>
+                  <progress style={{ width: '500px' }} value={progress} max="100"></progress>
+                  <div>
+                    <p className="inter-light-blue-dianne-15px">
+                      Please wait while uploading... ({((progress * finalFileSize) / 100000000).toFixed(2)} MB / {(finalFileSize / 1000000).toFixed(2)} MB)
+                    </p>
+                  </div>
+                </div>
+              )}
+              {progress === 100 && (
+                <>
+                <div class="frame-364" style={{ 
+                  alignItems: 'center', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  gap: '18px', 
+                  position: 'relative', 
+                  width: 'fit-content'
+                }}>
+                  <div class="group-363" style={{ 
+                    backgroundColor: 'var(--white)', 
+                    border: '1.5px solid', 
+                    borderColor: 'var(--japanese-laurel)', 
+                    borderRadius: '18px', 
+                    height: '36px', 
+                    minWidth: '36px', 
+                    position: 'relative'
+                  }}>
+                    <img
+                      class="material-symbolscheck-small"
+                      src="material-symbols-check-small.svg"
+                      alt="material-symbols:check-small"
+                      style={{ 
+                        height: '24px', 
+                        left: '4px', 
+                        position: 'absolute', 
+                        top: '4px', 
+                        width: '24px' 
+                      }}
+                    />
+                  </div>
+                  <p class="your-application-has" style={{ color: 'var(--japanese-laurel)'}}>Your application has been successfully submitted.</p>
+                </div>
+                <img class="line-105" src="line-105.svg" alt="Line 105" />
+              </>
+              )}
+            </div>
+            <img class="line-105" src="line-105.svg" alt="Line 105" />
+          </div>
+          <div class="frame-579">
+            <div class="frame-580">
+              {progress === 100 && (
+                <>
+                <div class="file-id-gh-13728930" style={{ marginTop: '10px' }}>File Name: {finalFileName}</div>
+                <p class="well-email-you-when" style={{ marginTop: '10px' }}>We'll email you an order confirmation with details and tracking info.</p>
+                </>
+              )}
+            </div>
+            <a href="/dashboard">
+              <div class="frame-488">
+                <div class="component-33-1"><div class="see-my-file inter-semi-bold-white-10-5px">Back to Dashboard</div></div>
+                {/* <div class="frame-213">
+                  <div class="component-33">
+                    <div class="back-to-dashboard inter-semi-bold-blue-dianne-10-5px">See my file</div>
+                  </div>
+                </div> */}
+              </div>
+            </a>
+          </div>
+        </div>
+        </>
+        )}
       </div>
     </div>
     </body>

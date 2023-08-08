@@ -372,9 +372,9 @@ export default function App() {
               <div className="back">back</div>
             </div>
           </a>
-          <div className="next-button" onClick={()=>{navigate('/database_input_1')}}>
+          <button className="next-button" onClick={()=>{navigate('/database_input_1')}}>
             <div className="next">Next</div>
-          </div>
+          </button>
         </div>
       </div>
     </div >
