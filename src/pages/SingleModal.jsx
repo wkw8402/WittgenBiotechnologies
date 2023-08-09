@@ -44,7 +44,7 @@ const SingleModal = ({ open, close, item, handleDelete, setSelectedCount, delete
       <div class="frame-627 frame-delete">
         <img
           class="delete_fill0_wght400_grad0_opsz48-1-1"
-          src="delete-fill0-wght400-grad0-opsz48--1--1.svg"
+          src="/image/delete-fill0-wght400-grad0-opsz48--1--1.svg"
           alt="delete_FILL0_wght400_GRAD0_opsz48 (1) 1"
         />
         <div class="frame-628 frame-delete">
