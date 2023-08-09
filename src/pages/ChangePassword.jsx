@@ -224,7 +224,7 @@ export default function Sample() {
             </div>
             <div class="group-462">
               <div class="overlap-group-2">
-                <img class="polygon-1" src="polygon-1-1.svg" alt="Polygon 1" />
+                <img class="polygon-1" src="/image/polygon-1-1.svg" alt="Polygon 1" />
                 <div class="rectangle-256"></div>
               </div>
             </div>
