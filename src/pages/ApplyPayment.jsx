@@ -23,7 +23,9 @@ export default function Sample()  {
     {id: 3, title: 'GH-1234567d'},
     {id: 4, title: 'GH-1234567e'},
     {id: 5, title: 'GH-1234567f'},
-    {id: 6, title: 'GH-1234567g'},
+    {id: 6, title: 'GH-1234567d'},
+    {id: 7, title: 'GH-1234567e'},
+    {id: 8, title: 'GH-1234567f'},
     
     
   ]);
@@ -107,7 +109,7 @@ export default function Sample()  {
           </FileUploader>
         ) : (
           
-            <div className="oxygen-normal-tundora-10px">{fileName}.{fileType}</div>
+            <div className="oxygen-normal-tundora-10px" style={{ fontSize: '10px' }}>{fileName}.{fileType}</div>
           
         )}
       </>
@@ -267,9 +269,9 @@ function toggleTable(checked) {
       
       
         
-        <input type="hidden" id="anPageName" name="page" value="applyu47-database-input" />
+        <input type="hidden" id="anPageName" name="page" value="apply-payment-4" />
       <div class="container-center-horizontal">
-        <div class="applyu47-database-input screen">
+        <div class="apply-payment-4 screen">
         <div class="main-navigation" style={{ zIndex: '1' }}>
           <div class="overlap-group1">
             <div class="group-184">
@@ -338,7 +340,7 @@ function toggleTable(checked) {
             <button class="next-buttona"><div class="next inter-semi-bold-white-10-5px-2" style={{ fontSize: '14px' }}>Submit</div></button>
           </div>
         </div>
-        <div class="frame-563">
+        <div class="frame-563" style={{ zIndex: '0' }}>
           <div class="frame-350">
             <div class="frame-258">
               <div class="frame-49">
@@ -420,7 +422,7 @@ function toggleTable(checked) {
 
 
                     <table id="myTable" className={`frame-5-1a frame-5-3a ${!tableEnabled ? 'disabled' : ''}`}>
-            <tr class="frame-556d">
+            <tr class="frame-556">
               <th scope="col" class="frame-55a">
                 
               </th>
@@ -434,7 +436,7 @@ function toggleTable(checked) {
               <div class="promotion inter-semi-bold-cerulean-10-5px"  style={{ fontSize: '10.5px' }} disabled={!applyButtonEnabled}>Promotion</div>
               </th>
               <th scope="col" class="component-103">
-                <div class="sample inter-semi-bold-slate-gray-10-5px">Sample</div>
+                <div class="sample inter-semi-bold-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Sample</div>
               </th>
               <th scope="col" class="component-104">
                 <div class="database-category database inter-semi-bold-slate-gray-10-5px">Database category</div>
@@ -476,7 +478,7 @@ function toggleTable(checked) {
                 <SingleModal open={modalOpen} close={closeModal} item={fileSelected} handleDelete={handleDelete} selectedCount={setSelectedCount} deleteText={deleteText}></SingleModal>
                 </td>
                 <td class="selectComponent">
-                <div class="frame-553">
+                <div class="frame-552">
                 <button
                     id={`applyButton${item.id}`}
                     className="frame-618 apply-3 inter-normal-cerulean-10-5px"
@@ -556,7 +558,7 @@ function toggleTable(checked) {
         </div>  
         
         
-      </div>
+      
       <div class="frame-591" style={{ left: '1360px', zIndex: '0', height:'870px' }}>
           <div class="frame-590">
             <div class="frame-58">
@@ -612,6 +614,7 @@ function toggleTable(checked) {
             </div>
           </div>
         </div>
+    </div>
     </div>
     
     </>
