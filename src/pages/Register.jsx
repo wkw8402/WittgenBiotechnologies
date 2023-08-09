@@ -254,7 +254,7 @@ export default function Register() {
                 <input
                   className="border justify-center p-[9px] w-[210px] h-[36px] "
                   type="text"
-                  value={firstname.trim()}
+                  value={firstname}
                   onChange={(e) => setFirstname(e.target.value)}
                   autoComplete="new-firstname"
                 />
@@ -269,7 +269,7 @@ export default function Register() {
                 <input
                   className="border justify-center p-[9px] w-[210px] h-[36px] "
                   type="text"
-                  value={lastname.trim()}
+                  value={lastname}
                   onChange={(e) => setLastname(e.target.value)}
                   autoComplete="new-lastname"
                 />
@@ -289,7 +289,7 @@ export default function Register() {
                 className="border-solid border-[0.9px] border-s[#CEDDE1]-400 justify-center pt-[9px] pb-[4.5px] pl-[9px] pr-[9px] w-[432px] h-[34px]"
                 type="email"
                 placeholder="example@email.com"
-                value={email.trim()}
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="new-email"
               />
@@ -304,7 +304,7 @@ export default function Register() {
               <input
                 className="border-solid border-[0.9px] border-[#CEDDE1]-400 justify-center pt-[9px] pb-[4.5px] pl-[9px] pr-[9px] w-[432px] h-[34px]"
                 type="password"
-                value={password.trim()}
+                value={password}
                 onChange={handlePasswordChange}
                 autoComplete="new-password"
               />
@@ -319,7 +319,7 @@ export default function Register() {
               <input
                 className="border-solid border-[0.9px] border-[#CEDDE1]-400 justify-center pt-[9px] pb-[4.5px] pl-[9px] pr-[9px] w-[432px] h-[34px]"
                 type="password"
-                value={confirm.trim()}
+                value={confirm}
                 onChange={(e) => setConfirm(e.target.value)}
                 autoComplete="new-confirm"
               />
@@ -337,7 +337,7 @@ export default function Register() {
                 <input
                   className="border justify-center p-[9px] w-[210px] h-[36px] "
                   type="text"
-                  value={companyname.trim()}
+                  value={companyname}
                   onChange={(e) => setCompanyname(e.target.value)}
                   autoComplete="new-companyname"
                 />
@@ -353,7 +353,7 @@ export default function Register() {
                 <input
                   className="border justify-center p-[9px] w-[210px] h-[36px] "
                   type="text"
-                  value={department.trim()}
+                  value={department}
                   onChange={(e) => setDepartment(e.target.value)}
                   autoComplete="new-department"
                 />
@@ -387,7 +387,7 @@ export default function Register() {
                 <input
                   className="border justify-center p-[9px] w-[210px] h-[36px] "
                   type="text"
-                  value={state.trim()}
+                  value={state}
                   onChange={(e) => setState(e.target.value)}
                   autoComplete="new-state"
                 />
@@ -403,7 +403,7 @@ export default function Register() {
                 <input
                   className="border justify-center p-[9px] w-[210px] h-[36px] "
                   type="text"
-                  value={city.trim()}
+                  value={city}
                   onChange={(e) => setCity(e.target.value)}
                   autoComplete="new-city"
                 />
@@ -421,7 +421,7 @@ export default function Register() {
                   className="border justify-center p-[9px] w-[210px] h-[36px] "
                   type="text"
                   id="country"
-                  value={country.trim()}
+                  value={country}
                   onChange={(e) => setCountry(e.target.value)}
                   autoComplete="new-country"
                 />
@@ -437,7 +437,7 @@ export default function Register() {
                 <input
                   className="border justify-center p-[9px] w-[90px] h-[36px] "
                   type="text"
-                  value={zip.trim()}
+                  value={zip}
                   onChange={(e) => setZip(e.target.value)}
                   autoComplete="new-zip"
                 />
@@ -447,6 +447,7 @@ export default function Register() {
               <button 
                 className="border justify-center py-[13.5px] px-[138px] w-[432px] h-[45px] bg-witgen border-solid border-[0.75px] text-[#FFFFFF] text-[13.5px] leading-[16px] font-medium"
                 type="submit"
+                onClick={onSubmit}
               >
                 Send verification email
               </button>
@@ -476,7 +477,7 @@ export default function Register() {
             <div>
               <p className="leading-[15px] text-[12px] font-normal text-black pt-[18px]">
                 Please enter the verification code sent to your email at{" "}
-                <span className="font-bold">j****h@science.co</span> to activate
+                <span className="font-bold">{email}</span> to activate
                 your account. The link will expire in 24 hours.
               </p>
             </div>
