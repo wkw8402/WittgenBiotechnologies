@@ -21,7 +21,7 @@ function ParentComponent({ hasErrorOrWarning }) {
     <>
       {hasErrorOrWarning && (
         <div className="errorbox">
-          <img src="/image/errorbox-icon.svg" alt="error-img" /> 
+          <img src="/image/errorbox-icon.svg" alt="error-img" />
           <div className="errorbox-font">
             Please fill in the invalid/or empty fields
           </div>
@@ -39,7 +39,7 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
   useEffect(() => {
     setPreviousRow(data[data.length - 1]);
   }, [data]);
-  
+
   useEffect(() => {
     if (data.length > 0) {
       setPreviousRow(data[0]);
@@ -50,7 +50,7 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
     if (
       value === "" ||
       value === null ||
-      value === undefined ||    
+      value === undefined ||
       String(value).toUpperCase() === "NA"
     ) {
       return "error";
@@ -73,7 +73,7 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
       onErrorOrWarningChange(hasErrorOrWarning);
     }
   }, [data, previousRow, onErrorOrWarningChange]);
-  
+
 
   return (
     <>
@@ -151,19 +151,19 @@ export default function App() {
 
   useEffect(() => {
     window.addEventListener("beforeunload", saveDataToLocal);
-  
+
     // Component unmount 때에 이벤트 리스너를 제거합니다.
     return () => {
       window.removeEventListener("beforeunload", saveDataToLocal);
     };
   }, [excelData, columnNames]);
-  
+
   const saveDataToLocal = () => {
     localStorage.setItem("excelData", JSON.stringify(excelData));
     localStorage.setItem("columnNames", JSON.stringify(columnNames));
   };
-  
-  
+
+
   useEffect(() => {
     // fetch data from local storage
     const storedExcelData = localStorage.getItem("excelData");
@@ -359,11 +359,11 @@ export default function App() {
               </div>
             </div>
           </div>
-          
+
 
 
         </div>
-        
+
         <ParentComponent hasErrorOrWarning={hasErrorOrWarning} />
 
         <div className="frame-bottom">
@@ -372,7 +372,10 @@ export default function App() {
               <div className="back">back</div>
             </div>
           </a>
-          <button className="next-button" onClick={()=>{navigate('/database_input_1')}}>
+          <button className="next-button" onClick={() => {
+            saveDataToLocal();
+            navigate('/database_input_1'); 
+          }}>
             <div className="next">Next</div>
           </button>
         </div>
@@ -380,4 +383,3 @@ export default function App() {
     </div >
   );
 }
-
