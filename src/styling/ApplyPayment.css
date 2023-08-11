@@ -687,7 +687,8 @@
     border-color: var(--geyser);
     display: flex;
     position: relative;
-    width: 998.94px;
+    width: 855px;
+    height: 30px;
   }
   
   
@@ -1174,7 +1175,7 @@
     align-items: flex-start;
     display: flex;
     position: relative;
-    width: 855px;
+    width: 845px;
   }
   
   .apply-payment-4 .frame-5-1a {
@@ -1244,7 +1245,7 @@
     width: fit-content;
   }
   
-  .apply-payment-4 .frame-215 {
+  .apply-payment-4 .frame-215a {
     align-items: center;
     background-color: var(--blue-dianne);
     display: flex;
@@ -1257,7 +1258,7 @@
     width: 118px;
   }
   
-  .apply-payment-4 .freemium {
+  .apply-payment-4 .freemiuma {
     letter-spacing: 0;
     line-height: 18.0px;
     margin-top: -0.75px;
