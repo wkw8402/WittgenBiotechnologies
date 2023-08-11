@@ -265,11 +265,11 @@ function toggleTable(checked) {
     <link rel="stylesheet" type="text/css" href="css/globals.css" />
       
       
-        
+    
         <input type="hidden" id="anPageName" name="page" value="apply-payment-4" />
       <div class="container-center-horizontal">
         <div class="apply-payment-4 screen">
-        <div class="main-navigation" style={{ zIndex: '1' }}>
+        <div class="main-navigation" style={{ zIndex: '1' }} >
           <div class="overlap-group1">
             <div class="group-184">
               <div class="overlap-group">
@@ -280,6 +280,7 @@ function toggleTable(checked) {
               {/*<img class="line-79" src="img/line-79-12.svg" alt="Line 79" />*/}
             </div>
             <div class="frame-185">
+            <a href="dashboard">
               <div class="frame-185-item">
                 <img
                   class="home_fill0_wght400_grad0_opsz48-1"
@@ -287,7 +288,8 @@ function toggleTable(checked) {
                   alt="home_FILL0_wght400_GRAD0_opsz48 1"
                 />
                 <div class="dashboard inter-normal-white-12px" style={{ fontSize: '12px' }}>Dashboard</div>
-              </div>
+              </div></a>
+              <a href="my_files_1">
               <div class="frame-185-item">
                 <img
                   class="draft_fill1_wght400_grad0_opsz48-1-1"
@@ -296,6 +298,8 @@ function toggleTable(checked) {
                 />
                 <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' }}>My files</div>
               </div>
+              </a>
+              <a href="CostUsage">
               <div class="frame-185-item">
                 <img
                   class="paid_fill0_wght400_grad0_opsz48-1"
@@ -303,7 +307,8 @@ function toggleTable(checked) {
                   alt="paid_FILL0_wght400_GRAD0_opsz48 1"
                 />
                 <div class="cost-usage inter-normal-white-12px" style={{ fontSize: '12px' }}>Cost &amp; Usage</div>
-              </div>
+              </div></a>
+              <a href="my_profile">
               <div class="frame-185-item">
                 <img
                   class="settings_fill0_wght400_grad0_opsz48-1"
@@ -311,15 +316,16 @@ function toggleTable(checked) {
                   alt="settings_FILL0_wght400_GRAD0_opsz48 1"
                 />
                 <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' }}>Settings</div>
-              </div>
+              </div></a>
+              <a href="support">
               <div class="frame-185-item">
                 <img
                   class="contact_support_fill"
                   src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
                   alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px' }}>FAQ / Support</div>
-              </div>
+                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px'}}>FAQ / Support</div>
+              </div></a>
             </div>
             <div class="logout">
               <img
@@ -331,6 +337,7 @@ function toggleTable(checked) {
             </div>
           </div>
         </div>
+
         <div class="back-next">
           <div class="frame-616a">
           <button class="back-buttona"><div class="place inter-semi-bold-blue-dianne-10-5px-2" style={{ fontSize: '14px' }}>Back</div></button>
