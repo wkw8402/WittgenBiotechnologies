@@ -127,7 +127,7 @@ body {
 
 .dashboard-1-1440 .frame-615 {
     align-items: flex-start;
-    border-color: var(--white);
+    border-color: var(--mystic);
     border-right-style: solid;
     border-right-width: 0.75px;
     display: flex;
