@@ -260,53 +260,60 @@ export default function FileUpload() {
                         </a>
                     </div>
                     <div className="navigation-box">
-                        <div className="navigation-box-1">
+                        <a href="/dashboard">
+                            <div className="navigation-box-1">
+                                <img
+                                    className="dashboard-icon"
+                                    src="/image/home-icon.svg"
+                                    alt="home-icon"
+                                />
+                                <div className="light-font font-gap">Dashboard</div>
+                            </div>
+                        </a>
+                        <a href="/my_files_1">
+                            <div className="navigation-box-1">
 
-                            <img
-                                className="dashboard-icon"
-                                src="/image/home-icon.svg"
-                                alt="home-icon"
-                            />
-                            <a href="/dashboard">
-                                <div className="light-font">Dashboard</div>
-                            </a>
-                        </div>
-                        <div className="navigation-box-1">
-                            <img
-                                className="myfiles-icon"
-                                src="/image/myfiles-icon.svg"
-                                alt="myfiles-icon"
-                            />
-
-                            <a href="/my_files_1" className="link-style">
+                                <img
+                                    className="myfiles-icon"
+                                    src="/image/myfiles-icon.svg"
+                                    alt="myfiles-icon"
+                                />
                                 <div className="my-files-font">My files</div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
+                        <a href="/CostUsage">
+                            <div className="navigation-box-1">
 
-                        <div className="navigation-box-1">
-                            <img
-                                className="cost-usage-icon"
-                                src="/image/cost-usage-icon.svg"
-                                alt="cost-usage-icon"
-                            />
-                            <div className="light-font">Cost &amp; Usage</div>
-                        </div>
-                        <div className="navigation-box-1">
-                            <img
-                                className="setting-icon"
-                                src="/image/settings-icon.svg"
-                                alt="setting-icon"
-                            />
-                            <div className="light-font">Settings</div>
-                        </div>
-                        <div className="navigation-box-1">
-                            <img
-                                className="faq-support-ion"
-                                src="/image/faq-support-icon.svg"
-                                alt="faq-support-icon"
-                            />
-                            <div className="light-font">FAQ / Support</div>
-                        </div>
+                                <img
+                                    className="cost-usage-icon"
+                                    src="/image/cost-usage-icon.svg"
+                                    alt="cost-usage-icon"
+                                />
+                                <div className="light-font font-gap2">Cost &amp; Usage</div>
+
+                            </div>
+                        </a>
+                        <a href="/my_profile">
+                            <div className="navigation-box-1">
+                                <img
+                                    className="setting-icon"
+                                    src="/image/settings-icon.svg"
+                                    alt="setting-icon"
+                                />
+                                <div className="light-font">Settings</div>
+
+                            </div>
+                        </a>
+                        <a href="/support">
+                            <div className="navigation-box-1">
+                                <img
+                                    className="faq-support-ion"
+                                    src="/image/faq-support-icon.svg"
+                                    alt="faq-support-icon"
+                                />
+                                <div className="light-font">FAQ / Support</div>
+                            </div>
+                        </a>
                     </div>
                     <div className="logout">
                         <img
@@ -317,8 +324,6 @@ export default function FileUpload() {
                         <div className="light-font">Logout</div>
                     </div>
                 </div>
-
-
                 <div className="main-frame">
                     <div className="frame-top">
                         <div className="frame-top-1">
@@ -351,8 +356,8 @@ export default function FileUpload() {
                         </div>
                     </div>
                     <div className="main-page">
-                    
-                    <YourExcelComponent />
+
+                        <YourExcelComponent />
                         <div className="frame-main-top">
                             <div className="frame-503">
                                 <div className="group-283">
@@ -369,17 +374,17 @@ export default function FileUpload() {
                                 </div>
                                 <div className="frame-main-2">
                                     <div className="frame-26">
-                                                <div className="circle-frame-bold">1</div>
-                                        </div>
-                                        <div className="bold-font">Upload file</div>
-                                    
+                                        <div className="circle-frame-bold">1</div>
+                                    </div>
+                                    <div className="bold-font">Upload file</div>
+
                                     <img
                                         className="line-9"
                                         src="/image/line-93.svg"
                                         alt="line-93"
                                     />
                                     <div className="frame-26">
-                                                <div className="circle-frame-gray">2</div>
+                                        <div className="circle-frame-gray">2</div>
                                         <div className="gray-font">Match columns</div>
                                     </div>
                                     <img
@@ -388,14 +393,14 @@ export default function FileUpload() {
                                         alt="line-93"
                                     />
                                     <div className="frame-26">
-                                                <div className="circle-frame-gray">3</div>
+                                        <div className="circle-frame-gray">3</div>
                                         <div className="gray-font">Validate data</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                        
+
 
                 </div>
             </div>
