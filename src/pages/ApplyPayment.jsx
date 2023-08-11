@@ -22,10 +22,7 @@ export default function Sample()  {
     {id: 2, title: 'GH-1234567c'},
     {id: 3, title: 'GH-1234567d'},
     {id: 4, title: 'GH-1234567e'},
-    {id: 5, title: 'GH-1234567f'},
-    {id: 6, title: 'GH-1234567d'},
-    {id: 7, title: 'GH-1234567e'},
-    {id: 8, title: 'GH-1234567f'},
+
     
     
   ]);
@@ -423,7 +420,7 @@ function toggleTable(checked) {
 
                     <table id="myTable" className={`frame-5-1a frame-5-3a ${!tableEnabled ? 'disabled' : ''}`}>
             <tr class="frame-556">
-              <th scope="col" class="frame-55a">
+              <th scope="col" class="frame-55" style={{width:"25px"}}>
                 
               </th>
               <th scope="col" class="frameofpromo">
@@ -438,10 +435,10 @@ function toggleTable(checked) {
               <th scope="col" class="component-103">
                 <div class="sample inter-semi-bold-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Sample</div>
               </th>
-              <th scope="col" class="component-104">
+              <th scope="col" class="component-103">
                 <div class="database-category database inter-semi-bold-slate-gray-10-5px">Database category</div>
               </th>
-              <th scope="col" class="component-105">
+              <th scope="col" class="component-103">
                 <div class="database-file database inter-semi-bold-slate-gray-10-5px">Database file</div>
               </th>
               <th scope="col" class="component-10"></th>
@@ -538,15 +535,14 @@ function toggleTable(checked) {
               <div class="group-423">
                 <div class="overlap-group-1">
                   <div class="frame-214"><div class="membership inter-semi-bold-silver-12px" style={{fontSize: "12px" }}>Membership</div></div>
-                  <div class="frame-32a"></div>
+                  <div class="frame-32" style={{ left: "230px" }}><div class="invoice-1 inter-semi-bold-silver-12px" style={{fontSize: "12px" }}>Pre-payment</div></div>
                   <div class="frame-32">
                     <div class="debit-credit-card inter-semi-bold-silver-12px" style={{fontSize: "12px" }}>Debit/Credit card</div>
                   </div>
                   <div class="frame-327"><div class="invoice-1 inter-semi-bold-silver-12px" style={{fontSize: "12px" }}>Invoice</div></div>
-                  <div class="frame-215"><div class="freemium inter-semi-bold-white-12px-2" style={{fontSize: "12px" }}>Freemium</div></div>
+                  <div class="frame-215a"><div class="freemiuma inter-semi-bold-white-12px-2" style={{fontSize: "12px" }}>Freemium</div></div>
                   <img class="line-92" src="img/line-92-3.svg" alt="Line 92" />
                 </div>
-                <div class="pre-payment inter-semi-bold-silver-12px" style={{fontSize: "12px" }}>Pre-payment</div>
               </div>
               <p class="your-freemium-ends-i inter-normal-tundora-12px" style={{fontSize: "12px" }}>
                 <span class="inter-normal-tundora-12px" style={{fontSize: "12px" }}>Your Freemium ends in </span
