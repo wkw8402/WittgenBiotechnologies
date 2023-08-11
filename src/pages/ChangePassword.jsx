@@ -30,6 +30,7 @@ export default function Sample() {
               {/*<img class="line-79" src="img/line-79-12.svg" alt="Line 79" />*/}
             </div>
             <div class="frame-185">
+            <a href="dashboard">
               <div class="frame-185-item">
                 <img
                   class="home_fill0_wght400_grad0_opsz48-1"
@@ -37,7 +38,8 @@ export default function Sample() {
                   alt="home_FILL0_wght400_GRAD0_opsz48 1"
                 />
                 <div class="dashboard inter-normal-white-12px" style={{ fontSize: '12px' }}>Dashboard</div>
-              </div>
+              </div></a>
+              <a href="my_files_1">
               <div class="frame-185-item">
                 <img
                   class="draft_fill1_wght400_grad0_opsz48-1-1"
@@ -46,6 +48,8 @@ export default function Sample() {
                 />
                 <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' , fontWeight: 400 }}>My files</div>
               </div>
+              </a>
+              <a href="CostUsage">
               <div class="frame-185-item">
                 <img
                   class="paid_fill0_wght400_grad0_opsz48-1"
@@ -53,7 +57,8 @@ export default function Sample() {
                   alt="paid_FILL0_wght400_GRAD0_opsz48 1"
                 />
                 <div class="cost-usage inter-normal-white-12px" style={{ fontSize: '12px' }}>Cost &amp; Usage</div>
-              </div>
+              </div></a>
+              <a href="my_profile">
               <div class="frame-185-item">
                 <img
                   class="settings_fill0_wght400_grad0_opsz48-1"
@@ -61,15 +66,16 @@ export default function Sample() {
                   alt="settings_FILL0_wght400_GRAD0_opsz48 1"
                 />
                 <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' ,  fontWeight: 600 }}>Settings</div>
-              </div>
+              </div></a>
+              <a href="support">
               <div class="frame-185-item">
                 <img
                   class="contact_support_fill"
                   src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
                   alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
                 />
-                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px' }}>FAQ / Support</div>
-              </div>
+                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px'}}>FAQ / Support</div>
+              </div></a>
             </div>
             <div class="logout">
               <img
@@ -81,6 +87,7 @@ export default function Sample() {
             </div>
           </div>
         </div>
+
         <div class="frame-695">
           <div class="frame-693">
             <div class="frame">
