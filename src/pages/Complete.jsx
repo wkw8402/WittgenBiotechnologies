@@ -76,16 +76,16 @@ export default function () {
                   </div>
                 </div>
                 <div className="summary-box-2">
-                <div className="box-title-font">
+                  <div className="box-title-font">
                     Metastasis
                   </div>
                   <div className="box-summary-font">
                     None
                   </div>
                 </div>
-                
+
                 <div className="summary-box-3">
-                <div className="box-title-font">
+                  <div className="box-title-font">
                     Metastasis
                   </div>
                   <div className="box-summary-font">
@@ -93,7 +93,7 @@ export default function () {
                   </div>
                 </div>
                 <div className="summary-box-4">
-                <div className="box-title-font">
+                  <div className="box-title-font">
                     Subtype
                   </div>
                   <div className="box-summary-font">
@@ -102,7 +102,7 @@ export default function () {
                   </div>
                 </div>
                 <div className="summary-box-5">
-                <div className="box-title-font">
+                  <div className="box-title-font">
                     Grade
                   </div>
                   <div className="box-summary-font">
@@ -111,7 +111,7 @@ export default function () {
                   </div>
                 </div>
                 <div className="summary-box-6">
-                <div className="box-title-font">
+                  <div className="box-title-font">
                     Grade
                   </div>
                   <div className="box-summary-font">
@@ -167,7 +167,7 @@ export default function () {
         name="page"
         defaultValue="apply-metadatabase-input-import-excel-file-match-columns"
       />
-      <div className="page">
+      <div className="page-complete">
         <div className="main-navigation">
           <div className="logo-box">
             <a href="/">
@@ -182,46 +182,60 @@ export default function () {
             </a>
           </div>
           <div className="navigation-box">
-            <div className="navigation-box-1">
-              <img
-                className="dashboard-icon"
-                src="/image/home-icon.svg"
-                alt="home-icon"
-              />
-              <div className="light-font">Dashboard</div>
-            </div>
-            <div className="navigation-box-1">
-              <img
-                className="myfiles-icon"
-                src="/image/myfiles-icon.svg"
-                alt="myfiles-icon"
-              />
-              <div className="my-files-font">My files</div>
-            </div>
-            <div className="navigation-box-1">
-              <img
-                className="cost-usage-icon"
-                src="/image/cost-usage-icon.svg"
-                alt="cost-usage-icon"
-              />
-              <div className="light-font">Cost &amp; Usage</div>
-            </div>
-            <div className="navigation-box-1">
-              <img
-                className="setting-icon"
-                src="/image/settings-icon.svg"
-                alt="setting-icon"
-              />
-              <div className="light-font">Settings</div>
-            </div>
-            <div className="navigation-box-1">
-              <img
-                className="faq-support-ion"
-                src="/image/faq-support-icon.svg"
-                alt="faq-support-icon"
-              />
-              <div className="light-font">FAQ / Support</div>
-            </div>
+            <a href="/dashboard">
+              <div className="navigation-box-1">
+                <img
+                  className="dashboard-icon"
+                  src="/image/home-icon.svg"
+                  alt="home-icon"
+                />
+                <div className="light-font font-gap">Dashboard</div>
+              </div>
+            </a>
+            <a href="/my_files_1">
+              <div className="navigation-box-1">
+
+                <img
+                  className="myfiles-icon"
+                  src="/image/myfiles-icon.svg"
+                  alt="myfiles-icon"
+                />
+                <div className="my-files-font">My files</div>
+              </div>
+            </a>
+            <a href="/CostUsage">
+              <div className="navigation-box-1">
+
+                <img
+                  className="cost-usage-icon"
+                  src="/image/cost-usage-icon.svg"
+                  alt="cost-usage-icon"
+                />
+                <div className="light-font font-gap2">Cost &amp; Usage</div>
+
+              </div>
+            </a>
+            <a href="/my_profile">
+              <div className="navigation-box-1">
+                <img
+                  className="setting-icon"
+                  src="/image/settings-icon.svg"
+                  alt="setting-icon"
+                />
+                <div className="light-font">Settings</div>
+
+              </div>
+            </a>
+            <a href="/support">
+              <div className="navigation-box-1">
+                <img
+                  className="faq-support-ion"
+                  src="/image/faq-support-icon.svg"
+                  alt="faq-support-icon"
+                />
+                <div className="light-font">FAQ / Support</div>
+              </div>
+            </a>
           </div>
           <div className="logout">
             <img

@@ -8,17 +8,17 @@ import { useState, useEffect, useRef } from 'react';
 
 function ExcelTable({ data }) {
   return (
-      <div className="excel-table">
-          {data.map((row, rowIndex) => (
-              <div key={rowIndex} className="excel-table-row">
-                  {row.map((column, columnIndex) => (
-                      <div key={columnIndex} className="excel-table-cell">
-                          {[column]}
-                      </div>
-                  ))}
-              </div>
+    <div className="excel-table">
+      {data.map((row, rowIndex) => (
+        <div key={rowIndex} className="excel-table-row">
+          {row.map((column, columnIndex) => (
+            <div key={columnIndex} className="excel-table-cell">
+              {[column]}
+            </div>
           ))}
-      </div>
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -79,46 +79,60 @@ export default function ColumnExcelComponent() {
           </a>
         </div>
         <div className="navigation-box">
-          <div className="navigation-box-1">
-            <img
-              className="dashboard-icon"
-              src="/image/home-icon.svg"
-              alt="home-icon"
-            />
-            <div className="light-font">Dashboard</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="myfiles-icon"
-              src="/image/myfiles-icon.svg"
-              alt="myfiles-icon"
-            />
-            <div className="my-files-font">My files</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="cost-usage-icon"
-              src="/image/cost-usage-icon.svg"
-              alt="cost-usage-icon"
-            />
-            <div className="light-font">Cost &amp; Usage</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="setting-icon"
-              src="/image/settings-icon.svg"
-              alt="setting-icon"
-            />
-            <div className="light-font">Settings</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="faq-support-ion"
-              src="/image/faq-support-icon.svg"
-              alt="faq-support-icon"
-            />
-            <div className="light-font">FAQ / Support</div>
-          </div>
+          <a href="/dashboard">
+            <div className="navigation-box-1">
+              <img
+                className="dashboard-icon"
+                src="/image/home-icon.svg"
+                alt="home-icon"
+              />
+              <div className="light-font font-gap">Dashboard</div>
+            </div>
+          </a>
+          <a href="/my_files_1">
+            <div className="navigation-box-1">
+
+              <img
+                className="myfiles-icon"
+                src="/image/myfiles-icon.svg"
+                alt="myfiles-icon"
+              />
+              <div className="my-files-font">My files</div>
+            </div>
+          </a>
+          <a href="/CostUsage">
+            <div className="navigation-box-1">
+
+              <img
+                className="cost-usage-icon"
+                src="/image/cost-usage-icon.svg"
+                alt="cost-usage-icon"
+              />
+              <div className="light-font font-gap2">Cost &amp; Usage</div>
+
+            </div>
+          </a>
+          <a href="/my_profile">
+            <div className="navigation-box-1">
+              <img
+                className="setting-icon"
+                src="/image/settings-icon.svg"
+                alt="setting-icon"
+              />
+              <div className="light-font">Settings</div>
+
+            </div>
+          </a>
+          <a href="/support">
+            <div className="navigation-box-1">
+              <img
+                className="faq-support-ion"
+                src="/image/faq-support-icon.svg"
+                alt="faq-support-icon"
+              />
+              <div className="light-font">FAQ / Support</div>
+            </div>
+          </a>
         </div>
         <div className="logout">
           <img
@@ -129,8 +143,6 @@ export default function ColumnExcelComponent() {
           <div className="light-font">Logout</div>
         </div>
       </div>
-
-
       <div className="main-frame">
         <div className="frame-top">
           <div className="frame-top-1">

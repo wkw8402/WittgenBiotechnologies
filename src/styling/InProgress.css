@@ -1,10 +1,220 @@
+html,
+body {
+    height: auto;
+    min-height: 100%;
+}
+
+.flex-container {
+    min-height: 100vh;
+    flex-direction: column;
+}
+
 .framebox {
-    width: 100%;
+    width: 1126.5px;
     height: auto;
     max-height: 253px;
     padding-bottom: 10px;
     border: 0.75px solid #CEDDE1;
     overflow: auto;
+}
+
+.page-inprogress {
+    width: 1440px;
+    height: 810px;
+}
+
+.in-progress {
+    box-sizing: border-box;
+    width: 1131PX;
+    height: 779.5px;
+    margin-left: 60px;
+    margin-top: 78px;
+    gap: 27px;
+    position: fixed;
+}
+
+.frame-top-inprogress {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px;
+    gap: 7.5px;
+    position: fixed;
+    width: 100vh;
+    height: 54px;
+    background: #FFFFFF;
+    border: 0.75px solid #E9EBED;
+    border-left: none;
+}
+
+.summary-box-inprogress {
+    width: 535px;
+    height: 164.5px;
+    gap: 12px;
+    margin-top: 27px;
+    right: 0px;
+    position: absolute;
+    display: flex;
+}
+
+.order-summary {
+    width: 236.5px;
+    height: 71.1px;
+    gap: 9px;
+}
+
+.order-top {
+    width: 236.5px;
+    height: 18px;
+    display: flex;
+    position: relative;
+}
+
+.order-top1 {
+    position: absolute;
+    color: #464646;
+    font-size: 10.5px;
+    line-height: 15.75px;
+    font-family: "inter";
+    top: 1.51px;
+    left: 163px;
+}
+
+.order-line {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    border-top: 0.75px solid #E9EBED;
+}
+
+.amount-box {
+    width: 238.5px;
+    height: 136.5px;
+    gap: 9px;
+    position: relative;
+}
+
+.amount-top {
+    width: 238.5px;
+    height: 48px;
+    gap: 9px;
+    padding-left: 33px;
+    padding-bottom: 9px;
+}
+
+.amount-bottom {
+    width: 161.75px;
+    height: 79.5px;
+    padding: 3px 9px 3px 9px;
+    gap: 7.5px;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+}
+
+.summary-font {
+    font-size: 12px;
+    line-height: 18px;
+    color: #464646;
+    font-family: "Inter";
+}
+
+.summary-font1 {
+    font-size: 10.5px;
+    line-height: 15.75px;
+    color: #717F8C;
+    font-family: "Inter";
+}
+
+.right-position {
+    position: absolute;
+    left: 204px;
+    top: 36px;
+}
+
+.amount-top1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: middle;
+}
+
+.total-amount {
+    display: flex;
+    gap: 7.75px;
+    width: 200px;
+    text-align: right;
+}
+
+.total-amount2 {
+    word-wrap: break-word;
+    font-family: "Inter";
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #C0C0C0;
+}
+
+.total-amount3 {
+    text-decoration: line-through;
+    font-family: "Inter";
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    color: #C0C0C0;
+}
+
+.freemium {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    text-align: right;
+    padding-left: 16px;
+}
+
+.freemium2 {
+    font-family: "inter";
+    font-size: 10.5px;
+    line-height: 15.75px;
+    color: #0FB4DB;
+}
+
+.freemium3 {
+    font-family: Inter;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #25474F;
+}
+
+.inprogress-layout {
+    width: 1126.5px;
+    height: 191.5px;
+    position: relative;
+    right: -50px;
+}
+
+.summary-box {
+    width: 535px;
+    height: 164.5px;
+    gap: 12px;
+    margin-top: 27px;
+    right: 0px;
+    position: absolute;
+    display: flex;
+}
+
+.main-frame-inprogress {
+    display: flex;
+    position: relative;
+    width: 1245.75px;
+    margin-left: 195px;
+    height: 810px;
 }
 
 .progress-framebox {
@@ -20,11 +230,21 @@
     box-sizing: border-box;
     top: 462px;
     left: 410.25px;
-    width: 970px;
+    width: 1131px;
     border-top: 0.75px solid;
     margin-top: 27px;
     margin-bottom: 27px;
     color: #F2F6F7;
+}
+
+.fp-title {
+    font-family: "Inter";
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #464646;
 }
 
 .title-componenet {
@@ -46,7 +266,7 @@
 .table {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 900px;
 }
 
 .header {

@@ -3,6 +3,7 @@ import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 
 //Add New Row
 function AddRowButton({ addRow }) {
@@ -20,7 +21,7 @@ function ParentComponent({ hasErrorOrWarning }) {
     <>
       {hasErrorOrWarning && (
         <div className="errorbox">
-          <img src="/image/errorbox-icon.svg" alt="error-img" /> 
+          <img src="/image/errorbox-icon.svg" alt="error-img" />
           <div className="errorbox-font">
             Please fill in the invalid/or empty fields
           </div>
@@ -38,7 +39,7 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
   useEffect(() => {
     setPreviousRow(data[data.length - 1]);
   }, [data]);
-  
+
   useEffect(() => {
     if (data.length > 0) {
       setPreviousRow(data[0]);
@@ -49,7 +50,7 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
     if (
       value === "" ||
       value === null ||
-      value === undefined ||    
+      value === undefined ||
       String(value).toUpperCase() === "NA"
     ) {
       return "error";
@@ -72,7 +73,7 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
       onErrorOrWarningChange(hasErrorOrWarning);
     }
   }, [data, previousRow, onErrorOrWarningChange]);
-  
+
 
   return (
     <>
@@ -142,6 +143,7 @@ export default function App() {
   const [columnNames, setColumnNames] = useState([]);
   const prevColumnNamesRef = useRef([]);
   const [hasErrorOrWarning, setHasErrorOrWarning] = useState(false);
+  const navigate = useNavigate();
 
   const addRow = () => {
     setExcelData(prevExcelData => [...prevExcelData, []]);
@@ -149,19 +151,19 @@ export default function App() {
 
   useEffect(() => {
     window.addEventListener("beforeunload", saveDataToLocal);
-  
+
     // Component unmount 때에 이벤트 리스너를 제거합니다.
     return () => {
       window.removeEventListener("beforeunload", saveDataToLocal);
     };
   }, [excelData, columnNames]);
-  
+
   const saveDataToLocal = () => {
     localStorage.setItem("excelData", JSON.stringify(excelData));
     localStorage.setItem("columnNames", JSON.stringify(columnNames));
   };
-  
-  
+
+
   useEffect(() => {
     // fetch data from local storage
     const storedExcelData = localStorage.getItem("excelData");
@@ -213,71 +215,84 @@ export default function App() {
         defaultValue="apply-metadatabase-input-import-excel-file-match-columns"
       />
       <div className="main-navigation">
-        <div className="logo-box">
-          <a href="/">
-            <div className="witt-gen-portal bold-portal-logo">
-              <span className="bold-portal-logo">
-                WittGen
-              </span>
-              <span className="light-portal-logo">
-                Portal
-              </span>
-            </div>
-          </a>
-        </div>
-        <div className="navigation-box">
-          <div className="navigation-box-1">
-            <img
-              className="dashboard-icon"
-              src="/image/home-icon.svg"
-              alt="home-icon"
-            />
-            <div className="light-font">Dashboard</div>
+          <div className="logo-box">
+            <a href="/">
+              <div className="witt-gen-portal bold-portal-logo">
+                <span className="bold-portal-logo">
+                  WittGen
+                </span>
+                <span className="light-portal-logo">
+                  Portal
+                </span>
+              </div>
+            </a>
           </div>
-          <div className="navigation-box-1">
-            <img
-              className="myfiles-icon"
-              src="/image/myfiles-icon.svg"
-              alt="myfiles-icon"
-            />
-            <div className="my-files-font">My files</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="cost-usage-icon"
-              src="/image/cost-usage-icon.svg"
-              alt="cost-usage-icon"
-            />
-            <div className="light-font">Cost &amp; Usage</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="setting-icon"
-              src="/image/settings-icon.svg"
-              alt="setting-icon"
-            />
-            <div className="light-font">Settings</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="faq-support-ion"
-              src="/image/faq-support-icon.svg"
-              alt="faq-support-icon"
-            />
-            <div className="light-font">FAQ / Support</div>
-          </div>
-        </div>
-        <div className="logout">
-          <img
-            className="logout-icon"
-            src="/image/logout-icon.png"
-            alt="logout-icon"
-          />
-          <div className="light-font">Logout</div>
-        </div>
-      </div>
+          <div className="navigation-box">
+            <a href="/dashboard">
+              <div className="navigation-box-1">
+                <img
+                  className="dashboard-icon"
+                  src="/image/home-icon.svg"
+                  alt="home-icon"
+                />
+                <div className="light-font font-gap">Dashboard</div>
+              </div>
+            </a>
+            <a href="/my_files_1">
+              <div className="navigation-box-1">
 
+                <img
+                  className="myfiles-icon"
+                  src="/image/myfiles-icon.svg"
+                  alt="myfiles-icon"
+                />
+                <div className="my-files-font">My files</div>
+              </div>
+            </a>
+            <a href="/CostUsage">
+              <div className="navigation-box-1">
 
+                <img
+                  className="cost-usage-icon"
+                  src="/image/cost-usage-icon.svg"
+                  alt="cost-usage-icon"
+                />
+                <div className="light-font font-gap2">Cost &amp; Usage</div>
+
+              </div>
+            </a>
+            <a href="/my_profile">
+              <div className="navigation-box-1">
+                <img
+                  className="setting-icon"
+                  src="/image/settings-icon.svg"
+                  alt="setting-icon"
+                />
+                <div className="light-font">Settings</div>
+
+              </div>
+            </a>
+            <a href="/support">
+              <div className="navigation-box-1">
+                <img
+                  className="faq-support-ion"
+                  src="/image/faq-support-icon.svg"
+                  alt="faq-support-icon"
+                />
+                <div className="light-font">FAQ / Support</div>
+              </div>
+            </a>
+          </div>
+          <div className="logout">
+            <img
+              className="logout-icon"
+              src="/image/logout-icon.png"
+              alt="logout-icon"
+            />
+            <div className="light-font">Logout</div>
+          </div>
+        </div>
+        
       <div className="main-frame">
         <div className="frame-top">
           <div className="frame-top-1">
@@ -357,11 +372,11 @@ export default function App() {
               </div>
             </div>
           </div>
-          
+
 
 
         </div>
-        
+
         <ParentComponent hasErrorOrWarning={hasErrorOrWarning} />
 
         <div className="frame-bottom">
@@ -370,12 +385,14 @@ export default function App() {
               <div className="back">back</div>
             </div>
           </a>
-          <div className="next-button">
+          <button className="next-button" onClick={() => {
+            saveDataToLocal();
+            navigate('/database_input_1'); 
+          }}>
             <div className="next">Next</div>
-          </div>
+          </button>
         </div>
       </div>
     </div >
   );
 }
-
