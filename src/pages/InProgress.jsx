@@ -31,6 +31,87 @@ export default function () {
       databaseFile3: "",
       dob: "11/11/2000",
     },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+    {
+      sample: "GH-2342",
+      databaseCategory: "Cell Ranger",
+      databaseFile1: "Upload File",
+      databaseFile2: "",
+      databaseFile3: "Upload File",
+      dob: "11/11/2000",
+    },
+
   ];
   
   function Table() {
@@ -55,6 +136,8 @@ export default function () {
       </div>
     );
   }
+
+  
   
   const prevColumnNamesRef = useRef([]);
 
@@ -162,18 +245,34 @@ export default function () {
     });
   }, []);
 
+
+  function MyComponent() {
+    unlockScroll();
+  
+    function unlockScroll() {
+      document.body.style.overflow = '';
+    }
+  
+    useEffect(() => {
+    }, []);
+  }
+  
+
   return (
     <>
+      <MyComponent/>
       <meta charSet="utf-8" />
-      <meta name="viewport" content="width=1920, maximum-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
       <input
         type="hidden"
         id="anPageName"
         name="page"
         defaultValue="apply-metadatabase-input-import-excel-file-match-columns"
       />
-      <div className="page">
-        <div className="main-navigation">
+      <div className="page-inprogress">
+      <div className="main-navigation">
           <div className="logo-box">
             <a href="/">
               <div className="witt-gen-portal bold-portal-logo">
@@ -187,46 +286,60 @@ export default function () {
             </a>
           </div>
           <div className="navigation-box">
-            <div className="navigation-box-1">
-              <img
-                className="dashboard-icon"
-                src="/image/home-icon.svg"
-                alt="home-icon"
-              />
-              <div className="light-font">Dashboard</div>
-            </div>
-            <div className="navigation-box-1">
-              <img
-                className="myfiles-icon"
-                src="/image/myfiles-icon.svg"
-                alt="myfiles-icon"
-              />
-              <div className="my-files-font">My files</div>
-            </div>
-            <div className="navigation-box-1">
-              <img
-                className="cost-usage-icon"
-                src="/image/cost-usage-icon.svg"
-                alt="cost-usage-icon"
-              />
-              <div className="light-font">Cost &amp; Usage</div>
-            </div>
-            <div className="navigation-box-1">
-              <img
-                className="setting-icon"
-                src="/image/settings-icon.svg"
-                alt="setting-icon"
-              />
-              <div className="light-font">Settings</div>
-            </div>
-            <div className="navigation-box-1">
-              <img
-                className="faq-support-icon"
-                src="/image/faq-support-icon.svg"
-                alt="faq-support-icon"
-              />
-              <div className="light-font">FAQ / Support</div>
-            </div>
+            <a href="/dashboard">
+              <div className="navigation-box-1">
+                <img
+                  className="dashboard-icon"
+                  src="/image/home-icon.svg"
+                  alt="home-icon"
+                />
+                <div className="light-font font-gap">Dashboard</div>
+              </div>
+            </a>
+            <a href="/my_files_1">
+              <div className="navigation-box-1">
+
+                <img
+                  className="myfiles-icon"
+                  src="/image/myfiles-icon.svg"
+                  alt="myfiles-icon"
+                />
+                <div className="my-files-font">My files</div>
+              </div>
+            </a>
+            <a href="/CostUsage">
+              <div className="navigation-box-1">
+
+                <img
+                  className="cost-usage-icon"
+                  src="/image/cost-usage-icon.svg"
+                  alt="cost-usage-icon"
+                />
+                <div className="light-font font-gap2">Cost &amp; Usage</div>
+
+              </div>
+            </a>
+            <a href="/my_profile">
+              <div className="navigation-box-1">
+                <img
+                  className="setting-icon"
+                  src="/image/settings-icon.svg"
+                  alt="setting-icon"
+                />
+                <div className="light-font">Settings</div>
+
+              </div>
+            </a>
+            <a href="/support">
+              <div className="navigation-box-1">
+                <img
+                  className="faq-support-ion"
+                  src="/image/faq-support-icon.svg"
+                  alt="faq-support-icon"
+                />
+                <div className="light-font">FAQ / Support</div>
+              </div>
+            </a>
           </div>
           <div className="logout">
             <img
@@ -237,11 +350,11 @@ export default function () {
             <div className="light-font">Logout</div>
           </div>
         </div>
-        <div className="main-frame">
-          <div className="frame-top-2">
+        <div className="main-frame-inprogress">
+          <div className="frame-top-inprogress">
             Sameple Name
           </div>
-          <div className="In-progress">
+          <div className="in-progress">
             <div className="fp-title">
               File Progress
             </div>
@@ -312,9 +425,10 @@ export default function () {
                 <Table />
               </div>
             </div>
-
-            <div className="progress-layout3">
-              <div className="summary-box">
+    
+            <div className="progress-line"></div>
+            <div className="inprogress-layout">
+              <div className="summary-box-inprogress">
                 <div className="order-summary">
                   <div className="order-top" >
                     <div className="ap-title">Order Summary</div>
@@ -356,5 +470,6 @@ export default function () {
       </div>
     </>
   );
-}
+  }
+
 

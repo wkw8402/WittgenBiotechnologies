@@ -22,7 +22,7 @@ function ParentComponent({ hasErrorOrWarning }) {
     <>
       {hasErrorOrWarning && (
         <div className="errorbox">
-          <img src="/image/errorbox-icon.svg" alt="error-img" /> 
+          <img src="/image/errorbox-icon.svg" alt="error-img" />
           <div className="errorbox-font">
             Please fill in the invalid/or empty fields
           </div>
@@ -50,12 +50,12 @@ function ExcelTable({ data, onErrorOrWarningChange }) {
       value === undefined ||
       String(value).toUpperCase() === "NA"
     ) {
-      onErrorOrWarningChange(true);   
+      onErrorOrWarningChange(true);
       return "error";
     }
 
     if (previousValue !== null && typeof value !== typeof previousValue) {
-      onErrorOrWarningChange(true); 
+      onErrorOrWarningChange(true);
       return "warning";
     }
 
@@ -191,46 +191,67 @@ export default function App() {
           </a>
         </div>
         <div className="navigation-box">
-          <div className="navigation-box-1">
-            <img
-              className="dashboard-icon"
-              src="/image/home-icon.svg"
-              alt="home-icon"
-            />
-            <div className="light-font">Dashboard</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="myfiles-icon"
-              src="/image/myfiles-icon.svg"
-              alt="myfiles-icon"
-            />
-            <div className="my-files-font">My files</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="cost-usage-icon"
-              src="/image/cost-usage-icon.svg"
-              alt="cost-usage-icon"
-            />
-            <div className="light-font">Cost &amp; Usage</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="setting-icon"
-              src="/image/settings-icon.svg"
-              alt="setting-icon"
-            />
-            <div className="light-font">Settings</div>
-          </div>
-          <div className="navigation-box-1">
-            <img
-              className="faq-support-ion"
-              src="/image/faq-support-icon.svg"
-              alt="faq-support-icon"
-            />
-            <div className="light-font">FAQ / Support</div>
-          </div>
+          <a href="/dashboard">
+            <div className="navigation-box-1">
+              <img
+                className="dashboard-icon"
+                src="/image/home-icon.svg"
+                alt="home-icon"
+              />
+              <div className="light-font font-gap">Dashboard</div>
+            </div>
+          </a>
+          <a href="/my_files_1">
+            <div className="navigation-box-1">
+
+              <img
+                className="myfiles-icon"
+                src="/image/myfiles-icon.svg"
+                alt="myfiles-icon"
+              />
+              <div className="my-files-font">My files</div>
+            </div>
+          </a>
+          <a href="/CostUsage">
+            <div className="navigation-box-1">
+
+              <img
+                className="cost-usage-icon"
+                src="/image/cost-usage-icon.svg"
+                alt="cost-usage-icon"
+              />
+              <div className="light-font font-gap2">Cost &amp; Usage</div>
+
+            </div>
+          </a>
+          <a href="/setting">
+            <div className="navigation-box-1">
+
+              { /* need to check  */}
+
+              <img
+                className="setting-icon"
+                src="/image/settings-icon.svg"
+                alt="setting-icon"
+              />
+              <div className="light-font">Settings</div>
+
+            </div>
+          </a>
+          <a href="/support">
+            <div className="navigation-box-1">
+
+              { /* need to check  */}
+
+              <img
+                className="faq-support-ion"
+                src="/image/faq-support-icon.svg"
+                alt="faq-support-icon"
+              />
+              <div className="light-font">FAQ / Support</div>
+
+            </div>
+          </a>
         </div>
         <div className="logout">
           <img
@@ -241,8 +262,6 @@ export default function App() {
           <div className="light-font">Logout</div>
         </div>
       </div>
-
-
       <div className="main-frame">
         <div className="frame-top">
           <div className="frame-top-1">
@@ -354,7 +373,7 @@ export default function App() {
                       ))}
                     </div>
                     <div className="excel-514-4">
-                    <ExcelTable data={excelData} onErrorOrWarningChange={setHasErrorOrWarning} />
+                      <ExcelTable data={excelData} onErrorOrWarningChange={setHasErrorOrWarning} />
                     </div>
                   </div>
                 </div>
@@ -368,7 +387,7 @@ export default function App() {
         </div>
 
       </div>
-      
+
       <ParentComponent hasErrorOrWarning={hasErrorOrWarning} />
       <div className="frame-bottom">
         <a href="/metabase_input_3">
