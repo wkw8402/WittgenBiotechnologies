@@ -499,17 +499,18 @@ export default function () {
                     </a>
                 </div>
                 <div className="navigation-box">
+                    <a></a>
                     <div className="navigation-box-1">
                         <img
                             className="dashboard-icon"
                             src="/image/home-icon.svg"
                             alt="home-icon"
                         />
-                        <div className="light-font">Dashboard</div>
+                        <div className="light-font font-gap">Dashboard</div>
                     </div>
                     <div className="navigation-box-1">
                         <img
-                            className="myfiles-icon"
+                            className="myfiles-icon2"
                             src="/image/myfiles-icon2.svg"
                             alt="myfiles-icon"
                         />
@@ -517,11 +518,11 @@ export default function () {
                     </div>
                     <div className="navigation-box-1">
                         <img
-                            className="cost-usage-icon"
+                            className="cost-usage-icon2"
                             src="/image/cost-usage-icon2.svg"
                             alt="cost-usage-icon"
                         />
-                        <div className="light-font2">Cost &amp; Usage</div>
+                        <div className="my-files-font">Cost &amp; Usage</div>
                     </div>
                     <div className="navigation-box-1">
                         <img
