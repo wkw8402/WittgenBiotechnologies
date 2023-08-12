@@ -514,7 +514,7 @@ export default function () {
                             src="/image/myfiles-icon2.svg"
                             alt="myfiles-icon"
                         />
-                        <div className="light-font">My files</div>
+                        <div className="light-font font-gap3">My files</div>
                     </div>
                     <div className="navigation-box-1">
                         <img
@@ -522,7 +522,7 @@ export default function () {
                             src="/image/cost-usage-icon2.svg"
                             alt="cost-usage-icon"
                         />
-                        <div className="my-files-font">Cost &amp; Usage</div>
+                        <div className="my-files-font font-gap3">Cost &amp; Usage</div>
                     </div>
                     <div className="navigation-box-1">
                         <img
@@ -530,7 +530,7 @@ export default function () {
                             src="/image/settings-icon.svg"
                             alt="setting-icon"
                         />
-                        <div className="light-font">Settings</div>
+                        <div className="light-font font-gap2">Settings</div>
                     </div>
                     <div className="navigation-box-1">
                         <img
@@ -538,7 +538,7 @@ export default function () {
                             src="/image/faq-support-icon.svg"
                             alt="faq-support-icon"
                         />
-                        <div className="light-font">FAQ / Support</div>
+                        <div className="light-font font-gap2">FAQ / Support</div>
                     </div>
                 </div>
                 <div className="logout">

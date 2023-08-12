@@ -178,90 +178,84 @@ export default function App() {
         defaultValue="apply-metadatabase-input-import-excel-file-match-columns"
       />
       <div className="main-navigation">
-        <div className="logo-box">
-          <a href="/">
-            <div className="witt-gen-portal bold-portal-logo">
-              <span className="bold-portal-logo">
-                WittGen
-              </span>
-              <span className="light-portal-logo">
-                Portal
-              </span>
-            </div>
-          </a>
+          <div className="logo-box">
+            <a href="/">
+              <div className="witt-gen-portal bold-portal-logo">
+                <span className="bold-portal-logo">
+                  WittGen
+                </span>
+                <span className="light-portal-logo">
+                  Portal
+                </span>
+              </div>
+            </a>
+          </div>
+          <div className="navigation-box">
+            <a href="/dashboard">
+              <div className="navigation-box-1">
+                <img
+                  className="dashboard-icon"
+                  src="/image/home-icon.svg"
+                  alt="home-icon"
+                />
+                <div className="light-font font-gap">Dashboard</div>
+              </div>
+            </a>
+            <a href="/my_files_1">
+              <div className="navigation-box-1">
+
+                <img
+                  className="myfiles-icon"
+                  src="/image/myfiles-icon.svg"
+                  alt="myfiles-icon"
+                />
+                <div className="my-files-font">My files</div>
+              </div>
+            </a>
+            <a href="/CostUsage">
+              <div className="navigation-box-1">
+
+                <img
+                  className="cost-usage-icon"
+                  src="/image/cost-usage-icon.svg"
+                  alt="cost-usage-icon"
+                />
+                <div className="light-font font-gap2">Cost &amp; Usage</div>
+
+              </div>
+            </a>
+            <a href="/my_profile">
+              <div className="navigation-box-1">
+                <img
+                  className="setting-icon"
+                  src="/image/settings-icon.svg"
+                  alt="setting-icon"
+                />
+                <div className="light-font font-gap2">Settings</div>
+
+              </div>
+            </a>
+            <a href="/support">
+              <div className="navigation-box-1">
+                <img
+                  className="faq-support-ion"
+                  src="/image/faq-support-icon.svg"
+                  alt="faq-support-icon"
+                />
+                <div className="light-font font-gap2">FAQ / Support</div>
+              </div>
+            </a>
+          </div>
+          <div className="logout">
+            <img
+              className="logout-icon"
+              src="/image/logout-icon.png"
+              alt="logout-icon"
+            />
+            <div className="light-font">Logout</div>
+          </div>
         </div>
-        <div className="navigation-box">
-          <a href="/dashboard">
-            <div className="navigation-box-1">
-              <img
-                className="dashboard-icon"
-                src="/image/home-icon.svg"
-                alt="home-icon"
-              />
-              <div className="light-font font-gap">Dashboard</div>
-            </div>
-          </a>
-          <a href="/my_files_1">
-            <div className="navigation-box-1">
-
-              <img
-                className="myfiles-icon"
-                src="/image/myfiles-icon.svg"
-                alt="myfiles-icon"
-              />
-              <div className="my-files-font">My files</div>
-            </div>
-          </a>
-          <a href="/CostUsage">
-            <div className="navigation-box-1">
-
-              <img
-                className="cost-usage-icon"
-                src="/image/cost-usage-icon.svg"
-                alt="cost-usage-icon"
-              />
-              <div className="light-font font-gap2">Cost &amp; Usage</div>
-
-            </div>
-          </a>
-          <a href="/setting">
-            <div className="navigation-box-1">
-
-              { /* need to check  */}
-
-              <img
-                className="setting-icon"
-                src="/image/settings-icon.svg"
-                alt="setting-icon"
-              />
-              <div className="light-font">Settings</div>
-
-            </div>
-          </a>
-          <a href="/support">
-            <div className="navigation-box-1">
-
-              { /* need to check  */}
-
-              <img
-                className="faq-support-ion"
-                src="/image/faq-support-icon.svg"
-                alt="faq-support-icon"
-              />
-              <div className="light-font">FAQ / Support</div>
-
-            </div>
-          </a>
-        </div>
-        <div className="logout">
-          <img
-            className="logout-icon"
-            src="/image/logout-icon.png"
-            alt="logout-icon"
-          />
-          <div className="light-font">Logout</div>
-        </div>
-      </div>
+        
       <div className="main-frame">
         <div className="frame-top">
           <div className="frame-top-1">
@@ -395,9 +389,11 @@ export default function App() {
             <div className="back">back</div>
           </div>
         </a>
+        <a href="/metabase_input_5">
         <div className="next-button">
           <div className="next">Next</div>
         </div>
+        </a>
       </div>
 
     </div>

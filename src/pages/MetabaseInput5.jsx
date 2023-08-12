@@ -268,7 +268,7 @@ export default function App() {
                   src="/image/settings-icon.svg"
                   alt="setting-icon"
                 />
-                <div className="light-font">Settings</div>
+                <div className="light-font font-gap2">Settings</div>
 
               </div>
             </a>
@@ -279,7 +279,7 @@ export default function App() {
                   src="/image/faq-support-icon.svg"
                   alt="faq-support-icon"
                 />
-                <div className="light-font">FAQ / Support</div>
+                <div className="light-font font-gap2">FAQ / Support</div>
               </div>
             </a>
           </div>

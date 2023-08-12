@@ -119,7 +119,7 @@ export default function ColumnExcelComponent() {
                 src="/image/settings-icon.svg"
                 alt="setting-icon"
               />
-              <div className="light-font">Settings</div>
+              <div className="light-font font-gaps">Settings</div>
 
             </div>
           </a>
@@ -130,7 +130,7 @@ export default function ColumnExcelComponent() {
                 src="/image/faq-support-icon.svg"
                 alt="faq-support-icon"
               />
-              <div className="light-font">FAQ / Support</div>
+              <div className="light-font font-gaps">FAQ / Support</div>
             </div>
           </a>
         </div>
