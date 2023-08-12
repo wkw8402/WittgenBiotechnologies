@@ -468,11 +468,11 @@
 }
 
 .font-gap {
-    margin-left: 5px;
+    margin-left: 0px;
 }
 
 .font-gap2 {
-    margin-left: 3px;
+    margin-left: -2px;
 }
 
 .main-navigation {
