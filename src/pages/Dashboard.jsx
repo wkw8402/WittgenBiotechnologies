@@ -317,60 +317,46 @@ export default function () {
               </a>
             </div>
             <div className="navigation-box">
-              <a href="/dashboard">
-                <div className="navigation-box-1">
-                  <img
-                    className="dashboard-icon"
-                    src="/image/home-icon.svg"
-                    alt="home-icon"
-                  />
-                  <div className="light-font font-gap">Dashboard</div>
-                </div>
-              </a>
-              <a href="/my_files_1">
-                <div className="navigation-box-1">
-
-                  <img
-                    className="myfiles-icon"
-                    src="/image/myfiles-icon.svg"
-                    alt="myfiles-icon"
-                  />
-                  <div className="my-files-font">My files</div>
-                </div>
-              </a>
-              <a href="/CostUsage">
-                <div className="navigation-box-1">
-
-                  <img
-                    className="cost-usage-icon"
-                    src="/image/cost-usage-icon.svg"
-                    alt="cost-usage-icon"
-                  />
-                  <div className="light-font font-gap2">Cost &amp; Usage</div>
-
-                </div>
-              </a>
-              <a href="/my_profile">
-                <div className="navigation-box-1">
-                  <img
-                    className="setting-icon"
-                    src="/image/settings-icon.svg"
-                    alt="setting-icon"
-                  />
-                  <div className="light-font">Settings</div>
-
-                </div>
-              </a>
-              <a href="/support">
-                <div className="navigation-box-1">
-                  <img
-                    className="faq-support-ion"
-                    src="/image/faq-support-icon.svg"
-                    alt="faq-support-icon"
-                  />
-                  <div className="light-font">FAQ / Support</div>
-                </div>
-              </a>
+              <div className="navigation-box-1">
+                <img
+                  className="dashboard-icon"
+                  src="/image/home-icon.svg"
+                  alt="home-icon"
+                />
+                <div className="light-font">Dashboard</div>
+              </div>
+              <div className="navigation-box-1">
+                <img
+                  className="myfiles-icon"
+                  src="/image/myfiles-icon.svg"
+                  alt="myfiles-icon"
+                />
+                <div className="my-files-font">My files</div>
+              </div>
+              <div className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
+                <img
+                  className="cost-usage-icon"
+                  src="/image/cost-usage-icon.svg"
+                  alt="cost-usage-icon"
+                />
+                <div className="light-font">Cost &amp; Usage</div>
+              </div>
+              <div className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+                <img
+                  className="setting-icon"
+                  src="/image/settings-icon.svg"
+                  alt="setting-icon"
+                />
+                <div className="light-font">Settings</div>
+              </div>
+              <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+                <img
+                  className="faq-support-ion"
+                  src="/image/faq-support-icon.svg"
+                  alt="faq-support-icon"
+                />
+                <div className="light-font">FAQ / Support</div>
+              </div>
             </div>
             <div className="logout">
               <img
@@ -416,7 +402,7 @@ export default function () {
             <div class="frame-472">
               <div class="submitted-files submitted-1 blue-15px">Submitted files</div>
               <a href="/my_files_1">
-                <div class="view-all-box">View all</div>
+  <div class="view-all-box">View all</div>
               </a>
             </div>
             <div class="frame-47">
@@ -437,131 +423,131 @@ export default function () {
                 <p>
                 </p>
               )}
-              <div class="frame-4-1">
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-1234567</div></div>
-                  <div class="frame-461"><div class="clinical inter-normal-tundora-10-5px">Clinical</div></div>
-                  <div class="frame-46"><div class="date-1 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
-                  <div class="frame-46">
-                    <div class="frame-276"><div class="complete">Complete</div></div>
-                  </div>
-                  <div class="frame-464">
-                    <div class="x2-files">
-                      <div class="address-1 address-4 inter-normal-persian-blue-10-5px">2 files</div>
-                    </div>
+              {/* <div class="frame-4-1">
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-1234567</div></div>
+                <div class="frame-461"><div class="clinical inter-normal-tundora-10-5px">Clinical</div></div>
+                <div class="frame-46"><div class="date-1 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
+                <div class="frame-46">
+                  <div class="frame-276"><div class="complete">Complete</div></div>
+                </div>
+                <div class="frame-464">
+                  <div class="x2-files">
+                    <div class="address-1 address-4 inter-normal-persian-blue-10-5px">2 files</div>
                   </div>
                 </div>
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-123445</div></div>
-                  <div class="frame-461"><div class="resaerch inter-normal-tundora-10-5px">Resaerch</div></div>
-                  <div class="frame-46"><div class="date-2 date-11 inter-normal-tundora-10-5px">11/14/2022</div></div>
-                  <div class="frame-46"><div class="submitted inter-normal-tundora-10-5px">Submitted</div></div>
-                  <div class="frame-464"><div class="text inter-normal-tundora-10-5px">-</div></div>
+              </div>
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-123445</div></div>
+                <div class="frame-461"><div class="resaerch inter-normal-tundora-10-5px">Resaerch</div></div>
+                <div class="frame-46"><div class="date-2 date-11 inter-normal-tundora-10-5px">11/14/2022</div></div>
+                <div class="frame-46"><div class="submitted inter-normal-tundora-10-5px">Submitted</div></div>
+                <div class="frame-464"><div class="text inter-normal-tundora-10-5px">-</div></div>
+              </div>
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-123447</div></div>
+                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
+                <div class="frame-46"><div class="date-3 date-11 inter-normal-tundora-10-5px">11/12/2022</div></div>
+                <div class="frame-46">
+                  <div class="frame-280"><div class="address inter-normal-red-10-5px">2 Issue(s)</div></div>
                 </div>
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-123447</div></div>
-                  <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                  <div class="frame-46"><div class="date-3 date-11 inter-normal-tundora-10-5px">11/12/2022</div></div>
-                  <div class="frame-46">
-                    <div class="frame-280"><div class="address inter-normal-red-10-5px">2 Issue(s)</div></div>
-                  </div>
-                  <div class="frame-464"><div class="address-2 address-4 inter-normal-tundora-10-5px">2 days</div></div>
+                <div class="frame-464"><div class="address-2 address-4 inter-normal-tundora-10-5px">2 days</div></div>
+              </div>
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh-123447-1 inter-normal-tundora-10-5px">GH-123447</div></div>
+                <div class="frame-461"><div class="place-3 inter-normal-tundora-10-5px">Research</div></div>
+                <div class="frame-46"><div class="date-4 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
+                <div class="frame-46"><div class="pre-processing inter-normal-tundora-10-5px">Pre-processing</div></div>
+                <div class="frame-464"><div class="address-3 address-4 inter-normal-tundora-10-5px">2 days</div></div>
+              </div>
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh-123445-1 inter-normal-tundora-10-5px">GH-123445</div></div>
+                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
+                <div class="frame-46"><div class="date-5 date-11 inter-normal-tundora-10-5px">11/06/2022</div></div>
+                <div class="frame-46">
+                  <div class="frame-280"><div class="address inter-normal-red-10-5px">2 Issue(s)</div></div>
                 </div>
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh-123447-1 inter-normal-tundora-10-5px">GH-123447</div></div>
-                  <div class="frame-461"><div class="place-3 inter-normal-tundora-10-5px">Research</div></div>
-                  <div class="frame-46"><div class="date-4 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
-                  <div class="frame-46"><div class="pre-processing inter-normal-tundora-10-5px">Pre-processing</div></div>
-                  <div class="frame-464"><div class="address-3 address-4 inter-normal-tundora-10-5px">2 days</div></div>
+                <div class="frame-464"><div class="text inter-normal-tundora-10-5px">-</div></div>
+              </div>
+            </div>  */}
+            </div>
+          </div>
+           {/* <div class="frame-474">
+          <div class="frame-472-1">
+            <div class="unsubmitted-files blue-15px">Unsubmitted files</div>
+            <div class="view-all-box">View all</div>
+          </div>
+          <div class="frame-47">
+            <div class="frame-4 inter-semi-bold-blue-dianne-10-5px">
+              <div class="frame-455"><div class="file-id inter-semi-bold-blue-dianne-10-5px">File ID</div></div>
+              <div class="frame-45-1">
+                <div class="service-1">Service</div>
+                <img
+                  class="material-symbolsnavigate-next"
+                  src="material-symbols-navigate-next-4.svg"
+                  alt="material-symbols:navigate-next"
+                />
+              </div>
+              <div class="frame-45-1">
+                <div class="last-edited">Last edited</div>
+                <img
+                  class="material-symbolsnavigate-next"
+                  src="material-symbols-navigate-next-5.svg"
+                  alt="material-symbols:navigate-next"
+                />
+              </div>
+              <div class="frame-45"><div class="status-1">Status</div></div>
+              <div class="frame-459"><div class="delete">Delete</div></div>
+            </div>
+            <div class="frame-4-1">
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-123325</div></div>
+                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
+                <div class="frame-46"><div class="date-6 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
+                <div class="frame-46"><div class="unpaid inter-normal-tundora-10-5px">Unpaid</div></div>
+                <div class="frame-464">
+                  <img class="icsharp-delete" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
                 </div>
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh-123445-1 inter-normal-tundora-10-5px">GH-123445</div></div>
-                  <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                  <div class="frame-46"><div class="date-5 date-11 inter-normal-tundora-10-5px">11/06/2022</div></div>
-                  <div class="frame-46">
-                    <div class="frame-280"><div class="address inter-normal-red-10-5px">2 Issue(s)</div></div>
-                  </div>
-                  <div class="frame-464"><div class="text inter-normal-tundora-10-5px">-</div></div>
+              </div>
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
+                <div class="frame-461"><div class="resaerch-1 inter-normal-tundora-10-5px">Resaerch</div></div>
+                <div class="frame-46"><div class="date-7 date-11 inter-normal-tundora-10-5px">11/14/2022</div></div>
+                <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
+                <div class="frame-464">
+                  <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
+                </div>
+              </div>
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
+                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
+                <div class="frame-46"><div class="date-8 date-11 inter-normal-tundora-10-5px">11/12/2022</div></div>
+                <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
+                <div class="frame-464">
+                  <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
+                </div>
+              </div>
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
+                <div class="frame-461"><div class="place-3 inter-normal-tundora-10-5px">Research</div></div>
+                <div class="frame-46"><div class="date-9 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
+                <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
+                <div class="frame-464">
+                  <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
+                </div>
+              </div>
+              <div class="frame-4">
+                <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
+                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
+                <div class="frame-46"><div class="date-10 date-11 inter-normal-tundora-10-5px">11/06/2022</div></div>
+                <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
+                <div class="frame-464">
+                  <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
                 </div>
               </div>
             </div>
           </div>
-          <div class="frame-474">
-            <div class="frame-472-1">
-              <div class="unsubmitted-files blue-15px">Unsubmitted files</div>
-              <div class="view-all-box">View all</div>
-            </div>
-            <div class="frame-47">
-              <div class="frame-4 inter-semi-bold-blue-dianne-10-5px">
-                <div class="frame-455"><div class="file-id inter-semi-bold-blue-dianne-10-5px">File ID</div></div>
-                <div class="frame-45-1">
-                  <div class="service-1">Service</div>
-                  <img
-                    class="material-symbolsnavigate-next"
-                    src="material-symbols-navigate-next-4.svg"
-                    alt="material-symbols:navigate-next"
-                  />
-                </div>
-                <div class="frame-45-1">
-                  <div class="last-edited">Last edited</div>
-                  <img
-                    class="material-symbolsnavigate-next"
-                    src="material-symbols-navigate-next-5.svg"
-                    alt="material-symbols:navigate-next"
-                  />
-                </div>
-                <div class="frame-45"><div class="status-1">Status</div></div>
-                <div class="frame-459"><div class="delete">Delete</div></div>
-              </div>
-              <div class="frame-4-1">
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-123325</div></div>
-                  <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                  <div class="frame-46"><div class="date-6 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
-                  <div class="frame-46"><div class="unpaid inter-normal-tundora-10-5px">Unpaid</div></div>
-                  <div class="frame-464">
-                    <img class="icsharp-delete" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                  </div>
-                </div>
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
-                  <div class="frame-461"><div class="resaerch-1 inter-normal-tundora-10-5px">Resaerch</div></div>
-                  <div class="frame-46"><div class="date-7 date-11 inter-normal-tundora-10-5px">11/14/2022</div></div>
-                  <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
-                  <div class="frame-464">
-                    <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                  </div>
-                </div>
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
-                  <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                  <div class="frame-46"><div class="date-8 date-11 inter-normal-tundora-10-5px">11/12/2022</div></div>
-                  <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
-                  <div class="frame-464">
-                    <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                  </div>
-                </div>
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
-                  <div class="frame-461"><div class="place-3 inter-normal-tundora-10-5px">Research</div></div>
-                  <div class="frame-46"><div class="date-9 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
-                  <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
-                  <div class="frame-464">
-                    <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                  </div>
-                </div>
-                <div class="frame-4">
-                  <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
-                  <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                  <div class="frame-46"><div class="date-10 date-11 inter-normal-tundora-10-5px">11/06/2022</div></div>
-                  <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
-                  <div class="frame-464">
-                    <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>  */}
           <div class="frame-478">
             <div class="frame-47">
               <div class="frame-305">
@@ -574,65 +560,65 @@ export default function () {
                 <div class="component">
                   <div class="frame-287">
                     <p class="lorem-ipsum-dolor-si inter-semi-bold-tundora-12px">
-                      We have published our new demo! We will implement our further funtions here. You can now upload and download your files, and see the files you submitted.
-
+                    We have published our new demo! We will implement our further funtions here. You can now upload and download your files, and see the files you submitted.
+                    
                     </p>
                     <div class="date inter-semi-bold-slate-gray-8-2px">10/04/2023</div>
                   </div>
                 </div>
-                <div class="component">
-                  <div class="frame-287">
-                    <p class="ut-enim-ad-minim-ven inter-semi-bold-tundora-12px">
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    </p>
-                    <div class="date inter-semi-bold-slate-gray-8-2px">15/11/2022</div>
-                  </div>
+                 {/* <div class="component">
+                <div class="frame-287">
+                  <p class="ut-enim-ad-minim-ven inter-semi-bold-tundora-12px">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                  </p>
+                  <div class="date inter-semi-bold-slate-gray-8-2px">15/11/2022</div>
                 </div>
-                <div class="component">
-                  <div class="frame-287">
-                    <p class="duis-aute-irure-dolo inter-semi-bold-tundora-12px">
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    </p>
-                    <div class="date inter-semi-bold-slate-gray-8-2px">15/11/2022</div>
+              </div>
+              <div class="component">
+                <div class="frame-287">
+                  <p class="duis-aute-irure-dolo inter-semi-bold-tundora-12px">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  </p>
+                  <div class="date inter-semi-bold-slate-gray-8-2px">15/11/2022</div>
+                </div>
+              </div> */}
+              </div>
+            </div>
+             {/* <div class="frame-47">
+            <div class="frame-305">
+              <div class="cost-usage blue-15px">Cost &amp; Usage</div>
+              <div class="view-all-box">View all</div>
+            </div>
+            <div class="frame-4-1">
+              <div class="component">
+                <div class="frame-287">
+                  <div class="frame-468">
+                    <div class="price inter-semi-bold-tundora-12px">$1200</div>
+                    <div class="pending">Pending</div>
                   </div>
+                  <div class="gh-123325-8 inter-normal-slate-gray-10-5px">GH-123325</div>
+                </div>
+              </div>
+              <div class="component">
+                <div class="frame-287">
+                  <div class="frame-468">
+                    <div class="price inter-semi-bold-tundora-12px">$800</div>
+                    <div class="done">Done</div>
+                  </div>
+                  <div class="gh-123325-8 inter-normal-slate-gray-10-5px">GH-123325</div>
+                </div>
+              </div>
+              <div class="component">
+                <div class="frame-287">
+                  <div class="frame-468">
+                    <div class="price inter-semi-bold-tundora-12px">$160</div>
+                    <div class="pending">Pending</div>
+                  </div>
+                  <div class="gh-123325-8 inter-normal-slate-gray-10-5px">GH-123325</div>
                 </div>
               </div>
             </div>
-            <div class="frame-47">
-              <div class="frame-305">
-                <div class="cost-usage blue-15px">Cost &amp; Usage</div>
-                <div class="view-all-box">View all</div>
-              </div>
-              <div class="frame-4-1">
-                <div class="component">
-                  <div class="frame-287">
-                    <div class="frame-468">
-                      <div class="price inter-semi-bold-tundora-12px">$1200</div>
-                      <div class="pending">Pending</div>
-                    </div>
-                    <div class="gh-123325-8 inter-normal-slate-gray-10-5px">GH-123325</div>
-                  </div>
-                </div>
-                <div class="component">
-                  <div class="frame-287">
-                    <div class="frame-468">
-                      <div class="price inter-semi-bold-tundora-12px">$800</div>
-                      <div class="done">Done</div>
-                    </div>
-                    <div class="gh-123325-8 inter-normal-slate-gray-10-5px">GH-123325</div>
-                  </div>
-                </div>
-                <div class="component">
-                  <div class="frame-287">
-                    <div class="frame-468">
-                      <div class="price inter-semi-bold-tundora-12px">$160</div>
-                      <div class="pending">Pending</div>
-                    </div>
-                    <div class="gh-123325-8 inter-normal-slate-gray-10-5px">GH-123325</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>  */}
           </div>
         </div>
       </div>
