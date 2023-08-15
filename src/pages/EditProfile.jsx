@@ -176,7 +176,7 @@ export default function EditProfile() {
                 <img class="icon" src="/image/icon-4.svg" alt="icon" />
                 <div class="my-profile-3 inter-semi-bold-white-15px" style={{ fontSize: '15px' }}>My profile</div>
               </div>
-              <a href="changepassword">
+              <a href="change_password">
                 <div class="frame-466">
                   <img class="icon-1" src="/image/icon-5.svg" alt="icon" />
                   <div class="change-password11 inter-semi-bold-blue-dianne-15px" style={{ fontSize: '15px' }}>Change password</div>

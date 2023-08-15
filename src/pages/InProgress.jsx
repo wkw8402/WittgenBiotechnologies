@@ -1,3 +1,4 @@
+/* eslint-disable */
 
 import "../styling/globals.css";
 import "../styling/styleguide.css";
