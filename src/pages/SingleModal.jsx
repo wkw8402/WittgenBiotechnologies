@@ -7,18 +7,15 @@ import AWS from "aws-sdk";
 var dynamodb = new AWS.DynamoDB();
 
 
-const SingleModal = ({ open, close, item, handleDelete, setSelectedCount, deleteText }) => {
+const SingleModal = ({ open, close, item, handleDelete, deleteText }) => {
   
   const handleConfirmDelete = (itemTitle) => {
 
     // Call the handleDelete prop with the selected item's id
-    handleDelete(itemTitle);
+    handleDelete(itemTitle, item);
 
     // Close the modal
     close();
-
-    // Reset the selected count
-    setSelectedCount(0);
   };
   
   
@@ -58,8 +55,8 @@ const SingleModal = ({ open, close, item, handleDelete, setSelectedCount, delete
       </div>
       <div class="frame-626 frame-delete">
       <button className="back-buttona" onClick={close}><div class="back inter-semi-bold-blue-dianne-14px">Cancel</div></button>
-          <button onClick={() => handleConfirmDelete(item)} class="next-delete">
-          <button onClick={() => handleConfirmDelete(item)} class="yes-delete-samples inter-semi-bold-white-14px">Yes, delete {deleteText}</button>
+          <button onClick={() => handleConfirmDelete()} class="next-delete">
+          <button onClick={() => handleConfirmDelete()} class="yes-delete-samples inter-semi-bold-white-14px">Yes, delete {deleteText}</button>
         </button>
       </div>
     </div>
