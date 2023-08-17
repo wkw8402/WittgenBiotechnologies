@@ -16,7 +16,7 @@ export default function Sample()  {
   const [selectedCount, setSelectedCount] = useState(0);
   const [deletedRows, setDeletedRows] = useState([]);
   const [deleteText, setDeleteText] = useState('');
-  const [data, setData] = useState([
+  const [SampleData, setSampleData] = useState([
     {id: 0, title: 'GH-1234567a'},
     {id: 1, title: 'GH-1234567b'},
     {id: 2, title: 'GH-1234567c'},
@@ -39,13 +39,14 @@ export default function Sample()  {
 
   const handleDelete = (itemTitle) => {
     if (checkItems.length > 1) {
-      const updatedData = data.filter((item) => !checkItems.includes(item.id));
-      setData(updatedData);
+      const updatedSampleData = SampleData.filter((item) => !checkItems.includes(item.id));
+      setSampleData(updatedSampleData);
     } else {
-      const updatedData = data.filter((item) => item.title !== itemTitle);
-      setData(updatedData);
+      const updatedSampleData = SampleData.filter((item) => item.title !== itemTitle);
+      setSampleData(updatedSampleData);
     }
     handleConfirmDelete();
+
   };
   
   const handleConfirmDelete = () => {
@@ -113,7 +114,7 @@ export default function Sample()  {
     );
   }
 
-  // 동의 버튼 누르면 테이블 활성화
+// 동의 버튼 누르면 테이블 활성화
 const [tableEnabled, setTableEnabled] = useState(false);
 const [applyButtonEnabled, setApplyButtonEnabled] = useState(false);
 
@@ -352,11 +353,11 @@ function toggleTable(checked) {
                 <div class="rectangle-228"></div>
               </div>
               <div class="frame-49">
-                <div class="database-input database inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>Metadatabase Input</div>
+                <div class="SampleDatabase-input SampleDatabase inter-normal-japanese-laurel-16px" style={{ fontSize: '12px' }}>MetaSampleDatabase Input</div>
                 <div class="rectangle-228"></div>
               </div>
               <div class="frame-49">
-                <div class="database-input database inter-semi-bold-blue-dianne-16px" style={{ fontSize: '12px' }}>Database Input</div>
+                <div class="SampleDatabase-input SampleDatabase inter-semi-bold-blue-dianne-16px" style={{ fontSize: '12px' }}>SampleDatabase Input</div>
                 <div class="rectangle-228-1 rectangle-228-3"></div>
               </div>
               <div class="frame-49">
@@ -382,7 +383,7 @@ function toggleTable(checked) {
                 <div class="frame-565">
                   <div class="group-456">
                     <p class="agree-to-wittgens-u inter-normal-blue-dianne-10-5px" style={{ fontSize: '10.5px' }}>
-                      Agree to Wittgen’s use of sample &amp; data information and enjoy 6 months unlimited access to
+                      Agree to Wittgen’s use of sample &amp; SampleData information and enjoy 6 months unlimited access to
                       Wittgen’s services for free. Effective immediately.
                     </p>
                     <div class="group-402">
@@ -443,19 +444,19 @@ function toggleTable(checked) {
                 <div class="sample inter-semi-bold-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Sample</div>
               </th>
               <th scope="col" class="component-103">
-                <div class="database-category database inter-semi-bold-slate-gray-10-5px">Database category</div>
+                <div class="SampleDatabase-category SampleDatabase inter-semi-bold-slate-gray-10-5px">SampleDatabase category</div>
               </th>
               <th scope="col" class="component-103">
-                <div class="database-file database inter-semi-bold-slate-gray-10-5px">Database file</div>
+                <div class="SampleDatabase-file SampleDatabase inter-semi-bold-slate-gray-10-5px">SampleDatabase file</div>
               </th>
               <th scope="col" class="component-10"></th>
               <th scope="col" class="component-10"></th>
             </tr>
             <ul class="table-container_applypayment">
-            {data.filter((item) => !deletedRows.includes(item.id)) // 삭제된 줄을 필터링
+            {SampleData.filter((item) => !deletedRows.includes(item.id)) // 삭제된 줄을 필터링
       .map((item) => (
-        // Skip rendering the row if the item is not present in the data state
-        !data.some((dataItem) => dataItem.id === item.id) ? null : (
+        // Skip rendering the row if the item is not present in the SampleData state
+        !SampleData.some((SampleDataItem) => SampleDataItem.id === item.id) ? null : (
               <tr key={item.id} className={checkItems.includes(item.id) ? "frame-5-2 frame-5-3a" : "frame-5-ss frame-5-3a"} >
                 <td class="frame-55">
                 {deleteMultipleMode ? (
@@ -580,13 +581,13 @@ function toggleTable(checked) {
                     <div class="group-392"><div class="samples">Samples</div></div>
                     <div class="group-389">
                       <div class="flex-row inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>
-                        <div class="number">{data.length}</div>
+                        <div class="number">{SampleData.length}</div>
                         <div class="x">x</div>
                         <div class="price">$100</div>
                       </div>
                     </div>
                   </div>
-                  <div class="price-1">${data.length * 100}</div>
+                  <div class="price-1">${SampleData.length * 100}</div>
                 </div>
               </div>
             </div>
@@ -595,11 +596,11 @@ function toggleTable(checked) {
                 <div class="frame-587">
                   <div class="frame-58-1a">
                     <div class="subtotal inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>Subtotal:</div>
-                    <div class="price-2 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>${data.length * 100}</div>
+                    <div class="price-2 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>${SampleData.length * 100}</div>
                   </div>
                   <div class="frame-58-1">
                     <div class="group-387"><div class="taxes10 inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>Taxes(10%)</div></div>
-                    <div class="price-3 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>${Math.floor(data.length * 100 * 0.1)}</div>
+                    <div class="price-3 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>${Math.floor(SampleData.length * 100 * 0.1)}</div>
                   </div>
                 </div>
                 <img class="line-112" src="line-112-2@2x.svg" alt="Line 112" />
@@ -607,7 +608,7 @@ function toggleTable(checked) {
               <div class="frame-317a">
                 <div class="group-427">
                   <div class="total-amount inter-normal-silver-10-5px" style={{fontSize: "10.5px" }}>Total amount</div>
-                  <h1 class="price-4 inter-semi-bold-silver-27px" style={{fontSize: "27px" }}>${Math.floor(data.length * 100 * 1.1)}</h1>
+                  <h1 class="price-4 inter-semi-bold-silver-27px" style={{fontSize: "27px" }}>${Math.floor(SampleData.length * 100 * 1.1)}</h1>
                 </div>
                 <div class="group-428">
                   <div class="freemium-1 inter-normal-cerulean-10-5px" style={{fontSize: "10.5px" }}>Freemium</div>
