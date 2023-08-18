@@ -175,7 +175,7 @@ export default function () {
   async function breakCallbackDownload() {
     UserNameUploaded = await HandleUserName();
 
-
+    console.log(UserNameUploaded);
     var queryItemParams = {
       TableName: configTableName,
       IndexName: "upoadedBy-CreationDate-index",
@@ -190,10 +190,34 @@ export default function () {
 
   useEffect(() => {
     breakCallbackDownload().then((data) => setSubmittedFilesState(data))
-    setUser(getUser());
-    //setSubmittedFilesState(data)
+    setUser(HandleUserName());
+    // setSubmittedFilesState(data)
     // console.log("submittedFilesObject updated", submittedFilesState)
   }, []);
+
+  const handleDownloadClick = async (s3URI, filename) => {
+    try {
+      const s3 = new AWS.S3();
+      const [bucket, key] = s3URI.replace('s3://', '').split('/');
+      
+      const params = {
+        Bucket: bucket,
+        Key: key,
+        Expires: 60, // URL expires in 60 seconds
+      };
+      
+      const url = await s3.getSignedUrlPromise('getObject', params);
+
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename || 'downloaded_file'; // Default filename if not provided
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   let submittedFilesObject = [
     {
@@ -207,7 +231,7 @@ export default function () {
         }}
         className="researchers-3 inter-semi-bold-slate-gray-14px"
       >
-        Next
+        Download
       </button>,
     },
     {
@@ -254,7 +278,14 @@ export default function () {
         </div>
         <div className="frame-464">
           <div className="estTime inter-normal-tundora-14px">
-            {"-"}
+            {element.downloadEligible.S === "true" ? (<button
+              onClick={() => {
+                handleDownloadClick(element.fileURI.S, element.fileName.S);
+              }}
+              className="researchers-3 inter-semi-bold-slate-gray-14px"
+            >
+              Download
+            </button>) : (<>-</>)}
           </div>
         </div>
       </div>

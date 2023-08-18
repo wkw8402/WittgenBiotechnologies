@@ -32,6 +32,16 @@ export default function GettingStarted1() {
   };
 
   const [userAttributes, setUserAttributes] = useState(null);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (event) => {
+    const newInputValue = event.target.value;
+    setInputValue(newInputValue);
+  
+    // Store the newInputValue in localStorage
+    localStorage.setItem("inputValue", newInputValue);
+  };
+  
 
   useEffect(() => {
     fetchUserAttributes();
@@ -217,10 +227,12 @@ export default function GettingStarted1() {
                     Application ID
                   </label>
                   <input
-                    className="border justify-center p-[9px] w-[210px] h-[36px]  text-[14px]"
+                    className="border justify-center p-[9px] w-[210px] h-[36px] text-[14px]"
                     type="text"
                     id="department/laboratory"
                     placeholder="GH-13728930_1"
+                    value={inputValue} // Bind input value to the state
+                    onChange={handleInputChange} // Update the state on input change
                   />
                 </div>
               </div>
