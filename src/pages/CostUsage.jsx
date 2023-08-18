@@ -1,10 +1,15 @@
+/* eslint-disable */
+
 import "../styling/CostUsage.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 export default function () {
+
+    const navigate = useNavigate();
 
     let TitleObject = [
         {
@@ -486,7 +491,7 @@ export default function () {
                 defaultValue="apply-metadatabase-input-import-excel-file-match-columns"
             />
             <div className="main-navigation">
-                <div className="logo-box">
+                <div className="logo-box" onClick={()=>{navigate('/')}}>
                     <a href="/">
                         <div className="witt-gen-portal bold-portal-logo">
                             <span className="bold-portal-logo">
@@ -500,46 +505,46 @@ export default function () {
                 </div>
                 <div className="navigation-box">
                     <a></a>
-                    <div className="navigation-box-1">
+                    <button className="navigation-box-1" onClick={()=>{navigate('/dashboard')}}>
                         <img
                             className="dashboard-icon"
                             src="/image/home-icon.svg"
                             alt="home-icon"
                         />
                         <div className="light-font font-gap">Dashboard</div>
-                    </div>
-                    <div className="navigation-box-1">
+                    </button>
+                    <button className="navigation-box-1" onClick={()=>{navigate('/dashboard')}}>
                         <img
                             className="myfiles-icon2"
                             src="/image/myfiles-icon2.svg"
                             alt="myfiles-icon"
                         />
                         <div className="light-font font-gap3">My files</div>
-                    </div>
-                    <div className="navigation-box-1">
+                    </button>
+                    <button className="navigation-box-1">
                         <img
                             className="cost-usage-icon2"
                             src="/image/cost-usage-icon2.svg"
                             alt="cost-usage-icon"
                         />
                         <div className="my-files-font font-gap3">Cost &amp; Usage</div>
-                    </div>
-                    <div className="navigation-box-1">
+                    </button>
+                    <button className="navigation-box-1" onClick={()=>{navigate('/my_profile')}}>
                         <img
                             className="setting-icon"
                             src="/image/settings-icon.svg"
                             alt="setting-icon"
                         />
                         <div className="light-font font-gap2">Settings</div>
-                    </div>
-                    <div className="navigation-box-1">
+                    </button>
+                    <button className="navigation-box-1" onClick={()=>{navigate('/support')}}>
                         <img
                             className="faq-support-ion"
                             src="/image/faq-support-icon.svg"
                             alt="faq-support-icon"
                         />
                         <div className="light-font font-gap2">FAQ / Support</div>
-                    </div>
+                    </button>
                 </div>
                 <div className="logout">
                     <img

@@ -201,7 +201,7 @@ export default function GettingStarted1() {
         {/* main */}
         <div className="flex flex-row gap-[230.5px] mt-[126px]">
           {/* Left */}
-          <div className="absolute flex flex-col justify-center item-center left-[253.6px] top-[126px] ">
+          <div className="absolute flex flex-col justify-center item-center left-[253.6px] top-[126px]">
             <form className="flex flex-col ml-[60px] gap-[12px]">
               <div className="flex flex-row gap-[12px] ">
                 <div>
@@ -440,8 +440,8 @@ export default function GettingStarted1() {
           </div>
 
           {/* Button */}
-          <div className="absolute flex flex-row gap-[801.5px] left-[313.6px] top-[900px]">
-            <button className=" justify-center items-center  w-[135px] h-[36px] border border-solid border-[#CEDDE1]">
+          <div className="absolute flex flex-row gap-[801.5px] left-[313.6px]" style={{ top: '680px' }}>
+            <button className=" justify-center items-center  w-[135px] h-[36px] border border-solid border-[#CEDDE1]" onClick={()=>{navigate('/dashboard')}}>
               <span className="font-semibold text-[10.5px] leading-[13px] text-[#25474F]">
                 Back
               </span>

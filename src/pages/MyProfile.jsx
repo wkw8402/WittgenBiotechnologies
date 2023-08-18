@@ -79,7 +79,7 @@ export default function Myprofile() {
               <div class="frame-185-item">
                 <img
                   class="draft_fill1_wght400_grad0_opsz48-1-1"
-                  src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
+                  src="/image/myfiles-icon2.svg"
                   alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
                 />
                 <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' , fontWeight: 400 }}>My files</div>

@@ -4,8 +4,12 @@ import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Sample() {
+
+  const navigate = useNavigate();
+
     return(
         <>
         
@@ -24,7 +28,7 @@ export default function Sample() {
       <div class="faq-support screen">
       <div class="main-navigation">
           <div class="overlap-group1">
-            <div class="group-184">
+            <div class="group-184" onClick={()=>{navigate('/')}}>
               <div class="overlap-group">
                 <div class="witt-gen-portal oxygen-bold-white-21px">
                   <span class="oxygen-bold-white-21px" style={{ fontSize: '21px' }}>WittGen</span><span class="oxygen-light-white-21px" style={{ fontSize: '21px' }}>Portal</span>
@@ -46,7 +50,7 @@ export default function Sample() {
               <div class="frame-185-item">
                 <img
                   class="draft_fill1_wght400_grad0_opsz48-1-1"
-                  src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
+                  src="/image/myfiles-icon2.svg"
                   alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
                 />
                 <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' , fontWeight: 400 }}>My files</div>
@@ -65,7 +69,7 @@ export default function Sample() {
               <div class="frame-185-item">
                 <img
                   class="settings_fill0_wght400_grad0_opsz48-1"
-                  src="settings-fill0-wght400-grad0-opsz48-1.svg"
+                  src="/image/settings-icon.svg"
                   alt="settings_FILL0_wght400_GRAD0_opsz48 1"
                 />
                 <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' }}>Settings</div>

@@ -228,7 +228,7 @@ export default function Register() {
                 Already Have an account?
               </h4>
               <span className="text-[#0FB4DB] text-[12px] font-semibold leading-[18px] underline underline-offset-[]">
-                <a onClick={(e) => login(e)}>Login</a>
+                <button onClick={(e) => login(e)}>Login</button>
               </span>
             </div>
           </div>
