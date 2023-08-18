@@ -348,38 +348,38 @@ export default function () {
               </a>
             </div>
             <div className="navigation-box">
-              <div className="navigation-box-1">
+              <button className="navigation-box-1">
                 <img
                   className="dashboard-icon"
                   src="/image/home-icon.svg"
                   alt="home-icon"
                 />
                 <div className="light-font">Dashboard</div>
-              </div>
-              <div className="navigation-box-1">
+              </button>
+              <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
                 <img
                   className="myfiles-icon"
                   src="/image/myfiles-icon.svg"
                   alt="myfiles-icon"
                 />
                 <div className="my-files-font">My files</div>
-              </div>
-              <div className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
+              </button>
+              <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
                 <img
                   className="cost-usage-icon"
                   src="/image/cost-usage-icon.svg"
                   alt="cost-usage-icon"
                 />
                 <div className="light-font">Cost &amp; Usage</div>
-              </div>
-              <div className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+              </button>
+              <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
                 <img
                   className="setting-icon"
                   src="/image/settings-icon.svg"
                   alt="setting-icon"
                 />
                 <div className="light-font">Settings</div>
-              </div>
+              </button>
               <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
                 <img
                   className="faq-support-ion"
