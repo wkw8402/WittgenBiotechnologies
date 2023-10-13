@@ -197,7 +197,7 @@ export default function () {
 
   const handleDownloadClick = async (s3URI, filename) => {
     try {
-      const s3 = new AWS.S3();
+      const s3 = new AWS.S3({signatureVersion: 'v4'});
       const [bucket, key] = s3URI.replace('s3://', '').split('/');
       
       const params = {
@@ -256,7 +256,8 @@ export default function () {
     return (
       <div className="frame-4">
         <div className="frame-460">
-          <div className="fileId inter-normal-tundora-14px">
+          <div className="fileId inter-normal-tundora-14px" onClick={()=>{  navigate('/in_process')  }}>
+           
             {element.fileName.S}
           </div>
         </div>
@@ -284,7 +285,7 @@ export default function () {
               }}
               className="researchers-3 inter-semi-bold-slate-gray-14px"
             >
-              Download
+              {/* Download */}
             </button>) : (<>-</>)}
           </div>
         </div>
@@ -354,15 +355,15 @@ export default function () {
                   src="/image/home-icon.svg"
                   alt="home-icon"
                 />
-                <div className="light-font">Dashboard</div>
+                <div className="my-files-font">Dashboard</div>
               </button>
               <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
                 <img
                   className="myfiles-icon"
-                  src="/image/myfiles-icon.svg"
+                  src="/image/myfiles-icon2.svg"
                   alt="myfiles-icon"
                 />
-                <div className="my-files-font">My files</div>
+                <div className="light-font">My files</div>
               </button>
               <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
                 <img
@@ -411,11 +412,11 @@ export default function () {
                       src="assignment-fill0-wght400-grad0-opsz48-1-white.svg"
                       alt="assignment_FILL0_wght400_GRAD0_opsz48 1"
                     />
-                    <button className="researchers inter-semi-bold-white-12px" onClick={() => { navigate('/getting_started_1') }}>Researchers</button>
+                    <button className="researchers inter-semi-bold-white-12px" onClick={() => { navigate('/getting_started_1') }}>Upload</button>
                   </div>
 
                 </div>
-                <div class="dashbaord_main-buttons-researcher">
+                {/* <div class="dashbaord_main-buttons-researcher">
                   <div class="frame-447">
                     <img
                       class="assignment_fill0"
@@ -425,7 +426,7 @@ export default function () {
                     <button className="researchers inter-semi-bold-white-12px" onClick={() => { navigate('/getting_started_1') }}>Clinicians</button>
 
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

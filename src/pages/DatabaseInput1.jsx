@@ -1285,7 +1285,7 @@ function toggleTable(checked) {
         
         
       
-      <div class="frame-591" style={{ left: '1360px', zIndex: '0', height:'870px' }}>
+      {/* <div class="frame-591" style={{ left: '1360px', zIndex: '0', height:'870px' }}>
           <div class="frame-590">
             <div class="frame-58">
               <div class="frame-58">
@@ -1339,7 +1339,7 @@ function toggleTable(checked) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
     </div>
     </div>
     

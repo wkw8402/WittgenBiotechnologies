@@ -9,110 +9,36 @@ import "../styling/InProgress.css";
 export default function () {
   let dataObject = [
     {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
+      ID: "GH-12345",
+      "Name (Optional)": "Cindy Park",
+      "D.O.B": "12.25.1988",
+      "Height (cm)": "171",
+      "Weight (kg)": "69",
+      "Primary region": "Breast",
+      "Subtype": "TNBC",
+      "Grade": "3",
     },
     {
-      sample: "GH-23421",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "Upload File",
-      databaseFile3: "",
-      dob: "11/11/2000",
+      ID: "GH-12346",
+      "Name (Optional)": "Jane Doe",
+      "D.O.B": "11.20.1965",
+      "Height (cm)": "170",
+      "Weight (kg)": "72",
+      "Primary region": "Breast",
+      "Subtype": "ER+",
+      "Grade": "1",
     },
     {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "",
-      databaseFile2: "Upload File",
-      databaseFile3: "",
-      dob: "11/11/2000",
+      ID: "GH-12347",
+      "Name (Optional)": "Patient 3",
+      "D.O.B": "04.06.1969",
+      "Height (cm)": "163",
+      "Weight (kg)": "63",
+      "Primary region": "Breast",
+      "Subtype": "ER+",
+      "Grade": "2",
     },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-    },
-
+    
   ];
   
   function Table() {
@@ -148,7 +74,7 @@ export default function () {
 
 
   const [progress, setProgress] = useState({
-    applicationSubmitted: 'notStarted',
+    applicationSubmitted: 'completed',
     dataCuration: 'completed',
     dataPreProcessing: 'inProgress',
     mlModel: 'notStarted',
@@ -181,7 +107,9 @@ export default function () {
       case 'inProgress':
         return '/image/inprogress/upload_file_progress.svg';
       default:
-        return '/image/inprogress/upload_file_notyet.svg';
+        // return '/image/inprogress/upload_file_notyet.svg';
+        // temp
+        return '/image/inprogress/upload_file_completed.svg';
     }
   };
 
@@ -192,7 +120,9 @@ export default function () {
       case 'inProgress':
         return '/image/inprogress/database_file_progress.svg';
       default:
-        return '/image/inprogress/database_file_notyet.svg';
+        // return '/image/inprogress/database_file_notyet.svg';
+        // temp
+        return '/image/inprogress/database_file_progress.svg';
     }
   };
 
@@ -238,8 +168,8 @@ export default function () {
       fileComplete: '',
     });
     setProgressTime({
-      applicationSubmitted: '2023-06-28 10:00',
-      dataCuration: '2023-06-28 10:10',
+      applicationSubmitted: '',
+      dataCuration: '',
       dataPreProcessing: '',
       mlModel: '',
       fileComplete: '',
@@ -361,7 +291,10 @@ export default function () {
             </div>
             <div className="progress-layout">
               <div className="progress-box">
-                <div className="progress-frame" style={{ color: determineColor(progress.applicationSubmitted) }}>
+                <div className="progress-frame" style={{ color: 
+                  "#1431C9"
+                  // determineColor(progress.applicationSubmitted) 
+                  }}>
                   <p className="progress-font">Application submitted</p>
                   <img
                     className="icon-position"
@@ -372,7 +305,10 @@ export default function () {
                 </div>
               </div>
               <div className="progress-box">
-                <div className="progress-frame" style={{ color: determineColor(progress.dataCuration) }}>
+                <div className="progress-frame" style={{ color: 
+                  "#25474F"
+                  // determineColor(progress.dataCuration) 
+                  }}>
                   <p className="progress-font">Data Curation</p>
                   <img
                     className="icon-position"
