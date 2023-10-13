@@ -165,7 +165,7 @@ export default function () {
                 Login
               </div>
             </button>
-            <button className="login" onClick={()=>{navigate('/register')}}><div className="login-1 login-2">Register</div></button>
+            {/* <button className="login" onClick={()=>{navigate('/register')}}><div className="login-1 login-2">Register</div></button> */}
             </form>
             <div className="frame-204 frame-1">
               <div className="group-201">

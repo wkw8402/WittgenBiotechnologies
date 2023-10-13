@@ -59,7 +59,7 @@ function App() {
         <Route path="/payment_2" element={<Payment2 />}></Route>
         <Route path="/submitted" element={<Submitted />}></Route>
         <Route path="/support" element={<Support />}></Route>
-        <Route path="/in_progress" element={<InProgress />}></Route>
+        <Route path="/in_process" element={<InProgress />}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
     </BrowserRouter>
