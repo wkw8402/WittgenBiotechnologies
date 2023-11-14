@@ -274,7 +274,7 @@ export default function () {
         {/* if there's an issue, must have different div. */}
         <div className="frame-46">
           <div className="payment inter-normal-tundora-14px">
-            {"In Process"}
+            {"Completed"}
           </div>
         </div>
         <div className="frame-464">
@@ -285,7 +285,7 @@ export default function () {
               }}
               className="researchers-3 inter-semi-bold-slate-gray-14px"
             >
-              {/* Download */}
+              Download
             </button>) : (<>-</>)}
           </div>
         </div>
