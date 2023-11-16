@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FileUploader } from "react-drag-drop-files";
 import { read, utils, writeFile } from 'xlsx';
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
+import { useNavigate } from "react-router-dom";
 
 
 function ExcelTable({ columnNames, data }) {
@@ -60,8 +62,18 @@ export default function YourExcelComponent() {
         localStorage.removeItem('columnNames');
     };
 
+    const navigate = useNavigate();
+
+    const compRef = useRef();
+  
+    const logout = (event) => {
+        compRef.current.logout();
+        navigate("/")
+    }
+
     return (
         <div>
+            <Account ref={compRef} />
             {!fileUploaded ? (
                 <><FileUploader
                     className="drag-drop-box"
@@ -81,11 +93,9 @@ export default function YourExcelComponent() {
 
                 </FileUploader>
                 <div className="frame-bottom">
-                        <a href='/metabase_input_3'>
-                            <div className="drop-next-button">
-                                <div className="drop-next">Next</div>
-                            </div>
-                        </a>
+                    <button className="drop-next-button" onClick={()=>{navigate("/metabase_input_3")}}>
+                        <div className="drop-next">Next</div>
+                    </button>
                 </div>
                 </>
             ) : (
@@ -134,21 +144,14 @@ export default function YourExcelComponent() {
                         </div>
                     </div>
                     <div className="frame-bottom">
-                                <a href='/metabase_input_1'>
-                                    <div className="back-button" >
-                                        <div className="back">back</div>
-                                    </div>
-                                </a>
-                                <a href='/metabase_input_3'>
-                                    <div className="next-button" >
-                                        <div className="next">Next</div>
-                                    </div>
-                                </a>
-                            </div>
-
+                    <button className="back-button" onClick={()=>{  navigate("/metabase_input_1")  }}>
+                        <div className="back">Back</div>
+                    </button>
+                    <button className="next-button" onClick={()=>{  navigate("/metabase_input_3")  }}>
+                        <div className="next">Next</div>
+                    </button>
+                    </div>
                 </>
-
-
             )}
         </div>
     );

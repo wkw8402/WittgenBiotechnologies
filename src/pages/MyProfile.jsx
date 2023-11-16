@@ -4,9 +4,10 @@ import "../styling/MyProfile.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React from "react";
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import countryList from "react-select-country-list";
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 export default function Myprofile() {
   const [firstName, setFirstName] = useState('');
@@ -17,8 +18,9 @@ export default function Myprofile() {
   const [zipCode, setZipCode] = useState('');
   const [state, setState] = useState('');
   const [city, setCity] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState(''); 
 
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Get the updated data from localStorage and set it to the state
@@ -42,8 +44,16 @@ export default function Myprofile() {
     setSelectedCountry(savedCountry);
   }, []);
 
+  const compRef = useRef();
+
+  const logout = (event) => {
+      compRef.current.logout();
+      navigate("/")
+  }
+
     return(
         <>   
+    <Account ref={compRef} />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1440, maximum-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
@@ -55,74 +65,69 @@ export default function Myprofile() {
     <input type="hidden" id="anPageName" name="page" value="my-profile" />
     <div class="container-center-horizontal">
       <div class="my-profile screen">
-      <div class="main-navigation">
-          <div class="overlap-group1">
-            <div class="group-184">
-              <div class="overlap-group">
-                <div class="witt-gen-portal oxygen-bold-white-21px">
-                  <span class="oxygen-bold-white-21px" style={{ fontSize: '21px' }}>WittGen</span><span class="oxygen-light-white-21px" style={{ fontSize: '21px' }}>Portal</span>
-                </div>
-              </div>
-              {/*<img class="line-79" src="img/line-79-12.svg" alt="Line 79" />*/}
-            </div>
-            <div class="frame-185">
-            <a href="dashboard">
-              <div class="frame-185-item">
-                <img
-                  class="home_fill0_wght400_grad0_opsz48-1"
-                  src="home-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="home_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="dashboard inter-normal-white-12px" style={{ fontSize: '12px' }}>Dashboard</div>
-              </div></a>
-              <a href="my_files_1">
-              <div class="frame-185-item">
-                <img
-                  class="draft_fill1_wght400_grad0_opsz48-1-1"
-                  src="/image/myfiles-icon2.svg"
-                  alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
-                />
-                <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' , fontWeight: 400 }}>My files</div>
-              </div>
-              </a>
-              <a href="CostUsage">
-              <div class="frame-185-item">
-                <img
-                  class="paid_fill0_wght400_grad0_opsz48-1"
-                  src="paid-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="paid_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="cost-usage inter-normal-white-12px" style={{ fontSize: '12px' }}>Cost &amp; Usage</div>
-              </div></a>
-              <a href="my_profile">
-              <div class="frame-185-item">
-                <img
-                  class="settings_fill0_wght400_grad0_opsz48-1"
-                  src="settings-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="settings_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' ,  fontWeight: 600 }}>Settings</div>
-              </div></a>
-              <a href="support">
-              <div class="frame-185-item">
-                <img
-                  class="contact_support_fill"
-                  src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
-                  alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
-                />
-                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px'}}>FAQ / Support</div>
-              </div></a>
-            </div>
-            <div class="logout">
-              <img
-                class="logout_fill0_wght400_grad0_opsz48-1"
-                src="logout-fill0-wght400-grad0-opsz48-1.svg"
-                alt="logout_FILL0_wght400_GRAD0_opsz48 1"
-              />
-              <div class="logout-1 inter-normal-white-12px" style={{ fontSize: '12px' }}>Logout</div>
-            </div>
-          </div>
+      <div className="main-navigation">
+        <div className="logo-box">
+        <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+            <span className="bold-portal-logo">
+            WittGen
+            </span>
+            <span className="light-portal-logo">
+            Portal
+            </span>
+        </button>
         </div>
+        <div className="navigation-box">
+        <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
+            <img
+            className="dashboard-icon"
+            src="/image/home-icon.svg"
+            alt="home-icon"
+            />
+            <div className="light-font">Dashboard</div>
+        </button>
+        <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }} style={{ marginLeft: '-3px' }}>
+            <img
+            className="myfiles-icon"
+            src="/image/myfiles-icon2.svg"
+            alt="myfiles-icon"
+            />
+            <div className="light-font">My files</div>
+        </button>
+        <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
+            <img
+            className="cost-usage-icon"
+            src="/image/cost-usage-icon.svg"
+            alt="cost-usage-icon"
+            />
+            <div className="light-font">Cost &amp; Usage</div>
+        </button>
+        <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+            <img
+            className="setting-icon"
+            src="/image/settings-icon2.svg"
+            alt="setting-icon"
+            style={{ width: '15px', height: '15px'}}
+            />
+            <div className="my-files-font">Settings</div>
+        </button>
+        <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+            <img
+            className="faq-support-ion"
+            src="/image/faq-support-icon.svg"
+            alt="faq-support-icon"
+            />
+            <div className="light-font">FAQ / Support</div>
+        </div>
+        </div>
+        <button className="logout" onClick={()=>{   logout()    }}>
+        <img
+            className="logout-icon"
+            src="/image/logout-icon.png"
+            alt="logout-icon"
+        />
+        <div className="light-font">Logout</div>
+        </button>
+    </div>
         <div class="frame-695">
           <div class="frame-693">
             <div class="frame">
@@ -133,11 +138,10 @@ export default function Myprofile() {
                 <img class="icon" src="/image/icon-4.svg" alt="icon" />
                 <div class="my-profile-3 inter-semi-bold-white-15px" style={{ fontSize: '15px' }}>My profile</div>
               </div>
-              <a href="change_password">
-                <div class="frame-466">
-                  <img class="icon-1" src="/image/icon-5.svg" alt="icon" />
-                  <div class="change-password11 inter-semi-bold-blue-dianne-15px" style={{ fontSize: '15px' }}>Change password</div>
-                </div></a>
+              <button class="frame-466" onClick={()=>{navigate("/change_password")}}>
+                <img class="icon-1" src="/image/icon-5.svg" alt="icon" />
+                <div class="change-password11 inter-semi-bold-blue-dianne-15px" style={{ fontSize: '15px' }}>Change password</div>
+              </button>
               <div class="frame-467">
                 <img
                   class="credit_card_fill0_wg"

@@ -12,12 +12,12 @@
 .faq-support .main-navigation {
   align-items: flex-start;
   display: flex;
-  height: 100vh;
+  height: 100%;
   left: -2px;
   min-width: 195px;
   position: fixed;
   top: 0;
-  z-index: 5;
+  z-index: 1;
 }
 
 

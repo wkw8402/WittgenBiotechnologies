@@ -14,6 +14,7 @@ import JSZip from 'jszip';
 import { gzip } from 'pako';
 import { configSourceBucket } from "../config";
 import SingleModal from './SingleModal';
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 var dynamodb = new AWS.DynamoDB();
 var fileID,
@@ -576,9 +577,17 @@ function toggleTable(checked) {
       })
     }
   };
+
+  const compRef = useRef();
+
+  const logout = (event) => {
+      compRef.current.logout();
+      navigate("/")
+  }
   
   return (
     <>
+    <Account ref={compRef} />
   {!toPayment ? 
     (
     <>
@@ -602,74 +611,69 @@ function toggleTable(checked) {
         <input type="hidden" id="anPageName" name="page" value="applyu47-database-input" />
       <div class="container-center-horizontal">
         <div class="applyu47-database-input screen">
-        <div class="main-navigation">
-            <div class="overlap-group1">
-              <div class="group-184">
-                <div class="overlap-group">
-                  <div class="witt-gen-portal oxygen-bold-white-21px">
-                    <span class="oxygen-bold-white-21px" style={{ fontSize: '21px' }}>WittGen</span><span class="oxygen-light-white-21px" style={{ fontSize: '21px' }}>Portal</span>
-                  </div>
-                </div>
-                {/*<img class="line-79" src="img/line-79-12.svg" alt="Line 79" />*/}
-              </div>
-              <div class="frame-185">
-              <a href="dashboard">
-                <div class="frame-185-item">
-                  <img
-                    class="home_fill0_wght400_grad0_opsz48-1"
-                    src="home-fill0-wght400-grad0-opsz48-1.svg"
-                    alt="home_FILL0_wght400_GRAD0_opsz48 1"
-                  />
-                  <div class="dashboard inter-normal-white-12px" style={{ fontSize: '12px' }}>Dashboard</div>
-                </div></a>
-                <a href="my_files_1">
-                <div class="frame-185-item">
-                  <img
-                    class="draft_fill1_wght400_grad0_opsz48-1-1"
-                    src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
-                    alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
-                  />
-                  <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px'}}>My files</div>
-                </div>
-                </a>
-                <a href="CostUsage">
-                <div class="frame-185-item">
-                  <img
-                    class="paid_fill0_wght400_grad0_opsz48-1"
-                    src="paid-fill0-wght400-grad0-opsz48-1.svg"
-                    alt="paid_FILL0_wght400_GRAD0_opsz48 1"
-                  />
-                  <div class="cost-usage inter-normal-white-12px" style={{ fontSize: '12px' }}>Cost &amp; Usage</div>
-                </div></a>
-                <a href="my_profile">
-                <div class="frame-185-item">
-                  <img
-                    class="settings_fill0_wght400_grad0_opsz48-1"
-                    src="settings-fill0-wght400-grad0-opsz48-1.svg"
-                    alt="settings_FILL0_wght400_GRAD0_opsz48 1"
-                  />
-                  <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' }}>Settings</div>
-                </div></a>
-                <a href="support">
-                <div class="frame-185-item">
-                  <img
-                    class="contact_support_fill"
-                    src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
-                    alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
-                  />
-                  <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px'}}>FAQ / Support</div>
-                </div></a>
-              </div>
-              <div class="logout">
-                <img
-                  class="logout_fill0_wght400_grad0_opsz48-1"
-                  src="logout-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="logout_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="logout-1 inter-normal-white-12px" style={{ fontSize: '12px' }}>Logout</div>
-              </div>
-            </div>
-          </div>
+        <div className="main-navigation">
+        <div className="logo-box">
+        <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+            <span className="bold-portal-logo">
+            WittGen
+            </span>
+            <span className="light-portal-logo">
+            Portal
+            </span>
+        </button>
+        </div>
+        <div className="navigation-box">
+        <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
+            <img
+            className="dashboard-icon"
+            src="/image/home-icon.svg"
+            alt="home-icon"
+            />
+            <div className="light-font">Dashboard</div>
+        </button>
+        <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }} style={{ marginLeft: '-3px' }}>
+            <img
+            className="myfiles-icon"
+            src="/image/myfiles-icon2.svg"
+            alt="myfiles-icon"
+            />
+            <div className="light-font">My files</div>
+        </button>
+        <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
+            <img
+            className="cost-usage-icon"
+            src="/image/cost-usage-icon.svg"
+            alt="cost-usage-icon"
+            />
+            <div className="light-font">Cost &amp; Usage</div>
+        </button>
+        <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+            <img
+            className="setting-icon"
+            src="/image/settings-icon2.svg"
+            alt="setting-icon"
+            style={{ width: '15px', height: '15px'}}
+            />
+            <div className="light-font">Settings</div>
+        </button>
+        <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+            <img
+            className="faq-support-ion"
+            src="/image/faq-support-icon.svg"
+            alt="faq-support-icon"
+            />
+            <div className="light-font">FAQ / Support</div>
+        </div>
+        </div>
+        <button className="logout" onClick={()=>{   logout()    }}>
+        <img
+            className="logout-icon"
+            src="/image/logout-icon.png"
+            alt="logout-icon"
+        />
+        <div className="light-font">Logout</div>
+        </button>
+      </div>
   
           <div class="back-next">
             <div class="frame-616">
@@ -701,10 +705,10 @@ function toggleTable(checked) {
                 </div>
               </div>
               <div class="frame-213">
-                <div class="component-33">
-                  <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '12px' }}>Discard &amp; Exit</div>
+                <div class="component-33" style={{ border: 'none' }}>
+                  <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '12px', border: 'none' }}></div>
                 </div>
-                <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }}>Save &amp; Exit</div></div>
+                <button class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }} onClick={()=>{navigate('/dashboard')}}>Exit</div></button>
               </div>
             </div>
           </div> 
@@ -843,10 +847,10 @@ function toggleTable(checked) {
                 </div>
               </div>
               <div class="frame-213">
-                <div class="component-33">
-                  <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '12px' }}>Discard &amp; Exit</div>
+                <div class="component-33" style={{ border: 'none' }}>
+                  <div class="x-exit inter-semi-bold-blue-dianne-7-9px"></div>
                 </div>
-                <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }}>Save &amp; Exit</div></div>
+                <button class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }} onClick={()=>{navigate("/dashboard")}}>Exit</div></button>
               </div>
             </div>
           </div>)}
@@ -1079,10 +1083,10 @@ function toggleTable(checked) {
               </div>
             </div>
             <div class="frame-213">
-              <div class="component-33">
-                <div class="x-exit inter-semi-bold-blue-dianne-7-9px" style={{ fontSize: '12px' }}>Discard &amp; Exit</div>
-              </div>
-              <div class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }}>Save &amp; Exit</div></div>
+            <div class="component-33" style={{ border: 'none' }}>
+              <div class="x-exit inter-semi-bold-blue-dianne-7-9px"></div>
+            </div>
+            <button class="component-31"><div class="x-exit inter-semi-bold-white-7-9px" style={{ fontSize: '12px' }} onClick={()=>{navigate('/dashboard')}}>Exit</div></button>
             </div>
           </div>
         </div> 

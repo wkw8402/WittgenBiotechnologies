@@ -2,12 +2,68 @@ import "../styling/ChangePassword.css"
 import "../styling/MyProfile.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
-import React from "react";
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import AWS, { SecretsManager } from "aws-sdk";
+import "../config";
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 export default function Sample() {
+
+  const navigate = useNavigate();
+
+  const compRef = useRef();
+
+  const logout = (event) => {
+      compRef.current.logout();
+      navigate("/")
+  }
+
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [nextPassword, setNextPassword] = useState('');
+  const [passwordConditionsMet, setPasswordConditionsMet] = useState(false);
+  const [nextPasswordCheck, setNextPasswordCheck] = useState('');
+  const [passwordsMatch, setPasswordsMatch] = useState(false);
+
+  const handleCurrentPasswordChange = (event) => {
+    setCurrentPassword(event.target.value);
+  };
+
+  const handleNextPasswordChange = (event) => {
+    setNextPassword(event.target.value);
+  };
+
+  const handleNextPasswordCheckChange = (event) => {
+    setNextPasswordCheck(event.target.value);
+  };
+
+  useEffect(() => {
+    // Check if password meets the specified conditions
+    const checkPasswordConditions = () => {
+      const hasMinimumLength = nextPassword.length >= 8;
+      const hasLetterAndNumber = /[a-zA-Z]/.test(nextPassword) && /\d/.test(nextPassword);
+      const hasUpperCaseAndLowerCase = /[a-z]/.test(nextPassword) && /[A-Z]/.test(nextPassword);
+      const hasSpecialCharacter = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(nextPassword);
+
+      setPasswordConditionsMet(
+        hasMinimumLength &&
+        hasLetterAndNumber &&
+        hasUpperCaseAndLowerCase &&
+        hasSpecialCharacter
+      );
+    };
+
+    checkPasswordConditions();
+  }, [nextPassword]);
+
+  useEffect(() => {
+    // Check if passwords match (excluding empty strings)
+    setPasswordsMatch(nextPassword !== '' && nextPassword === nextPasswordCheck);
+  }, [nextPassword, nextPasswordCheck]);
+
     return(
-        <>   
+    <>   
+    <Account ref={compRef} />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1440, maximum-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
@@ -19,74 +75,69 @@ export default function Sample() {
     <input type="hidden" id="anPageName" name="page" value="change-password" />
     <div class="container-center-horizontal">
       <div class="change-password screen">
-      <div class="main-navigation">
-          <div class="overlap-group1">
-            <div class="group-184">
-              <div class="overlap-group">
-                <div class="witt-gen-portal oxygen-bold-white-21px">
-                  <span class="oxygen-bold-white-21px" style={{ fontSize: '21px' }}>WittGen</span><span class="oxygen-light-white-21px" style={{ fontSize: '21px' }}>Portal</span>
-                </div>
-              </div>
-              {/*<img class="line-79" src="img/line-79-12.svg" alt="Line 79" />*/}
-            </div>
-            <div class="frame-185">
-            <a href="dashboard">
-              <div class="frame-185-item">
-                <img
-                  class="home_fill0_wght400_grad0_opsz48-1"
-                  src="home-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="home_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="dashboard inter-normal-white-12px" style={{ fontSize: '12px' }}>Dashboard</div>
-              </div></a>
-              <a href="my_files_1">
-              <div class="frame-185-item">
-                <img
-                  class="draft_fill1_wght400_grad0_opsz48-1-1"
-                  src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
-                  alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
-                />
-                <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px' , fontWeight: 400 }}>My files</div>
-              </div>
-              </a>
-              <a href="CostUsage">
-              <div class="frame-185-item">
-                <img
-                  class="paid_fill0_wght400_grad0_opsz48-1"
-                  src="paid-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="paid_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="cost-usage inter-normal-white-12px" style={{ fontSize: '12px' }}>Cost &amp; Usage</div>
-              </div></a>
-              <a href="my_profile">
-              <div class="frame-185-item">
-                <img
-                  class="settings_fill0_wght400_grad0_opsz48-1"
-                  src="settings-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="settings_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' ,  fontWeight: 600 }}>Settings</div>
-              </div></a>
-              <a href="support">
-              <div class="frame-185-item">
-                <img
-                  class="contact_support_fill"
-                  src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
-                  alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
-                />
-                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px'}}>FAQ / Support</div>
-              </div></a>
-            </div>
-            <div class="logout">
-              <img
-                class="logout_fill0_wght400_grad0_opsz48-1"
-                src="logout-fill0-wght400-grad0-opsz48-1.svg"
-                alt="logout_FILL0_wght400_GRAD0_opsz48 1"
-              />
-              <div class="logout-1 inter-normal-white-12px" style={{ fontSize: '12px' }}>Logout</div>
-            </div>
-          </div>
+      <div className="main-navigation">
+        <div className="logo-box">
+        <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+            <span className="bold-portal-logo">
+            WittGen
+            </span>
+            <span className="light-portal-logo">
+            Portal
+            </span>
+        </button>
         </div>
+        <div className="navigation-box">
+        <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
+            <img
+            className="dashboard-icon"
+            src="/image/home-icon.svg"
+            alt="home-icon"
+            />
+            <div className="light-font">Dashboard</div>
+        </button>
+        <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }} style={{ marginLeft: '-3px' }}>
+            <img
+            className="myfiles-icon"
+            src="/image/myfiles-icon2.svg"
+            alt="myfiles-icon"
+            />
+            <div className="light-font">My files</div>
+        </button>
+        <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
+            <img
+            className="cost-usage-icon"
+            src="/image/cost-usage-icon.svg"
+            alt="cost-usage-icon"
+            />
+            <div className="light-font">Cost &amp; Usage</div>
+        </button>
+        <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+            <img
+            className="setting-icon"
+            src="/image/settings-icon2.svg"
+            alt="setting-icon"
+            style={{ width: '15px', height: '15px'}}
+            />
+            <div className="my-files-font">Settings</div>
+        </button>
+        <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+            <img
+            className="faq-support-ion"
+            src="/image/faq-support-icon.svg"
+            alt="faq-support-icon"
+            />
+            <div className="light-font">FAQ / Support</div>
+        </div>
+        </div>
+        <button className="logout" onClick={()=>{   logout()    }}>
+        <img
+            className="logout-icon"
+            src="/image/logout-icon.png"
+            alt="logout-icon"
+        />
+        <div className="light-font">Logout</div>
+        </button>
+      </div>
 
         <div class="frame-695">
           <div class="frame-693">
@@ -94,12 +145,10 @@ export default function Sample() {
               <div class="frame-496"><h1 class="title inter-semi-bold-blue-dianne-27px" style={{ fontSize: '27px' }}>Settings</h1></div>
             </div>
             <div class="frame-683">
-              <a href="my_profile">
-                <div class="frame-468">
-                  <img class="icon" src="/image/icon-13.svg" alt="icon" />
-                  <div class="my-profile-2 my-profile-3 inter-semi-bold-blue-dianne-15px" style={{ fontSize: '15px' }}>My profile</div>
-                </div></a
-              >
+              <button class="frame-468" onClick={()=>{  navigate("/my_profile")   }}>
+                <img class="icon" src="/image/icon-13.svg" alt="icon" />
+                <div class="my-profile-2 my-profile-3 inter-semi-bold-blue-dianne-15px" style={{ fontSize: '15px' }}>My profile</div>
+              </button>
               <div class="frame-466">
                 <img class="icon-1" src="/image/icon-14.svg" alt="icon" />
                 <div class="change-password-1 change-password-3 inter-semi-bold-white-15px" style={{ fontSize: '15px' }}>Change password</div>
@@ -125,11 +174,9 @@ export default function Sample() {
                     Change password
                   </div>
                 </div>
-                <a href="myprofile">
-                  <div class="frame-467">
-                    <div class="frame-292"><div class="save-changes inter-semi-bold-white-12px" style={{ fontSize: '12px' }}>Save changes</div></div>
-                  </div></a
-                >
+                <button class="frame-467" onClick={()=>{  navigate("/my_profile")  }}>
+                  <div class="frame-292"><div class="save-changes inter-semi-bold-white-12px" style={{ fontSize: '12px' }}>Save changes</div></div>
+                </button >
               </div>
               <div class="frame-464">
                 <div class="frame-464-1 frame-464-3">
@@ -140,7 +187,13 @@ export default function Sample() {
                           <div class="group-298">
                             <div class="frame-301">
                               <div class="x-password inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Current password</div>
-                              <div class="frame-290"></div>
+                                <input
+                                  type="password"
+                                  class="frame-290"
+                                  value={currentPassword}
+                                  onChange={handleCurrentPasswordChange}
+                                  style={{  paddingLeft: '10px' }}
+                                />
                             </div>
                           </div>
                         </div>
@@ -152,7 +205,13 @@ export default function Sample() {
                           <div class="group-298">
                             <div class="frame-301">
                               <div class="x-password inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>New password</div>
-                              <div class="frame-290"></div>
+                                <input
+                                  type="password"
+                                  class="frame-290"
+                                  value={nextPassword}
+                                  onChange={handleNextPasswordChange}
+                                  style={{  paddingLeft: '10px' }}
+                                />
                             </div>
                           </div>
                         </div>
@@ -164,7 +223,13 @@ export default function Sample() {
                           <div class="group-298">
                             <div class="frame-301">
                               <div class="x-password inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Re-enter new password</div>
-                              <div class="frame-290"></div>
+                                <input
+                                  type="password"
+                                  class="frame-290"
+                                  value={nextPasswordCheck}
+                                  onChange={handleNextPasswordCheckChange}
+                                  style={{  paddingLeft: '10px' }}
+                                />
                             </div>
                           </div>
                         </div>
@@ -181,13 +246,25 @@ export default function Sample() {
             <div class="frame-546">
               <div class="frame-551">
                 <div class="frame-438">
-                  <div class="frame-445">
-                    <img
-                      class="error_fill0_wght400_grad0_opsz48-1"
-                      src="/image/error-fill0-wght400-grad0-opsz48-1-4.svg"
-                      alt="error_FILL0_wght400_GRAD0_opsz48 1"
-                    />
-                    <div class="password-security inter-semi-bold-milano-red-8-2px" style={{ fontSize: '9px' }}>Password security</div>
+                  <div class="frame-445" style={{ paddingTop: '5px' }}>
+                    {passwordConditionsMet?
+                    <>
+                      <img
+                        class="error_fill0_wght400_grad0_opsz48-1"
+                        src="/image/error-fill0-wght400-grad0-opsz48-1-5.svg"
+                        alt="error_FILL0_wght400_GRAD0_opsz48 1"
+                        />
+                      <div class="password-security inter-semi-bold-milano-red-8-2px" style={{ fontSize: '9px', color: 'green' }}>Password security</div>
+                    </>
+                    : 
+                    <>
+                      <img
+                        class="error_fill0_wght400_grad0_opsz48-1"
+                        src="/image/error-fill0-wght400-grad0-opsz48-1-4.svg"
+                        alt="error_FILL0_wght400_GRAD0_opsz48 1"
+                        />
+                      <div class="password-security inter-semi-bold-milano-red-8-2px" style={{ fontSize: '9px' }}>Password security</div>
+                    </>}
                   </div>
                   <p class="your-password-must-b inter-normal-black-10-5px" style={{ fontSize: '10.5px', whiteSpace: 'normal' }}>
                     Your password must be classified as at least Strong. A good password consists of:

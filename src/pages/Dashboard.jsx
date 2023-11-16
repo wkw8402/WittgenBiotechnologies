@@ -9,7 +9,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import AWS, { SecretsManager } from "aws-sdk";
 import { useNavigate } from 'react-router-dom';
 
-import { Account, AccountContext, cogGroup } from "../components/Account";
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 import JSZip from "jszip";
 import saveAs from "save-as";
@@ -25,70 +25,6 @@ var UserNameUploaded = "";
 let ItemsDataArr = {};
 var zipFilename = "wittgen.zip";
 
-
-
-let unSubmittedFilesObject = [
-  {
-    fileId: "GH-123445",
-    service: "Clincal",
-    lastEdited: "11/13/2022",
-    status: "Unpaid",
-  },
-  {
-    fileId: "GH-123445",
-    service: "Clincal",
-    lastEdited: "11/13/2022",
-    status: "Paid",
-  },
-  {
-    fileId: "GH-123445",
-    service: "Clincal",
-    lastEdited: "11/13/2022",
-    status: "Unpaid",
-  },
-  {
-    fileId: "GH-123445",
-    service: "Clincal",
-    lastEdited: "11/13/2022",
-    status: "Unpaid",
-  },
-];
-
-let unSubmittedFilesObjectRender = unSubmittedFilesObject.map((element) => {
-  return (
-    <div className="frame-4-1">
-      <div className="frame-4">
-        <div className="frame-460">
-          <div className="gh inter-normal-tundora-14px">{element.fileId}</div>
-        </div>
-        <div className="frame-461">
-          <div className="clinical-6 inter-normal-tundora-14px">
-            {element.service}
-          </div>
-        </div>
-        <div className="frame-46">
-          <div className="date-6 date-11 inter-normal-tundora-14px">
-            {element.lastEdited}
-          </div>
-        </div>
-        <div className="frame-46">
-          <div className="unpaid inter-normal-tundora-14px">
-            {element.status}
-          </div>
-        </div>
-        <div className="frame-464">
-          <img
-            className="icsharp-delete"
-            src="ic-sharp-delete-8@2x.svg"
-            alt="ic:sharp-delete"
-          />
-        </div>
-      </div>
-    </div>
-  );
-});
-
-
 function HandleUserName() {
 
   // const [username, setUsername] = useState("");
@@ -101,76 +37,35 @@ function HandleUserName() {
   return username;
 }
 
-
-function downloadOnClick() {
-  var zip = new JSZip();
-  var dataCount = 0;
-  console.log("ItemsDataArr==.>>>>", ItemsDataArr);
-
-  if (ItemsDataArr?.Count > 0) {
-    ItemsDataArr.Items?.map((item, index) => {
-      console.log("ItemsDataArr index", index);
-
-      const params = {
-        Bucket: configSourceBucket, //later change to: configTargetBucket,
-        Key: item?.fileName?.S,
-      };
-      console.log("Key==.>>>>", item?.fileName?.S);
-      console.log("params=", params);
-      s3.getObject(params, (err, data) => {
-        if (err) {
-          console.log(err, err.stack);
-        } else {
-          let myBlob = new Blob([data.Body /*.toString()*/], {
-            type: "application/*.*;charset= utf-8;",
-          });
-
-          zip.file(item.fileName?.S, myBlob, { binary: true });
-          dataCount++;
-          console.log("DATA COUNT -->", dataCount);
-          if (Number(dataCount) === Number(ItemsDataArr.Count)) {
-            console.log("EQUAL");
-            zip
-              .generateAsync({ type: "blob" })
-              .then(function downloadBlob(myBlob) {
-                saveAs(myBlob, zipFilename);
-              });
-          }
-        }
-      });;
-    });
-  }
-
-}
-
-function downloadBlob(blob) {
-  // Convert your blob into a Blob URL (a special url that points to an object in the browser's memory)
-  const blobUrl = URL.createObjectURL(blob);
-  // Create a link element
-  const link = document.createElement("a");
-  // Set link's href to point to the Blob URL
-  link.href = blobUrl;
-  //link.download = name; //'Health Claim Form.pdf ITGI.pdf';
-  // Append link to the body
-  document.body.appendChild(link);
-  // Dispatch click event on the link
-  // This is necessary as link.click() does not work on the latest firefox
-  link.dispatchEvent(
-    new MouseEvent("click", {
-      bubbles: true,
-      cancelable: true,
-      view: window,
-    })
-  );
-
-  // Remove link from body
-  document.body.removeChild(link);
-}
+const getUserAttributes = async () => {
+  const cognitoISP = new AWS.CognitoIdentityServiceProvider();
+  const currentUser = await cognitoISP.getUser({ AccessToken: NewJWTTOKEN }).promise();
+  const userAttributes = currentUser.UserAttributes.reduce((attributes, attribute) => {
+    attributes[attribute.Name] = attribute.Value;
+    return attributes;
+  }, {});
+  return userAttributes;
+};
 
 export default function () {
   // TODO: get user name in first call or wait until we get correct username or dont use usestate in username
   const [submittedFilesState, setSubmittedFilesState] = useState(null);
   const [user, setUser] = useState(null);
+  const [userAttributes, setUserAttributes] = useState(null);
+
+  useEffect(() => {
+    fetchUserAttributes();
+    console.log(userAttributes);
+  }, [userAttributes]);
+
+  const fetchUserAttributes = async () => {
+    try {
+      const attributes = await getUserAttributes();
+      setUserAttributes(attributes);
+    } catch (error) {
+      console.log('Error fetching user attributes:', error);
+    }
+  };
 
   async function breakCallbackDownload() {
     UserNameUploaded = await HandleUserName();
@@ -194,6 +89,7 @@ export default function () {
     // setSubmittedFilesState(data)
     // console.log("submittedFilesObject updated", submittedFilesState)
   }, []);
+
 
   const handleDownloadClick = async (s3URI, filename) => {
     try {
@@ -219,36 +115,6 @@ export default function () {
     }
   };
 
-  let submittedFilesObject = [
-    {
-      fileId: "GH-123445",
-      service: "Clincal",
-      submittedDate: "11/13/2022",
-      status: "Submitted",
-      download_estTime: <button
-        onClick={() => {
-          downloadOnClick();
-        }}
-        className="researchers-3 inter-semi-bold-slate-gray-14px"
-      >
-        Download
-      </button>,
-    },
-    {
-      fileId: "GH-123445",
-      service: "Clincal",
-      submittedDate: "11/13/2022",
-      status: "Completed",
-      download_estTime: "2 files",
-    },
-    {
-      fileId: "GH-123445",
-      service: "Clincal",
-      submittedDate: "11/13/2022",
-      status: "2 Issue(s)",
-      download_estTime: "2 files",
-    },
-  ]
   let submittedFilesObjectRender = (user && submittedFilesState) ? (submittedFilesState.Items.map((element) => {
     // console.log("render",submittedFilesState);
     // console.log("render",typeof(submittedFilesState.Items));
@@ -304,10 +170,10 @@ export default function () {
   const compRef = useRef();
 
   const logout = (event) => {
-    event.preventDefault();
     compRef.current.logout();
-
+    navigate("/")
   }
+
   const getUser = () => {
     return compRef.current.getUser();
   }
@@ -335,29 +201,28 @@ export default function () {
       />
       <div class="container-center-horizontal">
         <div class="dashboard-1-1440 screen">
-          <div className="main-navigation">
+        <div className="main-navigation">
             <div className="logo-box">
-              <a href="/">
-                <div className="witt-gen-portal bold-portal-logo">
-                  <span className="bold-portal-logo">
-                    WittGen
-                  </span>
-                  <span className="light-portal-logo">
-                    Portal
-                  </span>
-                </div>
-              </a>
+              <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+                <span className="bold-portal-logo">
+                  WittGen
+                </span>
+                <span className="light-portal-logo">
+                  Portal
+                </span>
+              </button>
             </div>
             <div className="navigation-box">
-              <button className="navigation-box-1">
+              <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }} style={{ left: '-12px' }}>
                 <img
                   className="dashboard-icon"
-                  src="/image/home-icon.svg"
+                  src="/image/home-icon2.svg"
                   alt="home-icon"
+                  style={{ width: '35px', height: '35px'}}
                 />
-                <div className="my-files-font">Dashboard</div>
+                <div className="my-files-font" style={{ marginLeft: '-8px' }}>Dashboard</div>
               </button>
-              <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
+              <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }} style={{ left: '-3px' }}>
                 <img
                   className="myfiles-icon"
                   src="/image/myfiles-icon2.svg"
@@ -390,32 +255,31 @@ export default function () {
                 <div className="light-font">FAQ / Support</div>
               </div>
             </div>
-            <div className="logout">
+            <button className="logout" onClick={()=>{   logout()    }}>
               <img
                 className="logout-icon"
                 src="/image/logout-icon.png"
                 alt="logout-icon"
               />
               <div className="light-font">Logout</div>
-            </div>
+            </button>
           </div>
 
           <div class="frame-610">
-            <div class="frame-615"><h1 class="place">Welcome</h1></div>
+            <div class="frame-615"><h1 class="place">Welcome, {userAttributes? userAttributes['custom:firstname']: user}!</h1></div>
             <div class="frame-449">
               <p class="get-started-with-our-services blue-15px">Get started with our services</p>
               <div class="frame-448">
-                <div class="dashbaord_main-buttons-researcher">
+                <button class="dashbaord_main-buttons-researcher" onClick={() => { navigate('/getting_started_1') }}>
                   <div class="frame-447">
                     <img
                       class="assignment_fill0"
                       src="assignment-fill0-wght400-grad0-opsz48-1-white.svg"
                       alt="assignment_FILL0_wght400_GRAD0_opsz48 1"
                     />
-                    <button className="researchers inter-semi-bold-white-12px" onClick={() => { navigate('/getting_started_1') }}>Upload</button>
+                    <div className="researchers inter-semi-bold-white-12px">Upload</div>
                   </div>
-
-                </div>
+                </button>
                 {/* <div class="dashbaord_main-buttons-researcher">
                   <div class="frame-447">
                     <img
@@ -433,9 +297,7 @@ export default function () {
           <div class="frame-473">
             <div class="frame-472">
               <div class="submitted-files submitted-1 blue-15px">Submitted files</div>
-              <a href="/my_files_1">
-  <div class="view-all-box">View all</div>
-              </a>
+              <button class="view-all-box" onClick={()=>{ navigate("/my_files_1")}}>View all</button>
             </div>
             <div class="frame-47">
               <div class="frame-4">
@@ -584,9 +446,9 @@ export default function () {
             <div class="frame-47">
               <div class="frame-305">
                 <div class="our-updates blue-15px">Our updates</div>
-                <div class="view-all-box">
+                <button class="view-all-box">
                   View all
-                </div>
+                </button>
               </div>
               <div class="frame-4-1">
                 <div class="component">

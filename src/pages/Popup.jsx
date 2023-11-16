@@ -149,7 +149,7 @@ const Modal = (props) => {
                   <button className="sign-up" type="submit" onmouseover><div className="registration">Registration</div></button>
                 </div>
               </div>
-              <div className="close" onClick={close} />
+              <button className="close" onClick={close} />
             </div>
           </div>
         </form>

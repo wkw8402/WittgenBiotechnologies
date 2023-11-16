@@ -1,7 +1,9 @@
 import "../styling/MyFiles1.css";
 
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import AWS, { SecretsManager } from "aws-sdk";
+import { useNavigate } from 'react-router-dom';
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 //import { Account, AccountContext, cogGroup } from "../components/Account";
 
@@ -249,6 +251,15 @@ let submittedFilesObject = [
 
 export default function () {
 
+  const navigate = useNavigate();
+  
+  const compRef = useRef();
+
+  const logout = (event) => {
+    compRef.current.logout();
+    navigate("/")
+  }
+
   const [submittedFilesState,setSubmittedFilesState] = useState(null);
 
   async function breakCallbackDownload() { 
@@ -316,6 +327,7 @@ export default function () {
 
   return (
     <>
+      <Account ref={compRef} />
       <meta charSet="utf-8" />
       {/*<meta name=description content="This site was generated with Anima. www.animaapp.com"/>*/}
       {/* <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> */}
@@ -336,48 +348,68 @@ export default function () {
       />
     <div class="container-center-horizontal">
       <div class="my-files-1440 screen">
-        <div class="main-navigation">
-          <div class="overlap-group1">
-            <div class="group-184">
-              <div class="overlap-group-1">
-              <a href="/dashboard">
-                <div class="witt-gen-portal oxygen-bold-white-21px">
-                  <span class="oxygen-bold-white-21px">WittGen</span><span class="oxygen-light-white-21px">Portal</span>
-                </div>
-                </a>
-              </div>
-              <img class="line-79" src="line-79.svg" alt="Line 79" />
+      <div className="main-navigation">
+            <div className="logo-box">
+              <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+                <span className="bold-portal-logo">
+                  WittGen
+                </span>
+                <span className="light-portal-logo">
+                  Portal
+                </span>
+              </button>
             </div>
-            <div class="frame-185">
-            <a href="/dashboard">
-              <div class="frame-185-item">
-                <img class="icon-home" src="home-fill0-wght400-grad0-opsz48-1.svg" alt="icon-home" />
-                <div class="dashboard inter-normal-white-12px">Dashboard</div>
-              </div>
-              </a>
-              <a href="/my_files_1">
-              <div class="frame-185-item">
+            <div className="navigation-box">
+              <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
                 <img
-                  class="draft_fill1_wght400_grad0_opsz48-1-1"
-                  src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
-                  alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
+                  className="dashboard-icon"
+                  src="/image/home-icon.svg"
+                  alt="home-icon"
                 />
-                <div class="my-files inter-semi-bold-white-12px">My files</div>
+                <div className="light-font">Dashboard</div>
+              </button>
+              <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }}>
+                <img
+                  className="myfiles-icon"
+                  src="/image/myfiles-icon.svg"
+                  alt="myfiles-icon"
+                />
+                <div className="my-files-font">My files</div>
+              </button>
+              <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
+                <img
+                  className="cost-usage-icon"
+                  src="/image/cost-usage-icon.svg"
+                  alt="cost-usage-icon"
+                />
+                <div className="light-font">Cost &amp; Usage</div>
+              </button>
+              <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+                <img
+                  className="setting-icon"
+                  src="/image/settings-icon.svg"
+                  alt="setting-icon"
+                />
+                <div className="light-font">Settings</div>
+              </button>
+              <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+                <img
+                  className="faq-support-ion"
+                  src="/image/faq-support-icon.svg"
+                  alt="faq-support-icon"
+                />
+                <div className="light-font">FAQ / Support</div>
               </div>
-              </a>
             </div>
-            <a href="/">
-            <div class="logout">
+            <button className="logout" onClick={()=>{   logout()    }} style={{  bottom: '57px', left: '2px'   }}>
               <img
-                class="logout_fill0_wght400_grad0_opsz48-1"
-                src="logout-fill0-wght400-grad0-opsz48-1.svg"
-                alt="logout_FILL0_wght400_GRAD0_opsz48 1"
+                className="logout-icon"
+                src="/image/logout-icon.png"
+                alt="logout-icon"
               />
-              <div class="logout-1 inter-normal-white-12px">Logout</div>
-            </div>
-            </a>
+              <div className="light-font">Logout</div>
+            </button>
           </div>
-        </div>
         <div class="frame-491">
           {/* <div class="frame-489">
             <div class="frame-488">
