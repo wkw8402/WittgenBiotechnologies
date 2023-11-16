@@ -1658,8 +1658,8 @@ function clinicalResearch(setIsDiagnosis, openModal) {
         </div>
       </div>
     </div>
-    <div class="frame-3301-IL9yul" onClick={openModal} 
-    onmouseover><div class="explore-more-BBuXSs">Explore more</div></div>
+    <button class="frame-3301-IL9yul" onClick={openModal} 
+    onmouseover><div class="explore-more-BBuXSs">Explore more</div></button>
   </div>
   </div>
   </div>;
@@ -1668,7 +1668,7 @@ function clinicalResearch(setIsDiagnosis, openModal) {
 function clinicalResearch1920(setIsDiagnosis, openModal) {
   return <div class="frame-3406-Xw3ch0"><div class="frame-3583-GeTPUD">
   <div class="frame-3554-jJ2VEg">
-    <div
+    <button
       class="frame-3387-SVgw1N"
       onClick={() => {
         setIsDiagnosis(true);
@@ -1678,8 +1678,8 @@ function clinicalResearch1920(setIsDiagnosis, openModal) {
       <div class="diagnosis-6cSx9i">Diagnosis</div>
       <div class="single-cell-level-cancer-diagnosis-6cSx9i">Single cell-level cancer diagnosis</div>
       <div class="check_circle-6cSx9i"></div>
-    </div>
-    <div class="frame-3388-SVgw1N"
+    </button>
+    <button class="frame-3388-SVgw1N"
     onClick={() => {
       setIsDiagnosis(false);
     } } onmouseover>
@@ -1687,7 +1687,7 @@ function clinicalResearch1920(setIsDiagnosis, openModal) {
       <div class="clinical-research-fExi2U">Clinical Research</div>
       <div class="cutting-edge-research-using-sc-rna-seq-fExi2U">Cutting-edge research using scRNA-seq</div>
       <div class="check_circle-fExi2U"></div>
-    </div>
+    </button>
   </div>
   <div class="frame-3399-jJ2VEg">
   <div class="frame-3396-HyFxLn">
