@@ -8,53 +8,19 @@
     position: relative;
 }
 
-.myfiles-icon2 {
-    display: flex;
-    align-items: center;
-    position: relative;
-    left: -3px
-}
-
-.cost-usage-icon2 {
-    display: flex;
-    align-items: center;
-    position: relative;
-    left: -3px
-}
-
 .main-navigation {
-    align-items: flex-end;
+    align-items: flex-start;
     display: flex;
     height: 100vh;
-    left: 0;
-    width: 195px;
+    left: -2px;
+    min-width: 195px;
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 1;
 }
 
 .font-gap3 {
     margin-left: -7px;
-}
-
-.navigation-box-1 {
-    align-items: center;
-    display: flex;
-    gap: 9px;
-    height: 36px;
-    padding: 11.25px 45px;
-    position: relative;
-    width: 195px;
-}
-
-.logo-box {
-    align-items: flex-start;
-    background-color: var(--blue-dianne);
-    display: flex;
-    height: 100vh;
-    justify-content: flex-end;
-    width: 138vw;
-    padding: 16.5px 26.2px;
 }
 
 .witt-gen-portal {
@@ -63,40 +29,10 @@
     min-height: 27px;
 }
 
-.bold-portal-logo {
-    color: var(--white);
-    font-family: var(--font-family-oxygen);
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 27px;
-}
-
-.light-portal-logo {
-    color: var(--white);
-    font-family: var(--font-family-oxygen);
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 300;
-}
-
 .witt-gen-portal {
     letter-spacing: 0;
     line-height: normal;
     min-height: 35px;
-}
-
-.navigation-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 9px;
-    position: absolute;
-    width: 195px;
-    height: 216px;
-    left: 0px;
-    top: 123px;
 }
 
 .logout {
@@ -109,11 +45,6 @@
     position: absolute;
     bottom: 12%;
     width: 195px;
-}
-
-.dashboard-icon {
-    display: flex;
-    align-items: center;
 }
 
 .light-font2 {
@@ -179,6 +110,8 @@
     top: 129.75px;
     width: 1126.5px;
     height: 606px;
+    overflow-y: auto;
+    overflow-x : auto;
 }
 
 .cost-page-main-1 {

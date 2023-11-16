@@ -3,9 +3,9 @@
 import "../styling/CostUsage.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
-
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 export default function () {
 
@@ -366,6 +366,8 @@ export default function () {
 
     ];
 
+    
+
     const switchColor = (state) => {
         switch (state) {
             case 'Done':
@@ -478,10 +480,18 @@ export default function () {
         );
     }
 
+    const compRef = useRef();
+
+    const logout = (event) => {
+        compRef.current.logout();
+        navigate("/")
+    }
+
     return (
 
 
         <div className="page">
+            <Account ref={compRef} />
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=1920, maximum-scale=1.0" />
             <input
@@ -491,69 +501,66 @@ export default function () {
                 defaultValue="apply-metadatabase-input-import-excel-file-match-columns"
             />
             <div className="main-navigation">
-                <div className="logo-box" onClick={()=>{navigate('/')}}>
-                    <a href="/">
-                        <div className="witt-gen-portal bold-portal-logo">
-                            <span className="bold-portal-logo">
-                                WittGen
-                            </span>
-                            <span className="light-portal-logo">
-                                Portal
-                            </span>
-                        </div>
-                    </a>
+                <div className="logo-box" style={{   marginTop: '-4px'   }}>
+                <button className="witt-gen-portal" onClick={()=>navigate("/dashboard")}>
+                    <span className="bold-portal-logo">
+                    WittGen
+                    </span>
+                    <span className="light-portal-logo">
+                    Portal
+                    </span>
+                </button>
                 </div>
                 <div className="navigation-box">
-                    <a></a>
-                    <button className="navigation-box-1" onClick={()=>{navigate('/dashboard')}}>
-                        <img
-                            className="dashboard-icon"
-                            src="/image/home-icon.svg"
-                            alt="home-icon"
-                        />
-                        <div className="light-font font-gap">Dashboard</div>
-                    </button>
-                    <button className="navigation-box-1" onClick={()=>{navigate('/dashboard')}}>
-                        <img
-                            className="myfiles-icon2"
-                            src="/image/myfiles-icon2.svg"
-                            alt="myfiles-icon"
-                        />
-                        <div className="light-font font-gap3">My files</div>
-                    </button>
-                    <button className="navigation-box-1">
-                        <img
-                            className="cost-usage-icon2"
-                            src="/image/cost-usage-icon2.svg"
-                            alt="cost-usage-icon"
-                        />
-                        <div className="my-files-font font-gap3">Cost &amp; Usage</div>
-                    </button>
-                    <button className="navigation-box-1" onClick={()=>{navigate('/my_profile')}}>
-                        <img
-                            className="setting-icon"
-                            src="/image/settings-icon.svg"
-                            alt="setting-icon"
-                        />
-                        <div className="light-font font-gap2">Settings</div>
-                    </button>
-                    <button className="navigation-box-1" onClick={()=>{navigate('/support')}}>
-                        <img
-                            className="faq-support-ion"
-                            src="/image/faq-support-icon.svg"
-                            alt="faq-support-icon"
-                        />
-                        <div className="light-font font-gap2">FAQ / Support</div>
-                    </button>
-                </div>
-                <div className="logout">
+                <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
                     <img
-                        className="logout-icon"
-                        src="/image/logout-icon.png"
-                        alt="logout-icon"
+                    className="dashboard-icon"
+                    src="/image/home-icon.svg"
+                    alt="home-icon"
                     />
-                    <div className="light-font">Logout</div>
+                    <div className="light-font">Dashboard</div>
+                </button>
+                <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }} style={{ marginLeft: '-3px' }}>
+                    <img
+                    className="myfiles-icon"
+                    src="/image/myfiles-icon2.svg"
+                    alt="myfiles-icon"
+                    />
+                    <div className="light-font">My files</div>
+                </button>
+                <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }} style={{ marginLeft: '-3px' }}>
+                    <img
+                    className="cost-usage-icon"
+                    src="/image/cost-usage-icon2.svg"
+                    alt="cost-usage-icon"
+                    />
+                    <div className="my-files-font">Cost &amp; Usage</div>
+                </button>
+                <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+                    <img
+                    className="setting-icon"
+                    src="/image/settings-icon.svg"
+                    alt="setting-icon"
+                    />
+                    <div className="light-font">Settings</div>
+                </button>
+                <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+                    <img
+                    className="faq-support-ion"
+                    src="/image/faq-support-icon.svg"
+                    alt="faq-support-icon"
+                    />
+                    <div className="light-font">FAQ / Support</div>
                 </div>
+                </div>
+                <button className="logout" onClick={()=>{   logout()    }}>
+                <img
+                    className="logout-icon"
+                    src="/image/logout-icon.png"
+                    alt="logout-icon"
+                />
+                <div className="light-font">Logout</div>
+                </button>
             </div>
 
 

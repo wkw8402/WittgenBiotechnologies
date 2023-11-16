@@ -1,13 +1,14 @@
 import "../styling/FileUpload.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ConfigurationOptions } from "aws-sdk";
 import { read, utils, writeFile } from 'xlsx';
 import AWS from "aws-sdk";
 import "../config";
 import YourExcelComponent from './ExcelComponent.jsx';
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 import {
     configTableName,
@@ -73,27 +74,15 @@ export default function FileUpload() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [uploadStatus, setUploadStatus] = useState(null);
     const navigate = useNavigate();
-    const handleClickNext = () => {
-        navigate('/metabase_input_2');
-    }
-    const secondClickNext = () => {
-        navigate('/metabase_input_3');
-    }
-    const handleClickBack = () => {
-        navigate('/getting_started_1');
-    }
-    const discardandExit = () => {
-        navigate('/dashboard');
-    }
-    const saveandExit = () => {
-        navigate('/dashboard');
+
+    const compRef = useRef();
+  
+    const logout = (event) => {
+        compRef.current.logout();
+        navigate("/")
     }
 
     try {
-
-
-
-
         const getStringValue = (value) => {
             if (typeof value == "number") {
                 return "" + value + "";
@@ -236,8 +225,9 @@ export default function FileUpload() {
 
         return (
 
-
+            
             <div className="page">
+                <Account ref={compRef} />
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=1920, maximum-scale=1.0" />
                 <input
@@ -248,81 +238,66 @@ export default function FileUpload() {
                 />
                 <div className="main-navigation">
                     <div className="logo-box">
-                        <a href="/">
-                            <div className="witt-gen-portal bold-portal-logo">
-                                <span className="bold-portal-logo">
-                                    WittGen
-                                </span>
-                                <span className="light-portal-logo">
-                                    Portal
-                                </span>
-                            </div>
-                        </a>
+                    <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+                        <span className="bold-portal-logo">
+                        WittGen
+                        </span>
+                        <span className="light-portal-logo">
+                        Portal
+                        </span>
+                    </button>
                     </div>
                     <div className="navigation-box">
-                        <a href="/dashboard">
-                            <div className="navigation-box-1">
-                                <img
-                                    className="dashboard-icon"
-                                    src="/image/home-icon.svg"
-                                    alt="home-icon"
-                                />
-                                <div className="light-font font-gap">Dashboard</div>
-                            </div>
-                        </a>
-                        <a href="/my_files_1">
-                            <div className="navigation-box-1">
-
-                                <img
-                                    className="myfiles-icon"
-                                    src="/image/myfiles-icon.svg"
-                                    alt="myfiles-icon"
-                                />
-                                <div className="my-files-font">My files</div>
-                            </div>
-                        </a>
-                        <a href="/CostUsage">
-                            <div className="navigation-box-1">
-
-                                <img
-                                    className="cost-usage-icon"
-                                    src="/image/cost-usage-icon.svg"
-                                    alt="cost-usage-icon"
-                                />
-                                <div className="light-font font-gap2">Cost &amp; Usage</div>
-
-                            </div>
-                        </a>
-                        <a href="/my_profile">
-                            <div className="navigation-box-1">
-                                <img
-                                    className="setting-icon"
-                                    src="/image/settings-icon.svg"
-                                    alt="setting-icon"
-                                />
-                                <div className="light-font">Settings</div>
-
-                            </div>
-                        </a>
-                        <a href="/support">
-                            <div className="navigation-box-1">
-                                <img
-                                    className="faq-support-ion"
-                                    src="/image/faq-support-icon.svg"
-                                    alt="faq-support-icon"
-                                />
-                                <div className="light-font">FAQ / Support</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="logout">
+                    <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
                         <img
-                            className="logout-icon"
-                            src="/image/logout-icon.png"
-                            alt="logout-icon"
+                        className="dashboard-icon"
+                        src="/image/home-icon.svg"
+                        alt="home-icon"
                         />
-                        <div className="light-font">Logout</div>
+                        <div className="light-font">Dashboard</div>
+                    </button>
+                    <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }} style={{ marginLeft: '-3px' }}>
+                        <img
+                        className="myfiles-icon"
+                        src="/image/myfiles-icon2.svg"
+                        alt="myfiles-icon"
+                        />
+                        <div className="light-font">My files</div>
+                    </button>
+                    <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
+                        <img
+                        className="cost-usage-icon"
+                        src="/image/cost-usage-icon.svg"
+                        alt="cost-usage-icon"
+                        />
+                        <div className="light-font">Cost &amp; Usage</div>
+                    </button>
+                    <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+                        <img
+                        className="setting-icon"
+                        src="/image/settings-icon2.svg"
+                        alt="setting-icon"
+                        style={{ width: '15px', height: '15px'}}
+                        />
+                        <div className="light-font">Settings</div>
+                    </button>
+                    <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+                        <img
+                        className="faq-support-ion"
+                        src="/image/faq-support-icon.svg"
+                        alt="faq-support-icon"
+                        />
+                        <div className="light-font">FAQ / Support</div>
                     </div>
+                    </div>
+                    <button className="logout" onClick={()=>{   logout()    }}>
+                    <img
+                        className="logout-icon"
+                        src="/image/logout-icon.png"
+                        alt="logout-icon"
+                    />
+                    <div className="light-font">Logout</div>
+                    </button>
                 </div>
                 <div className="main-frame">
                     <div className="frame-top">
@@ -346,12 +321,12 @@ export default function FileUpload() {
                                 </div>
                             </div>
                             <div className="frame-top-right">
-                                <div className="frame-top-right-light" onClick={discardandExit}>
-                                    <div className="discard-exit-1 ">Discard &amp; Exit</div>
+                                <div>
+                                    <div className="discard-exit-1 "></div>
                                 </div>
-                                <div className="frame-top-right-bold" onClick={saveandExit}>
-                                    <div className="save-exit-1">Save &amp; Exit</div>
-                                </div>
+                                <button className="frame-top-right-bold" onClick={() => {navigate("/dashboard")}}>
+                                    <div className="save-exit-1 flex items-center justify-center">Exit</div>
+                                </button>
                             </div>
                         </div>
                     </div>

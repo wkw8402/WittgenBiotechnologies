@@ -22,15 +22,6 @@ const getUserAttributes = async () => {
 };
 
 export default function GettingStarted1() {
-
-  const countryOptions = useMemo(() => countryList().getData(), []);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    console.log(clientInformation);
-  };
-
   const [userAttributes, setUserAttributes] = useState(null);
   const [inputValue, setInputValue] = useState('');
 
@@ -64,8 +55,16 @@ export default function GettingStarted1() {
     setIsChecked(event.target.checked);
   };
 
+  const compRef = useRef();
+
+  const logout = (event) => {
+    compRef.current.logout();
+    navigate("/")
+}
+
   return (
     <>
+      <Account ref={compRef} />
       <meta charSet="utf-8" />
       {/*<meta name=description content="This site was generated with Anima. www.animaapp.com"/>*/}
       {/* <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> */}
@@ -103,59 +102,68 @@ export default function GettingStarted1() {
             <h1 className="font-extralight">Portal</h1>
           </div>
 
-          <div class="main-navigation">
-          <div class="overlap-group1">
-            <div class="frame-185">
-              <div class="frame-185-item">
-                <img
-                  class="home_fill0_wght400_grad0_opsz48-1"
-                  src="home-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="home_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="dashboard inter-normal-white-12px" style={{ fontSize: '12px' }}>Dashboard</div>
-              </div>
-              <div class="frame-185-item">
-                <img
-                  class="draft_fill1_wght400_grad0_opsz48-1-1"
-                  src="draft-fill1-wght400-grad0-opsz48--1--1.svg"
-                  alt="draft_FILL1_wght400_GRAD0_opsz48 (1) 1"
-                />
-                <div class="my-files inter-semi-bold-white-16px" style={{ fontSize: '12px', fontWeight:'600' }}>My files</div>
-              </div>
-              <div class="frame-185-item">
-                <img
-                  class="paid_fill0_wght400_grad0_opsz48-1"
-                  src="paid-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="paid_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="cost-usage inter-normal-white-12px" style={{ fontSize: '12px' }}>Cost &amp; Usage</div>
-              </div>
-              <div class="frame-185-item">
-                <img
-                  class="settings_fill0_wght400_grad0_opsz48-1"
-                  src="settings-fill0-wght400-grad0-opsz48-1.svg"
-                  alt="settings_FILL0_wght400_GRAD0_opsz48 1"
-                />
-                <div class="settings inter-normal-white-12px" style={{ fontSize: '12px' }}>Settings</div>
-              </div>
-              <div class="frame-185-item">
-                <img
-                  class="contact_support_fill"
-                  src="contact-support-fill0-wght400-grad0-opsz48--1--1.svg"
-                  alt="contact_support_FILL0_wght400_GRAD0_opsz48 (1) 1"
-                />
-                <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px' }}>FAQ / Support</div>
-              </div>
+          <div className="main-navigation">
+            <div className="logo-box">
+            <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+                <span className="bold-portal-logo">
+                WittGen
+                </span>
+                <span className="light-portal-logo">
+                Portal
+                </span>
+            </button>
             </div>
-            <div class="logout">
-              <img
-                class="logout_fill0_wght400_grad0_opsz48-1"
-                src="logout-fill0-wght400-grad0-opsz48-1.svg"
-                alt="logout_FILL0_wght400_GRAD0_opsz48 1"
-              />
-              <div class="logout-1 inter-normal-white-12px" style={{ fontSize: '12px' }}>Logout</div>
+            <div className="navigation-box">
+            <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
+                <img
+                className="dashboard-icon"
+                src="/image/home-icon.svg"
+                alt="home-icon"
+                />
+                <div className="light-font">Dashboard</div>
+            </button>
+            <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }} style={{ marginLeft: '-3px' }}>
+                <img
+                className="myfiles-icon"
+                src="/image/myfiles-icon2.svg"
+                alt="myfiles-icon"
+                />
+                <div className="light-font">My files</div>
+            </button>
+            <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
+                <img
+                className="cost-usage-icon"
+                src="/image/cost-usage-icon.svg"
+                alt="cost-usage-icon"
+                />
+                <div className="light-font">Cost &amp; Usage</div>
+            </button>
+            <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+                <img
+                className="setting-icon"
+                src="/image/settings-icon2.svg"
+                alt="setting-icon"
+                style={{ width: '15px', height: '15px'}}
+                />
+                <div className="my-files-font">Settings</div>
+            </button>
+            <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+                <img
+                className="faq-support-ion"
+                src="/image/faq-support-icon.svg"
+                alt="faq-support-icon"
+                />
+                <div className="light-font">FAQ / Support</div>
             </div>
-          </div>
+            </div>
+            <button className="logout" onClick={()=>{   logout()    }}>
+            <img
+                className="logout-icon"
+                src="/image/logout-icon.png"
+                alt="logout-icon"
+            />
+            <div className="light-font">Logout</div>
+            </button>
         </div>
         </div>
 
@@ -184,14 +192,13 @@ export default function GettingStarted1() {
               </div>
             </ul>
             <div className="flex flex-row gap-[7.5px] py-[33px] pr-[60px] ml-[130px]">
-              <button className=" border border-solid w-[120px] h-[30px] ">
+              <div className="w-[105px] h-[30px] ">
                 <span className="font-semibold text-[10.5px] leading-[13px] ">
-                  Discard & Exit
                 </span>
-              </button>
-              <button className=" bg-[#25474F]    w-[120px] h-[30px] border border-solid border-gray-200">
-                <span className="text-white font-semibold text-[10.5px] leading-[13px] ">
-                  Save & Exit
+              </div>
+              <button className=" bg-[#25474F]    w-[120px] h-[40px] border border-solid border-gray-200" onClick={()=>{navigate('/dashboard')}}>
+                <span className="text-white font-semibold text-[14px] leading-[13px] ">
+                  Exit
                 </span>
               </button>
             </div>
@@ -407,7 +414,7 @@ export default function GettingStarted1() {
           </div>
 
           {/* Right Part */}
-          <div className="left-[916.5px] top-[126px] absolute  w-[463.5px] h-[546px] flex flex-col gap-[18px]">
+          <div className="left-[900.5px] top-[126px] absolute  w-[463.5px] h-[546px] flex flex-col gap-[18px]">
             <div>
               <h1 className="text-[15px] font-bold text-[#0FB4DB]">
                 Upgrade Freemium to 6 months
@@ -441,14 +448,14 @@ export default function GettingStarted1() {
 
           {/* Button */}
           <div className="absolute flex flex-row gap-[801.5px] left-[313.6px]" style={{ top: '680px' }}>
-            <button className=" justify-center items-center  w-[135px] h-[36px] border border-solid border-[#CEDDE1]" onClick={()=>{navigate('/dashboard')}}>
-              <span className="font-semibold text-[10.5px] leading-[13px] text-[#25474F]">
+            <button className=" justify-center items-center  w-[120px] h-[40px] border border-solid border-[#CEDDE1]" onClick={()=>{navigate('/dashboard')}}>
+              <span className="font-semibold text-[14px] flex items-center justify-center h-full">
                 Back
               </span>
             </button>
 
-            <button className=" bg-[#25474F] w-[135px] h-[36px] border border-solid border-[#CEDDE1]" onClick={()=>{navigate('/metabase_input_1')}}>
-              <span className="text-white font-semibold text-[10.5px] py-[18px] px-[60px] leading-[13px] ">
+            <button className="bg-[#25474F] w-[120px] h-[40px] border border-solid border-[#CEDDE1] ml-10" onClick={() => {navigate("/metabase_input_1")}}>
+              <span className="text-white font-semibold text-[14px] flex items-center justify-center h-full">
                 Next
               </span>
             </button>
