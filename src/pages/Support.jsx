@@ -112,14 +112,14 @@ export default function Sample() {
             />
             <div className="light-font">Settings</div>
         </button>
-        <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+        <button className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
             <img
             className="faq-support-ion"
             src="/image/faq-support-icon.svg"
             alt="faq-support-icon"
             />
             <div className="my-files-font">FAQ / Support</div>
-        </div>
+        </button>
         </div>
         <button className="logout" onClick={()=>{   logout()    }}>
         <img
