@@ -3,10 +3,11 @@ import "../styling/MyProfile.css";
 import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React, { useState, useEffect, useContext, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavigationType, useNavigate } from "react-router-dom";
 import AWS, { SecretsManager } from "aws-sdk";
 import "../config";
 import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
+import { AuthenticationDetails} from 'amazon-cognito-identity-js';
 
 export default function Sample() {
 
@@ -61,6 +62,44 @@ export default function Sample() {
     setPasswordsMatch(nextPassword !== '' && nextPassword === nextPasswordCheck);
   }, [nextPassword, nextPasswordCheck]);
 
+  const updatePassword = (cognitoUser, currentPassword, passwordMatch, newPassword) => {
+    // Check if currentPassword matches the user's actual password and passwordMatch is true
+    if (passwordMatch) {
+      const authenticationData = {
+        Username: cognitoUser.username,
+        Password: currentPassword,
+      };
+  
+      const authenticationDetails = new AuthenticationDetails(authenticationData);
+  
+      // Authenticate the user and obtain a session
+      cognitoUser.authenticateUser(authenticationDetails, {
+        onSuccess: (session) => {
+          // Use the obtained session to update the password
+          cognitoUser.changePassword(currentPassword, newPassword, (err, result) => {
+            if (err) {
+              console.error('Error updating password:', err);
+              alert('Password update failed. Please try again.');
+            } else {
+              console.log('Password updated successfully:', result);
+              alert('Password updated successfully!');
+              setTimeout(() => {
+                navigate('/my_profile');
+              }, 2000);
+            }
+          });
+        },
+        onFailure: (err) => {
+          console.error('Authentication failed:', err);
+          alert('Authentication failed. Please check your credentials.');
+        },
+      });
+    } else {
+      console.error('Password match is false.');
+      alert('Password match is false.');
+    }
+  };
+
     return(
     <>   
     <Account ref={compRef} />
@@ -77,7 +116,7 @@ export default function Sample() {
       <div class="change-password screen">
       <div className="main-navigation">
         <div className="logo-box">
-        <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+        <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/")}>
             <span className="bold-portal-logo">
             WittGen
             </span>
@@ -174,7 +213,7 @@ export default function Sample() {
                     Change password
                   </div>
                 </div>
-                <button class="frame-467" onClick={()=>{  navigate("/my_profile")  }}>
+                <button class="frame-467" onClick={()=>{  updatePassword(compRef.current.getUser(), currentPassword, passwordsMatch, nextPassword);  }}>
                   <div class="frame-292"><div class="save-changes inter-semi-bold-white-12px" style={{ fontSize: '12px' }}>Save changes</div></div>
                 </button >
               </div>

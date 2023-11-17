@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 import Modal from './Popup';
 import { Helmet } from "react-helmet";
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 const HeaderStyle = styled.header`
   position: fixed;
@@ -27,6 +28,9 @@ export default function () {
   const [modalOpen, setModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [isDiagnosis, setIsDiagnosis] = useState(true);
+  const [user, setUser] = useState(null);
+
+  const compRef = useRef();
 
   const openModal = () => {
     setModalOpen(true);
@@ -42,16 +46,15 @@ export default function () {
   }
 
   const toLogin = () => { 
-    let path = '/login'; 
+    if (!user) {
+      let path = '/login'; 
     navigate(path);
     window.scrollTo(0, 0);
     console.log("toLogin")
+    } else {
+      navigate("/dashboard");
+    }
   }
-
-  const ref = useRef(null);
-  const toContactFooter = () => {
-    ref.current?.scrollIntoView({behavior: 'smooth'});
-  };
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -69,6 +72,10 @@ export default function () {
     };
   });
 
+  useEffect(() => {
+    setUser(compRef.current.getUser())
+  })
+
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       openModal();
@@ -81,6 +88,7 @@ export default function () {
 
   return (
     <>
+      <Account ref={compRef} />
       {windowWidth >= 1920 
       ? 
       <div style={{ minHeight: calculateMinHeight(), overflow: 'hidden' }}>
