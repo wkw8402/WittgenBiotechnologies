@@ -8,48 +8,44 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import countryList from "react-select-country-list";
 import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
+import AWS, { SecretsManager } from "aws-sdk";
 
 export default function Myprofile() {
-  const [firstName, setFirstName] = useState('');
-  const [LastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [companyName, setCompanyName] = useState('');
-  const [companyAdress, setCompanyAdress] = useState('');
-  const [zipCode, setZipCode] = useState('');
-  const [state, setState] = useState('');
-  const [city, setCity] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState(''); 
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // Get the updated data from localStorage and set it to the state
-    const updatedFirstName = localStorage.getItem('firstName');
-    const updatedLastName = localStorage.getItem('lastName');
-    const savedEmail = localStorage.getItem('email');
-    const savedCompanyName = localStorage.getItem('companyName');
-    const savedCompanyAdress = localStorage.getItem('companyAdress');
-    const savedZipCode = localStorage.getItem('zipCode');
-    const savedState = localStorage.getItem('state');
-    const savedCity = localStorage.getItem('city');
-    const savedCountry = localStorage.getItem('selectedCountry');
-    setFirstName(updatedFirstName);
-    setLastName(updatedLastName);
-    setEmail(savedEmail);
-    setCompanyName(savedCompanyName);
-    setCompanyAdress(savedCompanyAdress); 
-    setZipCode(savedZipCode); 
-    setState(savedState);
-    setCity(savedCity);
-    setSelectedCountry(savedCountry);
-  }, []);
 
   const compRef = useRef();
 
   const logout = (event) => {
       compRef.current.logout();
       navigate("/")
+
   }
+  const [userAttributes, setUserAttributes] = useState(null);
+
+  useEffect(() => {
+    fetchUserAttributes();
+    console.log(userAttributes);
+  }, [userAttributes]);
+
+  const fetchUserAttributes = async () => {
+    try {
+      const attributes = await getUserAttributes();
+      setUserAttributes(attributes);
+    } catch (error) {
+      console.log('Error fetching user attributes:', error);
+    }
+  };
+
+  const getUserAttributes = async () => {
+    const cognitoISP = new AWS.CognitoIdentityServiceProvider();
+    const currentUser = await cognitoISP.getUser({ AccessToken: NewJWTTOKEN }).promise();
+    const userAttributes = currentUser.UserAttributes.reduce((attributes, attribute) => {
+      attributes[attribute.Name] = attribute.Value;
+      return attributes;
+    }, {});
+    return userAttributes;
+  };
 
     return(
         <>   
@@ -67,7 +63,7 @@ export default function Myprofile() {
       <div class="my-profile screen">
       <div className="main-navigation">
         <div className="logo-box">
-        <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+        <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/")}>
             <span className="bold-portal-logo">
             WittGen
             </span>
@@ -159,11 +155,9 @@ export default function Myprofile() {
             <div class="component-85">
               <div class="frame">
                 <div class="frame-496"><div class="my-profile-4 inter-semi-bold-blue-dianne-27px" style={{ fontSize: '27px' }}>My Profile</div></div>
-                <a href="edit_profile">
-                  <div class="frame-292">
-                    <div class="edit-my-profile inter-semi-bold-white-12px" style={{ fontSize: '12px' }}>Edit my profile</div>
-                  </div></a
-                >
+                <div class="frame-292" onClick={()=>{navigate('/edit_profile')}}>
+                  <div class="edit-my-profile inter-semi-bold-white-12px" style={{ fontSize: '12px' }}>Edit my profile</div>
+                </div>
               </div>
               <div class="frame-464">
                 <div class="frame-464-1 frame-464-4">
@@ -176,7 +170,7 @@ export default function Myprofile() {
                         <div class="frame">
                           <div class="frame-301">
                             <div class="first-name inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>First name</div>
-                            <div class="frame-290"><div class="name inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{firstName}</div></div>
+                            <div class="frame-290"><div class="name inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{userAttributes? userAttributes['custom:firstname'] : ""}</div></div>
                           </div>
                         </div>
                       </div>
@@ -184,7 +178,7 @@ export default function Myprofile() {
                         <div class="frame">
                           <div class="frame-301">
                           <div class="last-name inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Last name</div>
-                            <div class="frame-290"><div class="color inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{LastName}</div></div>
+                            <div class="frame-290"><div class="color inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{userAttributes? userAttributes['custom:lastname'] : ""}</div></div>
                           </div>
                         </div>
                       </div>
@@ -198,7 +192,7 @@ export default function Myprofile() {
                             </div>
                             <div class="frame-290">
                               <div class="johnsnowrandomscienceco inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>
-                                {email}
+                              {userAttributes ? userAttributes['email'] : ""}
                               </div>
                             </div>
                           </div>
@@ -225,7 +219,7 @@ export default function Myprofile() {
                             <div class="frame-301">
                               <div class="company inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Company name</div>
                               <div class="frame-290">
-                                <div class="randomscience inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{companyName}</div>
+                                <div class="randomscience inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{userAttributes? userAttributes['custom:company_name'] : ""}</div>
                               </div>
                             </div>
                           </div>
@@ -236,7 +230,7 @@ export default function Myprofile() {
                           <div class="frame">
                             <div class="frame-301">
                               <div class="country inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Country</div>
-                              <div class="frame-290"><div class="place1 inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{selectedCountry}</div></div>
+                              <div class="frame-290"><div class="place1 inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{userAttributes? userAttributes['custom:country'] : ""}</div></div>
                             </div>
                           </div>
                         </div>
@@ -249,7 +243,7 @@ export default function Myprofile() {
                             <div class="frame-301">
                               <div class="company inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Company address</div>
                               <div class="frame-290">
-                                <p class="address inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{companyAdress}</p>
+                                <p class="address inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{userAttributes? userAttributes['custom:address'] : ""}</p>
                               </div>
                             </div>
                           </div>
@@ -264,7 +258,7 @@ export default function Myprofile() {
                               <div class="frame-301">
                                 <div class="state-province inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>State/Province</div>
                                 <div class="frame-290">
-                                  <div class="place-1 inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{state}</div>
+                                  <div class="place-1 inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{userAttributes? userAttributes['custom:state'] : ""}</div>
                                 </div>
                               </div>
                             </div>
@@ -278,7 +272,7 @@ export default function Myprofile() {
                               <div class="frame-301">
                                 <div class="city inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>City</div>
                                 <div class="frame-290">
-                                  <div class="san-fransisco inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{city}</div>
+                                  <div class="san-fransisco inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{userAttributes? userAttributes['custom:city'] : ""}</div>
                                 </div>
                               </div>
                             </div>
@@ -293,7 +287,7 @@ export default function Myprofile() {
                             <div class="frame-301">
                               <div class="zip-postal-code inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Zip/Postal Code</div>
                               <div class="frame-290">
-                                <div class="h3-j-1-g9 inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{zipCode}</div>
+                                <div class="h3-j-1-g9 inter-semi-bold-black-12px" style={{ fontSize: '12px' }}>{userAttributes? userAttributes['custom:zipcode'] : ""}</div>
                               </div>
                             </div>
                           </div>

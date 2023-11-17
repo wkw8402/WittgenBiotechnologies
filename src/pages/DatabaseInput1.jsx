@@ -613,7 +613,7 @@ function toggleTable(checked) {
         <div class="applyu47-database-input screen">
         <div className="main-navigation">
         <div className="logo-box">
-        <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+        <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/")}>
             <span className="bold-portal-logo">
             WittGen
             </span>

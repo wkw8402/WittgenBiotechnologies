@@ -312,10 +312,8 @@
   .my-profile-edit-my-profile .custom-select {
     background-color: white;
     width: 210px;
-    border: none;
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 10.5px;
+    border: 0.9px solid;
+    border-color: var(--geyser);
 }
   
   .my-profile-edit-my-profile .frame-467 {
