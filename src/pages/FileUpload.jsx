@@ -61,9 +61,6 @@ function ErrorHandler({ error }) {
     );
 }
 
-
-
-
 export default function FileUpload() {
     const [progress, setProgress] = useState(0);
     const [username, setUsername] = useState("");
