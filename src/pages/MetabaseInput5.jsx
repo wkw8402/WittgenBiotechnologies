@@ -24,7 +24,7 @@ function ParentComponent({ hasErrorOrWarning }) {
         <div className="errorbox">
           <img src="/image/errorbox-icon.svg" alt="error-img" />
           <div className="errorbox-font">
-            Please fill in the invalid/or empty fields
+            Please fill in the invalid/empty fields
           </div>
         </div>
       )}
@@ -58,8 +58,14 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
     }
 
     if (previousValue !== null && typeof value !== typeof previousValue) {
+      const parsedValue = parseInt(value, 10);
+      if (!isNaN(parsedValue) && typeof previousValue === 'number') {
+        return "valid";
+      }
+      onErrorOrWarningChange(true);
       return "warning";
     }
+    
 
     return "valid";
   }
@@ -67,12 +73,16 @@ function ExcelTable({ data, onCellChange, onErrorOrWarningChange }) {
     const hasErrorOrWarning = data.some(row => row.some((column, columnIndex) => {
       const previousValue = previousRow ? previousRow[columnIndex] : null;
       const validationStatus = validateValue(column, previousValue);
+      console.log(validationStatus);
       return validationStatus === 'error' || validationStatus === 'warning';
     }))
+
+    localStorage.setItem('hasErrorOrWarning', hasErrorOrWarning);
 
     if (typeof onErrorOrWarningChange === 'function') {
       onErrorOrWarningChange(hasErrorOrWarning);
     }
+  
   }, [data, previousRow, onErrorOrWarningChange]);
 
 
@@ -160,10 +170,18 @@ export default function App() {
   }, [excelData, columnNames]);
 
   const saveDataToLocal = () => {
-    localStorage.setItem("excelData", JSON.stringify(excelData));
-    localStorage.setItem("columnNames", JSON.stringify(columnNames));
-  };
-
+    const storedValue = localStorage.getItem('hasErrorOrWarning');
+  
+    if (storedValue === 'true') {
+      // Conditionally execute if storedValue is 'true'
+      localStorage.setItem("excelData", JSON.stringify(excelData));
+      localStorage.setItem("columnNames", JSON.stringify(columnNames));
+      navigate('/database_input_1');
+    } else {
+      // Display an alert if storedValue is not 'true'
+      alert("Please fill in the invalid/empty fields");
+    }
+  };  
 
   useEffect(() => {
     // fetch data from local storage
@@ -377,7 +395,6 @@ export default function App() {
           </button >
           <button className="next-button" onClick={() => {
             saveDataToLocal();
-            navigate('/database_input_1'); 
           }}>
             <div className="next">Next</div>
           </button>

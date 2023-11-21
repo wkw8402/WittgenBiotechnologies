@@ -7,98 +7,121 @@ import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
+import AWS, { SecretsManager } from "aws-sdk";
 
 
 
 export default function EditProfile() {
+
+  const [userAttributes, setUserAttributes] = useState(null);
+
+  useEffect(() => {
+    fetchUserAttributes();
+    console.log(userAttributes);
+  }, [userAttributes]);
+
+  const fetchUserAttributes = async () => {
+    try {
+      const attributes = await getUserAttributes();
+      setUserAttributes(attributes);
+    } catch (error) {
+      console.log('Error fetching user attributes:', error);
+    }
+  };
+
+  const getUserAttributes = async () => {
+    const cognitoISP = new AWS.CognitoIdentityServiceProvider();
+    const currentUser = await cognitoISP.getUser({ AccessToken: NewJWTTOKEN }).promise();
+    const userAttributes = currentUser.UserAttributes.reduce((attributes, attribute) => {
+      attributes[attribute.Name] = attribute.Value;
+      return attributes;
+    }, {});
+    return userAttributes;
+  };
     
-      const navigate = useNavigate();
-      const [lastName, setLastName] = useState(''); 
-      const [firstName, setFirstName] = useState('');
-      const [email, setEmail] = useState('');
-      const [companyName, setCompanyName] = useState('');
-      const [companyAdress, setCompanyAdress] = useState('');
-      const [zipCode, setZipCode] = useState('');
-      const [state, setState] = useState('');
-      const [city, setCity] = useState('');
-      const [selectedCountry, setSelectedCountry] = useState('');
+  const navigate = useNavigate();
+  const [lastName, setLastName] = useState(''); 
+  const [firstName, setFirstName] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [companyAdress, setCompanyAdress] = useState('');
+  const [zipCode, setZipCode] = useState('');
+  const [state, setState] = useState('');
+  const [city, setCity] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('');
 
-      useEffect(() => {
-        // Get the data from localStorage and set it to the state
-        const savedFirstName = localStorage.getItem('firstName');
-        const savedLastName = localStorage.getItem('lastName');
-        const savedEmail = localStorage.getItem('email');
-        const savedCompanyName = localStorage.getItem('companyName');
-        const savedCompanyAdress = localStorage.getItem('companyAdress');
-        const savedZipCode = localStorage.getItem('zipCode');
-        const savedState = localStorage.getItem('state');
-        const savedCity = localStorage.getItem('city');
-        const savedCountry = localStorage.getItem('selectedCountry');
-        setFirstName(savedFirstName || ''); // Use an empty string as the default value if no data is found
-        setLastName(savedLastName || '');   
-        setEmail(savedEmail || ''); 
-        setCompanyName(savedCompanyName || ''); 
-        setCompanyAdress(savedCompanyAdress || ''); 
-        setZipCode(savedZipCode || ''); 
-        setState(savedState || '');
-        setCity(savedCity || '');
-        setSelectedCountry(savedCountry || '');
-      }, []);
+  // 입력값 달라지는 함수
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
+  const handleFirsttNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+  const handlecompanyNameChange = (event) => {
+    setCompanyName(event.target.value);
+  }
+  const handlecompanyAdressChange = (event) => {
+    setCompanyAdress(event.target.value);
+  }
+  const handlezipCodeChange = (event) => {
+    setZipCode(event.target.value);
+  }
+  const handlestateChange = (event) => {
+    setState(event.target.value);
+  }
+  const handleCityChange = (event) => {
+    setCity(event.target.value);
+  }
+  const handleCountryChange = (event) => {
+    setSelectedCountry(event.target.value);
+  };
 
+  const handleSaveChanges = () => {
+    // localStorage에 변한값을 저장하기
+    updateUserAttribute(NewJWTTOKEN, 'custom:firstname', firstName);
+    updateUserAttribute(NewJWTTOKEN, 'custom:lastname', lastName);
+    updateUserAttribute(NewJWTTOKEN, 'custom:company_name', companyName);
+    updateUserAttribute(NewJWTTOKEN, 'custom:address', companyAdress);
+    updateUserAttribute(NewJWTTOKEN, 'custom:state', state);
+    updateUserAttribute(NewJWTTOKEN, 'custom:city', city);
+    updateUserAttribute(NewJWTTOKEN, 'custom:zipcode', zipCode);
+    // myprofile페이지로 변한값 이동
+    navigate('/my_profile');
+  };
 
-      // 입력값 달라지는 함수
-      const handleLastNameChange = (event) => {
-        setLastName(event.target.value);
+  const updateUserAttribute = async (NewJWTTOKEN, attributeName, attributeValue) => {
+    const cognitoISP = new AWS.CognitoIdentityServiceProvider();
+  
+    try {
+      const currentUser = await cognitoISP.getUser({ AccessToken: NewJWTTOKEN }).promise();
+      const { Username } = currentUser;
+  
+      const updateParams = {
+        UserPoolId: "us-east-1_TWG8fe0ac",
+        Username,
+        UserAttributes: [
+          {
+            Name: attributeName,
+            Value: attributeValue,
+          },
+        ],
       };
-      const handleFirsttNameChange = (event) => {
-        setFirstName(event.target.value);
-      };
-      const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-      }
-      const handlecompanyNameChange = (event) => {
-        setCompanyName(event.target.value);
-      }
-      const handlecompanyAdressChange = (event) => {
-        setCompanyAdress(event.target.value);
-      }
-      const handlezipCodeChange = (event) => {
-        setZipCode(event.target.value);
-      }
-      const handlestateChange = (event) => {
-        setState(event.target.value);
-      }
-      const handleCityChange = (event) => {
-        setCity(event.target.value);
-      }
-      const handleCountryChange = (event) => {
-        setSelectedCountry(event.target.value);
-      };
-    
-      const handleSaveChanges = () => {
-        // localStorage에 변한값을 저장하기
-        localStorage.setItem('firstName', firstName);
-        localStorage.setItem('lastName', lastName);
-        localStorage.setItem('email', email);
-        localStorage.setItem('companyName', companyName);
-        localStorage.setItem('companyAdress', companyAdress);
-        localStorage.setItem('zipCode', zipCode);
-        localStorage.setItem('state', state);
-        localStorage.setItem('city', city);
-        localStorage.setItem('selectedCountry', selectedCountry);
-        // myprofile페이지로 변한값 이동
-        navigate('/my_profile');
-      };
+  
+      const result = await cognitoISP.adminUpdateUserAttributes(updateParams).promise();
+      console.log('Attribute update result:', result);
+      return result;
+    } catch (error) {
+      console.error('Error updating attribute:', attributeName, error);
+      throw error;
+    }
+  };
 
-      const compRef = useRef();
+  const compRef = useRef();
 
-      const logout = (event) => {
-          compRef.current.logout();
-          navigate("/")
-      }
-      
-      
-      
+  const logout = (event) => {
+      compRef.current.logout();
+      navigate("/")
+  }
+  
     return(
         <>
     <Account ref={compRef} />
@@ -230,7 +253,7 @@ export default function EditProfile() {
                             type="text"
                             value={firstName}
                             onChange={handleFirsttNameChange}
-                            placeholder="Enter your first name"
+                            placeholder={userAttributes? userAttributes['custom:firstname'] : ""}
                           />
                           </div>
                         </div>
@@ -244,7 +267,7 @@ export default function EditProfile() {
                             type="text"
                             value={lastName}
                             onChange={handleLastNameChange}
-                            placeholder="Enter your last name"
+                            placeholder={userAttributes? userAttributes['custom:lastname'] : ""}
                           />
                           </div>
                         </div>
@@ -261,12 +284,7 @@ export default function EditProfile() {
                               For receiving updates to your file ONLY
                             </p>
                           </div>
-                            <input type="email"
-                            class="frame-290-1 frame-290-4" 
-                            value={email}
-                            onChange={handleEmailChange}
-                            placeholder="Enter your email address"
-                            />
+                            <div class="frame-290-1 frame-290-4">{userAttributes ? userAttributes['email'] : ""}</div>
                         </div>
                       </div>
                     </div>
@@ -286,13 +304,13 @@ export default function EditProfile() {
                             type="text"
                             value={companyName}
                             onChange={handlecompanyNameChange}
-                            placeholder="Enter the name"
+                            placeholder={userAttributes? userAttributes['custom:company_name'] : ""}
                           />
                         </div>
                       </div>
                       <div class="frame-1">
                         <div class="country inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Country</div>
-                        <select class = "frame-29 custom-select" value={selectedCountry} onChange={handleCountryChange}>
+                        <select class = "frame-29 custom-select" value={selectedCountry} onChange={handleCountryChange} defaultValue={userAttributes? userAttributes['custom:country'] : ""}>
                         <option value='disabled'>Choose country</option>
                         <option value='United States'>United States</option>
                         <option value='Canada'>Canada</option>
@@ -329,7 +347,7 @@ export default function EditProfile() {
                               type="text"
                               value={companyAdress}
                               onChange={handlecompanyAdressChange}
-                              placeholder="Enter Address"
+                              placeholder={userAttributes? userAttributes['custom:address'] : ""}
                               />
                             </div>
                           </div>
@@ -343,7 +361,8 @@ export default function EditProfile() {
                         type="text"
                         value={state}
                         onChange={handlestateChange}
-                        placeholder="Enter State/Province"></input>
+                        placeholder={userAttributes? userAttributes['custom:state'] : ""}
+                        ></input>
                       </div>
                       <div class="group-298-2">
                         <div class="frame-1">
@@ -352,7 +371,8 @@ export default function EditProfile() {
                           type="text"
                           value={city}
                           onChange={handleCityChange}
-                          placeholder="Enter City"></input>
+                          placeholder={userAttributes? userAttributes['custom:city'] : ""}
+                          ></input>
                         </div>
                       </div>
                     </div>
@@ -364,7 +384,7 @@ export default function EditProfile() {
                               type="text"
                               value={zipCode}
                               onChange={handlezipCodeChange}
-                              placeholder="Enter zip code"
+                              placeholder={userAttributes? userAttributes['custom:zipcode'] : ""}
                               />
                       </div>
                     </div>

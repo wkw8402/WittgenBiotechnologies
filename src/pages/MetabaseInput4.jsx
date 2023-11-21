@@ -5,6 +5,7 @@ import React from "react";
 import { useState, useEffect, useRef } from 'react'
 import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 import { useNavigate } from "react-router-dom";
+import { type } from "@testing-library/user-event/dist/type";
 
 
 // Add New Row
@@ -26,7 +27,7 @@ function ParentComponent({ hasErrorOrWarning }) {
         <div className="errorbox">
           <img src="/image/errorbox-icon.svg" alt="error-img" />
           <div className="errorbox-font">
-            Please fill in the invalid/or empty fields
+            Please fill in the invalid/empty fields
           </div>
         </div>
       )}
@@ -55,11 +56,17 @@ function ExcelTable({ data, onErrorOrWarningChange }) {
       onErrorOrWarningChange(true);
       return "error";
     }
+    console.log(previousValue);
+    console.log(typeof previousValue);
 
     if (previousValue !== null && typeof value !== typeof previousValue) {
+      const parsedValue = parseInt(value, 10);
+      if (!isNaN(parsedValue) && typeof previousValue === 'number') {
+        return "valid";
+      }
       onErrorOrWarningChange(true);
       return "warning";
-    }
+    }    
 
     return "valid";
   }
@@ -146,6 +153,7 @@ export default function App() {
 
   const addRow = () => {
     setExcelData(prevExcelData => [...prevExcelData, []]);
+
   };
 
   useEffect(() => {
