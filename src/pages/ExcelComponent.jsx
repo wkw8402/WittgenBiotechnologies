@@ -55,6 +55,17 @@ export default function YourExcelComponent() {
         localStorage.removeItem('columnNames');
     };
 
+    const handleButtonClick = () => {      
+        if (!fileUploaded) {
+          // If file is not uploaded, show an alert
+          alert("Please upload your file and proceed.");
+        } else {
+          // File is uploaded, proceed with the next action
+          // Add your logic here for the next action
+        }
+      };
+      
+
     const navigate = useNavigate();
 
     const compRef = useRef();
@@ -85,11 +96,11 @@ export default function YourExcelComponent() {
                     
 
                 </FileUploader>
-                <div className="frame-bottom">
-                    <button className="drop-next-button">
+                <button className="frame-bottom" onClick={handleButtonClick}>
+                    <div className="drop-next-button">
                         <div className="drop-next">Next</div>
-                    </button>
-                </div>
+                    </div>
+                </button>
                 </>
             ) : (
                 <>
@@ -118,7 +129,7 @@ export default function YourExcelComponent() {
                         </div>
                     </div>
                     <div className="frame-bottom">
-                    <button className="back-button" onClick={()=>{  navigate("/metabase_input_1")  }}>
+                    <button className="back-button" onClick={()=>{  navigate("/getting_started_1")  }}>
                         <div className="back">Back</div>
                     </button>
                     <button className="next-button" onClick={()=>{  navigate("/metabase_input_3")  }}>

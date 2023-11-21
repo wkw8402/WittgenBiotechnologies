@@ -650,7 +650,7 @@ function toggleTable(checked) {
         <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
             <img
             className="setting-icon"
-            src="/image/settings-icon2.svg"
+            src="/image/settings-icon.svg"
             alt="setting-icon"
             style={{ width: '15px', height: '15px'}}
             />
@@ -677,7 +677,7 @@ function toggleTable(checked) {
   
           <div class="back-next">
             <div class="frame-616">
-              <div class="back-button"><div class="place inter-semi-bold-blue-dianne-10-5px" style={{ fontSize: '14px' }}>Back</div></div>
+              <button class="back-button" onClick={()=>{navigate("/metabase_input_5")}}><div class="place inter-semi-bold-blue-dianne-10-5px" style={{ fontSize: '14px' }}>Back</div></button>
               <button class="next-button" onClick={()=>{setToPayment(true); setFileArraysState(fileArrays)}}><div class="next inter-semi-bold-white-10-5px" style={{ fontSize: '14px' }}>Next</div></button>
             </div>
           </div>
