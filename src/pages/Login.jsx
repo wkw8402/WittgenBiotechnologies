@@ -182,7 +182,7 @@ export default function () {
                   </div>
                 </div>
               </div>
-                <button className="sign-up" onClick={openModal}>
+                <button className="sign-upp" onClick={openModal}>
                   <div className="sign-up-1">Sign Up for Demo</div>
                 </button>
                 <Modal open={modalOpen} close={closeModal} header="">

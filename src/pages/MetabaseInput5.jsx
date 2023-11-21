@@ -172,8 +172,8 @@ export default function App() {
   const saveDataToLocal = () => {
     const storedValue = localStorage.getItem('hasErrorOrWarning');
   
-    if (storedValue === 'true') {
-      // Conditionally execute if storedValue is 'true'
+    if (storedValue === 'false') {
+      // Conditionally execute if storedValue is 'false'
       localStorage.setItem("excelData", JSON.stringify(excelData));
       localStorage.setItem("columnNames", JSON.stringify(columnNames));
       navigate('/database_input_1');
