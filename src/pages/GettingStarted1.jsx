@@ -32,12 +32,21 @@ export default function GettingStarted1() {
     // Store the newInputValue in localStorage
     localStorage.setItem("inputValue", newInputValue);
   };
-  
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [companyAdress, setCompanyAdress] = useState('');
+  const [zipCode, setZipCode] = useState('');
+  const [state, setState] = useState('');
+  const [city, setCity] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('');  
+  const [email, setEmail] = useState('');  
 
   useEffect(() => {
     fetchUserAttributes();
     console.log(userAttributes);
-  }, [userAttributes]);
+  }, []);
 
   const fetchUserAttributes = async () => {
     try {
@@ -52,8 +61,66 @@ export default function GettingStarted1() {
   const navigate = useNavigate();
 
   const handleCheckboxChange = (event) => {
-    setIsChecked(event.target.checked);
+    const checked = event.target.checked;
+    setIsChecked(checked);
+  
+    if (userAttributes && checked) {
+      setFirstName(userAttributes['custom:firstname'] || '');
+      setLastName(userAttributes['custom:lastname'] || '');
+      setCompanyName(userAttributes['custom:company_name'] || '');
+      setCompanyAdress(userAttributes['custom:address'] || '');
+      setZipCode(userAttributes['custom:zipcode'] || '');
+      setState(userAttributes['custom:state'] || '');
+      setCity(userAttributes['custom:city'] || '');
+      setSelectedCountry(userAttributes['custom:country'] || '');
+      setEmail(userAttributes['email'] || '');
+    }
   };
+  
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
+  const handleFirsttNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+  const handlecompanyNameChange = (event) => {
+    setCompanyName(event.target.value);
+  }
+  const handlecompanyAdressChange = (event) => {
+    setCompanyAdress(event.target.value);
+  }
+  const handlezipCodeChange = (event) => {
+    setZipCode(event.target.value);
+  }
+  const handlestateChange = (event) => {
+    setState(event.target.value);
+  }
+  const handleCityChange = (event) => {
+    setCity(event.target.value);
+  }
+  const handleCountryChange = (event) => {
+    setSelectedCountry(event.target.value);
+  };
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+
+  const isNextButtonDisabled = () => {
+    return (
+      firstName === '' ||
+      lastName === '' ||
+      companyName === '' ||
+      companyAdress === '' ||
+      zipCode === '' ||
+      state === '' ||
+      city === '' ||
+      selectedCountry === '' ||
+      email === ''
+    );
+  };
+  
+
 
   const compRef = useRef();
 
@@ -232,14 +299,21 @@ export default function GettingStarted1() {
               <div className="flex flex-row gap-[170.5px] mt-[30px]">
                 <h1 className="text-[#25474F] font-semibold leading-[24px] text-[16px] ">
                   Client Information
+                  <span className="font-normal text-[14px] leading-[21px] text-[#FF0000] ml-1">*</span>
                 </h1>
-                <div className="flex flex-row">
-                  <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} className="form-checkbox" />
-                  <h1 className="font-normal text-[14px] leading-[21px] text-[#464646] ml-[8px]">
+                <div className="flex flex-row items-center" style={{ marginLeft: '-8px' }}>
+                  <span className="font-normal text-[14px] leading-[21px] text-[#464646]">
                     Same as profile
-                  </h1>
+                  </span>
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={handleCheckboxChange}
+                    className="form-checkbox ml-[8px]"
+                  />
                 </div>
               </div>
+
 
               {/* First Name and Last Name */}
               <div className="flex flex-row gap-[12px] ">
@@ -255,7 +329,8 @@ export default function GettingStarted1() {
                     type="text"
                     id="first_name"
                     style= {{ paddingLeft: "5px" }}
-                    defaultValue={ isChecked ? userAttributes['custom:firstname'] : ""}
+                    defaultValue={firstName}
+                    onChange={handleFirsttNameChange}
                   />
                 </div>
 
@@ -271,7 +346,8 @@ export default function GettingStarted1() {
                     type="text"
                     id="last_name"
                     style= {{ paddingLeft: "5px" }}
-                    defaultValue={ isChecked ? userAttributes['custom:lastname'] : ""}
+                    defaultValue={lastName}
+                    onChange={handleLastNameChange}
                   />
                 </div>
               </div>
@@ -292,7 +368,8 @@ export default function GettingStarted1() {
                   id="notification"
                   placeholder="example@email.com"
                   style= {{ paddingLeft: "5px" }}
-                  defaultValue={ isChecked ? userAttributes.email : ""}
+                  defaultValue={email}
+                  onChange={handleEmailChange}
                 />
               </div>
 
@@ -309,7 +386,8 @@ export default function GettingStarted1() {
                     type="text"
                     id="company_name"
                     style= {{ paddingLeft: "5px" }}
-                    defaultValue={ isChecked ? userAttributes['custom:company_name'] : ""}
+                    defaultValue={companyName}
+                    onChange={handlecompanyNameChange}
                   />
                 </div>
 
@@ -326,7 +404,8 @@ export default function GettingStarted1() {
                     id="country"
                     placeholder="Select a country"
                     style= {{ paddingLeft: "5px" }}
-                    defaultValue={ isChecked ? userAttributes['custom:country'] : ""}
+                    defaultValue={selectedCountry}
+                    onChange={handleCountryChange}
                   />
                 </div>
               </div>
@@ -342,7 +421,8 @@ export default function GettingStarted1() {
                   type="email"
                   id="notification"
                   style= {{ paddingLeft: "5px" }}
-                  defaultValue={ isChecked ? userAttributes['custom:address'] : ""}
+                  defaultValue={companyAdress}
+                  onChange={handlecompanyAdressChange}
                 />
               </div>
               <div className="flex flex-row gap-[12px] ">
@@ -359,7 +439,8 @@ export default function GettingStarted1() {
                     id="State"
                     placeholder="Select a state/province"
                     style= {{ paddingLeft: "5px" }}
-                    defaultValue={ isChecked ? userAttributes['custom:state'] : ""}
+                    defaultValue={state}
+                    onChange={handlestateChange}
                   />
                 </div>
 
@@ -376,7 +457,8 @@ export default function GettingStarted1() {
                     id="city"
                     placeholder="Select a city"
                     style= {{ paddingLeft: "5px" }}
-                    defaultValue={ isChecked ? userAttributes['custom:city'] : ""}
+                    defaultValue={city}
+                    onChange={handleCityChange}
                   />
                 </div>
               </div>
@@ -392,7 +474,8 @@ export default function GettingStarted1() {
                   type="text"
                   id="zip_code"
                   style= {{ paddingLeft: "5px" }}
-                  defaultValue={ isChecked ? userAttributes['custom:zipcode'] : ""}
+                  defaultValue={zipCode}
+                  onChange={handlezipCodeChange}
                 />
               </div>
             </form>
@@ -439,7 +522,11 @@ export default function GettingStarted1() {
               </span>
             </button>
 
-            <button className="bg-[#25474F] w-[120px] h-[40px] border border-solid border-[#CEDDE1] ml-10" onClick={() => {navigate("/metabase_input_1")}}>
+            <button
+              className={`bg-[#25474F] w-[120px] h-[40px] border border-solid border-[#CEDDE1] ml-10 ${isNextButtonDisabled() && 'cursor-not-allowed opacity-50'}`}
+              onClick={() => {navigate("/metabase_input_1")}}
+              disabled={isNextButtonDisabled()}
+            >
               <span className="text-white font-semibold text-[14px] flex items-center justify-center h-full">
                 Next
               </span>
