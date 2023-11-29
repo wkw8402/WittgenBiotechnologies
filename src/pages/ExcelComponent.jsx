@@ -28,24 +28,28 @@ export default function YourExcelComponent() {
     const [columnNames, setColumnNames] = useState([]);
 
     const handleFileChange = (selectedFile) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
+        if (validateFileType(selectedFile.name.toLowerCase())) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
             const bstr = e.target.result;
             const wb = read(bstr, { type: 'binary' });
-
+      
             const wsname = wb.SheetNames[0];
             const ws = wb.Sheets[wsname];
             const data = utils.sheet_to_json(ws, { header: 1 });
-
+      
             const columns = data.shift();
             setColumnNames(columns);
             setExcelData(data);
             setFileUploaded(true);
             localStorage.setItem('excelData', JSON.stringify(data));
             localStorage.setItem('columnNames', JSON.stringify(columns));
-        };
-        reader.readAsBinaryString(selectedFile);
-    };
+          };
+          reader.readAsBinaryString(selectedFile);
+        } else {
+          alert("Please upload a valid CSV, TSV, or XLSX file.");
+        }
+      };
 
     const handleReupload = () => {
         setFileUploaded(false);
@@ -63,7 +67,14 @@ export default function YourExcelComponent() {
           // File is uploaded, proceed with the next action
           // Add your logic here for the next action
         }
-      };
+    };
+
+    const validateFileType = (fileName) => {
+        const allowedExtensions = ['csv', 'tsv', 'xlsx'];
+        const fileExtension = fileName.split('.').pop();
+        return allowedExtensions.includes(fileExtension);
+    };
+      
       
 
     const navigate = useNavigate();
@@ -89,7 +100,7 @@ export default function YourExcelComponent() {
                         <div className="or">or</div>
                         <div className="frame-212">
                             <div className="choose-a-file inter-semi-bold-blue-dianne-10-5px">
-                                Choose a file
+                                Choose a csv/tsv/xlsx file
                             </div>
                         </div>
                     </div>

@@ -18,12 +18,24 @@ export default function EditProfile() {
   useEffect(() => {
     fetchUserAttributes();
     console.log(userAttributes);
+  }, []);
+
+  useEffect(() => {
+    if (userAttributes) {
+      setFirstName((prev) => userAttributes['custom:firstname'] || prev);
+      setLastName((prev) => userAttributes['custom:lastname'] || prev);
+      setCompanyName((prev) => userAttributes['custom:company_name'] || prev);
+      setCompanyAdress((prev) => userAttributes['custom:address'] || prev);
+      setZipCode((prev) => userAttributes['custom:zipcode'] || prev);
+      setState((prev) => userAttributes['custom:state'] || prev);
+      setCity((prev) => userAttributes['custom:city'] || prev);
+      setSelectedCountry((prev) => userAttributes['custom:country'] || prev);
+    }
   }, [userAttributes]);
 
   const fetchUserAttributes = async () => {
     try {
-      const attributes = await getUserAttributes();
-      setUserAttributes(attributes);
+      setUserAttributes(await getUserAttributes());
     } catch (error) {
       console.log('Error fetching user attributes:', error);
     }
@@ -40,14 +52,14 @@ export default function EditProfile() {
   };
     
   const navigate = useNavigate();
-  const [lastName, setLastName] = useState(''); 
   const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [companyAdress, setCompanyAdress] = useState('');
   const [zipCode, setZipCode] = useState('');
   const [state, setState] = useState('');
   const [city, setCity] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('');  
 
   // 입력값 달라지는 함수
   const handleLastNameChange = (event) => {
@@ -76,7 +88,6 @@ export default function EditProfile() {
   };
 
   const handleSaveChanges = () => {
-    // localStorage에 변한값을 저장하기
     updateUserAttribute(NewJWTTOKEN, 'custom:firstname', firstName);
     updateUserAttribute(NewJWTTOKEN, 'custom:lastname', lastName);
     updateUserAttribute(NewJWTTOKEN, 'custom:company_name', companyName);
@@ -84,6 +95,7 @@ export default function EditProfile() {
     updateUserAttribute(NewJWTTOKEN, 'custom:state', state);
     updateUserAttribute(NewJWTTOKEN, 'custom:city', city);
     updateUserAttribute(NewJWTTOKEN, 'custom:zipcode', zipCode);
+    updateUserAttribute(NewJWTTOKEN, 'custom:country', selectedCountry);
     // myprofile페이지로 변한값 이동
     navigate('/my_profile');
   };
@@ -251,9 +263,8 @@ export default function EditProfile() {
                             <input
                             class="frame-290"
                             type="text"
-                            value={firstName}
                             onChange={handleFirsttNameChange}
-                            placeholder={userAttributes? userAttributes['custom:firstname'] : ""}
+                            defaultValue={firstName}
                           />
                           </div>
                         </div>
@@ -265,9 +276,8 @@ export default function EditProfile() {
                             <input
                             class="frame-290"
                             type="text"
-                            value={lastName}
                             onChange={handleLastNameChange}
-                            placeholder={userAttributes? userAttributes['custom:lastname'] : ""}
+                            defaultValue={lastName}
                           />
                           </div>
                         </div>
@@ -302,15 +312,14 @@ export default function EditProfile() {
                           <input
                             class="frame-290"
                             type="text"
-                            value={companyName}
                             onChange={handlecompanyNameChange}
-                            placeholder={userAttributes? userAttributes['custom:company_name'] : ""}
+                            defaultValue={companyName}
                           />
                         </div>
                       </div>
                       <div class="frame-1">
                         <div class="country inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>Country</div>
-                        <select class = "frame-29 custom-select" value={selectedCountry} onChange={handleCountryChange} defaultValue={userAttributes? userAttributes['custom:country'] : ""}>
+                        <select class = "frame-29 custom-select" onChange={handleCountryChange} value={selectedCountry || 'disabled'}>
                         <option value='disabled'>Choose country</option>
                         <option value='United States'>United States</option>
                         <option value='Canada'>Canada</option>
@@ -345,9 +354,8 @@ export default function EditProfile() {
                               <input
                               class="frame-290-2 frame-290-4"
                               type="text"
-                              value={companyAdress}
                               onChange={handlecompanyAdressChange}
-                              placeholder={userAttributes? userAttributes['custom:address'] : ""}
+                              defaultValue={companyAdress}
                               />
                             </div>
                           </div>
@@ -359,9 +367,8 @@ export default function EditProfile() {
                         <div class="state-province inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>State/ province</div>
                         <input class="frame-29"
                         type="text"
-                        value={state}
                         onChange={handlestateChange}
-                        placeholder={userAttributes? userAttributes['custom:state'] : ""}
+                        defaultValue={state}
                         ></input>
                       </div>
                       <div class="group-298-2">
@@ -369,9 +376,8 @@ export default function EditProfile() {
                           <div class="city inter-normal-slate-gray-10-5px" style={{ fontSize: '10.5px' }}>City</div>
                           <input class="frame-29"
                           type="text"
-                          value={city}
                           onChange={handleCityChange}
-                          placeholder={userAttributes? userAttributes['custom:city'] : ""}
+                          defaultValue={city}
                           ></input>
                         </div>
                       </div>
@@ -382,9 +388,8 @@ export default function EditProfile() {
                         <input
                               class="frame-290-3 frame-290-4" 
                               type="text"
-                              value={zipCode}
                               onChange={handlezipCodeChange}
-                              placeholder={userAttributes? userAttributes['custom:zipcode'] : ""}
+                              defaultValue={zipCode}
                               />
                       </div>
                     </div>
