@@ -202,7 +202,7 @@ export default function () {
         <div class="dashboard-1-1440 screen">
         <div className="main-navigation">
             <div className="logo-box">
-              <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/")}>
+              <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
                 <span className="bold-portal-logo">
                   WittGen
                 </span>

@@ -141,11 +141,11 @@ export default function GettingStarted1() {
             <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
                 <img
                 className="setting-icon"
-                src="/image/settings-icon2.svg"
+                src="/image/settings-icon.svg"
                 alt="setting-icon"
                 style={{ width: '15px', height: '15px'}}
                 />
-                <div className="my-files-font">Settings</div>
+                <div className="light-font">Settings</div>
             </button>
             <div className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
                 <img
@@ -211,21 +211,6 @@ export default function GettingStarted1() {
           <div className="absolute flex flex-col justify-center item-center left-[253.6px] top-[126px]">
             <form className="flex flex-col ml-[60px] gap-[12px]">
               <div className="flex flex-row gap-[12px] ">
-                <div>
-                  <label
-                    className="block font-normal text-[10.5px] leading-[16px] text-[#717F8C]"
-                    htmlFor="company_name"
-                  >
-                    Application type
-                  </label>
-                  <input
-                    className="border justify-center p-[9px] w-[140px] h-[36px] bg-[#F1F3F4]  text-[14px]"
-                    type="text"
-                    id="company_name"
-                    placeholder="Researchers"
-                  />
-                </div>
-
                 <div>
                   <label
                     className="block font-normal text-[10.5px] leading-[16px] text-[#717F8C]"

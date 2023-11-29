@@ -67,7 +67,6 @@ const Account = forwardRef((props, ref) => {
         onFailure: (err) => {
           console.log("login failure", err);
           reject(err);
-          alert("Login failed!")
         },
         newPasswordRequired: (data) => {
           console.log("new password required", data);

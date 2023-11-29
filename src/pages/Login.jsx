@@ -27,8 +27,8 @@ export default function () {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const [modalOpen, setModalOpen] = useState(false);
+  const [loginFailed, setLoginFailed] = useState(false);
 
   const openModal = (event) => {
     event.preventDefault();
@@ -73,19 +73,9 @@ export default function () {
         //else if (cogGroup == configDownloadGroup) {
       })
       .catch((err) => {
-        toast("🦄 Please enter the correct information!", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        setLoginFailed(true); // Set the loginFailed state to true
       });
   };
-
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -160,6 +150,11 @@ export default function () {
                 </div>
               </div>
             </div>
+            {loginFailed && (
+              <div className="not-a-member-yet valign-text-middle" style={{ color: 'red', marginTop: '10px', fontWeight: 'bold', left: '57px' }}>
+                Login failed! Please enter the correct information.
+              </div>
+            )}
             <button type="submit" className="login">
               <div className="login-1 login-2">
                 Login
