@@ -7,19 +7,21 @@ import { useNavigate } from "react-router-dom";
 
 function ExcelTable({ columnNames, data }) {
     return (
-        <div className="excel-table">
-            {data.map((row, rowIndex) => (
-                <div key={rowIndex} className="excel-table-row">
-                    {columnNames.map((column, columnIndex) => (
-                        <div key={columnIndex} className="excel-table-cell">
-                            {row[columnIndex]}
-                        </div>
-                    ))}
+    <div className="excel-table-container">
+        <div style={{ width: 'max-content' }} className="excel-table">
+        {data.map((row, rowIndex) => (
+            <div key={rowIndex} style={{ display: 'flex' }} className="excel-table-row">
+            {columnNames.map((column, columnIndex) => (
+                <div key={columnIndex} className="excel-table-cell">
+                {row[columnIndex]}
                 </div>
             ))}
+            </div>
+        ))}
         </div>
+    </div>
     );
-}
+  }
 
 
 export default function YourExcelComponent() {
@@ -123,20 +125,18 @@ export default function YourExcelComponent() {
                             </button>
                         </div>
                         <div className="excel-input-frame">
+                            <div style={{ width: '100%', overflowX: 'auto' }} className="excel-page">
                             <div className="input-list">
-                            {columnNames.map((columnName, index) => (
-                                <div className='component'>
-                                    <div key={index} className="id inter-semi-bold-slate-gray-10-5px2">
-                                    {columnName}
+                                {columnNames.map((columnName, index) => (
+                                    <div className='component'>
+                                        <div key={index} className="id inter-semi-bold-slate-gray-10-5px2">
+                                        {columnName}
+                                        </div>
                                     </div>
+                                ))}
                                 </div>
-                            ))}
-                            </div>
-                            <div className="excel-page">
                                 <ExcelTable columnNames={columnNames} data={excelData} />
                             </div>
-                            
-
                         </div>
                     </div>
                     <div className="frame-bottom">

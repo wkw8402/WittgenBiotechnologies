@@ -65,15 +65,15 @@ export default function GettingStarted1() {
     setIsChecked(checked);
   
     if (userAttributes && checked) {
-      setFirstName(userAttributes['custom:firstname'] || '');
-      setLastName(userAttributes['custom:lastname'] || '');
-      setCompanyName(userAttributes['custom:company_name'] || '');
-      setCompanyAdress(userAttributes['custom:address'] || '');
-      setZipCode(userAttributes['custom:zipcode'] || '');
-      setState(userAttributes['custom:state'] || '');
-      setCity(userAttributes['custom:city'] || '');
-      setSelectedCountry(userAttributes['custom:country'] || '');
-      setEmail(userAttributes['email'] || '');
+      setFirstName((prev) => userAttributes['custom:firstname'] || prev);
+      setLastName((prev) => userAttributes['custom:lastname'] || prev);
+      setCompanyName((prev) => userAttributes['custom:company_name'] || prev);
+      setCompanyAdress((prev) => userAttributes['custom:address'] || prev);
+      setZipCode((prev) => userAttributes['custom:zipcode'] || prev);
+      setState((prev) => userAttributes['custom:state'] || prev);
+      setCity((prev) => userAttributes['custom:city'] || prev);
+      setSelectedCountry((prev) => userAttributes['custom:country'] || prev);
+      setEmail((prev) => userAttributes['email'] || prev);
     }
   };
   
