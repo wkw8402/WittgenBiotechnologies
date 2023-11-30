@@ -383,8 +383,6 @@ export default function App() {
             </div>
           </div>
 
-
-
         </div>
 
         <ParentComponent hasErrorOrWarning={hasErrorOrWarning} />

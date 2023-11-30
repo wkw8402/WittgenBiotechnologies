@@ -21,9 +21,16 @@ const getUserAttributes = async () => {
   return userAttributes;
 };
 
+// Function to generate a unique 10-digit number based on the current date and time
+const generateUniqueNumber = () => {
+  const currentDate = new Date();
+  const uniqueNumber = currentDate.getTime().toString().slice(-10);
+  return uniqueNumber;
+};
+
 export default function GettingStarted1() {
   const [userAttributes, setUserAttributes] = useState(null);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState(`GH-${generateUniqueNumber()}`);
 
   const handleInputChange = (event) => {
     const newInputValue = event.target.value;
@@ -284,13 +291,13 @@ export default function GettingStarted1() {
                     htmlFor="department/laboratory"
                   >
                     Application ID
+                    <span className="font-normal text-[10.5px] leading-[16px] text-[#FF0000] ml-1">*</span>
                   </label>
                   <input
                     className="border justify-center p-[9px] w-[210px] h-[36px] text-[14px]"
                     type="text"
                     id="department/laboratory"
-                    placeholder="GH-13728930_1"
-                    value={inputValue} // Bind input value to the state
+                    defaultValue={inputValue} // Bind input value to the state
                     onChange={handleInputChange} // Update the state on input change
                   />
                 </div>
