@@ -152,9 +152,28 @@ export default function App() {
   }
 
   const addRow = () => {
-    setExcelData(prevExcelData => [...prevExcelData, []]);
-
+    setExcelData((prevExcelData) => {
+      // Create a new row with the same structure as the previous row
+      const newRow = prevExcelData.length > 0 ? Array.from({ length: prevExcelData[0].length }, () => '') : [];
+      
+      // Append the new row to the existing data
+      return [...prevExcelData, newRow];
+    });
   };
+
+  const saveToLocalStorage = () => {
+    localStorage.setItem("excelData", JSON.stringify(excelData));
+    localStorage.setItem("columnNames", JSON.stringify(columnNames));
+  };
+
+  const handleNextClick = () => {
+    // Save the data to localStorage before navigating to the next page
+    saveToLocalStorage();
+
+    // Navigate to the next page
+    navigate("/metabase_input_5");
+  };
+  
 
   useEffect(() => {
     // fetch data from local storage
@@ -182,7 +201,6 @@ export default function App() {
       return newExcelData;
     });
   };
-
 
   return (
 
@@ -390,7 +408,7 @@ export default function App() {
       <button className="back-button" onClick={()=>{  navigate("/metabase_input_3")  }}>
         <div className="back">Back</div>
       </button>
-      <button className="next-button" onClick={()=>{  navigate("/metabase_input_5")  }}>
+      <button className="next-button" onClick={handleNextClick}>
         <div className="next">Next</div>
       </button>
       </div>
