@@ -1177,27 +1177,11 @@ function toggleTable(checked) {
         !data.some((dataItem) => excelData.indexOf(item) === excelData.indexOf(item)) ? null : (
               <tr key={excelData.indexOf(item)} className={checkItems.includes(excelData.indexOf(item)) ? "frame-5-2 frame-5-3a" : "frame-5-ss frame-5-3a"} >
                 <td class="frame-55">
-                {deleteMultipleMode ? (
-              <input
-                type="checkbox"
-                checked={checkItems.includes(excelData.indexOf(item))}
-                onChange={(e) => handleSingleCheck(e.target.checked, excelData.indexOf(item))}
-              />
-            ) : (
-              <button
-                disabled={!applyButtonEnabled}
-                onClick={() => openModal(item[0])}
-                className="applybutton"
-                type="button"
-              >
-                <img
-                  className="icsharp-delete"
-                  src="ic-sharp-delete-1@2x.svg"
-                  alt="ic:sharp-delete"
-                  disabled={!applyButtonEnabled}
-                />
-              </button>
-            )}
+                  <input
+                    type="checkbox"
+                    checked={checkItems.includes(excelData.indexOf(item))}
+                    onChange={(e) => handleSingleCheck(e.target.checked, excelData.indexOf(item))}
+                  />
                 <SingleModal open={modalOpen} close={closeModal} item={fileSelected} handleDelete={handleDelete} deleteText={deleteText}></SingleModal>
                 </td>
                 <td class="selectComponent">
