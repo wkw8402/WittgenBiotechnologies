@@ -1,3 +1,7 @@
+body {
+    overflow: auto;
+}
+
 .excel-frame-4 {
     align-items: flex-start;
     display: flex;
