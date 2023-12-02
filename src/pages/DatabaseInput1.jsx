@@ -52,7 +52,7 @@ export default function Sample()  {
   const [deleteText, setDeleteText] = useState('');
 
   const toggleDeleteMultipleMode = () => {
-    if (deleteMultipleMode && checkItems.length > 1) {
+    if (deleteMultipleMode && checkItems.length >= 1) {
       openModal();
       console.log(checkItems);
     } else {
@@ -61,7 +61,7 @@ export default function Sample()  {
   };
 
   const handleDelete = (itemTitle, item) => {
-    if (checkItems.length > 1) {
+    if (checkItems.length >= 1) {
       closeModal();
       setCheckItems([]);
       setSelectedRowCount(0);
@@ -107,8 +107,8 @@ export default function Sample()  {
 
   const openModal = (title) => {
     const selectedCount = checkItems.length;
-    const modalTitle = selectedCount > 1 ? `${selectedCount} samples` : title;
-    const deleteText = selectedCount > 1 ? "samples" : "sample";
+    const modalTitle = selectedCount >= 1 ? `${selectedCount} sample(s)` : title;
+    const deleteText = selectedCount >= 1 ? "sample(s)" : "sample";
 
     setModalOpen(true);
     setFileSelection(modalTitle);
@@ -1045,14 +1045,14 @@ function toggleTable(checked) {
                 <div class="faq-support inter-normal-white-12px" style={{ fontSize: '12px'}}>FAQ / Support</div>
               </div></a>
             </div>
-            <div class="logout">
-              <img
-                class="logout_fill0_wght400_grad0_opsz48-1"
-                src="logout-fill0-wght400-grad0-opsz48-1.svg"
-                alt="logout_FILL0_wght400_GRAD0_opsz48 1"
-              />
-              <div class="logout-1 inter-normal-white-12px" style={{ fontSize: '12px' }}>Logout</div>
-            </div>
+            <button className="logout" onClick={()=>{   logout()    }}>
+            <img
+                className="logout-icon"
+                src="/image/logout-icon.png"
+                alt="logout-icon"
+            />
+            <div className="light-font">Logout</div>
+            </button>
           </div>
         </div>
 
@@ -1134,7 +1134,7 @@ function toggleTable(checked) {
                     </div>
                     <button class="payment_-delete-multiple"  disabled={!applyButtonEnabled} onClick={toggleDeleteMultipleMode}>
                       <img class="frame-596" src="frame-596-1.svg" alt="Frame 596" />
-                      <div class="delete-multiple-applypayment inter-normal-blue-dianne-14px" >{deleteMultipleMode ? `Delete ${selectedRowCount} rows` : 'Delete multiple'}</div>
+                      <div class="delete-multiple-applypayment inter-normal-blue-dianne-14px" >{deleteMultipleMode ? `Delete ${selectedRowCount} row(s)` : 'Delete'}</div>
                     </button>
                   </div>
                 </div>
