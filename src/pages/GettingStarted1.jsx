@@ -31,15 +31,6 @@ const generateUniqueNumber = () => {
 export default function GettingStarted1() {
   const [userAttributes, setUserAttributes] = useState(null);
   const [inputValue, setInputValue] = useState(`GH-${generateUniqueNumber()}`);
-
-  const handleInputChange = (event) => {
-    const newInputValue = event.target.value;
-    setInputValue(newInputValue);
-  
-    // Store the newInputValue in localStorage
-    localStorage.setItem("inputValue", newInputValue);
-  };
-
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [companyName, setCompanyName] = useState('');
@@ -294,11 +285,11 @@ export default function GettingStarted1() {
                     <span className="font-normal text-[10.5px] leading-[16px] text-[#FF0000] ml-1">*</span>
                   </label>
                   <input
-                    className="border justify-center p-[9px] w-[210px] h-[36px] text-[14px]"
+                    className="border justify-center p-[9px] w-[210px] h-[36px] text-[14px] bg-gray-200 cursor-not-allowed"
                     type="text"
                     id="department/laboratory"
-                    defaultValue={inputValue} // Bind input value to the state
-                    onChange={handleInputChange} // Update the state on input change
+                    value={inputValue} // Bind input value to the state
+                    readOnly // This makes the input field read-only
                   />
                 </div>
               </div>
