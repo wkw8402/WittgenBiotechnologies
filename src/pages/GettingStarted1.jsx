@@ -21,11 +21,17 @@ const getUserAttributes = async () => {
   return userAttributes;
 };
 
-// Function to generate a unique 10-digit number based on the current date and time
 const generateUniqueNumber = () => {
   const currentDate = new Date();
-  const uniqueNumber = currentDate.getTime().toString().slice(-10);
-  return uniqueNumber;
+
+  // Get the last 6 digits of the current time in milliseconds
+  const timeComponent = currentDate.getTime().toString().slice(-6);
+
+  // Generate a 4-digit random number
+  const randomComponent = Math.floor(1000 + Math.random() * 9000).toString();
+
+  // Combine both components to get a 10-digit number
+  return timeComponent + randomComponent;
 };
 
 export default function GettingStarted1() {
@@ -118,14 +124,21 @@ export default function GettingStarted1() {
     );
   };
   
-
-
   const compRef = useRef();
 
   const logout = (event) => {
     compRef.current.logout();
     navigate("/")
-}
+  }
+
+  const handleNext = () => {
+    // Store inputValue to localStorage
+    localStorage.setItem('inputValue', inputValue);
+
+    // Navigate to the desired route
+    navigate("/metabase_input_1");
+  };
+
 
   return (
     <>
@@ -522,7 +535,7 @@ export default function GettingStarted1() {
 
             <button
               className={`bg-[#25474F] w-[120px] h-[40px] border border-solid border-[#CEDDE1] ml-10 ${isNextButtonDisabled() && 'cursor-not-allowed opacity-50'}`}
-              onClick={() => {navigate("/metabase_input_1")}}
+              onClick={handleNext}
               disabled={isNextButtonDisabled()}
             >
               <span className="text-white font-semibold text-[14px] flex items-center justify-center h-full">

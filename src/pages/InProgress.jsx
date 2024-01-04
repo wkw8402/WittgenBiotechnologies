@@ -4,9 +4,21 @@ import "../styling/globals.css";
 import "../styling/styleguide.css";
 import React, { useState, useEffect, useRef } from "react";
 import "../styling/InProgress.css";
+import AWS, { SecretsManager } from "aws-sdk";
+import { useNavigate } from 'react-router-dom';
+import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 
 export default function () {
+  const navigate = useNavigate();
+  
+  const compRef = useRef();
+
+  const logout = (event) => {
+    compRef.current.logout();
+    navigate("/")
+  }
+
   let dataObject = [
     {
       ID: "GH-12345",
@@ -191,6 +203,7 @@ export default function () {
 
   return (
     <>
+      <Account ref={compRef} />
       <MyComponent/>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -204,83 +217,67 @@ export default function () {
       />
       <div className="page-inprogress">
       <div className="main-navigation">
-          <div className="logo-box">
-            <a href="/">
-              <div className="witt-gen-portal bold-portal-logo">
+            <div className="logo-box">
+              <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
                 <span className="bold-portal-logo">
                   WittGen
                 </span>
                 <span className="light-portal-logo">
                   Portal
                 </span>
-              </div>
-            </a>
-          </div>
-          <div className="navigation-box">
-            <a href="/dashboard">
-              <div className="navigation-box-1">
+              </button>
+            </div>
+            <div className="navigation-box">
+              <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
                 <img
                   className="dashboard-icon"
                   src="/image/home-icon.svg"
                   alt="home-icon"
                 />
-                <div className="light-font font-gap">Dashboard</div>
-              </div>
-            </a>
-            <a href="/my_files_1">
-              <div className="navigation-box-1">
-
+                <div className="light-font">Dashboard</div>
+              </button>
+              <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }}>
                 <img
                   className="myfiles-icon"
                   src="/image/myfiles-icon.svg"
                   alt="myfiles-icon"
                 />
                 <div className="my-files-font">My files</div>
-              </div>
-            </a>
-            <a href="/CostUsage">
-              <div className="navigation-box-1">
-
+              </button>
+              <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
                 <img
                   className="cost-usage-icon"
                   src="/image/cost-usage-icon.svg"
                   alt="cost-usage-icon"
                 />
-                <div className="light-font font-gap2">Cost &amp; Usage</div>
-
-              </div>
-            </a>
-            <a href="/my_profile">
-              <div className="navigation-box-1">
+                <div className="light-font">Cost &amp; Usage</div>
+              </button>
+              <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
                 <img
                   className="setting-icon"
                   src="/image/settings-icon.svg"
                   alt="setting-icon"
                 />
-                <div className="light-font font-gap2">Settings</div>
-
-              </div>
-            </a>
-            <a href="/support">
-              <div className="navigation-box-1">
+                <div className="light-font">Settings</div>
+              </button>
+              <button className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
                 <img
                   className="faq-support-ion"
                   src="/image/faq-support-icon.svg"
                   alt="faq-support-icon"
                 />
-                <div className="light-font font-gap2">FAQ / Support</div>
-              </div>
-            </a>
+                <div className="light-font">FAQ / Support</div>
+              </button>
+            </div>
+            <button className="logout" onClick={()=>{   logout()    }} style={{  bottom: '57px', left: '2px'   }}>
+              <img
+                className="logout-icon"
+                src="/image/logout-icon.png"
+                alt="logout-icon"
+              />
+              <div className="light-font">Logout</div>
+            </button>
           </div>
-          <div className="logout">
-            <img
-              className="logout-icon"
-              src="/image/logout-icon.png"
-              alt="logout-icon"
-            />
-            <div className="light-font">Logout</div>
-          </div>
-        </div>
         <div className="main-frame-inprogress">
           <div className="frame-top-inprogress">
             Sameple Name
