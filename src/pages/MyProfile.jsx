@@ -39,7 +39,15 @@ export default function Myprofile() {
 
   const getUserAttributes = async () => {
     const cognitoISP = new AWS.CognitoIdentityServiceProvider();
-    const currentUser = await cognitoISP.getUser({ AccessToken: NewJWTTOKEN }).promise();
+    const token = localStorage.getItem("persist-crs-token");
+  
+    if (!token) {
+      throw new Error('No access token found');
+    }
+  
+    const accessToken = JSON.parse(token); // Parse the token if it's stored as a JSON string
+  
+    const currentUser = await cognitoISP.getUser({ AccessToken: accessToken }).promise();
     const userAttributes = currentUser.UserAttributes.reduce((attributes, attribute) => {
       attributes[attribute.Name] = attribute.Value;
       return attributes;

@@ -1,8 +1,5 @@
 /* eslint-disable */
 
-// TODO: change fileName to relFileName?
-// TODO: change configTargetBucket
-
 import "../styling/Dashboard.css";
 
 import React, { useState, useEffect, useContext, useRef } from "react";
@@ -26,20 +23,21 @@ let ItemsDataArr = {};
 var zipFilename = "wittgen.zip";
 
 function HandleUserName() {
-
-  // const [username, setUsername] = useState("");
-  // useEffect(() => {
-  //   const username = JSON.parse(localStorage.getItem("username"));
-  //   console.log("Yes", username);
-  //   if (username) setUsername(username);
-  // }, [username]);
   const username = JSON.parse(localStorage.getItem("username"));
   return username;
 }
 
 const getUserAttributes = async () => {
   const cognitoISP = new AWS.CognitoIdentityServiceProvider();
-  const currentUser = await cognitoISP.getUser({ AccessToken: NewJWTTOKEN }).promise();
+  const token = localStorage.getItem("persist-crs-token");
+
+  if (!token) {
+    throw new Error('No access token found');
+  }
+
+  const accessToken = JSON.parse(token); // Parse the token if it's stored as a JSON string
+
+  const currentUser = await cognitoISP.getUser({ AccessToken: accessToken }).promise();
   const userAttributes = currentUser.UserAttributes.reduce((attributes, attribute) => {
     attributes[attribute.Name] = attribute.Value;
     return attributes;
@@ -47,22 +45,45 @@ const getUserAttributes = async () => {
   return userAttributes;
 };
 
+// ... rest of your component code ...
+
+
 export default function () {
   // TODO: get user name in first call or wait until we get correct username or dont use usestate in username
   const [submittedFilesState, setSubmittedFilesState] = useState(null);
   const [user, setUser] = useState(null);
   const [userAttributes, setUserAttributes] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); // new state to track loading
 
   useEffect(() => {
     fetchUserAttributes();
-  }, [userAttributes]);
+  }, []); // empty dependency array
 
   const fetchUserAttributes = async () => {
+    setIsLoading(true); // set loading to true
     try {
       const attributes = await getUserAttributes();
       setUserAttributes(attributes);
     } catch (error) {
       console.log('Error fetching user attributes:', error);
+      // Handle the error state here (e.g., show an error message)
+    }
+    setIsLoading(false); // set loading to false after fetching
+  };
+
+  const navigate = useNavigate();
+
+  const [status, setStatus] = useState("Completed"); // initial state can be "In Process" or "Completed"
+
+  // Function to handle navigation based on the status
+  const navigateBasedOnStatus = (fileName) => {
+    // Store fileName in localStorage
+    localStorage.setItem('selectedFileName', fileName);
+
+    if (status === "Completed") {
+        navigate("/Complete");
+    } else if (status === "In Process") {
+        navigate("/in_process");
     }
   };
 
@@ -118,6 +139,7 @@ export default function () {
     // console.log("render",submittedFilesState);
     // console.log("render",typeof(submittedFilesState.Items));
     // console.log("render",element);
+
     return (
       <div className="frame-4">
         <div className="frame-460">
@@ -138,9 +160,9 @@ export default function () {
         </div>
         {/* if there's an issue, must have different div. */}
         <div className="frame-46">
-          <div className="payment inter-normal-tundora-14px">
-            {"Completed"}
-          </div>
+          <button className="researchers-3 inter-semi-bold-slate-gray-14px" onClick={()=>{navigateBasedOnStatus(element.fileName.S)}}>
+            {status}
+          </button>
         </div>
         <div className="frame-464">
           <div className="estTime inter-normal-tundora-14px">
@@ -176,8 +198,6 @@ export default function () {
   const getUser = () => {
     return compRef.current.getUser();
   }
-
-  const navigate = useNavigate();
 
   return (
     <>
@@ -265,7 +285,13 @@ export default function () {
           </div>
 
           <div class="frame-610">
-            <div class="frame-615"><h1 class="place">Welcome, {userAttributes? userAttributes['custom:firstname']: user}!</h1></div>
+            <div class="frame-615"><h1 class="place">
+              Welcome, {
+                isLoading 
+                ? 'Loading...' // Show loading or placeholder text
+                : (userAttributes ? userAttributes['custom:firstname'] : 'User') // Fallback to 'User' if userAttributes is null
+              }!
+            </h1></div>
             <div class="frame-449">
               <p class="get-started-with-our-services blue-15px">Get started with our services</p>
               <div class="frame-448">
@@ -279,17 +305,6 @@ export default function () {
                     <div className="researchers inter-semi-bold-white-12px">Upload</div>
                   </div>
                 </button>
-                {/* <div class="dashbaord_main-buttons-researcher">
-                  <div class="frame-447">
-                    <img
-                      class="assignment_fill0"
-                      src="/image/clinicians-icon.svg"
-                      alt="clinicians-icon"
-                    />
-                    <button className="researchers inter-semi-bold-white-12px" onClick={() => { navigate('/getting_started_1') }}>Clinicians</button>
-
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -316,131 +331,8 @@ export default function () {
                 <p>
                 </p>
               )}
-              {/* <div class="frame-4-1">
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-1234567</div></div>
-                <div class="frame-461"><div class="clinical inter-normal-tundora-10-5px">Clinical</div></div>
-                <div class="frame-46"><div class="date-1 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
-                <div class="frame-46">
-                  <div class="frame-276"><div class="complete">Complete</div></div>
-                </div>
-                <div class="frame-464">
-                  <div class="x2-files">
-                    <div class="address-1 address-4 inter-normal-persian-blue-10-5px">2 files</div>
-                  </div>
-                </div>
-              </div>
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-123445</div></div>
-                <div class="frame-461"><div class="resaerch inter-normal-tundora-10-5px">Resaerch</div></div>
-                <div class="frame-46"><div class="date-2 date-11 inter-normal-tundora-10-5px">11/14/2022</div></div>
-                <div class="frame-46"><div class="submitted inter-normal-tundora-10-5px">Submitted</div></div>
-                <div class="frame-464"><div class="text inter-normal-tundora-10-5px">-</div></div>
-              </div>
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-123447</div></div>
-                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                <div class="frame-46"><div class="date-3 date-11 inter-normal-tundora-10-5px">11/12/2022</div></div>
-                <div class="frame-46">
-                  <div class="frame-280"><div class="address inter-normal-red-10-5px">2 Issue(s)</div></div>
-                </div>
-                <div class="frame-464"><div class="address-2 address-4 inter-normal-tundora-10-5px">2 days</div></div>
-              </div>
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh-123447-1 inter-normal-tundora-10-5px">GH-123447</div></div>
-                <div class="frame-461"><div class="place-3 inter-normal-tundora-10-5px">Research</div></div>
-                <div class="frame-46"><div class="date-4 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
-                <div class="frame-46"><div class="pre-processing inter-normal-tundora-10-5px">Pre-processing</div></div>
-                <div class="frame-464"><div class="address-3 address-4 inter-normal-tundora-10-5px">2 days</div></div>
-              </div>
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh-123445-1 inter-normal-tundora-10-5px">GH-123445</div></div>
-                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                <div class="frame-46"><div class="date-5 date-11 inter-normal-tundora-10-5px">11/06/2022</div></div>
-                <div class="frame-46">
-                  <div class="frame-280"><div class="address inter-normal-red-10-5px">2 Issue(s)</div></div>
-                </div>
-                <div class="frame-464"><div class="text inter-normal-tundora-10-5px">-</div></div>
-              </div>
-            </div>  */}
             </div>
           </div>
-           {/* <div class="frame-474">
-          <div class="frame-472-1">
-            <div class="unsubmitted-files blue-15px">Unsubmitted files</div>
-            <div class="view-all-box">View all</div>
-          </div>
-          <div class="frame-47">
-            <div class="frame-4 inter-semi-bold-blue-dianne-10-5px">
-              <div class="frame-455"><div class="file-id inter-semi-bold-blue-dianne-10-5px">File ID</div></div>
-              <div class="frame-45-1">
-                <div class="service-1">Service</div>
-                <img
-                  class="material-symbolsnavigate-next"
-                  src="material-symbols-navigate-next-4.svg"
-                  alt="material-symbols:navigate-next"
-                />
-              </div>
-              <div class="frame-45-1">
-                <div class="last-edited">Last edited</div>
-                <img
-                  class="material-symbolsnavigate-next"
-                  src="material-symbols-navigate-next-5.svg"
-                  alt="material-symbols:navigate-next"
-                />
-              </div>
-              <div class="frame-45"><div class="status-1">Status</div></div>
-              <div class="frame-459"><div class="delete">Delete</div></div>
-            </div>
-            <div class="frame-4-1">
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh inter-normal-tundora-10-5px">GH-123325</div></div>
-                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                <div class="frame-46"><div class="date-6 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
-                <div class="frame-46"><div class="unpaid inter-normal-tundora-10-5px">Unpaid</div></div>
-                <div class="frame-464">
-                  <img class="icsharp-delete" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                </div>
-              </div>
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
-                <div class="frame-461"><div class="resaerch-1 inter-normal-tundora-10-5px">Resaerch</div></div>
-                <div class="frame-46"><div class="date-7 date-11 inter-normal-tundora-10-5px">11/14/2022</div></div>
-                <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
-                <div class="frame-464">
-                  <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                </div>
-              </div>
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
-                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                <div class="frame-46"><div class="date-8 date-11 inter-normal-tundora-10-5px">11/12/2022</div></div>
-                <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
-                <div class="frame-464">
-                  <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                </div>
-              </div>
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
-                <div class="frame-461"><div class="place-3 inter-normal-tundora-10-5px">Research</div></div>
-                <div class="frame-46"><div class="date-9 date-11 inter-normal-tundora-10-5px">11/13/2022</div></div>
-                <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
-                <div class="frame-464">
-                  <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                </div>
-              </div>
-              <div class="frame-4">
-                <div class="frame-460"><div class="gh-123325-8 inter-normal-tundora-10-5px">GH-123325</div></div>
-                <div class="frame-461"><div class="clinical-6 inter-normal-tundora-10-5px">Clinical</div></div>
-                <div class="frame-46"><div class="date-10 date-11 inter-normal-tundora-10-5px">11/06/2022</div></div>
-                <div class="frame-46"><div class="unpaid-5 inter-normal-tundora-10-5px">Unpaid</div></div>
-                <div class="frame-464">
-                  <img class="icsharp-delete-5" src="ic-sharp-delete-5.svg" alt="ic:sharp-delete" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>  */}
           <div class="frame-478">
             <div class="frame-47">
               <div class="frame-305">
@@ -459,59 +351,8 @@ export default function () {
                     <div class="date inter-semi-bold-slate-gray-8-2px">10/04/2023</div>
                   </div>
                 </div>
-                 {/* <div class="component">
-                <div class="frame-287">
-                  <p class="ut-enim-ad-minim-ven inter-semi-bold-tundora-12px">
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                  </p>
-                  <div class="date inter-semi-bold-slate-gray-8-2px">15/11/2022</div>
-                </div>
-              </div>
-              <div class="component">
-                <div class="frame-287">
-                  <p class="duis-aute-irure-dolo inter-semi-bold-tundora-12px">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  </p>
-                  <div class="date inter-semi-bold-slate-gray-8-2px">15/11/2022</div>
-                </div>
-              </div> */}
               </div>
             </div>
-             {/* <div class="frame-47">
-            <div class="frame-305">
-              <div class="cost-usage blue-15px">Cost &amp; Usage</div>
-              <div class="view-all-box">View all</div>
-            </div>
-            <div class="frame-4-1">
-              <div class="component">
-                <div class="frame-287">
-                  <div class="frame-468">
-                    <div class="price inter-semi-bold-tundora-12px">$1200</div>
-                    <div class="pending">Pending</div>
-                  </div>
-                  <div class="gh-123325-8 inter-normal-slate-gray-10-5px">GH-123325</div>
-                </div>
-              </div>
-              <div class="component">
-                <div class="frame-287">
-                  <div class="frame-468">
-                    <div class="price inter-semi-bold-tundora-12px">$800</div>
-                    <div class="done">Done</div>
-                  </div>
-                  <div class="gh-123325-8 inter-normal-slate-gray-10-5px">GH-123325</div>
-                </div>
-              </div>
-              <div class="component">
-                <div class="frame-287">
-                  <div class="frame-468">
-                    <div class="price inter-semi-bold-tundora-12px">$160</div>
-                    <div class="pending">Pending</div>
-                  </div>
-                  <div class="gh-123325-8 inter-normal-slate-gray-10-5px">GH-123325</div>
-                </div>
-              </div>
-            </div>
-          </div>  */}
           </div>
         </div>
       </div>

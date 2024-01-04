@@ -77,15 +77,14 @@ const Account = forwardRef((props, ref) => {
   };
 
   const logout = () => {
-    // alert("LOGOUT CALLED")
-
     const user = UserPool.getCurrentUser();
-
-    user.signOut();
-
+    if (user) {
+      user.signOut();
+    }
+    localStorage.removeItem("persist-crs-token"); // Clear the token from localStorage
     window.location.href = "/";
-    // window.location.href = "/login";
   };
+  
 
   const getUser = () => {
     return UserPool.getCurrentUser();

@@ -28,42 +28,52 @@ import Support from "./pages/Support";
 import VerifyCode from "./pages/VerifyCode";
 import FileUpload from "./pages/FileUpload";
 import Excel from "./pages/ExcelComponent"
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/apply_payment" element={<ApplyPayment />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/fileupload" element={<FileUpload />}></Route>
-        <Route path="/verify_code" element={<VerifyCode />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route path="/delete_sample" element={<DeleteSample />}></Route>
-        <Route path="/delet_emult" element={<DeleteMult />}></Route>
-        <Route path="/edit_profile" element={<EditProfile />}></Route>
-        <Route path="/my_files_1" element={<MyFiles1 />}></Route>
-        <Route path="/change_password" element={<ChangePassword />}></Route>
-        <Route path="/Complete" element={<Complete />}></Route>
-        <Route path="/CostUsage" element={<CostUsage />}></Route>
-        <Route path="/my_files_2" element={<MyFiles2 />}></Route>
-        <Route path="/getting_started_1" element={<GettingStarted1 />}></Route>
-        <Route path="/getting_started_2" element={<GettingStarted2 />}></Route>
-        <Route path="/metabase_input_1" element={<MetabaseInput1 />}></Route>
-        <Route path="/metabase_input_3" element={<MetabaseInput3 />}></Route>
-        <Route path="/metabase_input_4" element={<MetabaseInput4 />}></Route>
-        <Route path="/metabase_input_5" element={<MetabaseInput5 />}></Route>
-        <Route path="/my_profile" element={<MyProfile />}></Route>
-        <Route path="/database_input_1" element={<DatabaseInput1 />}></Route>
-        <Route path="/payment_1" element={<Payment1 />}></Route>
-        <Route path="/payment_2" element={<Payment2 />}></Route>
-        <Route path="/submitted" element={<Submitted />}></Route>
-        <Route path="/support" element={<Support />}></Route>
-        <Route path="/in_process" element={<InProgress />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+
+        {/* Protected Routes */}
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
+        <Route path="/apply_payment" element={<PrivateRoute><ApplyPayment /></PrivateRoute>}></Route>
+        <Route path="/fileupload" element={<PrivateRoute><FileUpload /></PrivateRoute>}></Route>
+        <Route path="/verify_code" element={<PrivateRoute><VerifyCode /></PrivateRoute>}></Route>
+        <Route path="/delete_sample" element={<PrivateRoute><DeleteSample /></PrivateRoute>}></Route>
+        <Route path="/delet_emult" element={<PrivateRoute><DeleteMult /></PrivateRoute>}></Route>
+        <Route path="/edit_profile" element={<PrivateRoute><EditProfile /></PrivateRoute>}></Route>
+        <Route path="/my_files_1" element={<PrivateRoute><MyFiles1 /></PrivateRoute>}></Route>
+        <Route path="/change_password" element={<PrivateRoute><ChangePassword /></PrivateRoute>}></Route>
+        <Route path="/Complete" element={<PrivateRoute><Complete /></PrivateRoute>}></Route>
+        <Route path="/CostUsage" element={<PrivateRoute><CostUsage /></PrivateRoute>}></Route>
+        <Route path="/my_files_2" element={<PrivateRoute><MyFiles2 /></PrivateRoute>}></Route>
+        <Route path="/getting_started_1" element={<PrivateRoute><GettingStarted1 /></PrivateRoute>}></Route>
+        <Route path="/getting_started_2" element={<PrivateRoute><GettingStarted2 /></PrivateRoute>}></Route>
+        <Route path="/metabase_input_1" element={<PrivateRoute><MetabaseInput1 /></PrivateRoute>}></Route>
+        <Route path="/metabase_input_3" element={<PrivateRoute><MetabaseInput3 /></PrivateRoute>}></Route>
+        <Route path="/metabase_input_4" element={<PrivateRoute><MetabaseInput4 /></PrivateRoute>}></Route>
+        <Route path="/metabase_input_5" element={<PrivateRoute><MetabaseInput5 /></PrivateRoute>}></Route>
+        <Route path="/my_profile" element={<PrivateRoute><MyProfile /></PrivateRoute>}></Route>
+        <Route path="/database_input_1" element={<PrivateRoute><DatabaseInput1 /></PrivateRoute>}></Route>
+        <Route path="/payment_1" element={<PrivateRoute><Payment1 /></PrivateRoute>}></Route>
+        <Route path="/payment_2" element={<PrivateRoute><Payment2 /></PrivateRoute>}></Route>
+        <Route path="/submitted" element={<PrivateRoute><Submitted /></PrivateRoute>}></Route>
+        <Route path="/support" element={<PrivateRoute><Support /></PrivateRoute>}></Route>
+        <Route path="/in_process" element={<PrivateRoute><InProgress /></PrivateRoute>}></Route>
       </Routes>
     </BrowserRouter>
   );
 }
+
+const PrivateRoute = ({ children }) => {
+  const token = localStorage.getItem('persist-crs-token');
+  return token ? children : <Navigate to="/login" />;
+};
+
 
 export default App;
