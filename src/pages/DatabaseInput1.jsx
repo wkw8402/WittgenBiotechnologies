@@ -578,6 +578,27 @@ function toggleTable(checked) {
             S: "" + upoadedBy + "",
             //S: "Call Me Today
           },
+          Process: {
+            N: "0", // Process attribute with value 0
+          },
+          curation_time: {
+            S: "", // curation_time with empty value
+          },
+          preprocess_time: {
+            S: "", // preprocess_time with empty value
+          },
+          model_time: {
+            S: "", // model_time with empty value
+          },
+          complete_time: {
+            S: "", // complete_time with empty value
+          },
+          metaURI: {
+            S: "s3://wittgen-bio-metadata-bucket/" + inputValue + ".tsv", // Construct metaURI
+          },
+          metaURL: {
+            S: "https://wittgen-bio-metadata-bucket.s3.amazonaws.com/" + inputValue + ".tsv", // Construct metaURL
+          },
         },
         ReturnConsumedCapacity: "TOTAL",
         TableName: "wittgen-bio-metadata-table",

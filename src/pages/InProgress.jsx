@@ -21,13 +21,61 @@ export default function () {
 
   const [applicationId, setApplicationId] = useState('');
 
+  const [progress, setProgress] = useState({
+    applicationSubmitted: 'notStarted',
+    dataCuration: 'notStarted',
+    dataPreProcessing: 'notStarted',
+    mlModel: 'notStarted',
+    fileComplete: 'notStarted',
+  });
+  
+  const dynamodb = new AWS.DynamoDB({ region: 'us-east-1' }); // Initialize AWS DynamoDB client with your region
+
   useEffect(() => {
       // Retrieve the filename from localStorage
       const appId = localStorage.getItem('selectedApplicationID');
       if (appId) {
           setApplicationId(appId);
       }
-  }, []);
+      
+      // Function to retrieve item from DynamoDB based on fileName using Scan (not recommended for large tables)
+      const fetchItemFromDynamoDB = async () => {
+        try {
+          const params = {
+            TableName: 'wittgen-bio-metadata-table',
+          };
+    
+          const response = await dynamodb.scan(params).promise();
+          const items = response.Items;
+    
+          if (items && items.length > 0) {
+            // Filter the items based on fileName
+            const matchingItem = items.find((item) => item.fileName.S === appId + '.tar.gz');
+    
+            if (matchingItem) {
+              const processValue = Number(matchingItem.Process.N);
+
+              console.log(processValue);
+    
+              // Calculate progress state based on Process attribute
+              const newProgress = {
+                applicationSubmitted: processValue >= 0 ? 'completed' : 'notStarted',
+                dataCuration: processValue >= 1 ? 'completed' : processValue === 0 ? 'inProgress' : 'notStarted',
+                dataPreProcessing: processValue >= 2 ? 'completed' : processValue === 1 ? 'inProgress' : 'notStarted',
+                mlModel: processValue >= 3 ? 'completed' : processValue === 2 ? 'inProgress' : 'notStarted',
+                fileComplete: processValue >= 4 ? 'completed' : processValue === 3 ? 'inProgress' : 'notStarted',
+              };
+    
+              setProgress(newProgress);
+            }
+          }
+        } catch (error) {
+          console.error('Error fetching item from DynamoDB:', error);
+        }
+      };
+    
+      fetchItemFromDynamoDB();
+    }, []);
 
   const s3 = new AWS.S3({ region: 'us-east-1' });
 
@@ -90,15 +138,6 @@ export default function () {
   const numberRow = 3;
   const costRow = 100;
   const paid = 10;
-
-
-  const [progress, setProgress] = useState({
-    applicationSubmitted: 'completed',
-    dataCuration: 'completed',
-    dataPreProcessing: 'inProgress',
-    mlModel: 'notStarted',
-    fileComplete: 'notStarted',
-  });
 
   const [progressTime, setProgressTime] = useState({
     applicationSubmitted: '',
@@ -177,24 +216,6 @@ export default function () {
         return '/image/inprogress/rebase_file_notyet.svg';
     }
   };
-
-  useEffect(() => {
-    setProgress({
-      applicationSubmitted: '',
-      dataCuration: '',
-      dataPreProcessing: '',
-      mlModel: '',
-      fileComplete: '',
-    });
-    setProgressTime({
-      applicationSubmitted: '',
-      dataCuration: '',
-      dataPreProcessing: '',
-      mlModel: '',
-      fileComplete: '',
-    });
-  }, []);
-
 
   function MyComponent() {
     unlockScroll();
@@ -295,10 +316,7 @@ export default function () {
             </div>
             <div className="progress-layout">
               <div className="progress-box">
-                <div className="progress-frame" style={{ color: 
-                  "#1431C9"
-                  // determineColor(progress.applicationSubmitted) 
-                  }}>
+                <div className="progress-frame" style={{ color: determineColor(progress.applicationSubmitted) }}>
                   <p className="progress-font">Application submitted</p>
                   <img
                     className="icon-position"
@@ -309,10 +327,7 @@ export default function () {
                 </div>
               </div>
               <div className="progress-box">
-                <div className="progress-frame" style={{ color: 
-                  "#25474F"
-                  // determineColor(progress.dataCuration) 
-                  }}>
+                <div className="progress-frame" style={{ color: determineColor(progress.dataCuration) }}>
                   <p className="progress-font">Data Curation</p>
                   <img
                     className="icon-position"
@@ -377,7 +392,7 @@ export default function () {
                   </div>
                   <div className="order-line"></div>
                   <div className="order-bottom">
-                    <div className="summary-font">Sameples</div>
+                    <div className="summary-font">Samples</div>
                     <div className="summary-font1">{numberRow} x {costRow}</div>
                     <div className="summary-font right-position">${numberRow * costRow}</div>
                   </div>
