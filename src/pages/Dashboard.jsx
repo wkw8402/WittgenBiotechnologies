@@ -73,7 +73,7 @@ export default function () {
 
   const navigate = useNavigate();
 
-  const [status, setStatus] = useState("Completed"); // initial state can be "In Process" or "Completed"
+  const [status, setStatus] = useState("In Process"); // initial state can be "In Process" or "Completed"
 
   // Function to handle navigation based on the status
   const navigateBasedOnStatus = (fileName) => {
