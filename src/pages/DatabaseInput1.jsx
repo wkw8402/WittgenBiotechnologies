@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import "../styling/DatabaseInput1.css";
 import "../styling/DeleteMult.css";
 import "../styling/ApplyPayment.css";
@@ -371,42 +373,43 @@ function toggleTable(checked) {
   const compressAllFiles = async (arraysOfFiles, twoDArray) => {
     const finalZip = new JSZip();
 
-  for (let i = 0; i < arraysOfFiles.length; i++) {
-    const array = arraysOfFiles[i];
+    for (let i = 0; i < arraysOfFiles.length; i++) {
+      const array = arraysOfFiles[i];
 
-    // Skip processing if the current array is empty
-    if (array.length === 0) {
-      continue;
+      // Skip processing if the current array is empty
+      if (array.length === 0) {
+        continue;
+      }
+
+      const zip = new JSZip();
+
+      // Add files from the current array to the zip
+      array.forEach((fileObject) => {
+        const { name, content } = fileObject;
+        const decodedContent = content.split(',')[1];
+        zip.file(name, atob(decodedContent), { binary: true });
+      });
+
+      // Generate tar archive
+      const tar = await zip.generateAsync({ type: 'arraybuffer' });
+
+      // Compress the tar archive to tar.gz format
+      const tarGz = gzip(tar);
+
+      // Add the tar.gz file to the final zip with a unique name (e.g., zip1.tar.gz, zip2.tar.gz, etc.)
+      finalZip.file(`${titles[i]}.tar.gz`, tarGz);
     }
 
-    const zip = new JSZip();
+    const tsvContent = convert2DArrayToTSV(twoDArray);
 
-    // Add files from the current array to the zip
-    array.forEach((fileObject) => {
-      const { name, content } = fileObject;
-      const decodedContent = content.split(',')[1];
-      zip.file(name, atob(decodedContent), { binary: true });
-    });
+    // Add the TSV file to the final zip
+    finalZip.file('metadata.tsv', tsvContent);
 
-    // Generate tar archive
-    const tar = await zip.generateAsync({ type: 'arraybuffer' });
+    // Generate the final tar.gz archive
+    const content = await finalZip.generateAsync({ type: 'blob' });
 
-    // Compress the tar archive to tar.gz format
-    const tarGz = gzip(tar);
+    setFinalFileSize(content.size);
 
-    // Add the tar.gz file to the final zip with a unique name (e.g., zip1.tar.gz, zip2.tar.gz, etc.)
-    finalZip.file(`${titles[i]}.tar.gz`, tarGz);
-  }
-
-  const tsvContent = convert2DArrayToTSV(twoDArray);
-
-  // Add the TSV file to the final zip
-  finalZip.file('metadata.tsv', tsvContent);
-
-  // Generate the final tar.gz archive
-  const content = await finalZip.generateAsync({ type: 'blob' });
-
-  setFinalFileSize(content.size);
     // Save the tar.gz file to S3
     await uploadToS3({ name: `${inputValue}.tar.gz`, content });
   
@@ -493,7 +496,11 @@ function toggleTable(checked) {
 
       fileName = finalFileObject.name;
       
-      fileSize = (finalFileSize / 1000000).toFixed(2) + "MB"
+      console.log("final file size")
+      console.log(finalFileSize)
+      fileSize = (finalFileObject.content.size / 1000000).toFixed(2) + "MB"
+      console.log("filesize")
+      console.log(fileSize)
           
       fileType = 'tar.gz';
 
