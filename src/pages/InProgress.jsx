@@ -19,64 +19,71 @@ export default function () {
     navigate("/")
   }
 
-  let dataObject = [
-    {
-      ID: "GH-12345",
-      "Name (Optional)": "Cindy Park",
-      "D.O.B": "12.25.1988",
-      "Height (cm)": "171",
-      "Weight (kg)": "69",
-      "Primary region": "Breast",
-      "Subtype": "TNBC",
-      "Grade": "3",
-    },
-    {
-      ID: "GH-12346",
-      "Name (Optional)": "Jane Doe",
-      "D.O.B": "11.20.1965",
-      "Height (cm)": "170",
-      "Weight (kg)": "72",
-      "Primary region": "Breast",
-      "Subtype": "ER+",
-      "Grade": "1",
-    },
-    {
-      ID: "GH-12347",
-      "Name (Optional)": "Patient 3",
-      "D.O.B": "04.06.1969",
-      "Height (cm)": "163",
-      "Weight (kg)": "63",
-      "Primary region": "Breast",
-      "Subtype": "ER+",
-      "Grade": "2",
-    },
-    
-  ];
-  
+  const [applicationId, setApplicationId] = useState('');
+
+  useEffect(() => {
+      // Retrieve the filename from localStorage
+      const appId = localStorage.getItem('selectedApplicationID');
+      if (appId) {
+          setApplicationId(appId);
+      }
+  }, []);
+
+  const s3 = new AWS.S3({ region: 'us-east-1' });
+
   function Table() {
+    const [tableData, setTableData] = useState([]);
+  
+    useEffect(() => {
+      // Function to retrieve and parse the TSV file
+      const fetchAndParseTSV = async () => {
+        try {
+          const params = {
+            Bucket: 'wittgen-bio-metadata-bucket',
+            Key: `${applicationId}.tsv`, // Replace with the actual filename
+          };
+  
+          const response = await s3.getObject(params).promise();
+          const tsvContent = response.Body.toString('utf-8');
+  
+          // Split the TSV content into rows and parse it
+          const rows = tsvContent.split('\n');
+          const headers = rows[0].split('\t');
+          const data = rows.slice(1).map((row) => {
+            const values = row.split('\t');
+            return Object.fromEntries(headers.map((header, index) => [header, values[index]]));
+          });
+  
+          setTableData(data);
+        } catch (error) {
+          console.error('Error fetching or parsing the TSV file:', error);
+        }
+      };
+
+      fetchAndParseTSV();
+    }, []);
+  
     return (
       <div className="table">
         <div className="header">
-          {Object.keys(dataObject[0]).map((key, index,array) => (
-              <div className={`header-cell ${index === array.length - 1 ? "last-header-cell" : ""}`} key={index}>
+          {Object.keys(tableData[0] || {}).map((key, index, array) => (
+            <div className={`header-cell ${index === array.length - 1 ? 'last-header-cell' : ''}`} key={index}>
               {key}
             </div>
           ))}
         </div>
-        {dataObject.map((row, index) => (
-          <div className="row" key={index}>
-          {Object.values(row).map((cell, cellIndex) => (
-            <div className={`cell ${cellIndex === 0 ? "first-cell" : ""}`} key={cellIndex}>
-              {cell}
-            </div>
+        {tableData.map((row, rowIndex) => (
+          <div className="row" key={rowIndex}>
+            {Object.values(row).map((cell, cellIndex) => (
+              <div className={`cell ${cellIndex === 0 ? 'first-cell' : ''}`} key={cellIndex}>
+                {cell}
+              </div>
             ))}
           </div>
         ))}
       </div>
     );
-  }
-
-  
+  }  
   
   const prevColumnNamesRef = useRef([]);
 
@@ -280,7 +287,7 @@ export default function () {
           </div>
         <div className="main-frame-inprogress">
           <div className="frame-top-inprogress">
-            Sameple Name
+            {applicationId}
           </div>
           <div className="in-progress">
             <div className="fp-title">

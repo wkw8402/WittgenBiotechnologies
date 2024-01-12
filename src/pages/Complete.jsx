@@ -23,11 +23,9 @@ export default function () {
 
   useEffect(() => {
       // Retrieve the filename from localStorage
-      const appId = localStorage.getItem('selectedFileName');
+      const appId = localStorage.getItem('selectedApplicationID');
       if (appId) {
-          // Remove the '.tar.gz' extension if present and update the state
-          const modifiedAppId = appId.endsWith('.tar.gz') ? appId.substring(0, appId.length - 7) : appId;
-          setApplicationId(modifiedAppId);
+          setApplicationId(appId);
       }
   }, []);
   

@@ -413,7 +413,13 @@ function toggleTable(checked) {
     // Save the tar.gz file to S3
     await uploadToS3({ name: `${inputValue}.tar.gz`, content });
   
-    console.log('All files compressed and uploaded to S3.');
+      // Create a new S3 instance for the "wittgen-bio-metadata-bucket"
+      const metadataS3 = new AWS.S3({ params: { Bucket: 'wittgen-bio-metadata-bucket' } });
+
+      // Upload the TSV file to "wittgen-bio-metadata-bucket"
+      await metadataS3.upload({ Key: `${inputValue}.tsv`, Body: tsvContent }).promise();
+
+      console.log('All files compressed and uploaded to S3.');
   };
 
   const uploadToS3 = (fileObject) => {

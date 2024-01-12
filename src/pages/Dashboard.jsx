@@ -78,7 +78,8 @@ export default function () {
   // Function to handle navigation based on the status
   const navigateBasedOnStatus = (fileName) => {
     // Store fileName in localStorage
-    localStorage.setItem('selectedFileName', fileName);
+    const applicationID = fileName.replace('.tar.gz', ''); // Remove the file extension
+    localStorage.setItem('selectedApplicationID', applicationID);
 
     if (status === "Completed") {
         navigate("/Complete");
