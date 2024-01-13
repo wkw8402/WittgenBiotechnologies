@@ -28,6 +28,14 @@ export default function () {
     mlModel: 'notStarted',
     fileComplete: 'notStarted',
   });
+
+  const [progressTime, setProgressTime] = useState({
+    applicationSubmitted: '',
+    dataCuration: '',
+    dataPreProcessing: '',
+    mlModel: '',
+    fileComplete: '',
+  });
   
   const dynamodb = new AWS.DynamoDB({ region: 'us-east-1' }); // Initialize AWS DynamoDB client with your region
 
@@ -59,7 +67,7 @@ export default function () {
     
               // Calculate progress state based on Process attribute
               const newProgress = {
-                applicationSubmitted: processValue >= 0 ? 'completed' : 'notStarted',
+                applicationSubmitted: processValue >= 0 ? 'completed' : 'inProgress',
                 dataCuration: processValue >= 1 ? 'completed' : processValue === 0 ? 'inProgress' : 'notStarted',
                 dataPreProcessing: processValue >= 2 ? 'completed' : processValue === 1 ? 'inProgress' : 'notStarted',
                 mlModel: processValue >= 3 ? 'completed' : processValue === 2 ? 'inProgress' : 'notStarted',
@@ -67,6 +75,28 @@ export default function () {
               };
     
               setProgress(newProgress);
+              
+              // Initialize progressTime with current values
+              const newProgressTime = { ...progressTime };
+
+              // Conditionally update progressTime based on processValue
+              if (processValue >= 0) {
+                newProgressTime.applicationSubmitted = matchingItem.CreationDate ? matchingItem.CreationDate.S : '';
+              }
+              if (processValue >= 1) {
+                newProgressTime.dataCuration = matchingItem.curation_time ? matchingItem.curation_time.S : '';
+              }
+              if (processValue >= 2) {
+                newProgressTime.dataPreProcessing = matchingItem.preprocess_time ? matchingItem.preprocess_time.S : '';
+              }
+              if (processValue >= 3) {
+                newProgressTime.mlModel = matchingItem.model_time ? matchingItem.model_time.S : '';
+              }
+              if (processValue >= 4) {
+                newProgressTime.fileComplete = matchingItem.complete_time ? matchingItem.complete_time.S : '';
+              }
+
+              setProgressTime(newProgressTime);
             }
           }
         } catch (error) {
@@ -75,7 +105,8 @@ export default function () {
       };
     
       fetchItemFromDynamoDB();
-    }, []);
+    }, []
+  );
 
   const s3 = new AWS.S3({ region: 'us-east-1' });
 
@@ -138,14 +169,6 @@ export default function () {
   const numberRow = 3;
   const costRow = 100;
   const paid = 10;
-
-  const [progressTime, setProgressTime] = useState({
-    applicationSubmitted: '',
-    dataCuration: '',
-    dataPreProcessing: '',
-    mlModel: '',
-    fileComplete: '',
-  });
 
   const determineColor = (state) => {
     switch (state) {
