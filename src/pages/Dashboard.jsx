@@ -54,10 +54,45 @@ export default function () {
   const [user, setUser] = useState(null);
   const [userAttributes, setUserAttributes] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // new state to track loading
+  const [retrievedItems, setRetrievedItems] = useState([]);
+  const [itemStatuses, setItemStatuses] = useState([]);
 
   useEffect(() => {
     fetchUserAttributes();
-  }, []); // empty dependency array
+    breakCallbackDownload().then((data) => {
+      // Extract fileName from each object in the Items array
+      const fileNames = data.Items.map(item => item.fileName.S);
+
+      const AWS = require('aws-sdk');
+      const dynamodb = new AWS.DynamoDB.DocumentClient({ region: 'us-east-1' });
+
+      // Use scan to search for items in DynamoDB
+      const params = {
+        TableName: 'wittgen-bio-metadata-table',
+        FilterExpression: 'fileName = :fileName',
+        ExpressionAttributeValues: {}
+      };
+
+      fileNames.forEach((fileName) => {
+        params.ExpressionAttributeValues = { ':fileName': fileName };
+
+        dynamodb.scan(params, (err, data) => {
+          if (err) {
+            console.error("Unable to scan. Error:", JSON.stringify(err, null, 2));
+          } else {
+            console.log("Scan succeeded:", data.Items);
+            // Handle the retrieved data as needed
+            // Append the found items to the state
+            setRetrievedItems(prevItems => [...prevItems, ...data.Items]);
+          }
+        });
+      });
+
+      // Other state updates
+      setSubmittedFilesState(data);
+      setUser(HandleUserName());
+    });
+  }, []);
 
   const fetchUserAttributes = async () => {
     setIsLoading(true); // set loading to true
@@ -73,20 +108,33 @@ export default function () {
 
   const navigate = useNavigate();
 
-  const [status, setStatus] = useState("In Process"); // initial state can be "In Process" or "Completed"
+  const checkProcessStatus = (fileName) => {
+    // Find the item with the matching fileName
+    const foundItem = retrievedItems.find(item => item.fileName === fileName);
+  
+    // Check if the item is found and its Process attribute
+    if (foundItem && foundItem.Process === 4) {
+      return "Completed";
+    } else {
+      return "In Process";
+    }
+  };
 
-  // Function to handle navigation based on the status
   const navigateBasedOnStatus = (fileName) => {
     // Store fileName in localStorage
     const applicationID = fileName.replace('.tar.gz', ''); // Remove the file extension
     localStorage.setItem('selectedApplicationID', applicationID);
-
-    if (status === "Completed") {
-        navigate("/Complete");
-    } else if (status === "In Process") {
-        navigate("/in_process");
+  
+    // Find the item with the matching fileName
+    const foundItem = retrievedItems.find(item => item.fileName === fileName);
+  
+    // Determine the navigation route based on the Process status
+    if (foundItem && foundItem.Process === 4) {
+      navigate("/Complete");
+    } else {
+      navigate("/in_process");
     }
-  };
+  };  
 
   async function breakCallbackDownload() {
     UserNameUploaded = await HandleUserName();
@@ -103,14 +151,6 @@ export default function () {
 
     return dynamodb.query(queryItemParams).promise().then();
   }
-
-  useEffect(() => {
-    breakCallbackDownload().then((data) => setSubmittedFilesState(data))
-    setUser(HandleUserName());
-    // setSubmittedFilesState(data)
-    // console.log("submittedFilesObject updated", submittedFilesState)
-  }, []);
-
 
   const handleDownloadClick = async (s3URI, filename) => {
     try {
@@ -145,7 +185,6 @@ export default function () {
       <div className="frame-4">
         <div className="frame-460">
           <div className="fileId inter-normal-tundora-14px" onClick={()=>{  navigate('/in_process')  }}>
-           
             {element.fileName.S}
           </div>
         </div>
@@ -162,7 +201,7 @@ export default function () {
         {/* if there's an issue, must have different div. */}
         <div className="frame-46">
           <button className="researchers-3 inter-semi-bold-slate-gray-14px" onClick={()=>{navigateBasedOnStatus(element.fileName.S)}}>
-            {status}
+            {checkProcessStatus(element.fileName.S)}
           </button>
         </div>
         <div className="frame-464">
