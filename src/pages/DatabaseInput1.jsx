@@ -41,7 +41,7 @@ export default function Sample()  {
   const prevColumnNamesRef = useRef([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toPayment, setToPayment] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(null);
   const [finalFileSize, setFinalFileSize] = useState(0);
   const [finalFileName, setFinalFileName] = useState('');
   const navigate = useNavigate();
@@ -52,6 +52,13 @@ export default function Sample()  {
   const [deletedRows, setDeletedRows] = useState([]);
   const [deletedFiles, setDeletedFiles] = useState([]);
   const [deleteText, setDeleteText] = useState('');
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const [uploading, setUploading] = useState(false);
+
+  useEffect(() => {
+    const disableCondition = !toPayment && uploading;
+    setIsButtonDisabled(disableCondition);
+  }, [toPayment, uploading]);
 
   const toggleDeleteMultipleMode = () => {
     if (deleteMultipleMode && checkItems.length >= 1) {
@@ -475,6 +482,7 @@ function toggleTable(checked) {
   }
 
   const handleUpload = async () => {
+    setUploading(true);
     setToPayment(false);
     setIsSubmitting(true);
     
@@ -609,6 +617,8 @@ function toggleTable(checked) {
         // an error occurred
         else console.log(data); // successful response
       })
+
+      setUploading(false);
     }
   };
 
@@ -709,12 +719,39 @@ function toggleTable(checked) {
         </button>
       </div>
   
-          <div class="back-next">
-            <div class="frame-616">
-              <button class="back-button" onClick={()=>{navigate("/metabase_input_5")}}><div class="place inter-semi-bold-blue-dianne-10-5px" style={{ fontSize: '14px' }}>Back</div></button>
-              <button class="next-button" onClick={()=>{setToPayment(true); setFileArraysState(fileArrays)}}><div class="next inter-semi-bold-white-10-5px" style={{ fontSize: '14px' }}>Next</div></button>
-            </div>
-          </div>
+      <div class="back-next">
+        <div class="frame-616">
+          <button class="back-button" 
+            style={{ display: progress === 100 ? 'none' : 'inline-block' }} // Hide button when progress is 100
+            onClick={() => {
+              if (isButtonDisabled) {
+                // Show a confirmation dialog when submitting
+                const confirmLeave = window.confirm("Changes you made may not be saved. Are you sure you want to leave?");
+                if (confirmLeave) {
+                  // If the user confirms, navigate to the desired page
+                  navigate("/metabase_input_5");
+                }
+              } else {
+                // If we are not submitting, navigate without confirmation
+                navigate("/metabase_input_5");
+              }
+            }}
+          ><div class="place inter-semi-bold-blue-dianne-10-5px" style={{ fontSize: '14px' }}>Back</div></button>
+          <button className={`next-button ${isButtonDisabled && 'cursor-not-allowed opacity-50'}`}
+          disabled={isButtonDisabled}
+          onClick={() => {
+            if (progress === 100) {
+              // Navigate to "/dashboard" if progress is 100
+              navigate("/dashboard");
+            } else {
+              // Keep the current behavior otherwise
+              setToPayment(true); 
+              setFileArraysState(fileArrays);
+            }
+          }}
+          ><div class="next inter-semi-bold-white-10-5px" style={{ fontSize: '14px' }}>{progress === 100 ? 'Move to Dashboard' : 'Next'}</div></button>
+        </div>
+      </div>
 
           {!isSubmitting ? (
           <>
@@ -1004,8 +1041,8 @@ function toggleTable(checked) {
       </body>
       </>
   ) : (
-    <>
-  <meta charset="utf-8" />
+  <>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=1437.7535400390625, maximum-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
     <meta name="og:type" content="website" />
@@ -1304,68 +1341,9 @@ function toggleTable(checked) {
             </div>
           </div>
         </div>  
-        
-        
-      
-      {/* <div class="frame-591" style={{ left: '1360px', zIndex: '0', height:'870px' }}>
-          <div class="frame-590">
-            <div class="frame-58">
-              <div class="frame-58">
-                <div class="frame-582">
-                  <div class="order-summary inter-normal-tundora-15px" style={{fontSize: "15px" }}>Order Summary</div>
-                  <div class="group-391">
-                    <div class="currency-usd inter-normal-tundora-10-5px-2" style={{fontSize: "10.5px" }}>Currency: USD</div>
-                  </div>
-                </div>
-                <img class="line-107" src="line-107-1@2x.svg" alt="Line 107" />
-              </div>
-              <div class="group-394">
-                <div class="group-393 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>
-                  <div class="frame-416">
-                    <div class="group-392"><div class="samples">Samples</div></div>
-                    <div class="group-389">
-                      <div class="flex-row inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>
-                        <div class="number">{excelData.length - deletedRows.length}</div>
-                        <div class="x">x</div>
-                        <div class="price">$100</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="price-1">${(excelData.length - deletedRows.length) * 100}</div>
-                </div>
-              </div>
-            </div>
-            <div class="frame-589">
-              <div class="frame-588" style={{ alignItems: 'flex-start' }}>
-                <div class="frame-587">
-                  <div class="frame-58-1a">
-                    <div class="subtotal inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>Subtotal:</div>
-                    <div class="price-2 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>${(excelData.length - deletedRows.length) * 100}</div>
-                  </div>
-                  <div class="frame-58-1">
-                    <div class="group-387"><div class="taxes10 inter-normal-slate-gray-10-5px-2" style={{fontSize: "10.5px" }}>Taxes(10%)</div></div>
-                    <div class="price-3 inter-semi-bold-tundora-12px" style={{fontSize: "12px" }}>${Math.floor((excelData.length - deletedRows.length) * 100 * 0.1)}</div>
-                  </div>
-                </div>
-                <img class="line-112" src="line-112-2@2x.svg" alt="Line 112" />
-              </div>
-              <div class="frame-317a">
-                <div class="group-427">
-                  <div class="total-amount inter-normal-silver-10-5px" style={{fontSize: "10.5px" }}>Total amount</div>
-                  <h1 class="price-4 inter-semi-bold-silver-27px" style={{fontSize: "27px" }}>${Math.floor((excelData.length - deletedRows.length) * 100 * 1.1)}</h1>
-                </div>
-                <div class="group-428">
-                  <div class="freemium-1 inter-normal-cerulean-10-5px" style={{fontSize: "10.5px" }}>Freemium</div>
-                  <div class="price-5 inter-semi-bold-blue-dianne-27px-2" style={{fontSize: "27px" }}>$0</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
     </div>
     </div>
-    
-    </>
+  </>
   )
   }
   </>
