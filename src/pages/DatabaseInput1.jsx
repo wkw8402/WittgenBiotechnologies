@@ -1243,9 +1243,9 @@ function toggleTable(checked) {
             <ul class="table-container_applypayment">
             {console.log(deletedRows)}
             {excelData.filter((item) => !deletedRows.includes(item)) // 삭제된 줄을 필터링
-      .map((item) => (
-        // Skip rendering the row if the item is not present in the data state
-        !data.some((dataItem) => excelData.indexOf(item) === excelData.indexOf(item)) ? null : (
+              .map((item) => (
+              // Skip rendering the row if the item is not present in the data state
+              !data.some((dataItem) => excelData.indexOf(item) === excelData.indexOf(item)) ? null : (
               <tr key={excelData.indexOf(item)} className={checkItems.includes(excelData.indexOf(item)) ? "frame-5-2 frame-5-3a" : "frame-5-ss frame-5-3a"} >
                 <td class="frame-55">
                   <input
