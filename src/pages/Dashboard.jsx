@@ -55,7 +55,6 @@ export default function () {
   const [userAttributes, setUserAttributes] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // new state to track loading
   const [retrievedItems, setRetrievedItems] = useState([]);
-  const [itemStatuses, setItemStatuses] = useState([]);
 
   useEffect(() => {
     fetchUserAttributes();
