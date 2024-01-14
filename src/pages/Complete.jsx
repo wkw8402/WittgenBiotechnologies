@@ -19,67 +19,64 @@ export default function () {
     navigate("/")
   }
 
-  const [applicationId, setApplicationId] = useState('');
+  const s3 = new AWS.S3({ region: 'us-east-1' });
+
+  const [sampleData, setSampleData] = useState([]);
+  const [selectedSample, setSelectedSample] = useState(null);
+  const applicationId = localStorage.getItem('selectedApplicationID');
 
   useEffect(() => {
-      // Retrieve the filename from localStorage
-      const appId = localStorage.getItem('selectedApplicationID');
-      if (appId) {
-          setApplicationId(appId);
+    const fetchAndParseTSV = async () => {
+      try {
+        const params = {
+          Bucket: 'wittgen-bio-metadata-bucket',
+          Key: `${applicationId}.tsv`, // Replace with the actual filename
+        };
+
+        console.log(params.Key);
+        
+        const response = await s3.getObject(params).promise();
+        const tsvContent = response.Body.toString('utf-8');
+
+        // Split the TSV content into rows and parse it
+        const rows = tsvContent.split('\n');
+        const headers = rows[0].split('\t');
+        const data = rows.slice(1).map((row) => {
+          const values = row.split('\t');
+          return Object.fromEntries(headers.map((header, index) => [header, values[index]]));
+        });
+        
+        setSampleData(data);
+
+        if (data.length > 0) {
+          setSelectedSample(data[0].ID); // Set the first sample as selected by default
+        }
+      } catch (error) {
+        console.error('Error fetching or parsing the TSV file:', error);
       }
-  }, []);
-  
-  let dataObject = [
-    {
-      sample: "GH-2342",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "",
-      databaseFile3: "Upload File",
-      dob: "11/11/2000",
-      img: "1"
-    },
-    {
-      sample: "GH-23421",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "Upload File",
-      databaseFile2: "Upload File",
-      databaseFile3: "",
-      dob: "11/11/2000",
-      img: "2"
-    },
-    {
-      sample: "GH-23423",
-      databaseCategory: "Cell Ranger",
-      databaseFile1: "",
-      databaseFile2: "Upload File",
-      databaseFile3: "",
-      dob: "11/11/2000",
-      img: "3"
-    },
-  ];
-
-
-  function SampleTable() {
-    const [selectedSample, setSelectedSample] = useState(dataObject[0].sample);
-
-    const handleClick = (sample) => {
-      setSelectedSample(sample);
     };
 
+    fetchAndParseTSV();
+  }, []);
+
+  const handleSampleClick = (sample) => {
+    setSelectedSample(sample);
+  };
+
+  function SampleTable({ sampleData, selectedSample, onSampleClick }) {
+    console.log("Selected Sample Data: ", selectedSample);
     return (
       <>
-        <Account ref={compRef} />
-        {dataObject.map((row, index) => {
-          const isSelected = selectedSample === row.sample;
+        {sampleData.map((row, index) => {
+          const isSelected = selectedSample === row.ID;
           const sampleClass = isSelected ? "sample-button-selected" : "sample-button";
           return (
             <div
               key={index}
               className={sampleClass}
-              onClick={() => handleClick(row.sample)}
+              onClick={() => onSampleClick(row.ID)}
             >
-              {row.sample}
+              {row.ID}
             </div>
           )
         })}
@@ -143,30 +140,61 @@ export default function () {
                   </div>
                 </div>
               </div>
-              <div className="summary-frame-img">{selectedSample.img}</div>
+              <div className="summary-frame-img"></div>
             </div>
           </>
         )}
-
       </>
-    )
+    );
   }
 
-
   function Table() {
+    const [tableData, setTableData] = useState([]);
+
+    const applicationId = localStorage.getItem('selectedApplicationID');
+  
+    useEffect(() => {
+      // Function to retrieve and parse the TSV file
+      const fetchAndParseTSV = async () => {
+        try {
+          const params = {
+            Bucket: 'wittgen-bio-metadata-bucket',
+            Key: `${applicationId}.tsv`, // Replace with the actual filename
+          };
+  
+          const response = await s3.getObject(params).promise();
+          const tsvContent = response.Body.toString('utf-8');
+  
+          // Split the TSV content into rows and parse it
+          const rows = tsvContent.split('\n');
+          const headers = rows[0].split('\t');
+          const data = rows.slice(1).map((row) => {
+            const values = row.split('\t');
+            return Object.fromEntries(headers.map((header, index) => [header, values[index]]));
+          });
+  
+          setTableData(data);
+        } catch (error) {
+          console.error('Error fetching or parsing the TSV file:', error);
+        }
+      };
+
+      fetchAndParseTSV();
+    }, []);
+  
     return (
       <div className="table">
         <div className="header">
-          {Object.keys(dataObject[0]).map((key, index, array) => (
-            <div className={`header-cell ${index === array.length - 1 ? "last-header-cell" : ""}`} key={index}>
+          {Object.keys(tableData[0] || {}).map((key, index, array) => (
+            <div className={`header-cell ${index === array.length - 1 ? 'last-header-cell' : ''}`} key={index}>
               {key}
             </div>
           ))}
         </div>
-        {dataObject.map((row, index) => (
-          <div className="row" key={index}>
+        {tableData.map((row, rowIndex) => (
+          <div className="row" key={rowIndex}>
             {Object.values(row).map((cell, cellIndex) => (
-              <div className={`cell ${cellIndex === 0 ? "first-cell" : ""}`} key={cellIndex}>
+              <div className={`cell ${cellIndex === 0 ? 'first-cell' : ''}`} key={cellIndex}>
                 {cell}
               </div>
             ))}
@@ -174,14 +202,14 @@ export default function () {
         ))}
       </div>
     );
-  }
-
+  }  
 
   const numberRow = 3;
   const costRow = 100;
 
   return (
     <>
+      <Account ref={compRef} />
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=1920, maximum-scale=1.0" />
       <input
@@ -203,21 +231,22 @@ export default function () {
               </button>
             </div>
             <div className="navigation-box">
-              <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
+              <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }} style={{ left: '-12px' }}>
                 <img
                   className="dashboard-icon"
-                  src="/image/home-icon.svg"
+                  src="/image/home-icon2.svg"
                   alt="home-icon"
+                  style={{ width: '35px', height: '35px'}}
                 />
-                <div className="light-font">Dashboard</div>
+                <div className="my-files-font" style={{ marginLeft: '-8px' }}>Dashboard</div>
               </button>
-              <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }}>
+              <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }} style={{ left: '-3px' }}>
                 <img
                   className="myfiles-icon"
-                  src="/image/myfiles-icon.svg"
+                  src="/image/myfiles-icon2.svg"
                   alt="myfiles-icon"
                 />
-                <div className="my-files-font">My files</div>
+                <div className="light-font">My files</div>
               </button>
               <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
                 <img
@@ -244,7 +273,7 @@ export default function () {
                 <div className="light-font">FAQ / Support</div>
               </button>
             </div>
-            <button className="logout" onClick={()=>{   logout()    }} style={{  bottom: '57px', left: '2px'   }}>
+            <button className="logout" onClick={()=>{   logout()    }}>
               <img
                 className="logout-icon"
                 src="/image/logout-icon.png"
@@ -264,7 +293,11 @@ export default function () {
             <p className="search-button-font">Search samples</p>
           </div>
           <div className="side-navigation-list">
-            <SampleTable />
+          <SampleTable
+            sampleData={sampleData}
+            selectedSample={selectedSample}
+            onSampleClick={handleSampleClick}
+          />
           </div>
         </div>
         <div className="main-frame-completed">
@@ -288,7 +321,8 @@ export default function () {
           <div className="In-progress-completed">
             <div className="completed-box"></div>
             <div className="progress-line-completed"></div>
-            <div className="completed-table-box">
+            <div className="progress-line"></div>
+            <div className="progress-framebox">
               <div className="ap-title">
                 Application info
               </div>
