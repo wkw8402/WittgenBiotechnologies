@@ -8,8 +8,10 @@ import AWS, { SecretsManager } from "aws-sdk";
 import { useNavigate } from 'react-router-dom';
 import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
-
 export default function () {
+
+  const [searchTerm, setSearchTerm] = useState('');
+
   const navigate = useNavigate();
   
   const compRef = useRef();
@@ -24,6 +26,12 @@ export default function () {
   const [sampleData, setSampleData] = useState([]);
   const [selectedSample, setSelectedSample] = useState(null);
   const applicationId = localStorage.getItem('selectedApplicationID');
+
+  const filteredSampleData = sampleData.filter(sample =>
+    Object.values(sample).some(
+      value => value.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );  
 
   useEffect(() => {
     const fetchAndParseTSV = async () => {
@@ -284,17 +292,31 @@ export default function () {
           </div>
         <div className="side-navigation">
           <div className="side-navigation-download"><p className="downloadbutton-font">Download all files</p></div>
-          <div className="side-navigation-search">
+          <div className="side-navigation-search" style={{ display: 'flex', alignItems: 'center' }}>
             <img
               className="search-icon"
               src="/image/search-icon.svg"
               alt="search-icon"
+              style={{ height: '100%' }}
             />
-            <p className="search-button-font">Search samples</p>
+            <input 
+              type="text"
+              placeholder="Search samples"
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              style={{
+                width: 'calc(100% - 20px)', // Adjust the 20px if you have different padding or icon width
+                height: '100%',
+                padding: '0 10px', // Optional, for inner spacing
+                border: 'none', // Optional, removes the border
+                outline: 'none', // Optional, removes the outline
+              }}
+              className="search-input"
+            />
           </div>
           <div className="side-navigation-list">
           <SampleTable
-            sampleData={sampleData}
+            sampleData={filteredSampleData}
             selectedSample={selectedSample}
             onSampleClick={handleSampleClick}
           />

@@ -552,15 +552,12 @@
 }
 
 .my-files-1440 .frame-610 {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  left: 254px;
-  position: fixed;
-  top: 24px;
-  width: 1142px;
-  z-index: 3;
+  position: relative; /* or absolute, depending on your needs */
+  top: 0; /* Adjust as needed */
+  right: 0; /* Adjust as needed, maybe 1rem for consistency */
+  z-index: 9; /* Below the search bar if it should appear under it */
 }
+
 
 .my-files-1440 .frame-615 {
   border-color: var(--mystic);
@@ -711,3 +708,113 @@
   min-width: 29px;
   position: relative;
 }
+
+.my-files-1440 .my-files_search-bar {
+  display: flex;
+  justify-content: space-between; /* Spread items across the horizontal axis */
+  align-items: center;
+  position: fixed; /* Already fixed based on your CSS */
+  width: 100%; /* Full width */
+  z-index: 10; /* High z-index to stay on top */
+  padding: 0 1rem; /* Add padding to match your design */
+  box-sizing: border-box; /* Include padding in the width */
+  top: 0;
+  left: 0;
+}
+
+/* Classes used inside the my-files_search-bar */
+.my-files-1440 .frame-292 {
+  align-items: flex-start;
+  border: 0px none;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 9.75px;
+  position: relative;
+  width: fit-content;
+}
+
+.my-files-1440 .frame-295 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  width: fit-content;
+  left: 220px; /* Adjust this value to move the element rightward */
+  top: 30px;
+}
+
+.my-files-1440 .frame-297-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  width: fit-content;
+  left: 280px; /* Adjust this value to move the element rightward */
+  top: 30px;
+}
+
+
+.my-files-1440 .what-are-you-looking-for {
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -0.75px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.my-files-1440 .frame-290-1 {
+  align-items: center;
+  background-color: var(--porcelain);
+  border: 0.75px solid;
+  border-color: var(--mystic-2);
+  display: flex;
+  gap: 6px;
+  height: 36px;
+  padding: 9px;
+  position: relative;
+  width: 270px;
+}
+
+.my-files-1440 .search {
+  letter-spacing: 0;
+  line-height: 21px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* ... and so on for the other classes inside your HTML structure */
+
+.my-files-1440 .line-106 {
+  height: 70px;
+  margin-left: 46px;
+  width: 1px;
+}
+
+.my-files-1440 .group-381 {
+  align-items: flex-end;
+  display: flex;
+  height: 60px;
+  margin-bottom: 9.75px;
+  margin-left: 41px;
+  min-width: 302px;
+  position: absolute;
+  left: 1070px;
+  top: 30px;
+}
+
+.my-files-1440 .file-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 60px;
+  width: 150px;
+}
+
+
+/* ... and so on for the other classes inside your HTML structure */
+
