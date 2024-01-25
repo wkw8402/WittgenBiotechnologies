@@ -332,6 +332,13 @@
   gap: 6px;
   position: relative;
   width: fit-content;
+  align-items: center;
+  background-color: var(--white);
+  border: 0.75px solid;
+  border-color: var(--geyser);
+  display: flex;
+  gap: 90px;
+  height: 37.5px;
 }
 
 .my-files-all-samples .status {

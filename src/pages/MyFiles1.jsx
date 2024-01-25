@@ -35,6 +35,8 @@ export default function () {
 
   const [submittedFilesState,setSubmittedFilesState] = useState(null);
   const [retrievedItems, setRetrievedItems] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedStatus, setSelectedStatus] = useState('');
 
   async function breakCallbackDownload() { 
   UserNameUploaded = await HandleUserName();
@@ -52,6 +54,11 @@ export default function () {
 
     return dynamodb.query(queryItemParams).promise().then();
   }
+
+  const handleStatusChange = (event) => {
+    setSelectedStatus(event.target.value);
+  };
+  
 
   useEffect(() => {
     breakCallbackDownload().then((data) => setSubmittedFilesState(data))
@@ -162,7 +169,14 @@ export default function () {
     }
   };
 
-  let submittedFilesObjectRender = submittedFilesState ? (submittedFilesState.Items.map((element) => {
+  let filteredFiles = submittedFilesState
+    ? submittedFilesState.Items.filter((element) =>
+        element.fileName.S.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        (selectedStatus === '' || checkProcessStatus(element.fileName.S) === selectedStatus)
+      )
+    : [];
+
+  let submittedFilesObjectRender = filteredFiles.length > 0 ? (filteredFiles.map((element) => {
     //console.log("render",submittedFilesState);
     // console.log("render",typeof(submittedFilesState.Items));
     console.log("render",element);
@@ -203,7 +217,7 @@ export default function () {
         </div>
       </div>
     );
-  })) : (null)
+  })) : (<p>No matching files found.</p>)
 
   return (
     <>
@@ -229,112 +243,182 @@ export default function () {
     <div class="container-center-horizontal">
       <div class="my-files-1440 screen">
       <div className="main-navigation">
-            <div className="logo-box">
-              <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
-                <span className="bold-portal-logo">
-                  WittGen
-                </span>
-                <span className="light-portal-logo">
-                  Portal
-                </span>
-              </button>
-            </div>
-            <div className="navigation-box">
-              <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
-                <img
-                  className="dashboard-icon"
-                  src="/image/home-icon.svg"
-                  alt="home-icon"
-                />
-                <div className="light-font">Dashboard</div>
-              </button>
-              <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }}>
-                <img
-                  className="myfiles-icon"
-                  src="/image/myfiles-icon.svg"
-                  alt="myfiles-icon"
-                />
-                <div className="my-files-font">My files</div>
-              </button>
-              <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
-                <img
-                  className="cost-usage-icon"
-                  src="/image/cost-usage-icon.svg"
-                  alt="cost-usage-icon"
-                />
-                <div className="light-font">Cost &amp; Usage</div>
-              </button>
-              <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
-                <img
-                  className="setting-icon"
-                  src="/image/settings-icon.svg"
-                  alt="setting-icon"
-                />
-                <div className="light-font">Settings</div>
-              </button>
-              <button className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
-                <img
-                  className="faq-support-ion"
-                  src="/image/faq-support-icon.svg"
-                  alt="faq-support-icon"
-                />
-                <div className="light-font">FAQ / Support</div>
-              </button>
-            </div>
-            <button className="logout" onClick={()=>{   logout()    }} style={{  bottom: '57px', left: '2px'   }}>
+        <div className="logo-box">
+          <button className="witt-gen-portal bold-portal-logo" onClick={()=>navigate("/dashboard")}>
+            <span className="bold-portal-logo">
+              WittGen
+            </span>
+            <span className="light-portal-logo">
+              Portal
+            </span>
+          </button>
+        </div>
+        <div className="navigation-box">
+          <button className="navigation-box-1" onClick={()=>{ navigate('/dashboard') }}>
+            <img
+              className="dashboard-icon"
+              src="/image/home-icon.svg"
+              alt="home-icon"
+            />
+            <div className="light-font">Dashboard</div>
+          </button>
+          <button className="navigation-box-1" onClick={()=>{ navigate('/my_files_1') }}>
+            <img
+              className="myfiles-icon"
+              src="/image/myfiles-icon.svg"
+              alt="myfiles-icon"
+            />
+            <div className="my-files-font">My files</div>
+          </button>
+          <button className="navigation-box-1" onClick={()=>{  navigate('/CostUsage')  }}>
+            <img
+              className="cost-usage-icon"
+              src="/image/cost-usage-icon.svg"
+              alt="cost-usage-icon"
+            />
+            <div className="light-font">Cost &amp; Usage</div>
+          </button>
+          <button className="navigation-box-1" onClick={()=>{  navigate('/my_profile')  }}>
+            <img
+              className="setting-icon"
+              src="/image/settings-icon.svg"
+              alt="setting-icon"
+            />
+            <div className="light-font">Settings</div>
+          </button>
+          <button className="navigation-box-1" onClick={()=>{  navigate('/support')  }}>
+            <img
+              className="faq-support-ion"
+              src="/image/faq-support-icon.svg"
+              alt="faq-support-icon"
+            />
+            <div className="light-font">FAQ / Support</div>
+          </button>
+        </div>
+        <button className="logout" onClick={()=>{   logout()    }} style={{  bottom: '57px', left: '2px'   }}>
+          <img
+            className="logout-icon"
+            src="/image/logout-icon.png"
+            alt="logout-icon"
+          />
+          <div className="light-font">Logout</div>
+        </button>
+      </div>
+
+      <div class="my-files_search-bar">
+        <div class="frame-292">
+          <div class="frame-295">
+            <p class="what-are-you-looking-for inter-semi-bold-tundora-16px">What are you looking for?</p>
+            <div class="frame-290-1">
               <img
-                className="logout-icon"
-                src="/image/logout-icon.png"
-                alt="logout-icon"
+                class="search_fill1_wght400_grad0_opsz48-1"
+                src="/search-fill1-wght400-grad0-opsz48-1.svg"
+                alt="Search Icon"
               />
-              <div className="light-font">Logout</div>
-            </button>
-          </div>
-        <div class="frame-491">
-          <div class="frame-490">
-            <div class="frame-488">
-              <div class="submitted-files submitted-1 inter-semi-bold-blue-dianne-15px">Submitted files</div>
-              <div class="group-286">
-                <div class="frame-487">
-                  <a href="">
-                  <img class="frame-24" src="frame-244.svg" alt="Frame 244" />
-                  </a>
-                  <div class="frame-486">
-                    <div class="group-23">
-                      <div class="overlap-group"><div class="number-1 inter-semi-bold-slate-gray-10-5px">1</div></div>
-                    </div>
-                  </div>
-                  <a href="">
-                  <img class="frame-24" src="frame-243.svg" alt="Frame 243" />
-                  </a>
-                </div>
-              </div>
+              <input
+                type="text"
+                placeholder="Search files"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                style={{ marginLeft: '10px', backgroundColor: '#F0F3F3', width: '100%' }} // Add some spacing between the icon and the input field
+              />
             </div>
-            <div class="frame-485-1">
-              <div class="frame-479-1 inter-semi-bold-blue-dianne-10-5px">
-                <div class="frame-460-3 frame-460-4">
-                  <div class="file-id-1 inter-semi-bold-blue-dianne-10-5px">File ID</div>
-                </div>
-                <div class="frame-4">
-                  <div class="service-1">Service</div>
-                </div>
-                <div class="frame-4">
-                  <div class="submitted-date submitted-1">Submitted date</div>
-                </div>
-                <div class="frame-4-1 frame-4-3"><div class="status-1">Status</div></div>
-                {/* <div class="frame-4-1 frame-4-3"><div class="reanalyze">Reanalyze</div></div> */}
-                <div class="frame-4-1 frame-4-3"><div class="download">Download</div></div>
-              </div>
-              {submittedFilesState ? (
-                  submittedFilesObjectRender
-                ) : (
-                  <p>
-                    Loading...
-                  </p>
-                )}
+          </div>
+          <div class="frame-297-1" style={{ top: '35px' }}>
+            <div class="status inter-semi-bold-tundora-16px" >Status</div>
+            <div class="status-1 status-4">
+            <select className="status-dropdown researchers inter-semi-bold-blue-dianne-12px"
+                    style={{ marginTop: '10px', width: '100%' }}
+                    onChange={handleStatusChange}
+            >
+              <option value="">All</option>
+              <option value="Completed">Completed</option>
+              <option value="In Process">In Process</option>
+            </select>
             </div>
           </div>
         </div>
+        <img class="line-106" src="/line-106.svg" alt="Line 106" />
+        <div class="group-381">
+          <div class="file-container">
+            <div class="submit-new-file inter-semi-bold-tundora-16px">Submit new file</div>
+          </div>
+          <button
+            class="my-files_-main-button" 
+            style={{ right: '227px', position: 'absolute' }}
+            onClick={() => navigate('/getting_started_1')}
+          >
+            <div class="group-220">
+              <img
+                class="_fill0_wght400_grad0_opsz48-1"
+                src="/assignment-fill0-wght400-grad0-opsz48-1.svg"
+                alt="assignment_FILL0_wght400_GRAD0_opsz48 1"
+              />
+              <div class="researchers inter-semi-bold-blue-dianne-12px">Researchers</div>
+            </div>
+          </button>
+          <button 
+            class="my-files_-main-button-1"  
+            style={{ right: '147px', bottom: '3px', position: 'absolute' }}
+            onClick={() => navigate('/getting_started_1')}
+          >
+            <div class="group-220-1">
+              <img
+                class="_fill0_wght400_grad0_opsz48-1"
+                src="/stethoscope-fill0-wght400-grad0-opsz48-1.svg"
+                alt="stethoscope_FILL0_wght400_GRAD0_opsz48 1"
+              />
+              <div class="clinicians inter-semi-bold-blue-dianne-12px">Clinicians</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="frame-491">
+        <div class="frame-490">
+          <div class="frame-488">
+            <div class="submitted-files submitted-1 inter-semi-bold-blue-dianne-15px">Submitted files</div>
+            <div class="group-286">
+              <div class="frame-487">
+                <a href="">
+                <img class="frame-24" src="frame-244.svg" alt="Frame 244" />
+                </a>
+                <div class="frame-486">
+                  <div class="group-23">
+                    <div class="overlap-group"><div class="number-1 inter-semi-bold-slate-gray-10-5px">1</div></div>
+                  </div>
+                </div>
+                <a href="">
+                <img class="frame-24" src="frame-243.svg" alt="Frame 243" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="frame-485-1">
+            <div class="frame-479-1 inter-semi-bold-blue-dianne-10-5px">
+              <div class="frame-460-3 frame-460-4">
+                <div class="file-id-1 inter-semi-bold-blue-dianne-10-5px">File ID</div>
+              </div>
+              <div class="frame-4">
+                <div class="service-1">Service</div>
+              </div>
+              <div class="frame-4">
+                <div class="submitted-date submitted-1">Submitted date</div>
+              </div>
+              <div class="frame-4-1 frame-4-3"><div class="status-1">Status</div></div>
+              {/* <div class="frame-4-1 frame-4-3"><div class="reanalyze">Reanalyze</div></div> */}
+              <div class="frame-4-1 frame-4-3"><div class="download">Download</div></div>
+            </div>
+            {submittedFilesState ? (
+                submittedFilesObjectRender
+              ) : (
+                <p>
+                  Loading...
+                </p>
+              )}
+          </div>
+        </div>
+      </div>
       </div>
     </div>
 
