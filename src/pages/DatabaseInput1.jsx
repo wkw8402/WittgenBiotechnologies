@@ -963,16 +963,26 @@ function toggleTable(checked) {
                 width: 'fit-content',
                 marginTop: '50px',
               }}>
-                {100 > progress && progress >= 0 && (
-                  <div>
-                    <progress style={{ width: '500px' }} value={progress} max="100"></progress>
+                {
+                  progress === null ? (
                     <div>
                       <p className="inter-light-blue-dianne-15px">
-                        Please wait while uploading... ({((progress * finalFileSize) / 100000000).toFixed(2)} MB / {(finalFileSize / 1000000).toFixed(2)} MB)
+                        Preparing the upload, this may take a few seconds...
                       </p>
                     </div>
-                  </div>
-                )}
+                  ) : (
+                    100 > progress && progress >= 0 && (
+                      <div>
+                        <progress style={{ width: '500px' }} value={progress} max="100"></progress>
+                        <div>
+                          <p className="inter-light-blue-dianne-15px">
+                            Please wait while uploading... ({((progress * finalFileSize) / 100000000).toFixed(2)} MB / {(finalFileSize / 1000000).toFixed(2)} MB)
+                          </p>
+                        </div>
+                      </div>
+                    )
+                  )
+                }
                 {progress === 100 && (
                   <>
                   <div class="frame-364" style={{ 

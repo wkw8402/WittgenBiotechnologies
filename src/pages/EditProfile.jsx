@@ -9,8 +9,6 @@ import { useNavigate } from 'react-router-dom';
 import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 import AWS, { SecretsManager } from "aws-sdk";
 
-
-
 export default function EditProfile() {
 
   const [userAttributes, setUserAttributes] = useState(null);
