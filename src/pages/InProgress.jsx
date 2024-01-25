@@ -404,46 +404,6 @@ export default function () {
                 <Table />
               </div>
             </div>
-    
-            <div className="progress-line"></div>
-            <div className="inprogress-layout">
-              <div className="summary-box-inprogress">
-                <div className="order-summary">
-                  <div className="order-top" >
-                    <div className="ap-title">Order Summary</div>
-                    <div className="order-top1">Currency:USD</div>
-                  </div>
-                  <div className="order-line"></div>
-                  <div className="order-bottom">
-                    <div className="summary-font">Samples</div>
-                    <div className="summary-font1">{numberRow} x {costRow}</div>
-                    <div className="summary-font right-position">${numberRow * costRow}</div>
-                  </div>
-                </div>
-                <div className="amount-box">
-                  <div className="amount-top">
-                    <div className="summary-font1 amount-top1" >Subtotal:
-                      <div className="summary-font" style={{ textAlign: 'right' }}>${numberRow * costRow}</div>
-                    </div>
-                    <div className="summary-font1 amount-top1">Taxes(10%)
-                      <div className="summary-font" style={{ textAlign: 'right' }}>${numberRow * costRow / 10}</div>
-                    </div>
-
-                  </div>
-                  <div className="order-line"></div>
-                  <div className="amount-bottom">
-                    <div className="total-amount">
-                      <div className="total-amount2">total amount</div>
-                      <div className="total-amount3">${(numberRow * costRow) + (numberRow * costRow / 10)}</div>
-                    </div>
-                    <div className="freemium">
-                      <div className="freemium2">Freemium</div>
-                      <div className="freemium3">$0</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
