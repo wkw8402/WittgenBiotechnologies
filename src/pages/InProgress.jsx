@@ -121,7 +121,7 @@ export default function () {
             Bucket: 'wittgen-bio-metadata-bucket',
             Key: `${applicationId}.tsv`, // Replace with the actual filename
           };
-  
+
           const response = await s3.getObject(params).promise();
           const tsvContent = response.Body.toString('utf-8');
   
@@ -338,7 +338,7 @@ export default function () {
               File Progress
             </div>
             <div className="progress-layout">
-              <div className="progress-box">
+              <div className="progress-box" style={{ left: '260px' }}>
                 <div className="progress-frame" style={{ color: determineColor(progress.applicationSubmitted) }}>
                   <p className="progress-font">Application submitted</p>
                   <img
@@ -349,7 +349,7 @@ export default function () {
                   <p className="progress-time">{progressTime.applicationSubmitted}</p>
                 </div>
               </div>
-              <div className="progress-box">
+              <div className="progress-box" style={{ left: '440px' }}>
                 <div className="progress-frame" style={{ color: determineColor(progress.dataCuration) }}>
                   <p className="progress-font">Data Curation</p>
                   <img
@@ -360,7 +360,7 @@ export default function () {
                   <p className="progress-time">{progressTime.dataCuration}</p>
                 </div>
               </div>
-              <div className="progress-box">
+              <div className="progress-box" style={{ left: '620px' }}>
                 <div className="progress-frame" style={{ color: determineColor(progress.dataPreProcessing) }}>
                   <p className="progress-font">Data pre-processing</p>
                   <img
@@ -371,7 +371,7 @@ export default function () {
                   <p className="progress-time">{progressTime.dataPreProcessing}</p>
                 </div>
               </div>
-              <div className="progress-box">
+              <div className="progress-box" style={{ left: '800px' }}>
                 <div className="progress-frame" style={{ color: determineColor(progress.mlModel) }}>
                   <p className="progress-font">ML Model</p>
                   <img
@@ -382,7 +382,7 @@ export default function () {
                   <p className="progress-time">{progressTime.mlModel}</p>
                 </div>
               </div>
-              <div className="progress-box">
+              <div className="progress-box" style={{ left: '980px' }}>
                 <div className="progress-frame" style={{ color: determineColor(progress.fileComplete) }}>
                   <p className="progress-font">File complete</p>
                   <img

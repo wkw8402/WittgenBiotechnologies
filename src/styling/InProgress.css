@@ -329,3 +329,27 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.progress-layout {
+    margin-top: 12px;
+    width: 900px;
+    height: 193.5px;
+    border-radius: 8px;
+    background-color: #F2F6F7;
+    display: flex;
+    justify-content: space-between; /* This will space the boxes evenly */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if needed */
+}
+
+
+.progress-box {
+    width: 180px;
+    height: 193.5px;
+    padding: 28px 26px;
+    gap: 7.5px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    /* Removed position: fixed; */
+}
