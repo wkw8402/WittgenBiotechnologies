@@ -317,13 +317,13 @@ export default function Sample() {
                       <div class="done_fill0_wght400_grad0_opsz48-1-2">
                         <div class="ellipse-25"></div>
                       </div>
-                      <div class="address inter-semi-bold-black-14px" style={{ fontSize: '14px' }}>8 or more characters</div>
+                      <div class="address inter-semi-bold-black-14px" style={{ fontSize: '11px' }}>8 or more characters</div>
                     </div>
                     <div class="frame-63">
                       <div class="done_fill0_wght400_grad0_opsz48-1-2">
                         <div class="ellipse-25"></div>
                       </div>
-                      <p class="mixture-of-letters-and-numbers inter-semi-bold-black-14px" style={{ fontSize: '14px' }}>
+                      <p class="mixture-of-letters-and-numbers inter-semi-bold-black-14px" style={{ fontSize: '11px' }}>
                         Mixture of letters and numbers
                       </p>
                     </div>
@@ -331,7 +331,7 @@ export default function Sample() {
                       <div class="done_fill0_wght400_grad0_opsz48-1-2">
                         <div class="ellipse-25"></div>
                       </div>
-                      <p class="mixture-of-upper-and-lowercase inter-semi-bold-black-14px" style={{ fontSize: '14px' }}>
+                      <p class="mixture-of-upper-and-lowercase inter-semi-bold-black-14px" style={{ fontSize: '11px' }}>
                         Mixture of upper and lowercase
                       </p>
                     </div>
@@ -339,7 +339,7 @@ export default function Sample() {
                       <div class="done_fill0_wght400_grad0_opsz48-1-2">
                         <div class="ellipse-25"></div>
                       </div>
-                      <div class="special-characters inter-semi-bold-black-14px" style={{ fontSize: '14px' }}>Special characters</div>
+                      <div class="special-characters inter-semi-bold-black-14px" style={{ fontSize: '11px' }}>Special characters</div>
                     </div>
                   </div>
                 </div>

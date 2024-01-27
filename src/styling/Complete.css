@@ -327,7 +327,7 @@
     position: fixed;
     top: 84px;
     left: 410.25px;
-    width: 939px;
+    width: 600px;
     height: 354px;
 }
 
@@ -361,85 +361,35 @@
     color: #25474F;
 }
 
+/* Container holding the summary boxes */
+.result-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Keeps 3 columns */
+    grid-auto-rows: minmax(120px, auto); /* Sets the minimum height for rows, but allows them to grow */
+    grid-gap: 10px; /* Adjust the gap between items as needed */
+    overflow-y: auto; /* Enables vertical scrolling if content overflows */
+    max-height: 360px; /* Adjust this based on the desired number of visible rows */
+    width: 100%; /* Adjust the width as needed */
+    padding: 10px; /* Optional: Adds some padding inside the container */
+}
+
+/* Individual summary boxes */
 .summary-box-1 {
-    position: fixed;
-    top: 111px;
-    left: 410.25px;
-    width: 150px;
-    height: 120px;
+    width: 180px; /* Set the width as needed */
+    height: 120px; /* Allows the box to grow with content */
     border-bottom: solid #E9EBED 0.75px;
-    gap: 9px;
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding: 18px;
+    box-sizing: border-box; /* Ensures padding is included in width/height */
+    overflow-y: auto; /* Enables scrolling inside each box if content overflows */
 }
-
-.summary-box-2 {
-    position: fixed;
-    top: 111px;
-    left: 569.25px;
-    width: 150px;
-    height: 120px;
-    border-bottom: solid #E9EBED 0.75px;
-    gap: 9px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
-
-.summary-box-3 {
-    position: fixed;
-    top: 111px;
-    left: 728.25px;
-    width: 150px;
-    height: 120px;
-    border-bottom: solid #E9EBED 0.75px;
-    gap: 9px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
-
-.summary-box-4 {
-    position: fixed;
-    top: 231px;
-    left: 410.25px;
-    width: 150px;
-    height: 120px;
-    border-bottom: solid #E9EBED 0.75px;
-    gap: 9px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
-
-.summary-box-5 {
-    position: fixed;
-    top: 231px;
-    left: 569.25px;
-    width: 150px;
-    height: 120px;
-    border-bottom: solid #E9EBED 0.75px;
-    gap: 9px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
-
-.summary-box-6 {
-    position: fixed;
-    top: 231px;
-    left: 728.25px;
-    width: 150px;
-    height: 120px;
-    border-bottom: solid #E9EBED 0.75px;
-    gap: 9px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-}
-
+  
 .summary-frame-img {
     position: fixed;
     width: 393px;
     height: 327.75px;
     top: 110.25px;
     left: 956.25px;
-    background-color: aqua;
+    background-color: white;
 }
 
 .box-title-font {
@@ -454,12 +404,14 @@
 
 .box-summary-font {
     font-family: Inter;
-    font-size: 16px;
+    font-size: 11px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
     color: #464646;
+    overflow-x: auto; /* Horizontal scroll */
+    overflow-y: auto; /* No vertical scroll */
 }
 
 .page-complete {
@@ -1546,7 +1498,11 @@
     border-radius: 8px;
     background-color: #F2F6F7;
     display: flex;
+    justify-content: space-between; /* This will space the boxes evenly */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if needed */
 }
+
 
 .progress-box {
     width: 180px;
@@ -1554,6 +1510,7 @@
     padding: 28px 26px;
     gap: 7.5px;
     display: flex;
+    position: fixed;
     text-align: center;
 }
 
