@@ -22,6 +22,7 @@ export default function Myprofile() {
 
   }
   const [userAttributes, setUserAttributes] = useState(null);
+  const [subscriptionEnabled, setSubscriptionEnabled] = useState(false);
 
   useEffect(() => {
     fetchUserAttributes();
@@ -53,6 +54,53 @@ export default function Myprofile() {
       return attributes;
     }, {});
     return userAttributes;
+  };
+
+
+  const handleSubscriptionChange = async (e) => {
+    const isChecked = e.target.checked;
+    setSubscriptionEnabled(isChecked);
+    if (isChecked) {
+      await subscribeToTopic(userAttributes['email']);
+    } else {
+      await unsubscribeFromTopic(userAttributes['email']);
+    }
+  };
+
+  const subscribeToTopic = async (email) => {
+    const sns = new AWS.SNS();
+    const params = {
+      Protocol: 'email',
+      TopicArn: 'arn:aws:sns:us-east-1:730147657155:FileSubmission',
+      Endpoint: email,
+    };
+
+    try {
+      await sns.subscribe(params).promise();
+      console.log('Subscription successful');
+    } catch (error) {
+      console.error('Error subscribing:', error);
+    }
+  };
+
+  const unsubscribeFromTopic = async (email) => {
+    // You will need to obtain the subscription ARN for the specific email subscription
+    // This typically requires listing all subscriptions by the topic and finding the right one by the endpoint
+    const sns = new AWS.SNS();
+    const listParams = {
+      TopicArn: 'arn:aws:sns:us-east-1:730147657155:FileSubmission',
+    };
+
+    try {
+      const subscriptions = await sns.listSubscriptionsByTopic(listParams).promise();
+      const subscription = subscriptions.Subscriptions.find(sub => sub.Endpoint === email);
+      if (subscription) {
+        await sns.unsubscribe({ SubscriptionArn: subscription.SubscriptionArn }).promise();
+        console.log('Unsubscription successful');
+      }
+    } catch (error) {
+      console.error('Error unsubscribing:', error);
+    }
   };
 
     return(
@@ -206,12 +254,12 @@ export default function Myprofile() {
                           </div>
                         </div>
                       </div>
-                      <div class="wrapper">
-                      <input type="checkbox" class="switch" id="switch"></input>
-                      <label for="switch" class="switch_label">
-                        <span class="onf_btn"></span>
-                      </label>
-                    </div>
+                      <div className="wrapper">
+                        <input type="checkbox" className="switch" id="switch" checked={subscriptionEnabled} onChange={handleSubscriptionChange}></input>
+                        <label htmlFor="switch" className="switch_label">
+                          <span className="onf_btn"></span>
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -19,6 +19,7 @@ import SingleModal from './SingleModal';
 import { Account, AccountContext, cogGroup, NewJWTTOKEN } from "../components/Account";
 
 var dynamodb = new AWS.DynamoDB();
+const sns = new AWS.SNS();
 var fileID,
   fileName,
   relFileName,
@@ -615,7 +616,29 @@ function toggleTable(checked) {
       dynamodb.putItem(params, function (err, data) {
         if (err) console.log(err, err.stack);
         // an error occurred
-        else console.log(data); // successful response
+        else {
+          console.log(data); // successful response
+  
+          // Construct the notification message
+          const message = `The file ${fileName} has been successfully submitted by ${upoadedBy}.`;
+          const subject = 'File Submission Successful';
+  
+          // SNS publish parameters
+          const publishParams = {
+            Message: message,
+            Subject: subject,
+            TopicArn: 'arn:aws:sns:us-east-1:730147657155:FileSubmission'
+          };
+  
+          // Send the notification
+          sns.publish(publishParams, function(err, data) {
+            if (err) {
+              console.log(err, err.stack); // an error occurred
+            } else {
+              console.log(`Notification sent: ${data}`); // successful response
+            }
+          });
+        }
       })
 
       setUploading(false);
@@ -1028,7 +1051,7 @@ function toggleTable(checked) {
                 {progress === 100 && (
                   <>
                   <div class="file-id-gh-13728930" style={{ marginTop: '10px' }}>File Name: {finalFileName}</div>
-                  <p class="well-email-you-when" style={{ marginTop: '10px' }}>We'll email you an order confirmation with details and tracking info.</p>
+                  <p class="well-email-you-when" style={{ marginTop: '10px' }}>We'll email you an order confirmation with details and tracking info!</p>
                   </>
                 )}
               </div>
