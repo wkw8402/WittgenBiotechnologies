@@ -11,7 +11,7 @@ A secure, cloud-integrated web portal that allows authenticated users to upload 
 - 📊 **User Dashboard** — View, track, and download reports for submitted files.
 
 ## 📺 Demo Video
-Check out a short walkthrough of the file upload and dashboard features: [![Watch Demo](./public/thumbnail.png)](./public/WittgenDemo.mp4)
+Click on the image below to check out a short walkthrough of the file upload and dashboard features: [![Watch Demo](./public/thumbnail.png)](https://youtu.be/Ywrjve2Eg4k)
 
 ## 🧱 Tech Stack
 
