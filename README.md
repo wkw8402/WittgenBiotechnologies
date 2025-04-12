@@ -34,7 +34,3 @@ Click on the image below to check out a short walkthrough of the file upload and
 
 ## 🤝 About This Project
 Originally developed for WittGen Biotechnologies as part of a pilot program supporting genomic researchers and clinicians. This repo demonstrates key concepts and code with sensitive content removed for privacy.
-
----
-
-**🔗 Contact:** Paul Kyung-Wan Woo | [LinkedIn](https://linkedin.com/in/kyungwanwoo) | [GitHub](https://github.com/wkw8402)
